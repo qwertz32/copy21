@@ -69,6 +69,15 @@ body {
     transform: translateX(-50%);
 }
 
+/* .layer-options {
+z-index: 1010;
+display: inline;
+text-align: center;
+width: 40px;
+height: 20px;
+background-color: #333;
+} */
+
 .btn {
 	height: 70px;
 	width: 150px;

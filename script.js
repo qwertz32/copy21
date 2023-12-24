@@ -51,6 +51,8 @@ initialZoom = parseFloat(storedZoom) || presetZoom;
 
 map = L.map('map', { zoomSnap: 0.45, zoomDelta: 0.75 }).setView(initialCoordinates, initialZoom);
 
+map.removeControl(map.zoomControl);
+
 L.control.zoom({
     position: 'bottomright'
 }).addTo(map);
