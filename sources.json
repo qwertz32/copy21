@@ -9,15 +9,26 @@
         "Satelite": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
     },
     "Carto": {
-        "DarkLBL": "https://cartodb-basemaps-c.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
+        "DarkLBL": "https://cartodb-basemaps-c.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+        "LightNOLBL": "http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png"
     },
     "OpenStreetMap": {
         "Normal": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        "DarkMode": "https://tile.jawg.io/jawg-dark/{z}/{x}/{y}{r}.png?access-token=eDxCCaW34dfWTOSbwEO80BxuckHdpCMCRTfkVEpSiVwvxMRrOahK2Kuj7uUFy8A4",
         "Topography": "https://c.tile.opentopomap.org/{z}/{x}/{y}.png",
         "Hot": "https://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
-        "Topo": "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"
+        "Topo": "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
+        "Transport": "https://a.tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=6e5478c8a4f54c779f85573c0e399391",
+        "Cycle": "https://a.tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=6e5478c8a4f54c779f85573c0e399391"
     },
     "Microsoft-Bing": {
         "Road": "https://t.ssl.ak.dynamic.tiles.virtualearth.net/comp/ch/12021323?it=g&og=2359&cstl=s23&stl=n"
+    },
+    "Maptiles": {
+        "Streets": "https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=xp5GwT0gCuKPbvbBeBg3",
+        "Satelite": "https://api.maptiler.com/maps/satellite/?key=xp5GwT0gCuKPbvbBeBg3#{z}/{x}/{y}"
+    },
+    "OpenRailwayMap": {
+        "Main": "http://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png"
     }
 }
