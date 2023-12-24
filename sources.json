@@ -1,0 +1,23 @@
+{
+    "Google": {
+        "Satelite": "https://mt3.google.com/vt?lyrs=s&z={z}&y={y}&x={x}",
+        "Hybrid": "https://mt3.google.com/vt?lyrs=s,h&z={z}&y={y}&x={x}",
+        "Streets": "https://mt3.google.com/vt?lyrs=m&z={z}&y={y}&x={x}",
+        "Terrain": "https://mt3.google.com/vt?lyrs=p&z={z}&y={y}&x={x}"
+    },
+    "Apple": {
+        "Satelite": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+    },
+    "Carto": {
+        "DarkLBL": "https://cartodb-basemaps-c.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
+    },
+    "OpenStreetMap": {
+        "Normal": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+        "Topography": "https://c.tile.opentopomap.org/{z}/{x}/{y}.png",
+        "Hot": "https://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
+        "Topo": "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"
+    },
+    "Microsoft-Bing": {
+        "Road": "https://t.ssl.ak.dynamic.tiles.virtualearth.net/comp/ch/12021323?it=g&og=2359&cstl=s23&stl=n"
+    }
+}
