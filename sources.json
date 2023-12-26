@@ -14,7 +14,7 @@
     },
     "OpenStreetMap": {
         "Normal": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-        "DarkMode": "https://tile.jawg.io/jawg-dark/{z}/{x}/{y}{r}.png?access-token=eDxCCaW34dfWTOSbwEO80BxuckHdpCMCRTfkVEpSiVwvxMRrOahK2Kuj7uUFy8A4",
+        "DarkMode": "https://tile.jawg.io/jawg-dark/{z}/{x}/{y}{r}.png?access-token=eDxCCaW34dfWTOSbwEO80BxuckHdpCMCRTfkVEpSiVwvxMRrOahK2Kuj7uUFy8A4 ",
         "Topography": "https://c.tile.opentopomap.org/{z}/{x}/{y}.png",
         "Hot": "https://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
         "Topo": "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",

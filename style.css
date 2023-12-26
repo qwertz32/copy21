@@ -1,110 +1,136 @@
 body {
-	margin: 0;
-	overflow: hidden !important;
+    margin: 0;
+    overflow: hidden !important;
+    font-family: sans-serif;
 }
 
-.leaflet-control-attribution {
-	background: rgba(14, 14, 14, 0.7) !important;
-    color: white;
-	padding: 5px;
-	border-radius: 15px;
-	font-size: 12px;
+:root {
+	--border-color: #c9970c;
+	--border-color-dark: #4008a1;
+	--dimmed-white: rgb(161, 154, 154);
+	--border-size: 4px;
+	--deafult-darkmode: #333;
+	--white-color: rgb(241, 233, 233);
+	--bug-report-bg: #552170;
+	--dark-bg: rgba(14, 14, 14, 0.7);
+
 }
+.leaflet-control-attribution {
+    background: var(--dark-bg) !important;
+    color: var(--white-color);
+    padding: 5px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
 .leaflet-control-attribution a {
     color: #0d9fd9;
 }
 
 .leaflet-container {
-	background: #333;
+    background: var(--deafult-darkmode);
 }
 
-/* .leaflet-control-zoom {
-	display: none; 
-} */
-
 #map {
-	height: 100vh !important;
-	width: 100vw !important;
+    height: calc(100vh - 10%);
+    width: 100vw !important;
+}
+
+.report-div {
+	border: solid var(--dimmed-white);
+    position: relative;
+    color: var(--white-color);
+    z-index: 1006;
+	cursor: pointer;
+    background-color: var(--bug-report-bg);
+    padding: 1% 7% 1% 7%;
+    border-radius: 15px;
+    margin: 0 auto;
+    /* max-height: 40%; */
+    max-width: 130%;
+}
+
+.btn {
+    height: 70px;
+    width: 150px;
 }
 
 .centered {
-	position: fixed;
-	display: flex;
-    bottom: 0px;
-	left: 50%;
-	transform: translateX(-50%);
-	align-items: center;
-	text-align: center;
-	height: 10%;
-	z-index: 1005;
-}
-
-.btn {
-	height: 50%;
-	width: 100%;
-}
-
-.btn button {
-    color: white;
-	background-repeat: no-repeat;
-	background-position: center;
-	height: 100%;
-	width: 100%;
-	border-radius: 8px;
-	background-image: url('https://mt3.google.com/vt?lyrs=s,h&z=0&y=0&x=0');
-}
-
-.options {
-    color: white;
-    z-index: 1010;
-    position: absolute;
-    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    margin: 0.3%;
     flex-direction: column;
-    text-align: center;
-    width: auto;
-    padding: 5px;
-    background-color: #333;
-    bottom: 8%;
-    left: 50%;
-    transform: translateX(-50%);
+    align-items: center;
+    z-index: 1005;
 }
 
-/* .layer-options {
-z-index: 1010;
-display: inline;
-text-align: center;
-width: 40px;
-height: 20px;
-background-color: #333;
-} */
+.bug-rep-p {
+    text-transform: capitalize;
+    font-weight: 600;
+}
 
 .btn {
-	height: 70px;
-	width: 150px;
+    height: 70px;
+    width: 150px;
+    margin-top: 5px;
 }
-.btn-in:hover {
-    cursor: pointer;
+.btn-in {
+	border: var(--border-size) solid var(--border-color-dark);
+	font-size: max(2.5px, 1.3vmin);
+	font-weight: 900;
+	text-align: center;
+	white-space: nowrap;
+	cursor: pointer;
 }
 .btn-in:active {
-    cursor:move;
+	cursor: move;
 }
 
-.options div {
-    margin: 5px;
-}
-
-.btn:hover + .options {
+.btn-in:hover + .options {
     display: flex;
 }
 
-.layer-options {
-	margin: 3px 5px 3px 5px;
+.btn-container {
+    display: flex;
+    align-items: center;
+	margin-top: 5px;
 }
 
-.main-down {
-	width: 100%;
-	min-height: 100px;
-	height: 40%;
-	max-height: 100px;
-	display: inline-block;
+.btn button {
+    color: var(--white-color);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    background-image: url('https://mt3.google.com/vt?lyrs=s&z=0&y=0&x=0');
+}
+
+.options {
+    color: var(--white-color);
+    z-index: 1010;
+    position: absolute;
+    left: 100%;
+    width: auto;
+    max-width: 300px;
+    height: 70px;
+    margin: 4%;
+    border-radius: 10%;
+    display: none;
+    align-items: center;
+    justify-content: center; 
+    padding: 5px; 
+    background-color: var(--deafult-darkmode);
+}
+
+.options div {
+    display: flex;
+    align-items: center;
+}
+
+.options div span {
+    white-space: nowrap;
+    margin-right: 10px;
 }
