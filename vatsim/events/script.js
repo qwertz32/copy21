@@ -161,6 +161,7 @@ var presetCoordinatesList = [
     
 ];
 // var storedCoordinates, storedZoom;
+var menuOptions = $('.menu-options');
 var tileLayerUrl = 'https://mt2.google.com/vt?lyrs=s&x={x}&y={y}&z={z}';
 var presetCoordinates = isMobile() ? [54.526000, 15.255100] : getRandomCordsForStart();
 var presetZoom = isMobile() ? 4 : 3; 

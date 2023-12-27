@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VATSIM   </title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" href="st.css" />
+    <link rel="stylesheet" href="/vatsim/events/style.css" />
     <link rel="stylesheet" href="/font-import.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
@@ -30,9 +30,14 @@
                     </div>
                 </div>
                 <div class="center">
-                    <div class="nav-logo">
-                        <!-- <a href="http://vatsim.net" target="_blank"><img src="/src/img/VATSIM Logos for Public Use/2000w/VATSIM_Logo_Official_White_Tagline_2000px.png" alt="VATSIM Logo"></a> -->
-                        <a href="http://vatsim.net" target="_blank" ><img src="https://cdn.glitch.global/651d1dc0-30a8-4ddd-8a83-0cba8aa8bfbf/VATSIM_Logo_Official_White_Tagline_2000px.png?v=1703699660018" alt="VATSIM logo"></a>
+                    <div class="logo">
+                        <div class="nav-logo clr-wht">
+                            <!-- <a href="http://vatsim.net" target="_blank"><img src="/src/img/VATSIM Logos for Public Use/2000w/VATSIM_Logo_Official_White_Tagline_2000px.png" alt="VATSIM Logo"></a> -->
+                            <a href="http://vatsim.net" target="_blank" ><img src="/src/img/VATSIM Logos for Public Use/2000w/VATSIM_Logo_White_No_Tagline_2000px.png" alt="VATSIM logo"></a>
+                        </div>
+                        <div class="nav-logo-subtext">
+                            <span class="nav-subtext">events</span>
+                        </div>
                     </div>
                 </div>
                 <div class="nav-logo-popup" id="popup">
@@ -63,10 +68,9 @@
             </nav>
         </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script defer src="sc.js"></script>
+    <script defer src="/vatsim/events/script.js"></script>
     <noscript>
         <style>.a-noscript{text-decoration: none;color: rgb(67, 152, 252);font-size: 2vh;}.a-noscript:hover{text-decoration: underline;}.div1-noscript{position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: rgb(0 0 0);display: flex;align-items: center;justify-content:center;z-index: 1050 !important;}.div2-noscript{color: white;font-weight: 900;font-size: 2.5vh;font-family: sans-serif;text-align: center;}</style><div class="div1-noscript"><div class="div2-noscript">JavaScript is dead, and so is this page...<br>Enable it! <a class="a-noscript" href="https://support.google.com/admanager/answer/12654" target="_blank">How?</a></div></div></noscript>
 </body>
