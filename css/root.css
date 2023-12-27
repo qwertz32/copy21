@@ -1,0 +1,10 @@
+:root {
+    --border-color: #c9970c;
+    --border-color-dark: #4008a1;
+    --dimmed-white: rgb(161, 154, 154);
+    --border-size: 4px;
+    --deafult-darkmode: #333;
+    --white-color: rgb(241, 233, 233);
+    --bug-report-bg: #552170;
+    --dark-bg: rgba(14, 14, 14, 0.7);
+}

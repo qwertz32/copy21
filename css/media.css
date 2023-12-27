@@ -1,0 +1,41 @@
+/* MOBILE */
+@media (max-width: 600px) {
+    .nav-bar-main {
+        height: 6%;
+    }
+    .nav-logo img {
+        height: 35px;
+    }
+    .menu-icon {
+        display: flex !important;
+    }
+    .nav-subwebsites {
+        display: none !important;
+    }
+    .leaflet-control-attribution {
+        font-size: 12px !important;
+        padding: 1px !important;
+    }
+    .r-clock {
+        display: none;
+    }
+}
+/* DESKTOP */
+@media (min-width: 601px) {
+    .l-clock {
+        display: none;
+    }
+}
+/* TABLET BOTTOM */
+@media(max-height: 1100px) {
+    .nav-logo {
+        height: 30px;
+    }
+}
+/* WHEN CONFLICT */
+@media (max-width: 309px) {
+
+    .leaflet-bottom {
+        display: none;
+    }
+}

@@ -1,0 +1,25 @@
+.leaflet-bottom {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: self-end;
+}
+
+.leaflet-control-attribution {
+    background: var(--dark-bg) !important;
+    color: var(--white-color);
+    padding: 5px;
+    border-radius: 15px;
+    font-size: 12px;
+    width: 100%;
+    text-wrap: nowrap;
+    text-align: right;
+}
+
+.leaflet-control-attribution a {
+    color: #0d9fd9;
+}
+
+.leaflet-container {
+    background: var(--deafult-darkmode);
+}
