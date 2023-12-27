@@ -1,31 +1,32 @@
-
 html {
     height: 100%;
 }
+
 body {
     height: 100%;
     margin: 0;
-    overflow: hidden !important;
+    overflow: hidden;
     font-family: sans-serif;
 }
 
 :root {
-	--border-color: #c9970c;
-	--border-color-dark: #4008a1;
-	--dimmed-white: rgb(161, 154, 154);
-	--border-size: 4px;
-	--deafult-darkmode: #333;
-	--white-color: rgb(241, 233, 233);
-	--bug-report-bg: #552170;
-	--dark-bg: rgba(14, 14, 14, 0.7);
-
+    --border-color: #c9970c;
+    --border-color-dark: #4008a1;
+    --dimmed-white: rgb(161, 154, 154);
+    --border-size: 4px;
+    --deafult-darkmode: #333;
+    --white-color: rgb(241, 233, 233);
+    --bug-report-bg: #552170;
+    --dark-bg: rgba(14, 14, 14, 0.7);
 }
+
 .leaflet-bottom {
     position: fixed;
     display: flex;
     flex-direction: column;
     align-items: self-end;
 }
+
 .leaflet-control-attribution {
     background: var(--dark-bg) !important;
     color: var(--white-color);
@@ -46,38 +47,31 @@ body {
 
 #map {
     height: calc(100vh - 10%);
-    width: 100vw !important;
+    width: 100vw;
 }
 
-/* report btn */
-.report-div {
-	border: solid var(--dimmed-white);
+/* .report-div {
+    border: solid var(--dimmed-white);
     position: relative;
     color: var(--white-color);
     z-index: 1006;
-	cursor: pointer;
+    cursor: pointer;
     background-color: var(--bug-report-bg);
-    padding: 1% 7% 1% 7%;
+    padding: 1% 7%;
     border-radius: 15px;
     margin: 0 auto;
-    /* max-height: 40%; */
     max-width: 130%;
-}
-
-/* .main-down {
-    height: 100dvh;
 } */
 
 .centered {
-    height: 100vh;
+    height: 50vh;
     position: fixed;
     bottom: 0;
-    height: 50%;
     left: 0;
     display: flex;
-    margin: 0.3%;
     flex-direction: column;
     align-items: center;
+    margin: 0.3%;
     z-index: 1005;
 }
 
@@ -85,6 +79,7 @@ body {
     .centered {
         display: none;
     }
+
     .leaflet-bottom {
         display: none;
     }
@@ -100,51 +95,56 @@ body {
     width: 150px;
     margin-top: 5px;
 }
+
 .btn-in {
-	border: var(--border-size) solid var(--border-color-dark);
-	font-size: max(15px);
-	font-weight: 900;
-	text-align: center;
-	white-space: nowrap;
-	cursor: pointer;
-}
-.btn-in:active {
-	cursor: move;
+    border: var(--border-size) solid var(--border-color-dark);
+    font-size: max(15px);
+    font-weight: 900;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
 }
 
+.btn-in:active {
+    cursor: move;
+}
 .options {
-    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; /* Align text horizontally */
+    justify-content: center; /* Align text vertically */
     color: var(--white-color);
     z-index: 1010;
-    position: absolute; /* do not change this as it will screw up the appearance*/
+    position:absolute;
     left: 100%;
     width: auto;
     max-width: 300px;
-    height: auto;
-    margin: 4%;
+    height: 70px; /* Set height to match the btn div */
+    margin-left: 2%;
     border-radius: 10%;
-    padding: 5px; 
+    padding: 5px;
     background-color: var(--deafult-darkmode);
-}
-.layer-options {
-    /* padding-top: 20%; */
-    white-space: nowrap;
     display: flex;
 }
+
+.layer-options {
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+}
+
 .options-provider-text-left {
     margin-right: 10px;
     margin-bottom: 5px;
 }
+
 .btn-in:hover + .options {
     display: flex;
 }
 
 .btn-container {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-	margin-top: 5px;
+    margin-top: 2%;
 }
 
 .btn button {

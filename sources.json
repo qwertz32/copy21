@@ -16,6 +16,8 @@
     },
     "Carto": {
         "DarkLBL": "https://cartodb-basemaps-c.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+        "DarkNOLBL": "https://cartodb-basemaps-c.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}.png",
+        "DarkONLYLBL": "https://cartodb-basemaps-b.global.ssl.fastly.net/rastertiles/dark_only_labels/{z}/{x}/{y}.png",
         "LightNOLBL": "http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png"
     },
     "OpenStreetMap": {

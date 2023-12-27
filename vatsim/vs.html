@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="st.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+
+<body>
+    <div id="loading-container">
+        <div id="loading-spinner"></div>
+    </div>
+    <!-- <div> class="overlay"></div> -->
+    <div id="map" style="height: 100vh; width: 100vw;"></div>
+    <div class="fullscreen">
+        <div class="main-content">
+            <nav class="nav-bar-main">
+                <div class="nav-text nav-left">
+                    <div class="nav-subwebsites">
+                        <ul>
+                            <li><a class="nav-links" href="/">Map</a></li>
+                            <li><a class="nav-links" href="/events">Events</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav-logo">
+                    <img src="/src/img/VATSIM Logos for Public Use/2000w/VATSIM_Logo_Official_White_Tagline_2000px.png" alt="VATIM Logo">
+                </div>
+                <div class="nav-logo-popup" id="popup">
+                    <div class="nav-logo-popup-main">
+                        <div class="nav-logo-popup-text">
+                            <p>Text 1</p>
+                        </div>
+                        <div class="nav-logo-popup-text">
+                            <p>Text 2</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-text nav-right">
+                    <div id="clock"> s</div>
+                    <div class="hamburger-menu">
+                        <div class="menu-icon">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                        <div class="menu-options">
+                            <ul>
+                                <li><a class="nav-links" href="/">Map</a></li>
+                                <li><a class="nav-links" href="/events">Events</a></li>
+                                <li><a class="nav-links" href="/events">Events</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script defer src="sc.js"></script>
+    <noscript>
+        <style>.a-noscript{text-decoration: none;color: rgb(67, 152, 252);font-size: 2vh;}.a-noscript:hover{text-decoration: underline;}.div1-noscript{position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: rgb(0 0 0);display: flex;align-items: center;justify-content:center;z-index: 1050 !important;}.div2-noscript{color: white;font-weight: 900;font-size: 2.5vh;font-family: sans-serif;text-align: center;}</style><div class="div1-noscript"><div class="div2-noscript">JavaScript is dead, and so is this page...<br>Enable it! <a class="a-noscript" href="https://support.google.com/admanager/answer/12654" target="_blank">How?</a></div></div></noscript>
+</body>
+
+</html>

@@ -1,30 +1,36 @@
-var mapProviders;
-var mapHistory = [];
-var maxHistoryLength = 10;
+function showLoadingSpinner() {
+    $('#loading-container').css('display', 'flex');
+    $('#loading-spinner').fadeIn().css('display', 'flex');
+}
 
-sourcesJson = 'sources.json';
-
-document.addEventListener('DOMContentLoaded', function() {
-    fetch(sourcesJson)
-        .then(response => response.json())
-        .then(data => {
-            callMapSources(data);
-        })
-        .catch(error => {
-            console.error('Error fetching sources. ', error);
-        });
-});
-
-window.onload = function() {
-    // Move the button visibility code here
-    var button = document.querySelector('.btn');
-    button.style.display = 'block';
-    button.style.visibility = 'visible';
+function hideLoadingSpinner() {
+    $('#loading-spinner').fadeOut().css('display', 'none');
+    $('#loading-container').fadeOut().css('display', 'none');
 };
 
-function callMapSources(mapSources) {
-    mapProviders = mapSources; // Assign the fetched data to mapProviders
-}
+showLoadingSpinner();
+document.addEventListener('DOMContentLoaded', function () {
+    var mapProviders;
+    var mapHistory = [];
+    var maxHistoryLength = 10;
+
+    sourcesJson = '/sources.json';
+
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch(sourcesJson)
+            .then(response => response.json())
+            .then(data => {
+                callMapSources(data);
+            })
+            .catch(error => {
+                console.error('Error fetching sources. ', error);
+            });
+    });
+
+    function callMapSources(mapSources) {
+        mapProviders = mapSources; // Assign the fetched data to mapProviders
+    }
+});
 
 // Function to change the map layer
 function changeMap(provider, mapType) {
@@ -79,6 +85,23 @@ function mapReturn() {
     } else {
         console.error(`No previous map provider stored`);
     }
+}
+
+function teleportTo(coordinates, zoom) {
+    if (!map) {
+        console.error(error);
+        return;
+    }
+
+    const [lat, lng] = coordinates.split(',').map(coord => parseFloat(coord.trim()));
+    
+    if (isNaN(lat) || isNaN(lng)) {
+        console.error('Invalid input.');
+        return;
+    }
+
+    map.setView([lat, lng], zoom);
+    console.log(`Teleported to: Latitude ${lat}, Longitude ${lng}, Zoom ${zoom}`);
 }
 
 function createLayerClone(layer) {
@@ -138,8 +161,7 @@ var ipToken = '57181dfc23ba47';
 
 var google = L.tileLayer('https://cartodb-basemaps-c.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}.png', {
     maxZoom: 21,
-    // maxNativeZoom: 18,
-    attribution: '© Google Maps',
+    attribution: 'Google Maps',
     preload: Infinity,
     subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
     keepBuffer: 5
@@ -147,11 +169,10 @@ var google = L.tileLayer('https://cartodb-basemaps-c.global.ssl.fastly.net/dark_
 
 var apple = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     maxZoom: 22,
-    attribution: 'Unspecified Maps',
+    attribution: 'Apple Maps',
     preload: Infinity,
     keepBuffer: 5
 });
-
 var baseMaps = {
     "Google Maps": google,
     "Apple Maps": apple
@@ -184,15 +205,10 @@ function isMobile() {
 initialZoom = parseFloat(storedZoom) || presetZoom;
 
 map = L.map('map', {
-    zoomSnap: 0.45,
+    zoomControl: false,
+    zoomSnap: 0.60,
     zoomDelta: 0.75
 }).setView(initialCoordinates, initialZoom);
-
-map.removeControl(map.zoomControl); //Remove the deafult zoom controls from the top left (they were doubled)
-
-L.control.zoom({
-    position: 'bottomright'
-}).addTo(map);
 
 google.addTo(map);
 
@@ -203,31 +219,25 @@ map.on('moveend', function() {
     localStorage.setItem('mapZoom', currentZoom.toString());
 });
 
-//
-
-// console.log('Stored cache data from previous session:\n' + "Zoom: " + localStorage.getItem('mapZoom') + "\n" + "Coordinates: " + localStorage.getItem('mapCoordinates'));
-// if (mapZoom === null || mapCoordinates === null) {
-//     console.error('Failed to get stored data.');
-// }
-
 var currentLayer = google;
 
-// // Function to change the map layer
-// function swapBgBtn() {
-//     var btnBg = $('.btn-in'); // Change the selector to target the button with class btn-in
-//     var bgUrl;
+function showTime() {
+    var date = new Date();
+    var h = date.getUTCHours(); // 0 - 23
+    var m = date.getUTCMinutes(); // 0 - 59
+    
+    h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    
+    var time = h + '' + m + "Z";
+    
+    $("#clock").text(time);
+}
 
-//     // Check if the currentLayer exists in the mapProviders JSON
-//     if (mapProviders && mapProviders[currentLayer]) {
-//         // Assume 'Satellite' is the mapType, you can replace it with your actual logic
-//         // bgUrl = mapProviders[currentLayer][];
-//     }
-
-//     // Set the background URL
-//     btnBg.css('background-image', `url('${bgUrl}')`);
-
-//     console.log("bgUrl = " + bgUrl);
-// }
+$(document).ready(function() {
+    showTime();
+    setInterval(showTime, 1000);
+});
 
 function switchLayer() {
     if (currentLayer === google) {
@@ -240,93 +250,52 @@ function switchLayer() {
         currentLayer = google;
     }
 }
-// // Wait for the DOM content to be loaded
-// document.addEventListener('DOMContentLoaded', function () {
-// Add mouseover and mouseout event listeners to the button
-//     var btn = $('.btn');
-//     var options = $('.options');
-//     var hideTimeout;
-
-//     btn.mouseover(function () {
-//         // Show the options when the button is hovered
-//         // clearTimeout(hideTimeout);
-//         options.css({ display: 'flex' });
-//     });
-
-//     btn.mouseout(function () {
-//         // Set a timeout to hide the options after a delay
-//         hideTimeout = setTimeout(function () {
-//             options.css({ display: 'none' });
-//         }, 300);
-//     });
-
-//     options.mouseover(function () {
-//         // Clear the hide timeout when options are hovered
-//         // clearTimeout(hideTimeout);
-//     });
-
-//     options.mouseout(function () {
-//         // Set a timeout to hide the options after a delay
-//         hideTimeout = setTimeout(function () {
-//             options.css({ display: 'none' });
-//         }, 300);
-//     });
-// // });
-
-var btn = $('.btn');
-var options = $('.options');
-var hideTimeout;
-
-btn.mouseover(function() {
-    // Show the options when the button is hovered
-    clearTimeout(hideTimeout);
-    options.css({
-        display: 'flex'
-    });
-});
-
-btn.mouseout(function() {
-    // Set a timeout to hide the options after a delay
-    hideTimeout = setTimeout(function() {
-        options.css({
-            display: 'none'
-        });
-    }, 300);
-});
-
-options.mouseover(function() {
-    // Clear the hide timeout when options are hovered
-    clearTimeout(hideTimeout);
-    // Add a class to indicate the options are being hovered
-    options.css({
-        display: 'flex'
-    });
-});
-
-options.mouseout(function() {
-    // Set a timeout to hide the options after a delay
-    hideTimeout = setTimeout(function() {
-        options.css({
-            display: 'none'
-        });
-        // Remove the class when the options are no longer hovered
-        options.removeClass('hovered');
-    }, 300);
-});
 
 function getCountry() {
     $.ajax({
         url: 'https://ipinfo.io/json?token=' + ipToken,
         dataType: 'json',
         success: function(data2) {
-            const userCountry = data2.country || '';
+            var userCountry = data2.country || '';
             console.log("Country code:", userCountry);
-            $('.footer-country').text(userCountry)
+            if (userCountry !== null) {
+                var attributionContainer = $('.leaflet-control-attribution');
+                var currentAttribution = attributionContainer.html();
+                var newAttribution = currentAttribution + ' | ' + userCountry;
+                attributionContainer.html(newAttribution);
+                console.log("Successfuly implemented user's country code.")
+            } else {
+                console.error(error);
+                hideLoadingSpinner();
+            }
+            hideLoadingSpinner();
         },
         error: function(error) {
             console.error('Error fetching country.\n', error);
+            hideLoadingSpinner();
         }
     });
-};
+}
 
 getCountry();
+
+// Your menu icon and nav logo logic
+$(".menu-icon").click(function () {
+    $(".menu-options").slideToggle();
+});
+
+$(document).click(function (event) {
+    if (!$(event.target).closest('.menu-icon, .menu-options').length) {
+        $(".menu-options").slideUp();
+    }
+});
+
+$(".nav-logo").click(function() {
+    $(".nav-logo-popup").fadeToggle();
+});
+
+$(document).click(function (event) {
+    if (!$(event.target).closest('.nav-logo, .nav-logo-popup').length) {
+        $(".nav-logo-popup").fadeOut();
+    }
+});
