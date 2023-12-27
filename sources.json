@@ -5,6 +5,12 @@
         "Streets": "https://mt3.google.com/vt?lyrs=m&z={z}&y={y}&x={x}",
         "Terrain": "https://mt3.google.com/vt?lyrs=p&z={z}&y={y}&x={x}"
     },
+    "Google2": {
+        "Satelite": "https://khms3.google.com/vt?lyrs=s&z={z}&y={y}&x={x}",
+        "Hybrid": "https://khms3.google.com/vt?lyrs=s,h&z={z}&y={y}&x={x}",
+        "Streets": "https://khms3.google.com/vt?lyrs=m&z={z}&y={y}&x={x}",
+        "Terrain": "https://hms3.google.com/vt?lyrs=p&z={z}&y={y}&x={x}"
+    },
     "Apple": {
         "Satelite": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
     },

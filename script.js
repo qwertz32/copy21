@@ -1,6 +1,6 @@
 var mapProviders;
-var mapHistory = []; // Stack to store past map changes
-var maxHistoryLength = 10; // Maximum length of the history stack
+var mapHistory = [];
+var maxHistoryLength = 10;
 
 sourcesJson = 'sources.json';
 
@@ -47,7 +47,7 @@ function changeMap(provider, mapType) {
             // Create a new layer with the specified URL
             var newLayer = L.tileLayer(mapUrl, {
                 maxZoom: 18, // Adjust maxZoom based on the specific provider
-                attribution: 'Custom Attribution'
+                attribution: 'Custom Map Provider'
             });
 
             // Add the new layer to the map
@@ -62,7 +62,6 @@ function changeMap(provider, mapType) {
         console.error(`Provider ${provider} not found in the JSON data`);
     }
 }
-
 // Function to return to the previous map provider
 function mapReturn() {
     if (mapHistory.length > 0) {
@@ -112,11 +111,32 @@ function createLayerClone(layer) {
 
 
 var map, currentLayer, initialCoordinates, initialZoom;
+var presetCoordinatesList = [
+    [27.386445836446814, 15.59099952979347], 
+    [25.19693081190781, 55.27419425547124],
+    [55.751605578948634,37.622505547875434], // 
+    [39.043127453366125,125.7556205996649], //
+    [35.70132841614543,499.7335694356339], //
+    [40.6892040108378,-74.04478900061456], //
+    [23.764313175283185,90.2804708680347], //
+    [0.0,0.0], 
+    [-70.30468490953506,24.048737550483317], //
+    [-43.52892045765742,171.35833055943286], //
+    [33.95624057296359,-118.24731336563917], //
+    [71.53863351460842,-53.21127807509122], //
+    [52.23919989939035,21.04489368750266], //
+    
+];
+// var storedCoordinates, storedZoom;
 var tileLayerUrl = 'https://mt2.google.com/vt?lyrs=s&x={x}&y={y}&z={z}';
-var presetCoordinates = [27.386445836446814, 15.59099952979347];
-var presetZoom = 3;
+var presetCoordinates = isMobile() ? [54.526000, 15.255100] : getRandomCordsForStart();
+var presetZoom = isMobile() ? 4 : 3; 
+var ipToken = '57181dfc23ba47';
+// var gotMapZoom = localStorage.getItem('mapZoom');
+// var gotMapCords = localStorage.getItem('mapCoordinates');
+// var gotMapProvider = 
 
-var google = L.tileLayer('https://{s}.google.com/vt?lyrs=s&z={z}&y={y}&x={x}', {
+var google = L.tileLayer('https://cartodb-basemaps-c.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}.png', {
     maxZoom: 21,
     // maxNativeZoom: 18,
     attribution: '© Google Maps',
@@ -138,6 +158,8 @@ var baseMaps = {
 };
 
 try {
+    // storedCoordinates = gotMapCords;
+    // storedZoom = gotMapZoom;
     var storedCoordinates = localStorage.getItem('mapCoordinates');
     var storedZoom = localStorage.getItem('mapZoom');
     initialCoordinates = JSON.parse(storedCoordinates) || presetCoordinates;
@@ -148,7 +170,16 @@ try {
         "color: orange; font-weight: normal;"
     );
     initialCoordinates = presetCoordinates;
+};
+
+function getRandomCordsForStart() {
+    var randomIndex2 = Math.floor(Math.random() * presetCoordinatesList.length);
+    return presetCoordinatesList[randomIndex2];
 }
+
+function isMobile() {
+    return $(window).width() <= 768;
+};
 
 initialZoom = parseFloat(storedZoom) || presetZoom;
 
@@ -172,6 +203,13 @@ map.on('moveend', function() {
     localStorage.setItem('mapZoom', currentZoom.toString());
 });
 
+//
+
+// console.log('Stored cache data from previous session:\n' + "Zoom: " + localStorage.getItem('mapZoom') + "\n" + "Coordinates: " + localStorage.getItem('mapCoordinates'));
+// if (mapZoom === null || mapCoordinates === null) {
+//     console.error('Failed to get stored data.');
+// }
+
 var currentLayer = google;
 
 // // Function to change the map layer
@@ -190,8 +228,6 @@ var currentLayer = google;
 
 //     console.log("bgUrl = " + bgUrl);
 // }
-
-
 
 function switchLayer() {
     if (currentLayer === google) {
@@ -262,7 +298,9 @@ options.mouseover(function() {
     // Clear the hide timeout when options are hovered
     clearTimeout(hideTimeout);
     // Add a class to indicate the options are being hovered
-    options.addClass('hovered');
+    options.css({
+        display: 'table-cell'
+    });
 });
 
 options.mouseout(function() {
@@ -275,3 +313,20 @@ options.mouseout(function() {
         options.removeClass('hovered');
     }, 300);
 });
+
+function getCountry() {
+    $.ajax({
+        url: 'https://ipinfo.io/json?token=' + ipToken,
+        dataType: 'json',
+        success: function(data2) {
+            const userCountry = data2.country || '';
+            console.log("Country code:", userCountry);
+            $('.footer-country').text(userCountry)
+        },
+        error: function(error) {
+            console.error('Eror fetching country.\n', error);
+        }
+    });
+};
+
+getCountry();

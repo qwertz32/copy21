@@ -1,4 +1,9 @@
+
+html {
+    height: 100%;
+}
 body {
+    height: 100%;
     margin: 0;
     overflow: hidden !important;
     font-family: sans-serif;
@@ -15,12 +20,20 @@ body {
 	--dark-bg: rgba(14, 14, 14, 0.7);
 
 }
+.leaflet-bottom {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: self-end;
+}
 .leaflet-control-attribution {
     background: var(--dark-bg) !important;
     color: var(--white-color);
     padding: 5px;
     border-radius: 15px;
     font-size: 12px;
+    width: 180%;
+    text-align: right;
 }
 
 .leaflet-control-attribution a {
@@ -36,6 +49,7 @@ body {
     width: 100vw !important;
 }
 
+/* report btn */
 .report-div {
 	border: solid var(--dimmed-white);
     position: relative;
@@ -50,20 +64,30 @@ body {
     max-width: 130%;
 }
 
-.btn {
-    height: 70px;
-    width: 150px;
-}
+/* .main-down {
+    height: 100dvh;
+} */
 
 .centered {
+    height: 100vh;
     position: fixed;
     bottom: 0;
+    height: 50%;
     left: 0;
     display: flex;
     margin: 0.3%;
     flex-direction: column;
     align-items: center;
     z-index: 1005;
+}
+
+@media (max-width: 309px) {
+    .centered {
+        display: none;
+    }
+    .leaflet-bottom {
+        display: none;
+    }
 }
 
 .bug-rep-p {
@@ -78,7 +102,7 @@ body {
 }
 .btn-in {
 	border: var(--border-size) solid var(--border-color-dark);
-	font-size: max(2.5px, 1.3vmin);
+	font-size: max(15px);
 	font-weight: 900;
 	text-align: center;
 	white-space: nowrap;
@@ -88,6 +112,31 @@ body {
 	cursor: move;
 }
 
+.options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--white-color);
+    z-index: 1010;
+    position: absolute; /* do not change this as it will screw up the appearance*/
+    left: 100%;
+    width: auto;
+    max-width: 300px;
+    height: auto;
+    margin: 4%;
+    border-radius: 10%;
+    padding: 5px; 
+    background-color: var(--deafult-darkmode);
+}
+.layer-options {
+    /* padding-top: 20%; */
+    white-space: nowrap;
+    display: flex;
+}
+.options-provider-text-left {
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
 .btn-in:hover + .options {
     display: flex;
 }
@@ -106,31 +155,4 @@ body {
     width: 100%;
     border-radius: 8px;
     background-image: url('https://mt3.google.com/vt?lyrs=s&z=0&y=0&x=0');
-}
-
-.options {
-    color: var(--white-color);
-    z-index: 1010;
-    position: absolute;
-    left: 100%;
-    width: auto;
-    max-width: 300px;
-    height: 70px;
-    margin: 4%;
-    border-radius: 10%;
-    display: none;
-    align-items: center;
-    justify-content: center; 
-    padding: 5px; 
-    background-color: var(--deafult-darkmode);
-}
-
-.options div {
-    display: flex;
-    align-items: center;
-}
-
-.options div span {
-    white-space: nowrap;
-    margin-right: 10px;
 }
