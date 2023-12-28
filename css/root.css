@@ -7,4 +7,7 @@
     --white-color: rgb(241, 233, 233);
     --bug-report-bg: #552170;
     --dark-bg: rgba(14, 14, 14, 0.7);
+    --scroll-bg: #9bd105;
+    --scroll-handle: #60466e;
+    --scroll-handle-hover: #697cd1;
 }

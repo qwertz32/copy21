@@ -1,0 +1,56 @@
+/* Events too small screen */
+@media (max-width: 1150px) {
+    .event-sidebox {
+        width: 450px;
+    }
+    .nav-bar-main {
+        height: 6%;
+    }
+    .nav-logo img {
+        height: 35px;
+    }
+    .menu-icon {
+        display: flex !important;
+    }
+    .nav-subwebsites {
+        display: none !important;
+    }
+    .leaflet-control-attribution {
+        font-size: 12px !important;
+        padding: 1px !important;
+    }
+    .l-clock {
+        display: none;
+    } 
+    .center {
+        margin-left: 60px;
+    }
+    
+}
+@media (min-width: 1150px) {
+    .r-clock {
+        display: flex;
+    }
+    .l-clock {
+        display: none;
+    }
+    .nav-subwebsites {
+        width: 0 !important;
+    }
+}
+
+
+
+/* Nedeed media from main */
+@media(max-height: 1100px) {
+    .nav-logo {
+        height: 30px;
+    }
+}
+/* WHEN CONFLICT */
+@media (max-width: 309px) {
+
+    .leaflet-bottom {
+        display: none;
+    }
+}

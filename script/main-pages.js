@@ -1,4 +1,4 @@
-var map, currentLayer, initialCoordinates, initialZoom;
+
 
 // var storedCoordinates, storedZoom;
 

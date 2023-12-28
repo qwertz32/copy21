@@ -3,8 +3,13 @@
     .nav-bar-main {
         height: 6%;
     }
+    .nav-logo {
+        width: auto; /* Allow the logo container to adjust its width */
+        text-align: center; /* Center the content inside the logo container */
+    }
     .nav-logo img {
         height: 35px;
+        max-height: 35px; /* Ensure the maximum height for the logo */
     }
     .menu-icon {
         display: flex !important;
@@ -26,10 +31,14 @@
         display: none;
     }
 }
-/* TABLET BOTTOM */
-@media(max-height: 1100px) {
+@media (max-height: 1100px) {
     .nav-logo {
         height: 30px;
+        text-align: center; /* Center the content inside the logo container */
+    }
+    .nav-logo img {
+        height: 30px;
+        max-height: 30px; /* Ensure the maximum height for the logo */
     }
 }
 /* WHEN CONFLICT */

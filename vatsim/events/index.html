@@ -17,10 +17,11 @@
     <meta name="twitter:description" content="Browse through VATSIM Network, see current and upcoming events, track your flight and many more!">
     <meta name="twitter:image" content="https://cdn.glitch.global/91c248c6-bd14-4293-a1f2-a614f547a022/VATSIM_Logo_No_Tagline_2000px.png?v=1703727270474">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="/css/font-import.css" />
     <link rel="stylesheet" href="/css/keyframes.css">
-    <link rel="stylesheet" href="/css/media.css">
+    <!-- <link rel="stylesheet" href="/css/media.css"> -->
     <link rel="stylesheet" href="/css/root.css">
     <link rel="stylesheet" href="/css/navbar/nav.css">
     <link rel="stylesheet" href="/css/leaflet/leaflet.css">
@@ -28,9 +29,11 @@
     <link rel="stylesheet" href="/css/hamburger-menu/menu.css">
     <link rel="stylesheet" href="/css/html/maindivs.css">
     <link rel="stylesheet" href="/css/html/fixes.css">
+    <link rel="stylesheet" href="/css/scroll.css">
     <link rel="stylesheet" href="/css/tbu/tobeused.css">
-    <link rel="stylesheet" href="/css/functions/events-sidebar.css">
+    <link rel="stylesheet" href="/css/events/events-sidebar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="/css/custom-css/events/media.css">
     <!-- <link rel="icon" type="image/x-icon" href="/src/img/vatsim-icon.png"> -->
     <link rel="icon" type="image/x-icon" href="https://vatsim-forums.nyc3.digitaloceanspaces.com/monthly_2021_04/VATSIM-favicon_48px.png"> <!--vatsim's icon-->
     
@@ -47,6 +50,18 @@
         <div class="main-content">
             <nav class="nav-bar-main">
                 <div class="nav-text nav-left">
+                    <div class="hamburger-menu">
+                        <div class="menu-icon">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                        <div class="menu-options">
+                            <ul>
+                                <li><a class="nav-links" href="/vatsim/vs.html">Map</a></li>
+                                <li><a class="nav-links" href="/events">Events</a></li>
+                                <li><a class="nav-links" href="/events">Events</a></li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="l-clock clock"></div>
                     <div class="nav-subwebsites">
                         <ul>
@@ -78,42 +93,65 @@
                 </div>
                 <div class="nav-text nav-right">
                     <div class="r-clock clock"></div>
-                    <div class="hamburger-menu">
-                        <div class="menu-icon">
-                            <i class="fas fa-bars"></i>
-                        </div>
-                        <div class="menu-options">
-                            <ul>
-                                <li><a class="nav-links" href="/vatsim/vs.html">Map</a></li>
-                                <li><a class="nav-links" href="/events">Events</a></li>
-                                <li><a class="nav-links" href="/events">Events</a></li>
-                            </ul>
-                        </div>
-                    </div>
+    
                 </div>
             </nav>
             <div class="event-sidebox">
                 <div class="single-event-box" id="single-event-box">
                     <div class="event-box-text">
                         <div class="event-box-title">
-                            <span>Pulkovo Online Day</span>    
+                            <!-- Title will be dynamically inserted by Handlebars -->
+                            <!-- <span>Pulkovo Online Day</span> -->
                         </div>
                         <div class="event-box-shortDescription">
-                            <span>
-                                <p>Are you new at our subdivision or even into the network as a controller or as a pilot, this event is focused on you! This is a ceremony for all those new members in our country. This is a Warm welcome to the VATSIM Colombia Family.</p><br>
-                            </span>
+                            <!-- Short description will be dynamically inserted by Handlebars -->
+                            <!-- <span></span> -->
                         </div>
                         <div class="event-box-icaos">
-                            ICAO: EPSC, EPRZ, EPWA, EPGD, 
-
+                            <!-- ICAOs will be dynamically inserted by Handlebars -->
+                            <!-- <span></span> -->
                         </div>
                     </div>
                 </div>
             </div>
+            
         </div>
     </div>
-    <!-- <script src="/templates/events-boxes/eventbox.hbs" id="event-template" type="text/x-handlebars-template"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: '/src/examples/example-events.json',
+                method: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    console.log('Fetched data:', data);
+                    renderEvents(data); // Pass the array directly
+                },
+                error: function (error) {
+                    console.error('Error fetching JSON:', error);
+                }
+            });
+        });
+
+        function renderEvents(events) {
+            // Use Handlebars to render each event box
+            var templateScript = $('#event-template').html();
+            var template = Handlebars.compile(templateScript);
+
+            events.forEach(function (event) {
+                // Log the data to be rendered for each event
+                console.log('Data to be rendered:', event);
+
+                // Render the HTML for each event
+                var html = template(event);
+                console.log('Rendered HTML:', html);
+
+                // Wrap each event in a container div and append to the event-sidebox
+                $('.event-sidebox').append('<div class="event-container">' + html + '</div>');
+            });
+        }
+    </script>
     <!-- <script src="/script/events/events-fetch.js"></script> -->
     <script src="/script/events/sidebar-height.js"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -122,9 +160,20 @@
     <script src="/script/map/nocache-cords-and-zoom.js"></script>
     <script src="/script/zulu-clock.js"></script>
     <script src="/script/console-functions.js"></script>
-    <script src="/script/getcountry.js"></script>
+    <script src="/script/getcountry.js"></script>a
     <script src="/script/map/map-providers.js"></script>
-    <script src="/script/map/settings.js"></script>
+    <script src="/script/menu-animations.js"></script>
+    <script id="event-template" type="text/x-handlebars-template">
+
+    </script>
+    <script>
+        // Load the template file content asynchronously
+        $.get('/templates/events-boxes/eventbox.hbs', function (templateContent) {
+            // Compile the template and use it
+            var template = Handlebars.compile(templateContent);
+            // Use the template as needed
+        });
+    </script>
     <noscript>
         <style>.a-noscript{text-decoration: none;color: rgb(67, 152, 252);font-size: 2vh;}.a-noscript:hover{text-decoration: underline;}.div1-noscript{position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: rgb(0 0 0);display: flex;align-items: center;justify-content:center;z-index: 1050 !important;}.div2-noscript{color: white;font-weight: 900;font-size: 2.5vh;font-family: sans-serif;text-align: center;}</style><div class="div1-noscript"><div class="div2-noscript">JavaScript is dead, and so is this page...<br>Enable it! <a class="a-noscript" href="https://support.google.com/admanager/answer/12654" target="_blank">How?</a></div></div></noscript>
 </body>

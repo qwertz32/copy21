@@ -15,15 +15,16 @@
 # VATSIM Map:
 ### Fixes
 - [&nbsp;&nbsp;] &nbsp; <span style="color:red">(add)</span> Darker overlay when going into hamburger menu
-- [&nbsp;&nbsp;] &nbsp; Any not centered divs.
+- [x] &nbsp; Any not centered divs.
+- [&nbsp;&nbsp;] &nbsp; The position of airports and descriptions.
 
 ### Adds
 
 - [x] &nbsp; Display user's country code
 - [x] &nbsp; A UI
-- [&nbsp;&nbsp;] &nbsp; Basic JSON-free addable info
+- [x] &nbsp; Basic JSON-free addable info
 - [x] &nbsp; Add Zulu clock (top-right)
-- [&nbsp;&nbsp;] &nbsp; Add events page
+- [x] &nbsp; Add events page
 - [&nbsp;&nbsp;] &nbsp; Start to use the files from network tab.
 - [&nbsp;&nbsp;] &nbsp; Fetch the data for pilots and atc number, put it in the navbar.
 - [&nbsp;&nbsp;] &nbsp; Add flight tracking

@@ -1,15 +1,20 @@
 .event-sidebox {
     font-family: 'Roboto Mono', monospace;
-    display: flex;
+    /* Remove display: flex */
     position: absolute;
     left: 0;
     top: 4.5%;
     z-index: 1200;
     background-color: #12381c;
-    width: 700px;
-    height: calc(100% - 4.5%);
+    width: 685px;
+    height: auto;
+    /* Add overflow property to enable vertical scrolling */
+    overflow-y: auto;
+    /* Add a max-height to limit the height before scrolling */
+    max-height: 100vh;
     justify-content: center;
 }
+
 
 .event-box {
     width: 100%;
@@ -23,11 +28,12 @@
     display: flex;
     flex-direction: column;
     background: #542cab;
-    width: 200px;
+    /* width: 650px; */
     display: grid;
     height: 130px;
     border-radius: 2%;
     position: relative;
+    margin-bottom: 20px;
 }
 
 .single-event-box::before {
@@ -46,6 +52,8 @@
     margin: 2%;
     background: #542cab;
     border-radius: inherit;
+    display: flex; /* Set display to flex */
+    flex-direction: column; /* Stack children vertically */
 }
 
 .event-box-title {
@@ -62,7 +70,8 @@
 }
 
 .event-box-icaos {
-    height: 26%;
-    width: 100%;
     white-space: nowrap;
+    min-height: 40px; /* Set a minimum height for the airports div */
+    width: 100%;
+    overflow: hidden; /* Add overflow to hide excess content if needed */
 }
