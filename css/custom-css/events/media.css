@@ -39,7 +39,46 @@
     }
 }
 @media (max-width: 750px) {
-    
+    .event-sidebox {
+        width: 300px;
+    }
+    /* .event-box-shortDescription {
+        padding-left: 5.5px;
+    } */
+    .nav-logo-subtext {
+        margin-left: 15%;
+    }
+    .event-box-text {
+        position: relative;
+    }
+    .single-event-box {
+        height: fit-content;
+        min-height: 90px;
+    }
+    .event-box-title {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        background: #542cab;
+        z-index: 1;
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+    .event-box-shortDescription {
+        display: none;
+    }
+    .event-box-icaos {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        position: -webkit-sticky;
+        position: sticky;
+        bottom: 0;
+        background: #542cab;
+        z-index: 1;
+        height: 25px;
+        margin-top: auto;
+        margin-bottom: 0;
+    }
 }
 
 

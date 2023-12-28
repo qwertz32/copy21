@@ -59,6 +59,7 @@
     <script src="/script/map/map-providers.js"></script>
     <script src="/script/menu-animations.js"></script>
     <script src="/script/events/sidebox-time-show.js"></script>
+    <script src="/script/events/sidebar-toggle.js"></script>
 
 </head>
 
@@ -72,7 +73,7 @@
         <div class="main-content">
             <nav class="nav-bar-main">
                 <div class="nav-text nav-left">
-                    <div class="hamburger-menu">
+                    <div class="hamburger-menu" id="sidebar-fun">
                         <div class="menu-icon">
                             <i class="fas fa-bars"></i>
                         </div>
@@ -178,10 +179,10 @@
                 <div class="event-box-icaos">
                     <span>
                         <!-- <div class="event-box-time"> -->
-                            {{formatTime startTime}} - {{formatTime endTime}}
+                            <span>{{formatTime startTime}} - {{formatTime endTime}}</span> 
                         <!-- </div> -->
                         <!-- <div class="event-box-airports"> -->
-                            {{#each airports}}{{icao}}{{#unless @last}}, {{/unless}}{{/each}}
+                            <span>{{#each airports}}{{icao}}{{#unless @last}}, {{/unless}}{{/each}}</span>
                         <!-- </div> -->
                     </span>
                 </div>

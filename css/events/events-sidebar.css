@@ -1,6 +1,5 @@
 .event-sidebox {
     font-family: 'Roboto Mono', monospace;
-    /* Remove display: flex */
     position: absolute;
     left: 0;
     top: 4.5%;
@@ -8,15 +7,12 @@
     background-color: #12381c;
     width: 685px;
     height: auto;
-    /* Add overflow property to enable vertical scrolling */
     overflow-y: auto;
-    /* Add a max-height to limit the height before scrolling */
     min-height: 100%;
     height: 100%;
     justify-content: center;
     padding-bottom: 20px;
 }
-
 
 .event-box {
     width: 100%;
@@ -31,27 +27,15 @@
     flex-direction: column;
     background: #542cab;
     display: grid;
-    /* min-height: 130px; */
     height: 130px;
     border-radius: 2%;
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .last-box {
-    margin-bottom: 80px; /* temporary fix to the last box being cut off in half */
+    margin-bottom: 80px;
 }
-/* .single-event-box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #542cab;
-    z-index: -1;
-    border-radius: inherit;
-} */
 
 .event-box-text {
     margin: 2%;
@@ -63,17 +47,20 @@
 
 .event-box-title {
     font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .event-box-shortDescription {
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: normal;
     display: -webkit-box;
     line-height: 1.05;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    margin-bottom: 5;
 }
+
 .event-box-icaos {
     margin-top: auto;
     display: -webkit-box;
@@ -82,5 +69,5 @@
     align-items: center;
     height: 25px;
     width: 100%;
-    overflow: hidden; /* Add this line */
+    overflow: hidden;
 }
