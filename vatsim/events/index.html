@@ -25,8 +25,8 @@
 
     <!--Stylesheets-->
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" href="/css/font-import.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <link rel="stylesheet" href="/css/font-import.css">
     <link rel="stylesheet" href="/css/keyframes.css">
     <!-- <link rel="stylesheet" href="/css/media.css"> -->
     <link rel="stylesheet" href="/css/root.css">
@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="/css/events/events-sidebar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="/css/custom-css/events/media.css">
+    <link rel="icon" type="image/x-icon" href="/src/img/VATSIM-favicon_48px.ico">
 
 
     <!--Scripts-->
@@ -49,7 +50,7 @@
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="/script/events/sidebar-height.js"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script defer src="/script/main-pages.js"></script>
+    <script src="/script/main-pages.js"></script>
     <script src="/script/loading-spinner.js"></script>
     <script src="/script/map/nocache-cords-and-zoom.js"></script>
     <script src="/script/zulu-clock.js"></script>
@@ -58,10 +59,6 @@
     <script src="/script/map/map-providers.js"></script>
     <script src="/script/menu-animations.js"></script>
 
-
-    <!-- <link rel="icon" type="image/x-icon" href="/src/img/vatsim-icon.png"> -->
-    <link rel="icon" type="image/x-icon" href="https://vatsim-forums.nyc3.digitaloceanspaces.com/monthly_2021_04/VATSIM-favicon_48px.png"> <!--vatsim's icon-->
-    
 </head>
 
 <body>
@@ -121,22 +118,16 @@
                 </div>
             </nav>
             <div class="event-sidebox">
-                <div class="single-event-box" id="single-event-box">
+                <!-- <div class="single-event-box" id="single-event-box">
                     <div class="event-box-text">
                         <div class="event-box-title">
-                            <!-- Title will be dynamically inserted by Handlebars -->
-                            <!-- <span>Pulkovo Online Day</span> -->
                         </div>
                         <div class="event-box-shortDescription">
-                            <!-- Short description will be dynamically inserted by Handlebars -->
-                            <!-- <span></span> -->
                         </div>
                         <div class="event-box-icaos">
-                            <!-- ICAOs will be dynamically inserted by Handlebars -->
-                            <!-- <span></span> -->
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             
         </div>
@@ -145,7 +136,7 @@
     <script>
         $(document).ready(function () {
             $.ajax({
-                url: '/src/examples/example-events.json',
+                url: 'https://phoenix-api.vatsim.net/api/events',
                 method: 'GET',
                 dataType: 'json',
                 success: function (data) {
@@ -157,36 +148,31 @@
                 }
             });
         });
-
         function renderEvents(events) {
-            // Use Handlebars to render each event box
-            var templateScript = $('#event-template').html();
-            var template = Handlebars.compile(templateScript);
-
-            events.forEach(function (event) {
-                // Log the data to be rendered for each event
-                console.log('Data to be rendered:', event);
-
-                // Render the HTML for each event
-                var html = template(event);
-                console.log('Rendered HTML:', html);
-
-                // Wrap each event in a container div and append to the event-sidebox
-                $('.event-sidebox').append('<div class="event-container">' + html + '</div>');
-            });
+    var templateScript = $('#event-template').html();
+    var template = Handlebars.compile(templateScript);
+    events.forEach(function (event, index, array) {
+        event.shortDescription = event.shortDescription.replace(/<[^>]*>/g, ''); //remove all html tags from shortDescription.
+        var html = template(event);
+        var isLastItem = index === array.length - 1;
+        var $eventContainer = $('<div class="event-container"></div>').append(html);
+        if (isLastItem) {
+            $eventContainer.find('.single-event-box').addClass('last-box');
         }
+        $eventContainer.appendTo('.event-sidebox');
+    });
+}
     </script>
     <!-- <script src="/script/events/events-fetch.js"></script> -->
     
     <script id="event-template" type="text/x-handlebars-template">
-        {{!-- This is a Handlebars comment --}}
-        <div class="single-event-box" id="single-event-box">
+        <div class="single-event-box">
             <div class="event-box-text">
                 <div class="event-box-title">
                     <span>{{name}}</span>
                 </div>
                 <div class="event-box-shortDescription">
-                    <span>{{shortDescription}}</span>
+                    <span>{{{shortDescription}}}</span>
                 </div>
                 <div class="event-box-icaos">
                     <span>{{#each airports}}{{icao}}, {{/each}}</span>
