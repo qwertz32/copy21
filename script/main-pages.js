@@ -171,6 +171,7 @@ var ipToken = '57181dfc23ba47';
 // var gotMapProvider = 
 
 var google = L.tileLayer('https://cartodb-basemaps-c.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}.png', {
+    minZoom: 2.5,
     maxZoom: 21,
     attribution: 'Google Maps',
     preload: Infinity,
@@ -217,7 +218,7 @@ initialZoom = parseFloat(storedZoom) || presetZoom;
 
 map = L.map('map', {
     zoomControl: false,
-    zoomSnap: 0.60,
+    zoomSnap: 0.20,
     zoomDelta: 0.75
 }).setView(initialCoordinates, initialZoom);
 
