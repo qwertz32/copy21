@@ -11,7 +11,7 @@
     /* Add overflow property to enable vertical scrolling */
     overflow-y: auto;
     /* Add a max-height to limit the height before scrolling */
-    max-height: 100vh;
+    height: 100%;
     justify-content: center;
 }
 
