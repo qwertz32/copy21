@@ -65,10 +65,14 @@
 }
 
 .nav-logo-subtext {
-    color: var(--white-color);
     /* text-decoration: underline; */
     margin-left: 25%; 
     line-height: 40px; 
+    text-decoration: none;
+}
+.nav-logo-subtext a {
+    color: var(--white-color);
+    text-decoration: none;
 }
 .nav-subtext {
     font-size: 1.5rem;
@@ -77,9 +81,6 @@
     height: 40px;
     max-height: 40px; 
     width: auto;
-}
-.nav-logo a {
-    text-decoration: none;
 }
 .nav-logo-popup {
     display: none;
