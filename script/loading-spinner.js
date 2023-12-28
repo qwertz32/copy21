@@ -1,0 +1,22 @@
+var loadingSpinnerShown = false;
+
+function showLoadingSpinner() {
+    if (!loadingSpinnerShown) {
+        $('#loading-container').css('display', 'flex');
+        $('#loading-spinner').fadeIn().css('display', 'flex');
+        loadingSpinnerShown = true;
+    }
+}
+
+function hideLoadingSpinner() {
+    $('#loading-spinner').fadeOut(function() {
+        $(this).css('display', 'none');
+        $('#loading-container').fadeOut().css('display', 'none');
+    });
+};
+
+setTimeout(function () {
+    showLoadingSpinner();
+}, 500);
+
+//spinner hides in the main javascript in the appropriate place
