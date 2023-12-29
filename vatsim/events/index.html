@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>VATSIM Events</title>
 
-
     <!--Meta-->
     <meta name="description" content="Browse through VATSIM Network, see current and upcoming events, track your flight and many more!">
     <meta property="og:url" content="https://vatsim.glitch.me">
@@ -138,8 +137,8 @@
                     </div>
                     <div class="event-box-icaos">
                         <span>
-                            <span>{{formatTime startTime}} - {{formatTime endTime}}</span> 
-                            <span>{{#each airports}}{{icao}}{{#unless @last}}, {{/unless}}{{/each}}</span>                        </span>
+                            <span>{{formatTime startTime}} - {{formatTime endTime}}</span>
+                            <span>{{#each airports}}{{icao}}{{#unless @last}}, {{/unless}}{{/each}}</span>
                     </div>
                 </div>
             </div>

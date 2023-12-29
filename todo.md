@@ -38,6 +38,7 @@
 - [&nbsp;&nbsp;] &nbsp; A border and a box for each airport ICAO to make them more visible separately. 
 - [&nbsp;&nbsp;] &nbsp; Make it so when you click outside the sidebar it also closes.
 - [&nbsp;&nbsp;] &nbsp; Add airport filtering.
+- [&nbsp;&nbsp;] &nbsp; Make that after clicking either or the sidebar event or on the pin on the map, it shows (smoothly) a popup with image and description.
 
 
 ### Changes

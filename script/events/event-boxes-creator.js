@@ -46,6 +46,9 @@ function renderEvents(events) {
     }
 }
 function renderCategory(category, events) {
+    if(events.length === 0) {
+        return;
+    }
     const templateScript = $('#event-template').html();
     const template = Handlebars.compile(templateScript);
     const categoryHtml = `<h2 class="sidebar-category-name">${category}</h2>${events.map(event => template({

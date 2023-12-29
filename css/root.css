@@ -4,7 +4,7 @@
     --dimmed-white: rgb(161, 154, 154);
     --border-size: 4px;
     --deafult-darkmode: #333;
-    --white-color: rgb(241, 233, 233);
+    --white-color: #dddad5;
     --bug-report-bg: #552170;
     --dark-bg: rgba(14, 14, 14, 0.7);
     --scroll-bg: #874013;
@@ -15,6 +15,6 @@
     --font-roboto: 'Roboto Mono', monospace;
     --event-box-border: 5px solid rgb(84, 31, 2);
     --sidebox-background: #1b1d1f;
-    --event-box-background: #342d2e;
+    --event-box-background: #252829;
     --nav-bar-background: #352c45;
 }

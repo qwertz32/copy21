@@ -24,24 +24,22 @@
 
 .single-event-box {
     color: var(--white-color);
-    margin: 3%;
     overflow: hidden;
     display: flex;
     height: auto;
     flex-direction: column;
     background: var(--event-box-background); /*margin color*/
-    display: grid;
-    /* height: 130px; */ 
+    /* height: 130px; */
     border-radius: 0.5rem;
     position: relative;
-    margin-bottom: 10px;
+    margin: 3% 3% 10px;
     border: var(--event-box-border);
     /* margin-bottom: 100px; */
 }
 
 .event-box-text {
     margin: 2%;
-    background: var(--event-box-background); /*text backgrdound color*/
+    background: var(--event-box-background); /*text background color*/
     border-radius: inherit;
     display: flex;
     flex-direction: column;

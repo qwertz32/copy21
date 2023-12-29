@@ -1,4 +1,4 @@
-//get user's country code and put in in the bottom right
+//get user's country code and put it in the bottom right
 var ipToken = '57181dfc23ba47';
 function getCountry() {
     $.ajax({

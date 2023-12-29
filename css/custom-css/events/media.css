@@ -57,7 +57,7 @@
         min-height: 90px;
     } */
     .event-box-title {
-        position: -webkit-sticky;
+        /*position: -webkit-sticky;*/
         position: sticky;
         top: 0;
         /* background: var; */
