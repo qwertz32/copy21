@@ -15,20 +15,11 @@ $(document).ready(function () {
 });
 
 function renderEvents(events) {
-    // Use Handlebars to render the first event box
     var templateScript = $('#event-template').html();
     var template = Handlebars.compile(templateScript);
-    
-    // Access the first event in the array
     var firstEvent = events[0];
-    
-    // Log the data to be rendered for the first event
     console.log('Data to be rendered:', firstEvent);
-    
-    // Render the HTML for the first event
     var html = template(firstEvent);
     console.log('Rendered HTML:', html);
-    
-    // Append the HTML to the event-sidebox
     $('.event-sidebox').append(html);
 }

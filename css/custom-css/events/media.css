@@ -77,8 +77,11 @@
         /* background: #542cab; */
         z-index: 1;
         height: 25px;
-        margin-top: auto;
+        /* margin-top: auto; */
         margin-bottom: 0;
+    }
+    .sidebar-category-name {
+        font-size: 1.2rem;
     }
 }
 /* Nedeed media from main */
