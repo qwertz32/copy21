@@ -5,6 +5,7 @@
 }
 ::-webkit-scrollbar-thumb {
     background: var(--scroll-handle);
+    border-radius: 30px;
 }
 ::-webkit-scrollbar-thumb:hover {
     background: var(--scroll-handle-hover);

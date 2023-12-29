@@ -39,27 +39,28 @@
     }
 }
 @media (max-width: 750px) {
+    .r-clock {
+        text-align: center;
+        font-size: 1rem !important;
+    }
     .event-sidebox {
         width: 300px;
     }
-    /* .event-box-shortDescription {
-        padding-left: 5.5px;
-    } */
     .nav-logo-subtext {
         margin-left: 15%;
     }
     .event-box-text {
         position: relative;
     }
-    .single-event-box {
+    /* .single-event-box {
         height: fit-content;
         min-height: 90px;
-    }
+    } */
     .event-box-title {
         position: -webkit-sticky;
         position: sticky;
         top: 0;
-        background: #542cab;
+        /* background: var; */
         z-index: 1;
         font-weight: 700;
         margin-bottom: 0;
@@ -73,28 +74,21 @@
         position: -webkit-sticky;
         position: sticky;
         bottom: 0;
-        background: #542cab;
+        /* background: #542cab; */
         z-index: 1;
         height: 25px;
         margin-top: auto;
         margin-bottom: 0;
     }
 }
-
-
-
-
-
 /* Nedeed media from main */
-@media(max-height: 1100px) {
+@media(max-height: 1150px) {
     .nav-logo {
         height: 30px;
     }
 }
-/* WHEN CONFLICT */
-@media (max-width: 309px) {
-
-    .leaflet-bottom {
-        display: none;
+@media(max-width: 389px) {
+    .r-clock {
+        font-size: 0.8rem !important;
     }
 }

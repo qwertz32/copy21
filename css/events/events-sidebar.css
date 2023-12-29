@@ -1,17 +1,20 @@
 .event-sidebox {
-    font-family: 'Roboto Mono', monospace;
+    font-family: var(--font-roboto);
     position: absolute;
     left: 0;
-    top: 4.5%;
+    /* top: 4.5%; */
     z-index: 1200;
-    background-color: #12381c;
+    background-color: var(--sidebox-background);
     width: 685px;
-    height: auto;
+    /* height: auto; */
     overflow-y: auto;
-    min-height: 100%;
     height: 100%;
     justify-content: center;
-    padding-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+}
+.show-sidebar .event-sidebox {
+    transform: translateX(0);
 }
 
 .event-box {
@@ -24,22 +27,24 @@
     margin: 3%;
     overflow: hidden;
     display: flex;
+    height: auto;
     flex-direction: column;
-    background: #542cab;
+    background: var(--event-box-background); /*margin color*/
     display: grid;
-    height: 130px;
-    border-radius: 2%;
+    /* height: 130px; */ 
+    border-radius: 0.5rem;
     position: relative;
     margin-bottom: 10px;
+    border: var(--event-box-border);
 }
 
 .last-box {
-    margin-bottom: 80px;
+    margin-bottom: 75px;
 }
 
 .event-box-text {
     margin: 2%;
-    background: #542cab;
+    background: var(--event-box-background); /*text backgrdound color*/
     border-radius: inherit;
     display: flex;
     flex-direction: column;

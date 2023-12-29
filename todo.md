@@ -14,9 +14,11 @@
 &nbsp; -->
 # VATSIM Map:
 ### Fixes
-- [&nbsp;&nbsp;] &nbsp; <span style="color:red">(add)</span> Darker overlay when going into hamburger menu
+- [&nbsp;&nbsp;] &nbsp;(add) Darker overlay when going into hamburger menu
 - [x] &nbsp; Any not centered divs.
-- [&nbsp;&nbsp;] &nbsp; The position of airports and descriptions.
+- [x] &nbsp; The position of airports and descriptions.
+- [&nbsp;&nbsp;] &nbsp; The scrollbar getting cofused when going to the very bottom  of events list.
+- [&nbsp;&nbsp;] &nbsp; When you give the events-sidebar a wider width the content inside becomes more and more separected.
 
 ### Adds
 
@@ -28,10 +30,13 @@
 - [&nbsp;&nbsp;] &nbsp; Start to use the files from network tab.
 - [&nbsp;&nbsp;] &nbsp; Fetch the data for pilots and atc number, put it in the navbar.
 - [&nbsp;&nbsp;] &nbsp; Add flight tracking
+- [&nbsp;&nbsp;] &nbsp; Make it so it puts airplanes in the right position on the map.
+- [&nbsp;&nbsp;] &nbsp; Make it so it add airports (atc'd) to the map.
+- [&nbsp;&nbsp;] &nbsp; A border and a box for each airport ICAO to make them more visible separately. 
 
 
 ### Changes
-- [&nbsp;&nbsp;] &nbsp; Change the coloring
+- [x] &nbsp; Change the coloring
 
 ### Get to know
 - [&nbsp;&nbsp;] &nbsp; How are firs drawn.

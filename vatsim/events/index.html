@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="/css/events/events-sidebar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="/css/custom-css/events/media.css">
+    <link rel="stylesheet" href="/css/custom-css/events/navbar.css">
     <link rel="icon" type="image/x-icon" href="/src/img/VATSIM-favicon_48px.ico">
 
 
@@ -60,7 +61,18 @@
     <script src="/script/menu-animations.js"></script>
     <script src="/script/events/sidebox-time-show.js"></script>
     <script src="/script/events/sidebar-toggle.js"></script>
+    <script src="/script/events/pin-put.js"></script>
+    <style>
+        @media (min-width: 1150px) {
+    body.show-sidebar {
+        overflow: visible !important;
+    }
 
+    .event-sidebox {
+        transform: translateX(0) !important;
+    }
+}
+    </style>
 </head>
 
 <body>
@@ -102,16 +114,6 @@
                         <div class="nav-logo-subtext">
                             <a href="http://vatsim.net/events" target="_blank"><span class="nav-subtext">events</span></a>
                         </div>
-                    </div>
-                </div>
-                <div class="nav-logo-popup" id="popup">
-                    <div class="nav-logo-popup-main">
-                        <!-- <div class="nav-logo-popup-text">
-                            <a>VATSIM</a>
-                        </div>
-                        <div class="nav-logo-popup-text">
-                            <a>Text 2</a>
-                        </div> -->
                     </div>
                 </div>
                 <div class="nav-text nav-right">
@@ -190,6 +192,17 @@
         </div>
         
     </script>
+    <script>
+        $(document).ready(function () {
+    // ... (your existing code)
+
+    // Toggle sidebar visibility on hamburger menu click
+    $('.hamburger-menu').on('click', function () {
+        $('body').toggleClass('show-sidebar');
+    });
+});
+    </script>
+  
     <noscript>
         <style>.a-noscript{text-decoration: none;color: rgb(67, 152, 252);font-size: 2vh;}.a-noscript:hover{text-decoration: underline;}.div1-noscript{position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: rgb(0 0 0);display: flex;align-items: center;justify-content:center;z-index: 1050 !important;}.div2-noscript{color: white;font-weight: 900;font-size: 2.5vh;font-family: sans-serif;text-align: center;}</style><div class="div1-noscript"><div class="div2-noscript">JavaScript is dead, and so is this page...<br>Enable it! <a class="a-noscript" href="https://support.google.com/admanager/answer/12654" target="_blank">How?</a></div></div></noscript>
 </body>

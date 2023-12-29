@@ -7,7 +7,14 @@
     --white-color: rgb(241, 233, 233);
     --bug-report-bg: #552170;
     --dark-bg: rgba(14, 14, 14, 0.7);
-    --scroll-bg: #60466e;
-    --scroll-handle: #9bd105;
-    --scroll-handle-hover: #697cd1;
+    --scroll-bg: #874013;
+    --scroll-handle: #31a337;
+    --scroll-handle-hover: #34df3d;
+    --font-rubik: 'Rubik', monospace;
+    --font-lato: 'Lato', sans-serif;
+    --font-roboto: 'Roboto Mono', monospace;
+    --event-box-border: 5px solid rgb(84, 31, 2);
+    --sidebox-background: #1b1d1f;
+    --event-box-background: #342d2e;
+    --nav-bar-background: #352c45;
 }
