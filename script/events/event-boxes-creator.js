@@ -53,7 +53,7 @@ function renderCategory(category, events) {
         shortDescription: event.shortDescription.replace(/<[^>]*>/g, ''),
     })).join('')}`;
 
-    $('<div class="event-category"></div>').html(categoryHtml).appendTo('.event-sidebox');
+    $('<div class="event-category"></div>').html(categoryHtml).appendTo('#event-boxes-container');
 }
 const dateOptions = {
     weekday: 'long',

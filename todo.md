@@ -37,6 +37,7 @@
 - [&nbsp;&nbsp;] &nbsp; Make it so it add airports (atc'd) to the map.
 - [&nbsp;&nbsp;] &nbsp; A border and a box for each airport ICAO to make them more visible separately. 
 - [&nbsp;&nbsp;] &nbsp; Make it so when you click outside the sidebar it also closes.
+- [&nbsp;&nbsp;] &nbsp; Add airport filtering.
 
 
 ### Changes

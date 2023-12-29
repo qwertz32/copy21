@@ -9,7 +9,7 @@ function showTime(clockClass) {
     m = (m < 10) ? "0" + m : m;
     const minutesAndDate = day + ' ' + monthShort;
 
-    const finalDate = `${h}${m}Z , ${minutesAndDate}`;
+    const finalDate = `${h}:${m}Z , ${minutesAndDate}`;
 
     $(clockClass).text(finalDate);
 }

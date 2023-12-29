@@ -36,10 +36,7 @@
     position: relative;
     margin-bottom: 10px;
     border: var(--event-box-border);
-}
-
-.last-box {
-    margin-bottom: 160px !important;
+    /* margin-bottom: 100px; */
 }
 
 .event-box-text {
@@ -86,3 +83,7 @@
     /* margin-left: 1.5rem; */
     text-align: center;
 }
+
+/* .event-boxes-container {
+    padding-bottom: 800px;
+} */

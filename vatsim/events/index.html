@@ -7,7 +7,6 @@
 
 
     <!--Meta-->
-
     <meta name="description" content="Browse through VATSIM Network, see current and upcoming events, track your flight and many more!">
     <meta property="og:url" content="https://vatsim.glitch.me">
     <meta property="og:type" content="website">
@@ -24,7 +23,6 @@
     
 
     <!--Stylesheets-->
-
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
     <link rel="stylesheet" href="/css/font-import.css">
     <link rel="stylesheet" href="/css/keyframes.css">
@@ -46,7 +44,6 @@
 
 
     <!--Scripts-->
-
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="/script/events/sidebar-height.js"></script>
@@ -62,10 +59,9 @@
     <script src="/script/events/sidebox-time-show.js"></script>
     <script src="/script/events/sidebar-toggle.js"></script>
     <script src="/script/events/pin-put.js"></script>
-    <script src="/script/events/date-asign.js"></script>
+    <script src="/script/events/event-boxes-creator.js"></script>
     <script src="/script/events/sidebar-activation.js"></script>
     <style>
-    
         @media (min-width: 1150px) {
     body.show-sidebar {
         overflow: visible !important;
@@ -125,42 +121,28 @@
                 </div>
             </nav>
             <div class="event-sidebox">
-                <!-- <div class="single-event-box" id="single-event-box">
-                    <div class="event-box-text">
-                        <div class="event-box-title">
-                        </div>
-                        <div class="event-box-shortDescription">
-                        </div>
-                        <div class="event-box-icaos">
-                        </div>
-                    </div>
-                </div> -->
+                <div id="event-boxes-container">
+
+                </div>
             </div>
-            
         </div>
     </div>
     <script id="event-template" type="text/x-handlebars-template">
-        <div class="single-event-box">
-            <div class="event-box-text">
-                <div class="event-box-title">
-                    <span>{{name}}</span>
-                </div>
-                <div class="event-box-shortDescription">
-                    <span>{{{shortDescription}}}</span>
-                </div>
-                <div class="event-box-icaos">
-                    <span>
-                        <!-- <div class="event-box-time"> -->
+            <div class="single-event-box">
+                <div class="event-box-text">
+                    <div class="event-box-title">
+                        <span>{{name}}</span>
+                    </div>
+                    <div class="event-box-shortDescription">
+                        <span>{{{shortDescription}}}</span>
+                    </div>
+                    <div class="event-box-icaos">
+                        <span>
                             <span>{{formatTime startTime}} - {{formatTime endTime}}</span> 
-                        <!-- </div> -->
-                        <!-- <div class="event-box-airports"> -->
-                            <span>{{#each airports}}{{icao}}{{#unless @last}}, {{/unless}}{{/each}}</span>
-                        <!-- </div> -->
-                    </span>
+                            <span>{{#each airports}}{{icao}}{{#unless @last}}, {{/unless}}{{/each}}</span>                        </span>
+                    </div>
                 </div>
             </div>
-        </div>
-        
     </script>
     <script>
     </script>
