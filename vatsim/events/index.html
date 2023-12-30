@@ -79,11 +79,21 @@
     <div id="loading-container">
         <div id="loading-spinner"></div>
     </div>
-    <div id="ls-popup">
+     <div id="ls-popup">
         <div id="ls-popup-content">
+            <div class="ls-popup-content-text">
             <p>This website uses local storage saving to magnify your experience with it.</p>
+            <p>The whole idea and implementation is heavily inspired by:</p>
+            </div>
+            <div class="ls-popup-content-links">
+                <a href="https://map.vatsim.net/" target="_blank">SimAware</a> <!--https://simaware.ca-->
+                <a href="https://vatsim.net/events" target="_blank">Events subpage on VATSIM's website</a>
+            </div>
             <button id="ls-popup-btn" onclick="clsPopUp()">Understood</button>
         </div>
+    </div> 
+    <div class="cache-disabled">
+
     </div>
     <div id="map" style="height: 100vh; width: 100vw;"></div>
     <div id="everything">

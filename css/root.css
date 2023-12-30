@@ -5,6 +5,7 @@
     --border-size: 4px;
     --deafult-darkmode: #333;
     --white-color: #dddad5;
+    --link-on-hover: rgb(51, 128, 211);
     --bug-report-bg: #552170;
     --dark-bg: rgba(14, 14, 14, 0.7);
     --scroll-bg: #874013;
@@ -17,4 +18,5 @@
     --sidebox-background: #1b1d1f;
     --event-box-background: #252829;
     --nav-bar-background: #352c45;
+    --ls-popup-btn-bg: #9a5e04;
 }

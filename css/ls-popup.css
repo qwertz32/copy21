@@ -1,31 +1,58 @@
 #ls-popup {
+    display: none; /* Hide the popup by default */
     position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #171717f7; /* Solid white background for the popup */
+    z-index: 2300; /* Ensure the popup is on top of other elements */
+}
+
+#ls-popup-content {
+    font-family: var(--font-lato);
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 2599;
-}
-/*.overlay-active {*/
-/*    display: none;*/
-/*}*/
-#ls-popup-content {
-    font-size: 1.7rem;
-    background-color: #5a1111;
-    padding: 100% 0;
     text-align: center;
-    color: var(--white-color);
-    font-family: var(--font-rubik);
+    padding: 20px;
+    background-color: #1a1b17;
+    box-shadow: 0 0 10px rgb(52, 54, 53); /* Optional: Add a subtle box shadow */
+    width: 70%;
+    /* min-width: 300px */
 }
-#ls-popup-btn {
-    background-color: #007bff;
+
+.ls-popup-content-text {
     color: var(--white-color);
-    border: none;
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+}
+
+.ls-popup-content-links a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--white-color); /* Blue color for the links */
+    margin-right: 10px;
+    transition: cubic-bezier(.56,.18,1,.48) 0.3s;
+}
+
+.ls-popup-content-links a:hover {
+    color: var(--link-on-hover);
+    font-size: 1.7rem;
+}
+
+#ls-popup-btn {
+    background: var(--ls-popup-btn-bg);
+    color: var(--white-color);
     font-size: 1.4rem;
-    padding: 10px 20px;
-    border-radius: 5px;
+    margin-top: 25px;
+    transition: cubic-bezier(.37,.53,.86,.57) 0.15s;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
+}
+#ls-popup-btn:hover {
+    font-size: 1.8rem;
 }

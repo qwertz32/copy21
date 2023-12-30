@@ -83,6 +83,15 @@
     .sidebar-category-name {
         font-size: 1.2rem;
     }
+    .ls-popup-content-text {
+        font-size: 1.2rem !important;
+    }
+    .ls-popup-content-links a {
+        font-size: 1.2rem !important;
+    }
+    #ls-popup-btn {
+        font-size: 1.2rem !important;
+    }
 }
 /* Nedeed media from main */
 @media(max-height: 1150px) {

@@ -82,6 +82,6 @@
     text-align: center;
 }
 
-/* .event-boxes-container {
-    padding-bottom: 800px;
-} */
+.event-boxes-container:last-child, .event-category:last-child {
+    margin-bottom: 80px; /*Fix for last box not being visible */
+}

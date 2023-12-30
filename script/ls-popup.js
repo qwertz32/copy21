@@ -1,28 +1,27 @@
 let userResponse = '';
 
 function shwPopUp() {
-    if (localStorage.getItem('resp') === 'understood') {
-        return; // Do not open the popup
+    try {
+        if (!localStorage) {
+            console.error("nope")
+        }
+        if (localStorage.getItem('resp') === 'understood') {
+            return; // Do not open the popup
+        }
+        if (localStorage.getItem('resp') === null) {
+            $('#ls-popup').fadeIn();
+        } 
+    } catch (error) {
+        console.error("Local Storage not accessible.");
     }
-    $('#ls-popup').fadeIn();
-    disableBg();
-}
+};
+
 
 function clsPopUp() {
     $('#ls-popup').fadeOut();
-    enableBg();
+
     userResponse = 'understood';
     localStorage.setItem('resp', userResponse.toString());
-}
-
-function disableBg() {
-    $('#map').addClass('overlay-active');
-    $('#everything').addClass('overlay-active');
-}
-
-function enableBg() {
-    $('#map').removeClass('overlay-active');
-    $('#everything').removeClass('overlay-active');
 }
 
 $(document).ready(function () {
