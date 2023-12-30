@@ -1,0 +1,31 @@
+#ls-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2599;
+}
+/*.overlay-active {*/
+/*    display: none;*/
+/*}*/
+#ls-popup-content {
+    font-size: 1.7rem;
+    background-color: #5a1111;
+    padding: 100% 0;
+    text-align: center;
+    color: var(--white-color);
+    font-family: var(--font-rubik);
+}
+#ls-popup-btn {
+    background-color: #007bff;
+    color: var(--white-color);
+    border: none;
+    font-size: 1.4rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}

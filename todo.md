@@ -21,7 +21,7 @@
 - [&nbsp;&nbsp;] &nbsp; When you give the events-sidebar a wider width the content inside becomes more and more separected.
 - [&nbsp;&nbsp;] &nbsp; The sidebar not being shown initially on mobile
 - [&nbsp;&nbsp;] &nbsp; The sidebar being cut from the bottom on mobile (if the browser has the searchbar on the bottom).
-- [&nbsp;&nbsp;] &nbsp; 
+- [&nbsp;&nbsp;] &nbsp; The loading animation instead of a message when the user has turned off JS
 
 ### Adds
 

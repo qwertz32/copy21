@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="/css/custom-css/events/media.css">
     <link rel="stylesheet" href="/css/custom-css/events/navbar.css">
+    <link rel="stylesheet" href="/css/ls-popup.css">
     <link rel="icon" type="image/x-icon" href="/src/img/VATSIM-favicon_48px.ico">
 
 
@@ -60,6 +61,7 @@
     <script src="/script/events/pin-put.js"></script>
     <script src="/script/events/event-boxes-creator.js"></script>
     <script src="/script/events/sidebar-activation.js"></script>
+    <script src="/script/ls-popup.js"></script>
     <style>
         @media (min-width: 1150px) {
     body.show-sidebar {
@@ -77,55 +79,64 @@
     <div id="loading-container">
         <div id="loading-spinner"></div>
     </div>
-    <!-- <div> class="overlay"></div> -->
+    <div id="ls-popup">
+        <div id="ls-popup-content">
+            <p>This website uses local storage saving to magnify your experience with it.</p>
+            <button id="ls-popup-btn" onclick="clsPopUp()">Understood</button>
+        </div>
+    </div>
     <div id="map" style="height: 100vh; width: 100vw;"></div>
-    <div class="fullscreen">
-        <div class="main-content">
-            <nav class="nav-bar-main">
-                <div class="nav-text nav-left">
-                    <div class="hamburger-menu" id="sidebar-fun">
-                        <div class="menu-icon">
-                            <i class="fas fa-bars"></i>
+    <div id="everything">
+        <div class="fullscreen">
+            <div class="main-content">
+                <nav class="nav-bar-main">
+                    <div class="nav-text nav-left">
+                        <div class="hamburger-menu" id="sidebar-fun">
+                            <div class="menu-icon">
+                                <i class="fas fa-bars"></i>
+                            </div>
+                            <div class="menu-options">
+                                <ul>
+                                    <li><a class="nav-links" href="/vatsim/vs.html">Map</a></li>
+                                    <li><a class="nav-links" href="/events">Events</a></li>
+                                    <li><a class="nav-links" href="/events">Events</a></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="menu-options">
+                        <div class="l-clock clock"></div>
+                        <div class="nav-subwebsites">
                             <ul>
                                 <li><a class="nav-links" href="/vatsim/vs.html">Map</a></li>
-                                <li><a class="nav-links" href="/events">Events</a></li>
-                                <li><a class="nav-links" href="/events">Events</a></li>
+                                <li><a class="nav-links" href="/vatsim/events">Events</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="l-clock clock"></div>
-                    <div class="nav-subwebsites">
-                        <ul>
-                            <li><a class="nav-links" href="/vatsim/vs.html">Map</a></li>
-                            <li><a class="nav-links" href="/vatsim/events">Events</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="center">
-                    <div class="logo">
-                        <div class="nav-logo clr-wht">
-                            <!-- <a href="http://vatsim.net" target="_blank"><img src="/src/img/VATSIM Logos for Public Use/2000w/VATSIM_Logo_Official_White_Tagline_2000px.png" alt="VATSIM Logo"></a> -->
-                            <a href="http://vatsim.net" target="_blank" ><img src="/src/img/VATSIM Logos for Public Use/2000w/VATSIM_Logo_White_No_Tagline_2000px.png" alt="VATSIM logo"></a>
-                        </div>
-                        <div class="nav-logo-subtext">
-                            <a href="http://vatsim.net/events" target="_blank"><span class="nav-subtext">events</span></a>
+                    <div class="center">
+                        <div class="logo">
+                            <div class="nav-logo clr-wht">
+                                <!-- <a href="http://vatsim.net" target="_blank"><img src="/src/img/VATSIM Logos for Public Use/2000w/VATSIM_Logo_Official_White_Tagline_2000px.png" alt="VATSIM Logo"></a> -->
+                                <a href="http://vatsim.net" target="_blank" ><img src="/src/img/VATSIM Logos for Public Use/2000w/VATSIM_Logo_White_No_Tagline_2000px.png" alt="VATSIM logo"></a>
+                            </div>
+                            <div class="nav-logo-subtext">
+                                <a href="http://vatsim.net/events" target="_blank"><span class="nav-subtext">events</span></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="nav-text nav-right">
-                    <div class="r-clock clock"></div>
-    
-                </div>
-            </nav>
-            <div class="event-sidebox">
-                <div id="event-boxes-container">
+                    <div class="nav-text nav-right">
+                        <div class="r-clock clock"></div>
 
+                    </div>
+                </nav>
+                <div class="event-sidebox">
+                    <div id="event-boxes-container">
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- <div> class="overlay"></div> -->
+
     <script id="event-template" type="text/x-handlebars-template">
             <div class="single-event-box">
                 <div class="event-box-text">
