@@ -1,0 +1,47 @@
+.menu-options {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4008a1;
+    border: 1px solid;
+    padding: 20px;
+    box-shadow: 1px 5px 32px white;
+    border-radius: 5px;
+    display: none;
+    z-index: 1700;
+    width: 65%; 
+    height: 25%;
+    vertical-align: middle;
+}
+
+.menu-options ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-options li {
+    text-align: center;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.menu-options li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.hamburger-menu {
+    display: flex;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    top: 10px;
+    right: 10px; 
+}

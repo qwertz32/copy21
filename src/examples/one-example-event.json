@@ -1,0 +1,94 @@
+[
+    [
+        {
+           "type":"Event", 
+           "name":"Colombia NEWIES Day",
+           "link":"https://my.vatsim.net/events/colombia-newies-day",
+           "startTime":"2023-12-27T23:59:00Z",
+           "endTime":"2023-12-28T03:00:00Z",
+           "shortDescription":"<p>Are you new at our subdivision or even into the network as a controller or as a pilot, this event is focused on you! This is a ceremony for all those new members in our country. This is a Warm welcome to the VATSIM Colombia Family.</p><br>",
+           "description":"<p>This event is created as a ceremony for all those new controllers and pilots in our subdivision and outside there who have just obtained their ranks or which are doing their first steps on VATSIM. This is an invitation to be part of VATSIM Colombia´s family. Let us be part of your story as a virtual pilot and controller.</p><br>",
+           "bannerLink":"https://vatsim-my.nyc3.digitaloceanspaces.com/events/MtOZVX4GDwfZezeFtCr55ZgRBwJqssqSFTY35d3C.png",
+           "organisers":[
+              {
+                 "region":"AMAS",
+                 "division":"SAM",
+                 "subdivision":null,
+                 "organisedByVatsim":false
+              }
+           ],
+           "airports":[
+              {
+                 "icao":"SKBO",
+                 "name":"El Dorado International Airport",
+                 "city":"Bogota",
+                 "country":"CO",
+                 "coords":[
+                    4.70159,
+                    -74.1469
+                 ]
+              },
+              {
+                 "icao":"SKCL",
+                 "name":"Alfonso Bonilla Aragon International Airport",
+                 "city":"Cali",
+                 "country":"CO",
+                 "coords":[
+                    3.54322,
+                    -76.3816
+                 ]
+              },
+              {
+                 "icao":"SKCG",
+                 "name":"Rafael Nunez International Airport",
+                 "city":"Cartagena",
+                 "country":"CO",
+                 "coords":[
+                    10.4424,
+                    -75.513
+                 ]
+              },
+              {
+                 "icao":"SKBQ",
+                 "name":"Ernesto Cortissoz International Airport",
+                 "city":"Barranquilla",
+                 "country":"CO",
+                 "coords":[
+                    10.8896,
+                    -74.7808
+                 ]
+              },
+              {
+                 "icao":"SKSM",
+                 "name":"Simon Bolivar International Airport",
+                 "city":"Santa Marta",
+                 "country":"CO",
+                 "coords":[
+                    11.1196,
+                    -74.2306
+                 ]
+              },
+              {
+                 "icao":"SKBG",
+                 "name":"Palonegro Airport",
+                 "city":"Bucaramanga",
+                 "country":"CO",
+                 "coords":[
+                    7.1265,
+                    -73.1848
+                 ]
+              },
+              {
+                 "icao":"SKRG",
+                 "name":"Jose Maria Cordova International Airport",
+                 "city":"Rionegro",
+                 "country":"CO",
+                 "coords":[
+                    6.16454,
+                    -75.4231
+                 ]
+              }
+           ]
+        }
+    ]
+]

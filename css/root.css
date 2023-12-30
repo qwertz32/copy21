@@ -1,0 +1,25 @@
+:root {
+    --border-color: #c9970c;
+    --border-color-dark: #4008a1;
+    --dimmed-white: rgb(161, 154, 154);
+    --border-size: 4px;
+    --deafult-darkmode: #333;
+    --white-color: #dddad5;
+    --link-on-hover: rgb(51, 128, 211);
+    --bug-report-bg: #552170;
+    --dark-bg: rgba(14, 14, 14, 0.7);
+    --scroll-bg: #874013;
+    --scroll-handle: #31a337;
+    --scroll-handle-hover: #34df3d;
+    --font-rubik: 'Rubik', monospace;
+    --font-lato: 'Lato', sans-serif;
+    --font-roboto: 'Roboto Mono', monospace;
+    --event-box-deafult-border: 5px solid rgb(84, 31, 2);
+    --event-box-active-border: 5px solid rgb(50, 217, 20);
+    --sidebox-background: #1b1d1f;
+    --event-box-background: #252829;
+    --nav-bar-background: #352c45;
+    --ls-popup-btn-bg: #9a5e04;
+    --cd-popup-btn-bg: #7939ce;
+    --popups-box-shadow:  0 0 10px rgb(52, 54, 53);
+}
