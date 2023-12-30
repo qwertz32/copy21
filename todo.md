@@ -40,7 +40,8 @@
 - [&nbsp;&nbsp;] &nbsp; Make it so when you click outside the sidebar it also closes.
 - [&nbsp;&nbsp;] &nbsp; Add airport filtering.
 - [&nbsp;&nbsp;] &nbsp; Make that after clicking either or the sidebar event or on the pin on the map, it shows (smoothly) a popup with image and description.
-- [&nbsp;&nbsp;] &nbsp; Popup informing about inspiration.
+- [x] &nbsp; Popup informing about inspiration.
+- [&nbsp;&nbsp;] &nbsp; City pair line drawing (or any other way to show it).
 
 
 ### Changes
