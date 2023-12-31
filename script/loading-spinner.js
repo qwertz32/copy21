@@ -18,5 +18,3 @@ function hideLoadingSpinner() {
 setTimeout(function () {
     showLoadingSpinner();
 }, 500);
-
-//spinner hides in the main javascript in the appropriate place

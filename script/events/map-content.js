@@ -2,7 +2,7 @@ var map, currentLayer, initialCoordinates, initialZoom;
 
 $(document).ready(function () {
     initialZoom = parseFloat(storedZoom) || presetZoom;
-    initialCoordinates = // set your initial coordinates here;
+    initialCoordinates =
 
         map = L.map('map', {
             zoomControl: false,
@@ -12,7 +12,6 @@ $(document).ready(function () {
 
     var google = L.tileLayer('https://cartodb-basemaps-c.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}.png', {
         minZoom: 2.5,
-        // maxBounds: bounds,
         bounceAtZoomLimits: false,
         maxZoom: 21,
         attribution: 'CartoDB',
