@@ -92,7 +92,11 @@
     #ls-popup-btn {
         font-size: 1.2rem !important;
     }
+    .event-boxes-container:last-child, .event-category:last-child {
+        height: 40dvh;
+    }
 }
+
 /* Nedeed media from main */
 @media(max-height: 1150px) {
     .nav-logo {

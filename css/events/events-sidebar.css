@@ -85,3 +85,11 @@
 .event-boxes-container:last-child, .event-category:last-child {
     margin-bottom: 80px; /*Fix for last box not being visible */
 }
+
+.active-event-box {
+    border: var(--event-box-active-border)
+}
+
+/* .inactive-event-box {
+    border: var(--event-box-inactive-border);
+} */

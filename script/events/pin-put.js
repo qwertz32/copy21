@@ -30,9 +30,17 @@ $.getJSON('https://phoenix-api.vatsim.net/api/events', function (data) {
     }
 
     function formatDate(dateString) {
-        var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        return new Date(dateString).toLocaleDateString(undefined, options);
+        var day = String(new Date(dateString).getDate()).padStart(2, '0');
+        var month = String(new Date(dateString).getMonth() + 1).padStart(2, '0');
+        var time = new Date(dateString).toLocaleTimeString('pl-PL', { hour: '2-digit', minute: '2-digit', hour12: false });
+        return `${day}.${month} ${time}`;
     }
+    
+    function generateUniqueId(airportICAO) {
+        const markerToken = Math.random().toString(36).substring(2, 12);
+        return `event_${markerToken}`;
+    }
+    
 
     function findAirportsInEvent(event) {
         if (!event.airports || !Array.isArray(event.airports)) {
@@ -63,25 +71,40 @@ $.getJSON('https://phoenix-api.vatsim.net/api/events', function (data) {
                 }
 
                 var marker = L.marker(coords, { icon: icon }).addTo(map);
+                
+                const eventId = generateUniqueId();
 
-                var eventsList = data.filter((e) =>
-                    e.airports && e.airports.some((a) => a && a.icao === airport.icao) &&
-                    e.endTime && new Date(e.endTime) >= currentDate
-                );
+                marker.eventId = eventId;
 
-                marker.on('mouseover', function () {
-                    var leafletPopup = `<b>Events at ${airport.name}, ${airport.city}, ${airport.icao}</b><br>`;
-                    eventsList.forEach((e) => {
-                        leafletPopup += `<br><b>${e.name}</b><br>${formatDate(e.startTime)} to ${formatDate(e.endTime)}`;
-                    });
-                    marker.bindPopup(leafletPopup, { closeButton: false }).openPopup();
+            var eventsList = data.filter((e) =>
+                e.airports && e.airports.some((a) => a && a.icao === airport.icao) &&
+                e.endTime && new Date(e.endTime) >= currentDate
+            );
+
+            marker.on('mouseover', function () {
+                var leafletPopup = `<b>${airport.name}, ${airport.city} <br>${airport.icao}</b><br>`;
+                eventsList.forEach((e) => {
+                    leafletPopup += `<br><b>${e.name}</b><br><b>${formatDate(e.startTime)}</b> to <b>${formatDate(e.endTime)}</b>`;
                 });
+                var customEventPopup = {
+                    'className': 'custom-event-popup',
+                    closeButton: false
+                };
+                marker.bindPopup(leafletPopup,customEventPopup).openPopup();
+            });
 
-                marker.on('mouseout', function () {
-                    marker.closePopup();
-                });
+            marker.on('mouseout', function () {
+                marker.closePopup();
+            });
 
-                console.log(`Event pin put on airport: %c${airport.icao}`, 'font-weight: bold;');
+            marker.on('click', function () {
+                openSimpleOverlay();
+            });
+            $('.simple-test-close-btn').on('click', function (event) {
+                    closeSimpleOverlay();
+            });
+
+                console.log(`Event pin put on airport: %c${airport.icao} with ${eventId}`, 'font-weight: bold;');
                 processedAirports.push(airport.icao);
             } else {
                 console.log('No coords found for airport in event.');
@@ -92,3 +115,14 @@ $.getJSON('https://phoenix-api.vatsim.net/api/events', function (data) {
 .fail(function (error) {
     console.error('Error fetching JSON:', error);
 });
+
+
+
+function openSimpleOverlay() {
+    $('.simple-test-overlay').fadeIn();
+    $('.simple-test-overlay-bg').fadeIn();
+}
+function closeSimpleOverlay() {
+    $('.simple-test-overlay').fadeOut();
+    $('.simple-test-overlay-bg').fadeOut();
+}

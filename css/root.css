@@ -22,4 +22,8 @@
     --ls-popup-btn-bg: #9a5e04;
     --cd-popup-btn-bg: #7939ce;
     --popups-box-shadow:  0 0 10px rgb(52, 54, 53);
+    --events-custom-popup-bg: #61573d;
+    --event-box-active-border: 3px solid rgba(39, 158, 39, 0.797);
+    /* --event-box-inactive-border: 2px solid red; NOT IN USE */
+    --precise-event-popup-overlay-bg: rgba(0, 0, 0, 0.914);
 }

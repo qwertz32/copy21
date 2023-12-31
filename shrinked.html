@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>VATSIM Events</title>
+
+
+    <meta name="description" content="Browse through VATSIM Network, see current and upcoming events, track your flight and many more!">
+    <meta property="og:url" content="https://vatsim.glitch.me">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="VATSIM Tracking">
+    <meta property="og:description" content="Browse through VATSIM Network, see current and upcoming events, track your flight and many more!">
+    <meta property="og:image" content="https://cdn.glitch.global/91c248c6-bd14-4293-a1f2-a614f547a022/VATSIM_Logo_No_Tagline_2000px.png?v=1703727270474">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="vatsim.glitch.me">
+    <meta property="twitter:url" content="https://vatsim.glitch.me">
+    <meta name="twitter:title" content="VATSIM Tracking">
+    <meta name="twitter:description" content="Browse through VATSIM Network, see current and upcoming events, track your flight and many more!">
+    <meta name="twitter:image" content="https://cdn.glitch.global/91c248c6-bd14-4293-a1f2-a614f547a022/VATSIM_Logo_No_Tagline_2000px.png?v=1703727270474">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="icon" type="image/x-icon" href="/src/img/VATSIM-favicon_48px.ico">
+    <style>
+        #loading-container{display:flex;justify-content:center;align-items:center;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgb(0,0,0);color:var(--white-color);flex-direction:column;z-index:2000}#loading-spinner{border:16px solid #f3f3f3;border-top:16px solid #3498db;border-radius:50%;width:120px;height:120px;animation:spin 1s linear infinite}@media (max-width:1150px){.event-sidebox{width:450px}.nav-bar-main{height:6%}.nav-logo img{height:35px}.menu-icon{display:flex!important}.nav-subwebsites{display:none!important}.leaflet-control-attribution{font-size:12px!important;padding:1px!important}.l-clock{display:none}.center{margin-left:60px}}@media (min-width:1150px){.r-clock{display:flex}.l-clock{display:none}.nav-subwebsites{width:0!important}}@media (max-width:750px){.r-clock{text-align:center;font-size:1rem!important}.event-sidebox{width:300px}.nav-logo-subtext{margin-left:15%}.event-box-text{position:relative}.event-box-title{position:sticky;top:0;z-index:1;font-weight:700;margin-bottom:0}.event-box-shortDescription{display:none}.event-box-icaos{overflow:hidden;text-overflow:ellipsis;position:-webkit-sticky;position:sticky;bottom:0;z-index:1;height:25px;margin-bottom:0}.sidebar-category-name{font-size:1.2rem}.ls-popup-content-text{font-size:1.2rem!important}.ls-popup-content-links a{font-size:1.2rem!important}#ls-popup-btn{font-size:1.2rem!important}}@media(max-height:1150px){.nav-logo{height:30px}}@media(max-width:389px){.r-clock{font-size:0.8rem!important}}.r-clock{font-size:1.5rem}.event-sidebox{font-family:var(--font-roboto);position:absolute;left:0;z-index:1200;background-color:var(--sidebox-background);width:685px;overflow-y:auto;height:100vh;justify-content:center;transition:transform 0.3s ease-in-out;transform:translateX(-100%)}.show-sidebar .event-sidebox{transform:translateX(0)}.event-box{width:100%;overflow:hidden}.single-event-box{color:var(--white-color);overflow:hidden;display:flex;height:auto;flex-direction:column;background:var(--event-box-background);border-radius:0.5rem;position:relative;margin:3% 3% 10px}.event-box-text{margin:2%;background:var(--event-box-background);border-radius:inherit;display:flex;flex-direction:column}.event-box-title{font-weight:700;overflow:hidden;text-overflow:ellipsis}.event-box-shortDescription{overflow:hidden;text-overflow:ellipsis;white-space:normal;display:-webkit-box;line-height:1.05;-webkit-line-clamp:3;-webkit-box-orient:vertical;margin-top:3px}.event-box-icaos{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;align-items:center;height:25px;width:100%;overflow:hidden;margin-top:10px}.sidebar-category-name{font-size:2rem;font-weight:600;font-family:var(--font-lato);color:var(--white-color);text-align:center}.event-boxes-container:last-child,.event-category:last-child{margin-bottom:80px}.menu-options{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background-color:#4008a1;border:1px solid;padding:20px;box-shadow:1px 5px 32px white;border-radius:5px;display:none;z-index:1700;width:65%;height:25%;vertical-align:middle}.menu-options ul{list-style:none;padding:0;margin:0}.menu-options li{text-align:center;cursor:pointer;padding:8px}.menu-options li:hover{background-color:rgba(255,255,255,0.1)}.hamburger-menu{display:flex;margin-left:auto;margin-right:0}.menu-icon{display:none;font-size:24px;cursor:pointer;color:white;top:10px;right:10px}html{height:100%}body{height:100%;margin:0;overflow:hidden}#map{height:calc(100vh - 10%);width:100vw}.fullscreen{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100dvh;width:100dvw}.main-content{width:100%;z-index:1001}.leaflet-bottom{position:fixed;display:flex;flex-direction:column;align-items:self-end}.leaflet-control-attribution{background:var(--dark-bg)!important;color:var(--white-color);padding:5px;border-radius:15px;font-size:12px;width:100%;text-wrap:nowrap;text-align:right}.leaflet-control-attribution a{color:#0d9fd9}.leaflet-container{background:var(--deafult-darkmode)}.nav-bar-main{position:fixed;top:0;left:0;background-color:var(--nav-bar-background);height:4.5%;min-height:55px;width:100%;display:flex;justify-content:space-between;align-items:center;z-index:1005;flex-wrap:nowrap}.nav-text{margin:10px;display:flex;align-items:center;justify-content:space-between}.nav-subwebsites{width:30%}.nav-text{display:flex;color:var(--white-color)}.nav-right{font-family:var(--font-lato)}.nav-subwebsites ul{list-style:none;margin:0;padding:0;display:flex}.nav-subwebsites li{margin:0 10px;cursor:pointer}.nav-links{text-decoration:none;color:var(--white-color);display:inline-block;line-height:40px;transition:transform 0.3s ease;font-family:var(--font-rubik)}.nav-links:hover{transform:scale(1.2)}.nav-logo{color:var(--white-color);display:flex;align-items:center;justify-content:center;max-width:100%;width:40%;height:40px;text-align:center}.nav-logo-subtext{margin-left:25%;line-height:40px;text-decoration:none;font-family:var(--font-rubik)}.nav-logo-subtext a{color:var(--white-color);text-decoration:none}.nav-subtext{font-size:1.5rem}.nav-logo img{height:40px;max-height:40px;width:auto}.nav-links{text-decoration:none;color:var(--white-color)}.logo{display:flex;align-items:center}.center{margin-left:120px}.clr-wht{color:var(--white-color)}.d-fx{display:flex}#cd-popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#171717b1;z-index:2400}.cd-popup-content{font-family:var(--font-lato);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;padding:20px;background-color:#1a1b17;box-shadow:var(--popups-box-shadow);width:70%}.cd-popup-content-text{color:var(--white-color);font-size:1.7rem;margin-bottom:20px}#cd-popup-btn{background:var(--cd-popup-btn-bg);color:var(--white-color);font-size:1.4rem;transition:cubic-bezier(.37,.53,.86,.57) 0.15s;padding:10px 15px;border:none;border-radius:4px;cursor:pointer}.cd-popup-content-text a{color:var(--white-color);text-decoration:none}.cd-popup-content-text a:hover{color:var(--link-on-hover)}@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Rubik:wght@500&display=swap');@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto+Mono&display=swap');@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}#ls-popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#171717f7;z-index:2300}#ls-popup-content{font-family:var(--font-lato);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;padding:20px;background-color:#1a1b17;box-shadow:var(--popups-box-shadow);width:70%}.ls-popup-content-text{color:var(--white-color);font-size:1.7rem;margin-bottom:20px}.ls-popup-content-links a{font-size:1.5rem;text-decoration:none;color:var(--white-color);margin-right:10px;transition:cubic-bezier(.56,.18,1,.48) 0.3s}.ls-popup-content-links a:hover{color:var(--link-on-hover);font-size:1.7rem}#ls-popup-btn{background:var(--ls-popup-btn-bg);color:var(--white-color);font-size:1.4rem;margin-top:25px;transition:cubic-bezier(.37,.53,.86,.57) 0.15s;padding:10px 15px;border:none;border-radius:4px;cursor:pointer}#ls-popup-btn:hover{font-size:1.8rem}@media (max-width:600px){.nav-bar-main{height:6%}.nav-logo{width:auto;text-align:center}.nav-logo img{height:35px;max-height:35px}.menu-icon{display:flex!important}.nav-subwebsites{display:none!important}.leaflet-control-attribution{font-size:12px!important;padding:1px!important}.r-clock{display:none}}@media (min-width:601px){.l-clock{display:none}}@media (max-height:1150px){.nav-logo{height:30px;text-align:center}.nav-logo img{height:30px;max-height:30px}}@media (max-width:309px){.leaflet-bottom{display:none}}:root{--border-color:#c9970c;--border-color-dark:#4008a1;--dimmed-white:rgb(161,154,154);--border-size:4px;--deafult-darkmode:#333;--white-color:#dddad5;--link-on-hover:rgb(51,128,211);--bug-report-bg:#552170;--dark-bg:rgba(14,14,14,0.7);--scroll-bg:#874013;--scroll-handle:#31a337;--scroll-handle-hover:#34df3d;--font-rubik:'Rubik',monospace;--font-lato:'Lato',sans-serif;--font-roboto:'Roboto Mono',monospace;--event-box-deafult-border:5px solid rgb(84,31,2);--event-box-active-border:5px solid rgb(50,217,20);--sidebox-background:#1b1d1f;--event-box-background:#252829;--nav-bar-background:#352c45;--ls-popup-btn-bg:#9a5e04;--cd-popup-btn-bg:#7939ce;--popups-box-shadow:0 0 10px rgb(52,54,53)}::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:var( --scroll-bg)}::-webkit-scrollbar-thumb{height:5%;background:var(--scroll-handle);border-radius:0.3rem}::-webkit-scrollbar-thumb:hover{background:var(--scroll-handle-hover)}
+    </style>
+
+ 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+    $(document).ready(()=>{$.ajax({url:'https://phoenix-api.vatsim.net/api/events',method:'GET',dataType:'json',success:(data)=>{console.log('Fetched data:',data);renderEvents(data)},error:(error)=>console.error('Error fetching JSON:',error)});function renderEvents(events){const categories={today:[],tomorrow:[],};const dateMap={};events.forEach((event)=>{const eventDate=new Date(event.startTime).toLocaleDateString('en-US',{weekday:'long',day:'numeric',month:'long',});const todayDate=new Date();const tomorrowDate=new Date(todayDate);tomorrowDate.setDate(todayDate.getDate()+1);const isToday=eventDate===todayDate.toLocaleDateString('en-US',dateOptions);const isTomorrow=eventDate===tomorrowDate.toLocaleDateString('en-US',dateOptions);if(isToday){categories.today.push(event)}else if(isTomorrow){categories.tomorrow.push(event)}else{dateMap[eventDate]=dateMap[eventDate]||[];dateMap[eventDate].push(event)}});renderCategory('Today',categories.today);renderCategory('Tomorrow',categories.tomorrow);for(const[date,events]of Object.entries(dateMap)){renderCategory(date,events)}}function renderCategory(category,events){if(events.length===0){return}const templateScript=$('#event-template').html();const template=Handlebars.compile(templateScript);const categoryHtml=`<h2 class="sidebar-category-name">${category}</h2>${events.map(event=>template({...event,shortDescription:event.shortDescription.replace(/<[^>]*>/g,''),})).join('')}`;$('<div class="event-category"></div>').html(categoryHtml).appendTo('#event-boxes-container')}const dateOptions={weekday:'long',day:'numeric',month:'long',}});var map,currentLayer,initialCoordinates,initialZoom;$(document).ready(function(){initialZoom=parseFloat(storedZoom)||presetZoom;initialCoordinates=map=L.map('map',{zoomControl:false,zoomSnap:0.20,zoomDelta:0.75}).setView(initialCoordinates,initialZoom);var google=L.tileLayer('https://cartodb-basemaps-c.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}.png',{minZoom:2.5,bounceAtZoomLimits:false,maxZoom:21,attribution:'CartoDB',preload:Infinity,subdomains:['mt0','mt1','mt2','mt3'],keepBuffer:5});var apple=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:22,attribution:'Apple Maps',preload:Infinity,keepBuffer:5});var baseMaps={"Google Maps":google,"Apple Maps":apple};google.addTo(map);map.on('moveend',function(){try{var currentCoordinates=map.getCenter();var currentZoom=map.getZoom();localStorage.setItem('mapCoordinates',JSON.stringify(currentCoordinates));localStorage.setItem('mapZoom',currentZoom.toString())}catch(error){console.error("Cannot write into Local Storage")}});currentLayer=google;function switchLayer(){if(currentLayer===google){map.removeLayer(google);apple.addTo(map);currentLayer=apple}else{map.removeLayer(apple);google.addTo(map);currentLayer=google}}});$.getJSON('https://phoenix-api.vatsim.net/api/events',function(data){var currentDate=new Date();var defaultIcon=L.icon({iconUrl:'/src/img/event_marker_off.png',iconSize:[32,32],iconAnchor:[16,32],popupAnchor:[0,-35],});var ongoingIcon=L.icon({iconUrl:'/src/img/event_marker_on.png',iconSize:[32,32],iconAnchor:[16,32],popupAnchor:[0,-32],});var multipleIcon=L.icon({iconUrl:'/src/img/event_marker_multiple.png',iconSize:[32,32],iconAnchor:[16,32],popupAnchor:[0,-32],});function countEventsAtAirport(airportICAO,allEvents){return allEvents.filter((event)=>event.airports&&Array.isArray(event.airports)&&event.airports.some((airport)=>airport&&airport.icao===airportICAO)&&event.endTime&&new Date(event.endTime)>=currentDate).length}function formatDate(dateString){var options={weekday:'long',year:'numeric',month:'long',day:'numeric'};return new Date(dateString).toLocaleDateString(undefined,options)}function findAirportsInEvent(event){if(!event.airports||!Array.isArray(event.airports)){return[]}return event.airports.filter((airport)=>airport&&airport.coords)}var processedAirports=[];$.each(data,function(index,event){var airportsInEvent=findAirportsInEvent(event);airportsInEvent.forEach(function(airport){var coords=airport.coords;if(coords&&processedAirports.indexOf(airport.icao)===-1){var startTime=new Date(event.startTime);var endTime=new Date(event.endTime);var isActive=startTime<=currentDate&&currentDate<=endTime;var icon=isActive?ongoingIcon:defaultIcon;var eventsCount=countEventsAtAirport(airport.icao,data);if(eventsCount>1){icon=multipleIcon}var marker=L.marker(coords,{icon:icon}).addTo(map);var eventsList=data.filter((e)=>e.airports&&e.airports.some((a)=>a&&a.icao===airport.icao)&&e.endTime&&new Date(e.endTime)>=currentDate);marker.on('mouseover',function(){var leafletPopup=`<b>Events at ${airport.name},${airport.city},${airport.icao}</b><br>`;eventsList.forEach((e)=>{leafletPopup+=`<br><b>${e.name}</b><br>${formatDate(e.startTime)}to ${formatDate(e.endTime)}`});marker.bindPopup(leafletPopup,{closeButton:false}).openPopup()});marker.on('mouseout',function(){marker.closePopup()});console.log(`Event pin put on airport:%c${airport.icao}`,'font-weight: bold;');processedAirports.push(airport.icao)}else{console.log('No coords found for airport in event.')}})})}).fail(function(error){console.error('Error fetching JSON:',error)});$(document).ready(function(){$('.hamburger-menu').on('click',function(){$('body').toggleClass('show-sidebar')})});$(document).ready(function(){function setEventSideboxPosition(){var navbarHeight=$('.nav-bar-main').outerHeight();$('.event-sidebox').css('top',navbarHeight+'px')}setEventSideboxPosition();$(window).resize(function(){setEventSideboxPosition()})});$(document).ready(function(){function toggleSidebar(){const sidebar=$('#event-sidebox');sidebar.toggleClass('hidden')}});Handlebars.registerHelper('formatTime',function(time){const formattedTime=new Date(time).toLocaleTimeString('pl-PL',{hour:'2-digit',minute:'2-digit',hour12:false,});return formattedTime});var map,currentLayer,initialCoordinates,initialZoom;$(document).ready(function(){initialZoom=parseFloat(storedZoom)||presetZoom;initialCoordinates=map=L.map('map',{zoomControl:false,zoomSnap:0.20,zoomDelta:0.75}).setView(initialCoordinates,initialZoom);var google=L.tileLayer('https://cartodb-basemaps-c.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}.png',{minZoom:2.5,bounceAtZoomLimits:false,maxZoom:21,attribution:'Google Maps',preload:Infinity,subdomains:['mt0','mt1','mt2','mt3'],keepBuffer:5});var apple=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:22,attribution:'Apple Maps',preload:Infinity,keepBuffer:5});var baseMaps={"Google Maps":google,"Apple Maps":apple};google.addTo(map);map.on('moveend',function(){var currentCoordinates=map.getCenter();var currentZoom=map.getZoom();localStorage.setItem('mapCoordinates',JSON.stringify(currentCoordinates));localStorage.setItem('mapZoom',currentZoom.toString())});currentLayer=google;function switchLayer(){if(currentLayer===google){map.removeLayer(google);apple.addTo(map);currentLayer=apple}else{map.removeLayer(apple);google.addTo(map);currentLayer=google}}});function isMobile(){return $(window).width()<=768};var presetCoordinatesList=[[27.386445836446814,15.59099952979347],[25.19693081190781,55.27419425547124],[55.751605578948634,37.622505547875434],[39.043127453366125,125.7556205996649],[35.70132841614543,499.7335694356339],[40.6892040108378,-74.04478900061456],[23.764313175283185,90.2804708680347],[0.0,0.0],[-70.30468490953506,24.048737550483317],[-43.52892045765742,171.35833055943286],[33.95624057296359,-118.24731336563917],[71.53863351460842,-53.21127807509122],[52.23919989939035,21.04489368750266],];var tileLayerUrl='https://mt2.google.com/vt?lyrs=s&x={x}&y={y}&z={z}';var presetCoordinates=isMobile()?[54.526000,15.255100]:getRandomCordsForStart();var presetZoom=isMobile()?4:3;try{var storedCoordinates=localStorage.getItem('mapCoordinates');var storedZoom=localStorage.getItem('mapZoom');initialCoordinates=JSON.parse(storedCoordinates)||presetCoordinates}catch(error){console.error("Error getting the last position. \n Fix is most likely to %cenable cache%c. \n If this does not help, contact the owner and provide any other error you get.","color: #e30505; font-weight: bold; text-decoration: underline;","color: orange; font-weight: normal;");initialCoordinates=presetCoordinates};function getRandomCordsForStart(){var randomIndex2=Math.floor(Math.random()*presetCoordinatesList.length);return presetCoordinatesList[randomIndex2]}document.addEventListener('DOMContentLoaded',function(){var mapProviders;var mapHistory=[];var maxHistoryLength=10;sourcesJson='/sources.json';document.addEventListener('DOMContentLoaded',function(){fetch(sourcesJson).then(response=>response.json()).then(data=>{callMapSources(data)}).catch(error=>{console.error('Error fetching sources. ',error)})});function callMapSources(mapSources){mapProviders=mapSources}});function changeMap(provider,mapType){if(mapProviders&&mapProviders[provider]){var mapUrl=mapProviders[provider][mapType];if(mapUrl){mapHistory.push(createLayerClone(currentLayer));if(mapHistory.length>maxHistoryLength){mapHistory.shift()}map.removeLayer(currentLayer);var newLayer=L.tileLayer(mapUrl,{maxZoom:18,attribution:'Custom Map Provider'});newLayer.addTo(map);currentLayer=newLayer;console.log(`Changed to ${provider}-${mapType}`)}else{console.error(`Map type ${mapType}not found for ${provider}`)}}else{console.error(`Provider ${provider}not found in the JSON data`)}}function mapReturn(){if(mapHistory.length>0){map.removeLayer(currentLayer);var previousLayer=mapHistory.pop();previousLayer.addTo(map);currentLayer=previousLayer;console.log(`Returned to the previous map provider`)}else{console.error(`No previous map provider stored`)}}function teleportTo(coordinates,zoom){if(!map){console.error(error);return}const[lat,lng]=coordinates.split(',').map(coord=>parseFloat(coord.trim()));if(isNaN(lat)||isNaN(lng)){console.error('Invalid input.');return}map.setView([lat,lng],zoom);console.log(`Teleported to:Latitude ${lat},Longitude ${lng},Zoom ${zoom}`)}function createLayerClone(layer){var clone;var subdoms=['mt0','mt1','mt2','mt3'];var randomIndex=Math.floor(Math.random()*subdoms.length);var randomizedSubdoms=subdoms[randomIndex];if(layer._url.includes('{s}')){var clonedUrl=layer._url.replace(/\{s\}/,randomizedSubdoms);clone=L.tileLayer(clonedUrl,{maxZoom:layer.options.maxZoom,attribution:layer.options.attribution,})}else{clone=L.tileLayer(layer._url,{maxZoom:layer.options.maxZoom,attribution:layer.options.attribution})}return clone}var ipToken='57181dfc23ba47';function getCountry(){$.ajax({url:'https://ipinfo.io/json?token='+ipToken,dataType:'json',success:function(data2){var userCountry=data2.country||'';console.log("Country code:",userCountry);if(userCountry!==null){var attributionContainer=$('.leaflet-control-attribution');var currentAttribution=attributionContainer.html();var newAttribution=currentAttribution+' | '+userCountry;attributionContainer.html(newAttribution);console.log("Successfuly implemented user's country code.")}else{console.error(error);hideLoadingSpinner()}hideLoadingSpinner()},error:function(error){console.error('Error fetching country.\n',error);hideLoadingSpinner()}})}getCountry();var loadingSpinnerShown=false;function showLoadingSpinner(){if(!loadingSpinnerShown){$('#loading-container').css('display','flex');$('#loading-spinner').fadeIn().css('display','flex');loadingSpinnerShown=true}}function hideLoadingSpinner(){$('#loading-spinner').fadeOut(function(){$(this).css('display','none');$('#loading-container').fadeOut().css('display','none')})};setTimeout(function(){showLoadingSpinner()},500);var menuOptions=$('.menu-options');$(".menu-icon").click(function(){$(".menu-options").slideToggle()});$(document).click(function(event){if(!$(event.target).closest('.menu-icon, .menu-options').length){$(".menu-options").slideUp()}});let userResponse='';function shwPopUp(){try{if(!localStorage){console.error("nope")}if(localStorage.getItem('resp')==='understood'){return}if(localStorage.getItem('resp')===null){$('#ls-popup').fadeIn()}}catch(error){$('#cd-popup').fadeIn();console.error("Local Storage not accessible.")}};function clsPopUp(){$('#ls-popup').fadeOut();userResponse='understood';localStorage.setItem('resp',userResponse.toString())}function clsCdPopUp(){$('#cd-popup').fadeOut()}$(document).ready(function(){setTimeout(function(){shwPopUp()},0);$("#ls-popup-btn").click(function(){clsPopUp()})});function showTime(clockClass){const date=new Date();let h=date.getUTCHours();let m=date.getUTCMinutes();const day=date.getUTCDate();const monthShort=new Intl.DateTimeFormat('en-US',{month:'short'}).format(date);h=(h<10)?"0"+h:h;m=(m<10)?"0"+m:m;const minutesAndDate=day+' '+monthShort;const finalDate=`${h}:${m}Z,${minutesAndDate}`;$(clockClass).text(finalDate)}$(document).ready(function(){showTime(".clock");setInterval(function(){showTime(".clock")},1000)});
+    </script>
+    <style>
+        @media (min-width: 1150px) {
+    body.show-sidebar {
+        overflow: visible !important;
+    }
+
+    .event-sidebox {
+        transform: translateX(0) !important;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <div id="loading-container">
+        <div id="loading-spinner"></div>
+    </div>
+     <div id="ls-popup">
+        <div id="ls-popup-content">
+            <div class="ls-popup-content-text">
+            <p>This website uses local storage saving to magnify your experience with it.</p>
+            <p>The whole idea and implementation is heavily inspired by:</p>
+            </div>
+            <div class="ls-popup-content-links">
+                <a href="https://map.vatsim.net/" target="_blank">SimAware</a> 
+                <a href="https://vatsim.net/events" target="_blank">Events subpage on VATSIM's website</a>
+            </div>
+            <button id="ls-popup-btn" onclick="clsPopUp()">Understood</button>
+        </div>
+    </div> 
+    <div id="cd-popup">
+        <div class="cd-popup-content">
+            <div class="cd-popup-content-text">
+                <p>Unable to write / read local storage. You can still use this website but some features won't work.</p>
+                <p><a href="/ls-disabled-features" target="_blank">Learn which</a> and <a href="https://www.bublup.com/support/enable-cookies-local-storage-in-your-browser/" target="_blank">how to fix it.</a></p>
+            </div>
+            <button id="cd-popup-btn" onclick="clsCdPopUp()">Now I know, thanks</button>
+        </div>
+    </div>
+    <div id="map" style="height: 100vh; width: 100vw;"></div>
+    <div id="everything">
+        <div class="fullscreen">
+            <div class="main-content">
+                <nav class="nav-bar-main">
+                    <div class="nav-text nav-left">
+                        <div class="hamburger-menu" id="sidebar-fun">
+                            <div class="menu-icon">
+                                <i class="fas fa-bars"></i>
+                            </div>
+                            <div class="menu-options">
+                                <ul>
+                                    <li><a class="nav-links" href="/vatsim/vs.html">Map</a></li>
+                                    <li><a class="nav-links" href="/events">Events</a></li>
+                                    <li><a class="nav-links" href="/events">Events</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="l-clock clock"></div>
+                        <div class="nav-subwebsites">
+                            <ul>
+                                <li><a class="nav-links" href="/vatsim/vs.html">Map</a></li>
+                                <li><a class="nav-links" href="/vatsim/events">Events</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="center">
+                        <div class="logo">
+                            <div class="nav-logo clr-wht">
+                                <a href="http://vatsim.net" target="_blank" ><img src="/src/img/VATSIM Logos for Public Use/2000w/VATSIM_Logo_White_No_Tagline_2000px.png" alt="VATSIM logo"></a>
+                            </div>
+                            <div class="nav-logo-subtext">
+                                <a href="http://vatsim.net/events" target="_blank"><span class="nav-subtext">events</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-text nav-right">
+                        <div class="r-clock clock"></div>
+
+                    </div>
+                </nav>
+                <div class="event-sidebox">
+                    <div id="event-boxes-container">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script id="event-template" type="text/x-handlebars-template">
+            <div class="single-event-box">
+                <div class="event-box-text">
+                    <div class="event-box-title">
+                        <span>{{name}}</span>
+                    </div>
+                    <div class="event-box-shortDescription">
+                        <span>{{{shortDescription}}}</span>
+                    </div>
+                    <div class="event-box-icaos">
+                        <span>
+                            <span>{{formatTime startTime}} - {{formatTime endTime}}</span>
+                            <span>{{#each airports}}{{icao}}{{#unless @last}}, {{/unless}}{{/each}}</span>
+                    </div>
+                </div>
+            </div>
+    </script>
+    <noscript>
+        <style>.a-noscript{text-decoration: none;color: rgb(67, 152, 252);font-size: 2vh;}.a-noscript:hover{text-decoration: underline;}.div1-noscript{position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: rgb(0 0 0);display: flex;align-items: center;justify-content:center;z-index: 1050 !important;}.div2-noscript{color: white;font-weight: 900;font-size: 2.5vh;font-family: sans-serif;text-align: center;}</style><div class="div1-noscript"><div class="div2-noscript">JavaScript is dead, and so is this page...<br>Enable it! <a class="a-noscript" href="https://support.google.com/admanager/answer/12654" target="_blank">How?</a></div></div></noscript>
+</body>
+
+</html>

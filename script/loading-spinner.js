@@ -7,7 +7,7 @@ function showLoadingSpinner() {
         loadingSpinnerShown = true;
     }
 }
-
+showLoadingSpinner()
 function hideLoadingSpinner() {
     $('#loading-spinner').fadeOut(function() {
         $(this).css('display', 'none');

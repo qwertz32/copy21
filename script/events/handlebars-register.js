@@ -7,3 +7,6 @@ Handlebars.registerHelper('formatTime', function (time) {
     });
     return formattedTime;
 });
+Handlebars.registerHelper('isActive', function (activeClass, inactiveClass) {
+    return this.isActive ? activeClass : inactiveClass;
+});

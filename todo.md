@@ -26,8 +26,7 @@
 - [&nbsp;&nbsp;] &nbsp; Add flight tracking.
 - [&nbsp;&nbsp;] &nbsp; Make it so it puts airplanes in the right position on the map.
 - [&nbsp;&nbsp;] &nbsp; Make it so it add airports (atc'd) to the map.
-- [&nbsp;&nbsp;] &nbsp; A border and a box for each airport ICAO to make them more visible separately. 
-- [&nbsp;&nbsp;] &nbsp; Make it so when you click outside the sidebar it also closes.
+- [&nbsp;&nbsp;] &nbsp; <span style="color:lightgreen">A border and a box for each airport ICAO to make them more visible separately. </span>
 - [&nbsp;&nbsp;] &nbsp; Add airport filtering.
 - [&nbsp;&nbsp;] &nbsp; <span style="color:red">Make that after clicking either or the sidebar event or on the pin on the map, it shows (smoothly) a popup with image and description. </span>
 - [&nbsp;&nbsp;] &nbsp; City pair line drawing (or any other way to show it).
@@ -35,7 +34,7 @@
 
 ### Changes
 - [&nbsp;&nbsp;] &nbsp; Move the handlebars to a separated file and make the js use it..
-- [&nbsp;&nbsp;] &nbsp; The appearance of (location) event popup.
+- [&nbsp;&nbsp;] &nbsp; <span style="color:lightgreen">The appearance of (location) event popup. </span>
 
 ### Get to know
 - [&nbsp;&nbsp;] &nbsp; How are firs drawn.
