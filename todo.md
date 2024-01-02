@@ -14,12 +14,11 @@
 &nbsp; -->
 # VATSIM Map:
 ### Fixes
-- [&nbsp;&nbsp;] &nbsp;(add) Darker overlay when going into hamburger menu.
 - [&nbsp;&nbsp;] &nbsp; Scrollbar going out of the screen at the bottom.
 - [&nbsp;&nbsp;] &nbsp; When you give the events-sidebar a wider width the content inside becomes more and more separected.
 - [&nbsp;&nbsp;] &nbsp; The sidebar being cut from the bottom on mobile (if the browser has the searchbar on the bottom).
 - [&nbsp;&nbsp;] &nbsp; The loading animation instead of a message when the user has turned off JS.
-- [&nbsp;&nbsp;] &nbsp; When there is ongoing event in an airport that has status of purple icon, that purple icon overwrites the active one.
+- [x] &nbsp; When there is ongoing event in an airport that has status of purple icon, that purple icon overwrites the active one.
 
 ### Adds
 
@@ -31,7 +30,7 @@
 - [&nbsp;&nbsp;] &nbsp; Add airport filtering.
 - [&nbsp;&nbsp;] &nbsp; <span style="color:red">Make that after clicking either or the sidebar event or on the pin on the map, it shows (smoothly) a popup with image and description. </span>
 - [&nbsp;&nbsp;] &nbsp; City pair line drawing (or any other way to show it).
-- [&nbsp;&nbsp;] &nbsp; Animations in the "Cannot write / read in local storage" popup.
+- [x] &nbsp; Animations in the "Cannot write / read in local storage" popup.
 
 
 ### Changes
