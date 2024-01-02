@@ -32,7 +32,7 @@ $(document).ready(function () {
         shwPopUp();
     }, 0);
 
-    $("#ls-popup-btn").click(function () {
-        clsPopUp();
-    });
+$("#ls-popup-btn").click(function () {
+    clsPopUp();
+});
 });

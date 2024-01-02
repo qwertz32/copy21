@@ -100,10 +100,12 @@ $.getJSON('https://phoenix-api.vatsim.net/api/events', function (data) {
             marker.on('click', function () {
                 openSimpleOverlay();
             });
-            $('.simple-test-close-btn').on('click', function (event) {
-                    closeSimpleOverlay();
+            $('.simple-test-close-btn').click(function () {
+                closeSimpleOverlay();
             });
-
+            $(".simple-test-overlay-bg").click(function () {
+                closeSimpleOverlay(); 
+            })
                 console.log(`Event pin put on airport: %c${airport.icao} with ${eventId}`, 'font-weight: bold;');
                 processedAirports.push(airport.icao);
             } else {
@@ -115,9 +117,6 @@ $.getJSON('https://phoenix-api.vatsim.net/api/events', function (data) {
 .fail(function (error) {
     console.error('Error fetching JSON:', error);
 });
-
-
-
 function openSimpleOverlay() {
     $('.simple-test-overlay').fadeIn();
     $('.simple-test-overlay-bg').fadeIn();

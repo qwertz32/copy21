@@ -35,10 +35,11 @@
     color: var(--white-color); 
     margin-right: 10px;
     transition: cubic-bezier(.56,.18,1,.48) 0.3s;
+    animation: cdDisPopupColorChange 2s infinite;
 }
 
 .ls-popup-content-links a:hover {
-    color: var(--link-on-hover);
+    color: var(--link-on-hover) !important;
     font-size: 1.7rem;
 }
 

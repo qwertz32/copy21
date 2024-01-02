@@ -28,6 +28,13 @@
     
 }
 @media (min-width: 1150px) {
+    body.show-sidebar {
+        overflow: visible !important;
+    }
+    
+    .event-sidebox {
+        transform: translateX(0) !important;
+    }
     .r-clock {
         display: flex;
     }

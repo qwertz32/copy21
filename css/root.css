@@ -5,7 +5,9 @@
     --border-size: 4px;
     --deafult-darkmode: #333;
     --white-color: #dddad5;
-    --link-on-hover: rgb(51, 128, 211);
+    --link-on-hover: rgb(42, 130, 224);
+    --dark-link-on-hover: rgb(28, 111, 199);
+    --close-btn-on-hover: rgb(166, 97, 239);
     --bug-report-bg: #552170;
     --dark-bg: rgba(14, 14, 14, 0.7);
     --scroll-bg: #874013;
@@ -26,4 +28,6 @@
     --event-box-active-border: 3px solid rgba(39, 158, 39, 0.797);
     /* --event-box-inactive-border: 2px solid red; NOT IN USE */
     --precise-event-popup-overlay-bg: rgba(0, 0, 0, 0.914);
+    --sidebar-bg: rgba(0, 0, 0, 0.558);
+    --animation-soft-blue: rgb(83, 149, 220);
 }

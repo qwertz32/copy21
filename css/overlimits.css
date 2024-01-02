@@ -1,0 +1,22 @@
+#overLimitsPopup {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #171717f7; 
+    z-index: 2300; 
+}
+.overLimitsPopup-content {
+    font-family: var(--font-lato);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
+    background-color: #1a1b17;
+    box-shadow: var(--popups-box-shadow);
+    width: 70%;
+}

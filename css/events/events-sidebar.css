@@ -16,7 +16,9 @@
 .show-sidebar .event-sidebox {
     transform: translateX(0);
 }
-
+.hide-sidebar .event-sidebox {
+    transform: translateX(-100%);
+}
 .event-box {
     width: 100%;
     overflow: hidden;
@@ -93,3 +95,13 @@
 /* .inactive-event-box {
     border: var(--event-box-inactive-border);
 } */
+#sidebar-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--sidebar-bg); /* Adjust the opacity as needed */
+    display: none;
+    z-index: 1000;
+}

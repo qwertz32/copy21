@@ -36,10 +36,14 @@
     border-radius: 4px;
     cursor: pointer;
 }
+#cd-popup-btn:hover {
+    font-size: 1.6rem;
+}
 .cd-popup-content-text a {
     color: var(--white-color);
     text-decoration: none;
+    animation: cdDisPopupColorChange 5s infinite;
 }
 .cd-popup-content-text a:hover {
-    color: var(--link-on-hover);
+    color: var(--dark-link-on-hover) !important;
 }
