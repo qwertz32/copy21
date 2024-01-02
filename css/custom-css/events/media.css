@@ -35,18 +35,15 @@
     .event-sidebox {
         transform: translateX(0) !important;
     }
-    .r-clock {
+    .clocks {
         display: flex;
-    }
-    .l-clock {
-        display: none;
     }
     .nav-subwebsites {
         width: 0 !important;
     }
 }
 @media (max-width: 750px) {
-    .r-clock {
+    .clocks {
         text-align: center;
         font-size: 1rem !important;
     }
@@ -111,7 +108,7 @@
     }
 }
 @media(max-width: 389px) {
-    .r-clock {
+    .clocks {
         font-size: 0.8rem !important;
     }
 }
