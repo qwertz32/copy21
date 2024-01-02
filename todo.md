@@ -30,7 +30,7 @@
 - [&nbsp;&nbsp;] &nbsp; Add airport filtering.
 - [&nbsp;&nbsp;] &nbsp; <span style="color:red">Make that after clicking either or the sidebar event or on the pin on the map, it shows (smoothly) a popup with image and description. </span>
 - [&nbsp;&nbsp;] &nbsp; City pair line drawing (or any other way to show it).
-- [x] &nbsp; Animations in the "Cannot write / read in local storage" popup.
+- [&nbsp;&nbsp;] &nbsp; The precise popup
 
 
 ### Changes
