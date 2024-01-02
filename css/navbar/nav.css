@@ -8,7 +8,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Center items vertically */
+    align-items: center;
     z-index: 1005;
     flex-wrap: nowrap;
 }
@@ -31,6 +31,8 @@
 }
 .nav-right {
     font-family: var(--font-lato);
+    animation: clockSwap 10s infinite;
+    position: relative;
 }
 .nav-subwebsites ul {
     list-style: none;
@@ -66,7 +68,6 @@
 }
 
 .nav-logo-subtext {
-    /* text-decoration: underline; */
     margin-left: 25%; 
     line-height: 40px; 
     text-decoration: none;
@@ -87,12 +88,11 @@
 .nav-links {
     text-decoration: none;
     color: var(--white-color);
-    /* font-weight: 600; */
 }
 .logo {
     display: flex;
     align-items: center;
 }
 .center {
-    margin-left: 120px;
+    margin-left: 125px;
 }

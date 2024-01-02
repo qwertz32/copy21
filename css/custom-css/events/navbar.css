@@ -1,3 +1,35 @@
-.r-clock {
+@keyframes fadeInLocal {
+    0% {
+        opacity: 0;
+        display: block;
+    }
+
+    100% {
+        opacity: 1;
+        display: block;
+    }
+}
+
+@keyframes fadeInZulu {
+    0% {
+        opacity: 0;
+        display: block;
+    }
+
+    100% {
+        opacity: 1;
+        display: block;
+    }
+}
+.zulu-clock , .local-clock {
     font-size: 1.5rem;
+    text-align: center;
+}
+.zulu-clock {
+    animation-name: fadeInZulu;
+    animation-delay: 0.5s;
+}
+.local-clock {
+    animation-name: fadeInLocal;
+    animation-delay: 0.5s;
 }
