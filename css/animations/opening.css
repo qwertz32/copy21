@@ -1,5 +1,5 @@
 #loading-container {
-    display: none;
+    display: none; /*for now its broken let it remain disabled*/
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -10,10 +10,8 @@
     background-color: rgb(0, 0, 0);
     color: var(--white-color);
     flex-direction: column;
-    z-index: 2000;
+    z-index: 3000;
 }
-
-/* Updated styles for #loading-spinner */
 #loading-spinner {
     border: 16px solid #f3f3f3;
     border-top: 16px solid #3498db;

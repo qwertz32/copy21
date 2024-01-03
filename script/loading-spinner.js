@@ -1,4 +1,4 @@
-var loadingSpinnerShown = false;
+var loadingSpinnerShown = true;
 
 function showLoadingSpinner() {
     if (!loadingSpinnerShown) {

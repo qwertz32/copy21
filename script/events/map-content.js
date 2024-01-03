@@ -10,7 +10,7 @@ $(document).ready(function () {
             zoomDelta: 0.75
         }).setView(initialCoordinates, initialZoom);
 
-    var google = L.tileLayer('https://cartodb-basemaps-c.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}.png', {
+    var google = L.tileLayer('https://cartodb-basemaps-c.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
         minZoom: 2.5,
         bounceAtZoomLimits: false,
         maxZoom: 21,

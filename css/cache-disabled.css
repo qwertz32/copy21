@@ -38,12 +38,19 @@
 }
 #cd-popup-btn:hover {
     font-size: 1.6rem;
+    background: var(--cd-popup-btn-bg-dark);
 }
-.cd-popup-content-text a {
+.cd-popup-links-content {
     color: var(--white-color);
     text-decoration: none;
+}
+.cd-popup-links-animation {
     animation: cdDisPopupColorChange 5s infinite;
 }
-.cd-popup-content-text a:hover {
+.cd-popup-links-content:hover {
     color: var(--dark-link-on-hover) !important;
+    cursor: pointer;
+}
+.cd-popup-links-no-biggie:hover {
+    color: var(--link-on-hover) !important;
 }
