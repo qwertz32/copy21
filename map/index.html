@@ -25,8 +25,17 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossoigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Oswald:wght@500&family=Roboto+Mono:wght@500&family=Rubik:wght@500&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Oswald:wght@500&family=Roboto+Mono:wght@500&family=Rubik:wght@500&display=swap&family=Inter:wght@900&display=swap" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css"> -->
+
+        <!-- IMPORTANT! Think bout what to do with ^^^^^ -->
+
+
     <!--Stylesheets-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
@@ -35,17 +44,18 @@
     <link rel="stylesheet" href="/css/navbar/nav.css">
     <link rel="stylesheet" href="/css/leaflet/leaflet.css">
     <link rel="stylesheet" href="/css/animations/opening.css">
-    <link rel="stylesheet" href="/css/hamburger-menu/menu.css">
+    <link rel="stylesheet" href="/css/hamburgermenu/menu.css">
     <link rel="stylesheet" href="/css/html/maindivs.css">
     <link rel="stylesheet" href="/css/html/fixes.css">
     <link rel="stylesheet" href="/css/scroll.css">
     <link rel="stylesheet" href="/css/tbu/tobeused.css">
     <link rel="stylesheet" href="/css/events/events-sidebar.css">
-    <link rel="stylesheet" href="/css/custom-css/events/media.css">
-    <link rel="stylesheet" href="/css/custom-css/events/navbar.css">
+    <link rel="stylesheet" href="/css/customcss/media.css">
+    <link rel="stylesheet" href="/css/customcss/navbar.css">
     <link rel="stylesheet" href="/css/ls-popup.css">
     <link rel="stylesheet" href="/css/cache-disabled.css">
     <link rel="stylesheet" href="/css/events/event-popups.css">
+    <link rel="stylesheet" href="/css/navbar/top-right-stats.css">
 
     <!--Scripts-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -66,9 +76,10 @@
     <script src="/script/events/event-boxes-creator.js"></script>
     <script src="/script/return-to-center.js"></script>
     <script src="/script/popups.js"></script> 
+    <script src="/script/top-right-stats.js"></script>
+    
     <style>
-
-.simple-test-overlay {
+        .precise-overlay {
     display: none;
     position: fixed;
     top: 50%;
@@ -82,7 +93,7 @@
     border-radius: 1.3rem;
     text-align: center;
 }
-.simple-test-close-btn {
+.precise-close-btn {
     font-family:'Courier New', Courier, monospace;
     position: absolute;
     padding: 0;
@@ -93,10 +104,7 @@
     right: 13px;
     cursor: pointer;
 }
-.simple-test-close-btn:hover {
-    fill: var(--close-btn-on-hover);
-}
-.simple-test-overlay-bg {
+.precise-overlay-bg {
     position: fixed;
     top: 0;
     left: 0;
@@ -106,7 +114,7 @@
     display: none;
     z-index: 2399;
 }
- </style>
+    </style>
 </head>
 
 <body>
@@ -136,12 +144,11 @@
             <button id="cd-popup-btn" onclick="clsCdPopUp()">Cool! Let's use it anyway</button>
         </div>
     </div>
-    <div class="simple-test-overlay-bg"></div>
-    <div class="simple-test-overlay">
+    <div class="precise-overlay-bg"></div>
+    <div class="precise-overlay">
         <!-- <p class="simple-test-close-btn" onclick="closeSimpleOverlay()"><img src="https://vatsim.glitch.me/src/img/square-xmark-solid.svg" alt="X Button"></p> -->
         <!-- <p class="simple-test-close-btn" onclick="closeSimpleOverlay()"><img src="/src/img/square-xmark-solid.svg"></p> -->
-        <p class="simple-test-close-btn" onclick="closeSimpleOverlay()">x</p> 
-
+        <p class="prescise-close-btn" onclick="closePreciseOverlay()">x</p> 
         <h2>A simple testing overlay</h2>
         <p>Made just to test for the future JS functionality.</p>
     </div>
@@ -157,7 +164,7 @@
                             </div>
                             <div class="menu-options">
                                 <ul>
-                                    <li><a class="nav-links" href="/vatsim/vs.html">Map</a></li>
+                                    <li><a class="nav-links" href="/map">Map</a></li>
                                     <li><a class="nav-links" href="/events">Events</a></li>
                                     <li><a class="nav-links" href="/events">Events</a></li>
                                 </ul>
@@ -166,8 +173,8 @@
                         <div class="l-clock clock"></div>
                         <div class="nav-subwebsites">
                             <ul>
-                                <li><a class="nav-links" href="/vatsim/vs.html">Map</a></li>
-                                <li><a class="nav-links" href="/vatsim/events">Events</a></li>
+                                <li><a class="nav-links" href="/map">Map</a></li>
+                                <li><a class="nav-links" href="/events">Events</a></li>
                             </ul>
                         </div>
                     </div>
@@ -178,11 +185,18 @@
                                 <a href="http://vatsim.net" target="_blank" ><img src="/src/img/VATSIM Logos for Public Use/2000w/VATSIM_Logo_White_No_Tagline_2000px.png" alt="VATSIM logo"></a>
                             </div>
                             <div class="nav-logo-subtext">
-                                <a href="http://vatsim.net/events" target="_blank"><span class="nav-subtext">events</span></a>
+                                <a href="http://map.vatsim.net/" target="_blank"><span class="nav-subtext">map</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="nav-text nav-right">
+                        <div class="top-right-stats">
+                            <span class="t-r-s-icon t-r-s-margin"><i class="fa fa-plane"></i></span>
+                            <span class="t-r-s-airplane-count t-r-s-margin t-r-s-text"></span>
+                            <span class="t-r-s-atc-text t-r-s-margin t-r-s-text">ATC</span>
+                            <span class="t-r-s-atc-count t-r-s-margin t-r-s-text"></span>
+                        </div>
+                        <p><i class="fa-solid fa-tower-control"></i></p>
                         <div class="zulu-clock clocks"></div>
                         <div class="local-clock clocks"></div>
 

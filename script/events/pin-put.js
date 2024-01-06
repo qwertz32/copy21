@@ -62,14 +62,21 @@ $.getJSON('https://phoenix-api.vatsim.net/api/events', function (data) {
                 var startTime = new Date(event.startTime);
                 var endTime = new Date(event.endTime);
                 var isActive = startTime <= currentDate && currentDate <= endTime;
-                var icon = isActive ? ongoingIcon : defaultIcon;
-
+                var eventsListForAirport = data.filter((e) =>
+                    e.airports && e.airports.some((a) => a && a.icao === airport.icao) &&
+                    e.endTime && new Date(e.endTime) >= currentDate
+                );
                 var eventsCount = countEventsAtAirport(airport.icao, data);
-
-                if (eventsCount > 1) {
+                var hasActiveEvent = eventsListForAirport && eventsListForAirport.some(e => startTime <= currentDate && currentDate <= endTime);
+                if (isActive) {
+                    icon = ongoingIcon;
+                } else if (hasActiveEvent) {
+                    icon = ongoingIcon;
+                } else if (eventsCount > 1) {
                     icon = multipleIcon;
+                } else {
+                    icon = defaultIcon;
                 }
-
                 var marker = L.marker(coords, { icon: icon }).addTo(map);
                 
                 const eventId = generateUniqueId();
@@ -98,13 +105,13 @@ $.getJSON('https://phoenix-api.vatsim.net/api/events', function (data) {
             });
 
             marker.on('click', function () {
-                openSimpleOverlay();
+                openPreciseOverlay();
             });
-            $('.simple-test-close-btn').click(function () {
-                closeSimpleOverlay();
+            $('.precise-close-btn').click(function () {
+                closePreciseOverlay();
             });
-            $(".simple-test-overlay-bg").click(function () {
-                closeSimpleOverlay(); 
+            $(".precise-overlay-bg").click(function () {
+                closePreciseOverlay(); 
             })
                 console.log(`Event pin put on airport: %c${airport.icao} with ${eventId}`, 'font-weight: bold;');
                 processedAirports.push(airport.icao);
@@ -117,11 +124,11 @@ $.getJSON('https://phoenix-api.vatsim.net/api/events', function (data) {
 .fail(function (error) {
     console.error('Error fetching JSON:', error);
 });
-function openSimpleOverlay() {
-    $('.simple-test-overlay').fadeIn();
-    $('.simple-test-overlay-bg').fadeIn();
+function openPreciseOverlay() {
+    $('.precise-overlay').fadeIn();
+    $('.precise-overlay-bg').fadeIn();
 }
-function closeSimpleOverlay() {
-    $('.simple-test-overlay').fadeOut();
-    $('.simple-test-overlay-bg').fadeOut();
+function closePreciseOverlay() {
+    $('.precise-overlay').fadeOut();
+    $('.precise-overlay-bg').fadeOut();
 }

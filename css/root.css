@@ -1,18 +1,18 @@
 :root {
-    --border-color: #c9970c;
-    --border-color-dark: #4008a1;
+    --border-color: #98720a;
+    --border-color-dark: #340781;
     --dimmed-white: rgb(161, 154, 154);
     --border-size: 4px;
-    --deafult-darkmode: #333;
+    --deafult-darkmode: #292828;
     --white-color: #dddad5;
     --link-on-hover: rgb(42, 130, 224);
     --dark-link-on-hover: rgb(28, 111, 199);
     --close-btn-on-hover: rgb(166, 97, 239);
-    --bug-report-bg: #552170;
+    --bug-report-bg: #481961;
     --dark-bg: rgba(14, 14, 14, 0.7);
-    --scroll-bg: #874013;
-    --scroll-handle: #31a337;
-    --scroll-handle-hover: #34df3d;
+    --scroll-bg: #622c0a;
+    --scroll-handle: #1e7722;
+    --scroll-handle-hover: #19b521;
     --font-rubik: 'Rubik', monospace;
     --font-lato: 'Lato', sans-serif;
     --font-roboto: 'Roboto Mono', monospace;
@@ -30,4 +30,5 @@
     --precise-event-popup-overlay-bg: rgba(0, 0, 0, 0.914);
     --sidebar-bg: rgba(0, 0, 0, 0.558);
     --animation-soft-blue: rgb(83, 149, 220);
+    --top-right-stats-grayed: rgb(136, 131, 131);
 }

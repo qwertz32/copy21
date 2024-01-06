@@ -10,7 +10,7 @@ $(document).ready(function () {
             zoomDelta: 0.75
         }).setView(initialCoordinates, initialZoom);
 
-    var google = L.tileLayer('https://cartodb-basemaps-c.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
+    var cartodbDark = L.tileLayer('https://cartodb-basemaps-c.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
         minZoom: 2.5,
         bounceAtZoomLimits: false,
         maxZoom: 21,
@@ -20,7 +20,7 @@ $(document).ready(function () {
         keepBuffer: 5
     });
 
-    var apple = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    var weatherLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
         maxZoom: 22,
         attribution: 'Apple Maps',
         preload: Infinity,
@@ -28,11 +28,11 @@ $(document).ready(function () {
     });
 
     var baseMaps = {
-        "Google Maps": google,
-        "Apple Maps": apple
+        "Google Maps": cartodbDark,
+        "Weather": weatherLayer
     };
 
-    google.addTo(map);
+    cartodbDark.addTo(map);
 
     map.on('moveend', function () {
         try {
@@ -45,17 +45,17 @@ $(document).ready(function () {
         }
     });
 
-    currentLayer = google;
+    currentLayer = cartodbDark;
 
     function switchLayer() {
-        if (currentLayer === google) {
-            map.removeLayer(google);
-            apple.addTo(map);
-            currentLayer = apple;
+        if (currentLayer === cartodbDark) {
+            map.removeLayer(cartodbDark);
+            weatherLayer.addTo(map);
+            currentLayer = weatherLayer;
         } else {
-            map.removeLayer(apple);
-            google.addTo(map);
-            currentLayer = google;
+            map.removeLayer(weatherLayer);
+            cartodbDark.addTo(map);
+            currentLayer = cartodbDark;
         }
     }
 });

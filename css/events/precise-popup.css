@@ -1,0 +1,35 @@
+.precise-overlay {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2400;
+    background: rgb(45, 40, 40);
+    color: aliceblue;
+    padding: 10%;
+    font-size: 2.3rem;
+    border-radius: 1.3rem;
+    text-align: center;
+}
+.precise-close-btn {
+    font-family:'Courier New', Courier, monospace;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    fill: var(--white-color);
+    top: 0;
+    right: 13px;
+    cursor: pointer;
+}
+.precise-overlay-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--precise-event-popup-overlay-bg);
+    display: none;
+    z-index: 2399;
+}
