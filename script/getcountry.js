@@ -1,3 +1,9 @@
+function hideLoadingSpinner() {
+    $('#loading-spinner').fadeOut(function() {
+        $(this).css('display', 'none');
+        $('#loading-container').fadeOut().css('display', 'none');
+    });
+};
 
 var ipToken = '57181dfc23ba47';
 function getCountry() {

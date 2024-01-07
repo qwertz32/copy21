@@ -29,7 +29,7 @@ $(document).ready(() => {
     let visiblePlanes = {};
 
     function addOrUpdateMarker(pilot) {
-        if (pilot.name && pilot.callsign && pilot.flight_plan && pilot.flight_plan.aircraft_short && pilot.flight_plan.altitude) {
+        if (pilot.name && pilot.callsign && pilot.flight_plan) {
             const markerId = pilot.callsign;
 
             if (visiblePlanes[markerId]) {
@@ -42,9 +42,9 @@ $(document).ready(() => {
                 });
 
                 marker.bindPopup(
-                    `${pilot.callsign} ${pilot.flight_plan.aircraft_short} <br> ${pilot.flight_plan.altitude}ft ${pilot.flight_plan.cruise_tas}kts tas <br> ${pilot.flight_plan.departure} - ${pilot.flight_plan.arrival}`,
+                    `${pilot.callsign} ${pilot.flight_plan.aircraft_short} <br> ${Math.round(pilot.altitude / 50) * 50}ft ${pilot.flight_plan.cruise_tas}kts tas <br> ${pilot.flight_plan.departure} - ${pilot.flight_plan.arrival}`,
                     { className: 'plane-custom-popup' }
-                );
+                );                
 
                 marker.on('mouseover', function () {
                     this.openPopup();
