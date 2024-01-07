@@ -67,7 +67,7 @@
     <script src="https://unpkg.com/leaflet-canvas-marker"></script>
     <script src="/script/events/sidebar-height.js"></script>
     <script src="/script/loading-spinner.js"></script>
-    <script src="/script/map/nocache-cords-and-zoom.js"></script>
+    <script src="/script/nocache-cords-and-zoom.js"></script>
     <script src="/script/clock.js"></script>
     <script src="/script/events/handlebars-register.js"></script>
     <script src="/script/console-functions.js"></script>
@@ -86,7 +86,7 @@
     <div class="overlay"></div>
     <div id="loading-container">
         <div id="loading-spinner"></div>
-        <p>Ver 0.1.1-alpha <br> Build 6.873</p>
+        <p id="loading-build-info"></p>
     </div>
      <div id="ls-popup">
         <div id="ls-popup-content">
@@ -181,6 +181,19 @@
     <div class="plane-info-content">
         <h2>{{callsign}}</h2>
     </div>
+</script>
+<script>
+    $.ajax({
+        url: '/version.json',
+        dataType: 'json',
+        success: function (data) {
+            var versionText = 'Version: ' + data.version.ver + ', Build: ' + data.version.build;
+            $('#loading-build-info').text(versionText);
+        },
+        error: function () {
+            $('#loading-build-info').text('');
+        }
+    });
 </script>
     <noscript>
         <style>.a-noscript{text-decoration: none;color: rgb(67, 152, 252);font-size: 2vh;}.a-noscript:hover{text-decoration: underline;}.div1-noscript{position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: rgb(0 0 0);display: flex;align-items: center;justify-content:center;z-index: 3500 !important;}  .div2-noscript{color: white;font-weight: 900;font-size: 2.5vh;font-family: sans-serif;text-align: center;}</style><div class="div1-noscript"><div class="div2-noscript">JavaScript decided to take a nap, and so did this page...<br>Wake them up! <br><a class="a-noscript" href="https://support.google.com/admanager/answer/12654" target="_blank">Don't know how?</a></div></div></noscript>
