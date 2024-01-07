@@ -99,6 +99,9 @@
     .event-boxes-container:last-child, .event-category:last-child {
         height: 40dvh;
     }
+    .top-right-stats {
+        display: none !important;
+    }
 }
 
 /* Nedeed media from main */

@@ -1,0 +1,13 @@
+.plane-custom-popup .leaflet-popup-tip,
+.plane-custom-popup .leaflet-popup-content-wrapper {
+    background: #000000a9;
+    box-shadow: none;
+    font-family: var(--font-montserrat);
+    color: #fce306;
+    font-weight: 800;
+    flex-wrap: nowrap;
+    text-align: center;
+}
+.plane-icon-transition {
+    transition: transform 0.5s ease;
+}

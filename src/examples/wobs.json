@@ -1,0 +1,2921 @@
+[
+   {
+      "cid":1393124,
+      "name":"Heidi",
+      "callsign":"SY_APP",
+      "frequency":"124.400",
+      "facility":5,
+      "rating":4,
+      "server":"USA-WEST",
+      "visual_range":100,
+      "text_atis":[
+         "Sydney Approach",
+         "ATIS available on 126.25",
+         "Charts - vats.im/pac/charts",
+         "ATC feedback - helpdesk.vatpac.org"
+      ],
+      "last_updated":"2024-01-06T13:23:56.4833325Z",
+      "logon_time":"2024-01-06T03:51:17.7983984Z"
+   },
+   {
+      "cid":1702596,
+      "name":"Justin Alter",
+      "callsign":"SIA22",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"USA-WEST",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:56.4830525Z",
+      "logon_time":"2024-01-06T06:40:25.1907141Z"
+   },
+   {
+      "cid":1589698,
+      "name":"Artur Mitskus",
+      "callsign":"UMKK_TWR",
+      "frequency":"127.200",
+      "facility":4,
+      "rating":2,
+      "server":"GERMANY2",
+      "visual_range":50,
+      "text_atis":[
+         "Kaliningrad-Tower / Êàëèíèíãðàä-Âûøêà",
+         "UMKK ATIS on 122.475.",
+         "We love feedback! Join us on Discord discord.gg/YpTjQVn"
+      ],
+      "last_updated":"2024-01-06T13:23:52.2192145Z",
+      "logon_time":"2024-01-06T08:13:16.192663Z"
+   },
+   {
+      "cid":1681872,
+      "name":"AFiQ ANUAR",
+      "callsign":"MAS729",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:05.7251138Z",
+      "logon_time":"2024-01-06T08:56:51.0320007Z"
+   },
+   {
+      "cid":1633328,
+      "name":"Philippe",
+      "callsign":"LSZH_TWR",
+      "frequency":"118.100",
+      "facility":4,
+      "rating":3,
+      "server":"GERMANY",
+      "visual_range":50,
+      "text_atis":[
+         "Zurich Tower, Grüezi",
+         "ATIS 125.725, Initial climb clearance 5000ft",
+         "Find validated routes *routes.vacc.ch*, read our charts *charts.vacc.ch*, feedback *fb.vacc.ch*"
+      ],
+      "last_updated":"2024-01-06T13:23:53.8448889Z",
+      "logon_time":"2024-01-06T08:59:39.4399808Z"
+   },
+   {
+      "cid":1759583,
+      "name":"Valentin Stashevski",
+      "callsign":"FRT1818",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:58.1362422Z",
+      "logon_time":"2024-01-06T09:09:47.4655259Z"
+   },
+   {
+      "cid":1424752,
+      "name":"Muhammad Abdullah",
+      "callsign":"OPKR_CTR",
+      "frequency":"126.500",
+      "facility":6,
+      "rating":5,
+      "server":"GERMANY",
+      "visual_range":240,
+      "text_atis":[
+         "\"Karachi Control\"",
+         "Covering the entire Karachi",
+         "Visit --> vatsimpakistan.com | We love feedback --> vatwa.net/feedback, Pakistan Official Virtual Airline piavirtual.org"
+      ],
+      "last_updated":"2024-01-06T13:23:47.8350642Z",
+      "logon_time":"2024-01-06T09:19:50.2091892Z"
+   },
+   {
+      "cid":1605655,
+      "name":"Allan Beeston",
+      "callsign":"EZY462Y",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"UK",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:54.754278Z",
+      "logon_time":"2024-01-06T09:30:08.0839094Z"
+   },
+   {
+      "cid":1769132,
+      "name":"Nikolai Salminen",
+      "callsign":"FIN1TH",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"AMSTERDAM",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:58.3845832Z",
+      "logon_time":"2024-01-06T10:09:35.953099Z"
+   },
+   {
+      "cid":869298,
+      "name":"Simon",
+      "callsign":"EDDF_C_TWR",
+      "frequency":"118.780",
+      "facility":4,
+      "rating":3,
+      "server":"AMSTERDAM",
+      "visual_range":50,
+      "text_atis":[
+         "Frankfurt Tower",
+         "PDC/DCL Datalink [EDDF] - Pilotbriefing vats.im/eddf",
+         "You have feedback? Submit it! feedback.vatger.de"
+      ],
+      "last_updated":"2024-01-06T13:24:02.0300818Z",
+      "logon_time":"2024-01-06T10:10:46.3429736Z"
+   },
+   {
+      "cid":1662655,
+      "name":"Anthony Maidment",
+      "callsign":"G249TM",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"UK",
+      "visual_range":50,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:01.975161Z",
+      "logon_time":"2024-01-06T10:18:09.9250724Z"
+   },
+   {
+      "cid":1625128,
+      "name":"Louis Lu",
+      "callsign":"RCTP_DEL",
+      "frequency":"121.800",
+      "facility":2,
+      "rating":2,
+      "server":"GERMANY2",
+      "visual_range":20,
+      "text_atis":[
+         "Taipei Delivery. PDC/DCL RCTP",
+         "RCTP ATIS 127.600.",
+         "Get the up-to-date charts from ais.caa.gov.tw"
+      ],
+      "last_updated":"2024-01-06T13:23:55.9530239Z",
+      "logon_time":"2024-01-06T10:28:10.9147159Z"
+   },
+   {
+      "cid":1506151,
+      "name":"Benjamin",
+      "callsign":"LSAS_CTR",
+      "frequency":"134.600",
+      "facility":6,
+      "rating":4,
+      "server":"GERMANY",
+      "visual_range":400,
+      "text_atis":[
+         "Swiss Radar, Grüezi - CPDLC above FL245 [LSAS]",
+         "Covering LS*, EDNY, LFSB if local ATC offline",
+         "Find validated routes *routes.vacc.ch*, read our charts *charts.vacc.ch*, feedback *fb.vacc.ch*"
+      ],
+      "last_updated":"2024-01-06T13:23:45.0755963Z",
+      "logon_time":"2024-01-06T10:28:13.5008978Z"
+   },
+   {
+      "cid":1086470,
+      "name":"1086470",
+      "callsign":"LFPG_TWR",
+      "frequency":"119.250",
+      "facility":4,
+      "rating":8,
+      "server":"GERMANY",
+      "visual_range":30,
+      "text_atis":[
+         "De Gaulle Tower - EN/FR",
+         "Book your desired gate here vatsim.fr/airports/LFPG",
+         "Leave me some feedback! vatsim.fr/fb/1086470"
+      ],
+      "last_updated":"2024-01-06T13:24:02.7188746Z",
+      "logon_time":"2024-01-06T10:31:48.4152182Z"
+   },
+   {
+      "cid":1556068,
+      "name":"Zhanlong Bei",
+      "callsign":"ZSPD_TWR",
+      "frequency":"118.800",
+      "facility":4,
+      "rating":3,
+      "server":"GERMANY2",
+      "visual_range":50,
+      "text_atis":[
+         "Callsign Pudong Tower",
+         "For charts and more info please visit www.vatprc.net"
+      ],
+      "last_updated":"2024-01-06T13:23:57.2044411Z",
+      "logon_time":"2024-01-06T10:51:11.8379296Z"
+   },
+   {
+      "cid":1008890,
+      "name":"Tim Carrington",
+      "callsign":"BAW34GM",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"UK",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:05.8316563Z",
+      "logon_time":"2024-01-06T10:56:31.6018475Z"
+   },
+   {
+      "cid":1471036,
+      "name":"Jelle Dikmans",
+      "callsign":"LOWW_APP",
+      "frequency":"134.675",
+      "facility":5,
+      "rating":4,
+      "server":"AMSTERDAM",
+      "visual_range":150,
+      "text_atis":[
+         "Wien Radar CPDLC/DCL LOWA",
+         "My active sector vats.im/lovv",
+         "Charts vats.im/lovv-charts"
+      ],
+      "last_updated":"2024-01-06T13:24:06.6266264Z",
+      "logon_time":"2024-01-06T10:57:08.456218Z"
+   },
+   {
+      "cid":1645415,
+      "name":"1645415",
+      "callsign":"ZSPD_T_GND",
+      "frequency":"121.800",
+      "facility":3,
+      "rating":2,
+      "server":"GERMANY2",
+      "visual_range":20,
+      "text_atis":[
+         "Callsign Pudong Ground",
+         "For charts and more info please visit www.vatprc.net"
+      ],
+      "last_updated":"2024-01-06T13:23:43.9865776Z",
+      "logon_time":"2024-01-06T10:58:32.5170899Z"
+   },
+   {
+      "cid":1476960,
+      "name":"Stephen Lee",
+      "callsign":"EGLL_S__TWR",
+      "frequency":"118.505",
+      "facility":4,
+      "rating":3,
+      "server":"UK",
+      "visual_range":50,
+      "text_atis":[
+         "Heathrow Tower",
+         "INITIAL CLIMB ALTITUDE 6000 FEET",
+         "Submit feedback at vats.im/atcfb"
+      ],
+      "last_updated":"2024-01-06T13:23:52.7432387Z",
+      "logon_time":"2024-01-06T10:59:33.377288Z"
+   },
+   {
+      "cid":1777853,
+      "name":"Stephan Hinderer",
+      "callsign":"SHD38",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY2",
+      "visual_range":30,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:56.6943928Z",
+      "logon_time":"2024-01-06T11:02:36.541881Z"
+   },
+   {
+      "cid":1710436,
+      "name":"aota shimizu",
+      "callsign":"ANA2024A",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"USA-WEST",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:00.5426223Z",
+      "logon_time":"2024-01-06T11:05:40.5046879Z"
+   },
+   {
+      "cid":1063042,
+      "name":"Callum",
+      "callsign":"MAN_W_CTR",
+      "frequency":"128.055",
+      "facility":6,
+      "rating":5,
+      "server":"UK",
+      "visual_range":200,
+      "text_atis":[
+         "Scottish Control",
+         "Check top-down and coverage at vatglasses.uk/ukireland",
+         "Submit feedback at vats.im/atcfb"
+      ],
+      "last_updated":"2024-01-06T13:23:49.8509639Z",
+      "logon_time":"2024-01-06T11:06:00.4411503Z"
+   },
+   {
+      "cid":1626412,
+      "name":"Franz Reichelt",
+      "callsign":"ISINK",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"AMSTERDAM",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:05.8310432Z",
+      "logon_time":"2024-01-06T11:06:20.7464069Z"
+   },
+   {
+      "cid":1777504,
+      "name":"Jay Kuby",
+      "callsign":"FDX621F",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"UK",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:05.5180842Z",
+      "logon_time":"2024-01-06T11:07:00.0084572Z"
+   },
+   {
+      "cid":1224306,
+      "name":"Georg Suchanek",
+      "callsign":"GS_SUP",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":11,
+      "server":"GERMANY",
+      "visual_range":300,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:07.3744635Z",
+      "logon_time":"2024-01-06T11:10:46.4855215Z"
+   },
+   {
+      "cid":1294458,
+      "name":"Tomer Israel",
+      "callsign":"LLBG_D_TWR",
+      "frequency":"134.600",
+      "facility":4,
+      "rating":3,
+      "server":"GERMANY",
+      "visual_range":55,
+      "text_atis":[
+         "Ben Gurion Tower",
+         "Squawk Mode C prior to movement on ground | PDC LLBG",
+         "Submit your feedback at vats.im/vatilfb"
+      ],
+      "last_updated":"2024-01-06T13:23:59.2918747Z",
+      "logon_time":"2024-01-06T11:11:17.0415832Z"
+   },
+   {
+      "cid":1403037,
+      "name":"Foong Wen Wei",
+      "callsign":"WSSS_APP",
+      "frequency":"124.600",
+      "facility":5,
+      "rating":3,
+      "server":"GERMANY",
+      "visual_range":150,
+      "text_atis":[
+         "Singapore Approach [DCL LOGON WSSS]",
+         "Singapore Info & Charts @ linktr.ee/sinvacc"
+      ],
+      "last_updated":"2024-01-06T13:23:48.9299828Z",
+      "logon_time":"2024-01-06T11:11:57.9784331Z"
+   },
+   {
+      "cid":1314891,
+      "name":"Aki Chen",
+      "callsign":"ZSSS_C_CTR",
+      "frequency":"134.300",
+      "facility":6,
+      "rating":8,
+      "server":"USA-WEST",
+      "visual_range":600,
+      "text_atis":[
+         "\"Shanghai Control\" - Central High Sector CN/EN",
+         "Report callsign and altitude on first contact.",
+         "China METRIC RVSM in use -> vats.im/rvsm"
+      ],
+      "last_updated":"2024-01-06T13:23:55.8502544Z",
+      "logon_time":"2024-01-06T11:12:19.4251561Z"
+   },
+   {
+      "cid":1457069,
+      "name":"Shyam Menon",
+      "callsign":"WSSS_1_TWR",
+      "frequency":"118.600",
+      "facility":4,
+      "rating":2,
+      "server":"GERMANY",
+      "visual_range":50,
+      "text_atis":[
+         "Singapore Tower",
+         "ARR tfc - Expect initial taxi instructions upon vacating runway",
+         "Singapore Info & Charts @ linktr.ee/sinvacc"
+      ],
+      "last_updated":"2024-01-06T13:23:53.4733034Z",
+      "logon_time":"2024-01-06T11:12:41.1573863Z"
+   },
+   {
+      "cid":1422663,
+      "name":"Conner Parmenter",
+      "callsign":"SPOT420",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"USA-WEST",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:03.7171927Z",
+      "logon_time":"2024-01-06T11:13:43.4869208Z"
+   },
+   {
+      "cid":1652094,
+      "name":"Matteo Moritsch",
+      "callsign":"EDFH_TWR",
+      "frequency":"119.655",
+      "facility":4,
+      "rating":2,
+      "server":"GERMANY",
+      "visual_range":50,
+      "text_atis":[
+         "Hahn Tower",
+         "PDC/DCL Datalink [EDFH] - Pilotbriefing vats.im/edfh",
+         "You have feedback? Submit it! feedback.vatger.de"
+      ],
+      "last_updated":"2024-01-06T13:24:00.4162937Z",
+      "logon_time":"2024-01-06T11:14:26.5495647Z"
+   },
+   {
+      "cid":1514090,
+      "name":"Mats OMAA",
+      "callsign":"OBBB_EH_CTR",
+      "frequency":"132.125",
+      "facility":6,
+      "rating":5,
+      "server":"AMSTERDAM",
+      "visual_range":300,
+      "text_atis":[
+         "\"Bahrain Radar\" - DCL OBBB",
+         "Covering the Bahrain & Qatari FIR when local ATC offline.",
+         "We <3 Feedback - helpdesk.vatsim.me"
+      ],
+      "last_updated":"2024-01-06T13:24:04.0312014Z",
+      "logon_time":"2024-01-06T11:20:59.7344848Z"
+   },
+   {
+      "cid":1434722,
+      "name":"INBAR KIZNER",
+      "callsign":"LLBG_W_GND",
+      "frequency":"121.750",
+      "facility":3,
+      "rating":2,
+      "server":"AMSTERDAM",
+      "visual_range":30,
+      "text_atis":[
+         "Monitor Ben Gurion ATIS on 132.500",
+         "All aircraft shall squawk C when operating on ground",
+         "RWY21 Is not included in the default scenery"
+      ],
+      "last_updated":"2024-01-06T13:24:05.1628571Z",
+      "logon_time":"2024-01-06T11:23:29.9899511Z"
+   },
+   {
+      "cid":1475020,
+      "name":"Ofek Krikov",
+      "callsign":"LLBG_D_APP",
+      "frequency":"120.500",
+      "facility":5,
+      "rating":3,
+      "server":"GERMANY2",
+      "visual_range":150,
+      "text_atis":[
+         "Ben Gurion Approach/Departure",
+         "Arr ATIS on 132.5",
+         "Submit feedback at vats.im/vatilfb"
+      ],
+      "last_updated":"2024-01-06T13:23:59.8762491Z",
+      "logon_time":"2024-01-06T11:23:48.4031645Z"
+   },
+   {
+      "cid":1226767,
+      "name":"Inwoo Yeo",
+      "callsign":"RKSS_APP",
+      "frequency":"119.750",
+      "facility":5,
+      "rating":10,
+      "server":"AMSTERDAM",
+      "visual_range":150,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:55.8487216Z",
+      "logon_time":"2024-01-06T11:24:15.571271Z"
+   },
+   {
+      "cid":1427222,
+      "name":"Dapeng Liu",
+      "callsign":"ZSPD_T_DEL",
+      "frequency":"121.950",
+      "facility":2,
+      "rating":2,
+      "server":"GERMANY",
+      "visual_range":100,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:58.1209514Z",
+      "logon_time":"2024-01-06T11:25:15.8252078Z"
+   },
+   {
+      "cid":1747975,
+      "name":"Kevin",
+      "callsign":"EDHL_TWR",
+      "frequency":"128.705",
+      "facility":4,
+      "rating":2,
+      "server":"GERMANY2",
+      "visual_range":50,
+      "text_atis":[
+         "LUEBECK TOWER",
+         "Submit your feedback at feedback.vatger.de"
+      ],
+      "last_updated":"2024-01-06T13:24:02.6403284Z",
+      "logon_time":"2024-01-06T11:27:53.094239Z"
+   },
+   {
+      "cid":1374460,
+      "name":"1374460",
+      "callsign":"RS_OBS",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"AMSTERDAM",
+      "visual_range":300,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:58.9693307Z",
+      "logon_time":"2024-01-06T11:29:41.5190705Z"
+   },
+   {
+      "cid":1409490,
+      "name":"Eilon Klein",
+      "callsign":"LLBG_M_APP",
+      "frequency":"120.500",
+      "facility":5,
+      "rating":5,
+      "server":"CANADA",
+      "visual_range":150,
+      "text_atis":[
+         "Ben Gurion Approach/Departure",
+         "Arr ATIS on 132.5",
+         "Submit feedback at vats.im/vatilfb"
+      ],
+      "last_updated":"2024-01-06T13:23:48.9302046Z",
+      "logon_time":"2024-01-06T11:29:54.856878Z"
+   },
+   {
+      "cid":1559031,
+      "name":"Sander Lislott",
+      "callsign":"ENGM_W_APP",
+      "frequency":"120.450",
+      "facility":5,
+      "rating":4,
+      "server":"AMSTERDAM",
+      "visual_range":150,
+      "text_atis":[
+         "Oslo Approach",
+         "Feedback welcome at vatsca.org/feedback",
+         "DCL ENGM"
+      ],
+      "last_updated":"2024-01-06T13:23:59.5308583Z",
+      "logon_time":"2024-01-06T11:32:47.7582127Z"
+   },
+   {
+      "cid":1432724,
+      "name":"1432724 ",
+      "callsign":"OMDB_APP",
+      "frequency":"124.900",
+      "facility":5,
+      "rating":4,
+      "server":"UK",
+      "visual_range":150,
+      "text_atis":[
+         "\"Dubai Arrivals\" | PDC Logon OMDA",
+         "Covering OMDB, OMDW, OMSJ. | Request PDC via Private Message or Datalink",
+         "Getting rerouted? Check out vats.im/uaerm | We love feedback! vats.im/uaefeedback | Visit us at arabian-vacc.com"
+      ],
+      "last_updated":"2024-01-06T13:23:59.7866965Z",
+      "logon_time":"2024-01-06T11:32:50.7306465Z"
+   },
+   {
+      "cid":1758756,
+      "name":"Noco Sticht",
+      "callsign":"AWT383A",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:05.0744048Z",
+      "logon_time":"2024-01-06T11:35:00.5166887Z"
+   },
+   {
+      "cid":1606766,
+      "name":"Jackson MacKay",
+      "callsign":"DLH678",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"USA-EAST2",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:53.806302Z",
+      "logon_time":"2024-01-06T11:35:04.9474409Z"
+   },
+   {
+      "cid":1704659,
+      "name":"Tom",
+      "callsign":"EDVK_TWR",
+      "frequency":"118.105",
+      "facility":4,
+      "rating":2,
+      "server":"GERMANY",
+      "visual_range":50,
+      "text_atis":[
+         "KASSEL TOWER",
+         "PDC/DCL Datalink [EDVK] is available",
+         "Submit your feedback at feedback.vatger.de"
+      ],
+      "last_updated":"2024-01-06T13:24:00.3019717Z",
+      "logon_time":"2024-01-06T11:36:35.861568Z"
+   },
+   {
+      "cid":1514751,
+      "name":"Midas Terstal",
+      "callsign":"EHAM_W_APP",
+      "frequency":"121.205",
+      "facility":5,
+      "rating":3,
+      "server":"AMSTERDAM",
+      "visual_range":70,
+      "text_atis":[
+         "Schiphol Approach | PDC logon EHAM",
+         "For sector & airport coverage, check vatglasses.uk",
+         "Pilot briefing vats.im/ehambriefing | Feedback vats.im/dvfeedback"
+      ],
+      "last_updated":"2024-01-06T13:23:46.7166921Z",
+      "logon_time":"2024-01-06T11:38:56.4210395Z"
+   },
+   {
+      "cid":1522724,
+      "name":"Stewart",
+      "callsign":"EGPH_GND",
+      "frequency":"121.755",
+      "facility":3,
+      "rating":2,
+      "server":"UK",
+      "visual_range":20,
+      "text_atis":[
+         "Edinburgh Ground",
+         "INITIAL CLIMB ALTITUDE 6000 FEET",
+         "Submit feedback at vats.im/atcfb"
+      ],
+      "last_updated":"2024-01-06T13:24:08.1007986Z",
+      "logon_time":"2024-01-06T11:39:22.2644281Z"
+   },
+   {
+      "cid":1593682,
+      "name":"Finn",
+      "callsign":"SY_TWR",
+      "frequency":"120.500",
+      "facility":4,
+      "rating":3,
+      "server":"USA-WEST",
+      "visual_range":50,
+      "text_atis":[
+         "Sydney Tower",
+         "ATIS available on 126.25",
+         "Charts - vats.im/pac/charts",
+         "ATC feedback - helpdesk.vatpac.org"
+      ],
+      "last_updated":"2024-01-06T13:24:01.1578981Z",
+      "logon_time":"2024-01-06T11:40:14.6248919Z"
+   },
+   {
+      "cid":1613211,
+      "name":"BeomJun Kim",
+      "callsign":"RKSS_TWR",
+      "frequency":"118.100",
+      "facility":4,
+      "rating":3,
+      "server":"GERMANY",
+      "visual_range":50,
+      "text_atis":[
+         "Gimpo Tower"
+      ],
+      "last_updated":"2024-01-06T13:23:59.936249Z",
+      "logon_time":"2024-01-06T11:40:30.6373307Z"
+   },
+   {
+      "cid":1532516,
+      "name":"Sebastian F",
+      "callsign":"UPS5",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY2",
+      "visual_range":70,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:58.7341118Z",
+      "logon_time":"2024-01-06T11:42:11.2926787Z"
+   },
+   {
+      "cid":1502250,
+      "name":"Samuel Beard",
+      "callsign":"EGCC_GND",
+      "frequency":"121.855",
+      "facility":3,
+      "rating":2,
+      "server":"UK",
+      "visual_range":20,
+      "text_atis":[
+         "Manchester Ground",
+         "INITIAL CLIMB ALTITUDE 5000 FEET",
+         "Submit feedback at vats.im/atcfb"
+      ],
+      "last_updated":"2024-01-06T13:23:55.4359421Z",
+      "logon_time":"2024-01-06T11:42:27.2409417Z"
+   },
+   {
+      "cid":1542642,
+      "name":"Abdul Kareem",
+      "callsign":"OMDB_1_GND",
+      "frequency":"118.350",
+      "facility":3,
+      "rating":2,
+      "server":"GERMANY2",
+      "visual_range":20,
+      "text_atis":[
+         "\"Dubai Ground\" | PDC Logon OMDB",
+         "Covering all aprons when GMC 2 offline | Request PDC via Private Message or Datalink",
+         "Getting rerouted? Check out vats.im/uaerm | We love feedback! vats.im/me/uaefeedback | Visit us at arabian-vacc.com"
+      ],
+      "last_updated":"2024-01-06T13:24:02.1806508Z",
+      "logon_time":"2024-01-06T11:43:00.5284581Z"
+   },
+   {
+      "cid":1524102,
+      "name":"Yechan Choi",
+      "callsign":"RKPC_TWR",
+      "frequency":"118.250",
+      "facility":4,
+      "rating":4,
+      "server":"GERMANY2",
+      "visual_range":50,
+      "text_atis":[
+         "JEJU TOWER",
+         "AFTER LANDING ON RW07, DO NOT STOP ON THE RAPID EXIT TAXIWAY.",
+         "AFTER LANDING ON RW07, TAXI VIA P->G1->R AND SIMULTANEOUSLY, CONTACT JEJU GND ON 121.675."
+      ],
+      "last_updated":"2024-01-06T13:23:50.062824Z",
+      "logon_time":"2024-01-06T11:43:12.355573Z"
+   },
+   {
+      "cid":1601102,
+      "name":"Guido Marstrand Lindstrøm",
+      "callsign":"ENBR_GND",
+      "frequency":"121.900",
+      "facility":3,
+      "rating":2,
+      "server":"AMSTERDAM",
+      "visual_range":20,
+      "text_atis":[
+         "Flesland Ground (solo endorsment)",
+         "Feedback welcome at vatsca.org/feedback",
+         "i'm live on twitch https //www.twitch.tv/captain_oslo"
+      ],
+      "last_updated":"2024-01-06T13:23:43.5382096Z",
+      "logon_time":"2024-01-06T11:46:04.1995446Z"
+   },
+   {
+      "cid":1148433,
+      "name":"Semir Gebran",
+      "callsign":"EKDK_CTR",
+      "frequency":"136.485",
+      "facility":6,
+      "rating":5,
+      "server":"GERMANY",
+      "visual_range":450,
+      "text_atis":[
+         "Copenhagen Control - CPDLC Available on EKDK - Covering Lower airspace around Copenhagen",
+         "See sectorization at www.vatsim-scandinavia.org/pilots/airports-charts/denmark/ | Thank you for your feedback@vatsim-scandinavia.org",
+         "Enjoy your flight in Denmark!"
+      ],
+      "last_updated":"2024-01-06T13:24:05.5804937Z",
+      "logon_time":"2024-01-06T11:46:34.8650804Z"
+   },
+   {
+      "cid":1657615,
+      "name":"Rogier Helmus",
+      "callsign":"KLM144",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"AMSTERDAM",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:55.4215481Z",
+      "logon_time":"2024-01-06T11:48:06.7080909Z"
+   },
+   {
+      "cid":1621318,
+      "name":"1621318",
+      "callsign":"RJGG_TWR",
+      "frequency":"118.850",
+      "facility":4,
+      "rating":3,
+      "server":"AMSTERDAM",
+      "visual_range":50,
+      "text_atis":[
+         "CALL GINE ''CENTRAIR TOWER''",
+         "CK ATIS 127.075"
+      ],
+      "last_updated":"2024-01-06T13:24:03.275724Z",
+      "logon_time":"2024-01-06T11:48:29.3130529Z"
+   },
+   {
+      "cid":1492784,
+      "name":"Ku Kawamura",
+      "callsign":"RJAA_TWR",
+      "frequency":"118.200",
+      "facility":4,
+      "rating":3,
+      "server":"USA-WEST",
+      "visual_range":50,
+      "text_atis":[
+         "ATIS 128.250"
+      ],
+      "last_updated":"2024-01-06T13:23:58.2330555Z",
+      "logon_time":"2024-01-06T11:49:18.7369613Z"
+   },
+   {
+      "cid":1470217,
+      "name":"Michal Krzyzanowski",
+      "callsign":"MK_OBS",
+      "frequency":"120.805",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY2",
+      "visual_range":100,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:53.4563455Z",
+      "logon_time":"2024-01-06T11:49:27.2933842Z"
+   },
+   {
+      "cid":1366545,
+      "name":"1366545",
+      "callsign":"RJTT_DEP",
+      "frequency":"124.350",
+      "facility":5,
+      "rating":5,
+      "server":"CANADA",
+      "visual_range":150,
+      "text_atis":[
+         "Callsign 'Tokyo Approach' or 'Tokyo Departure'",
+         "AFV TOP DOWN",
+         "RJTT TWR 124.35",
+         "RJAA APP 124.4"
+      ],
+      "last_updated":"2024-01-06T13:24:04.0356254Z",
+      "logon_time":"2024-01-06T11:50:18.8665588Z"
+   },
+   {
+      "cid":1549953,
+      "name":"Keisuke Hoshino",
+      "callsign":"RJTT_APP",
+      "frequency":"119.100",
+      "facility":5,
+      "rating":4,
+      "server":"CANADA",
+      "visual_range":150,
+      "text_atis":[
+         "Tokyo Approach"
+      ],
+      "last_updated":"2024-01-06T13:23:59.3499157Z",
+      "logon_time":"2024-01-06T11:50:34.399291Z"
+   },
+   {
+      "cid":1496029,
+      "name":"daniel james caddies",
+      "callsign":"CPA238",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"UK",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:02.9548601Z",
+      "logon_time":"2024-01-06T11:51:14.5208205Z"
+   },
+   {
+      "cid":1551061,
+      "name":"1551061",
+      "callsign":"RJGG_APP",
+      "frequency":"121.050",
+      "facility":5,
+      "rating":4,
+      "server":"CANADA",
+      "visual_range":150,
+      "text_atis":[
+         "Centrair Approach"
+      ],
+      "last_updated":"2024-01-06T13:23:53.8188701Z",
+      "logon_time":"2024-01-06T11:51:17.4915895Z"
+   },
+   {
+      "cid":1696596,
+      "name":"Tom",
+      "callsign":"EDSB_GND",
+      "frequency":"121.830",
+      "facility":3,
+      "rating":2,
+      "server":"GERMANY",
+      "visual_range":50,
+      "text_atis":[
+         "Baden Ground",
+         "PDC/DCL Datalink [EDSB] - Pilotbriefing vats.im/edsb",
+         "You have feedback? Submit it! feedback.vatger.de"
+      ],
+      "last_updated":"2024-01-06T13:24:03.0639591Z",
+      "logon_time":"2024-01-06T11:51:46.2713366Z"
+   },
+   {
+      "cid":1767595,
+      "name":"Rahul",
+      "callsign":"SWA492AX",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY2",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:01.0266565Z",
+      "logon_time":"2024-01-06T11:51:57.6397373Z"
+   },
+   {
+      "cid":1616802,
+      "name":"Ron 't Hart",
+      "callsign":"KLM1695",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"AMSTERDAM",
+      "visual_range":100,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:56.5643258Z",
+      "logon_time":"2024-01-06T11:52:23.08601Z"
+   },
+   {
+      "cid":1453602,
+      "name":"1453602",
+      "callsign":"RJTG_CTR",
+      "frequency":"120.500",
+      "facility":6,
+      "rating":5,
+      "server":"USA-WEST",
+      "visual_range":400,
+      "text_atis":[
+         "Tokyo Control",
+         "Radio Checks $5, \"With you\" $10, \"airborne\" $15, Stating your squawk on initial contact $80 to donate.vatsim.net/",
+         "Feedback system trial period squawk.id/1453602"
+      ],
+      "last_updated":"2024-01-06T13:23:58.0936386Z",
+      "logon_time":"2024-01-06T11:52:55.5238345Z"
+   },
+   {
+      "cid":1306639,
+      "name":"1306639",
+      "callsign":"EISN_CTR",
+      "frequency":"134.260",
+      "facility":6,
+      "rating":5,
+      "server":"UK",
+      "visual_range":400,
+      "text_atis":[
+         "Shannon Control - Hoppie CPDLC/PDC Logon \"EISE\"",
+         "Covering Dublin 28R"
+      ],
+      "last_updated":"2024-01-06T13:24:02.2094151Z",
+      "logon_time":"2024-01-06T11:53:12.4880879Z"
+   },
+   {
+      "cid":1478475,
+      "name":"Mario Witteman",
+      "callsign":"M_OBS",
+      "frequency":"121.205",
+      "facility":0,
+      "rating":1,
+      "server":"AMSTERDAM",
+      "visual_range":70,
+      "text_atis":[
+         "Schiphol Arrival | PDC logon EHAM",
+         "For sector & airport coverage, check vatglasses.uk",
+         "Pilot briefing vats.im/ehambriefing | Feedback vats.im/dvfeedback"
+      ],
+      "last_updated":"2024-01-06T13:23:56.8140996Z",
+      "logon_time":"2024-01-06T11:55:11.7974108Z"
+   },
+   {
+      "cid":1613454,
+      "name":"1613454",
+      "callsign":"RJTT_GND",
+      "frequency":"118.225",
+      "facility":3,
+      "rating":3,
+      "server":"AMSTERDAM",
+      "visual_range":50,
+      "text_atis":[
+         "TOP DOWN INPR.",
+         "TOKYO DEL 121.825",
+         "TOKYO GND 118.225",
+         "CK ATIS 128.800"
+      ],
+      "last_updated":"2024-01-06T13:24:03.3445509Z",
+      "logon_time":"2024-01-06T11:55:15.3037681Z"
+   },
+   {
+      "cid":1271695,
+      "name":"1271695",
+      "callsign":"RKPC_APP",
+      "frequency":"121.200",
+      "facility":5,
+      "rating":5,
+      "server":"AMSTERDAM",
+      "visual_range":150,
+      "text_atis":[
+         "Jeju Departure/Approach"
+      ],
+      "last_updated":"2024-01-06T13:23:53.1651195Z",
+      "logon_time":"2024-01-06T11:55:22.3233831Z"
+   },
+   {
+      "cid":1460478,
+      "name":"1460478",
+      "callsign":"RJAA_DEL",
+      "frequency":"121.900",
+      "facility":2,
+      "rating":4,
+      "server":"USA-WEST",
+      "visual_range":15,
+      "text_atis":[
+         "callsigin NARITA Delivery"
+      ],
+      "last_updated":"2024-01-06T13:23:56.3439339Z",
+      "logon_time":"2024-01-06T11:58:23.3427338Z"
+   },
+   {
+      "cid":1743593,
+      "name":"Rudi",
+      "callsign":"EDDG_TWR",
+      "frequency":"129.805",
+      "facility":4,
+      "rating":2,
+      "server":"GERMANY",
+      "visual_range":50,
+      "text_atis":[
+         "Muenster/Osnabrueck Tower",
+         "PDC/DCL Datalink [EDDG] - Pilotbriefing vats.im/eddg",
+         "You have feedback? Submit it! feedback.vatger.de"
+      ],
+      "last_updated":"2024-01-06T13:23:59.9948546Z",
+      "logon_time":"2024-01-06T11:58:39.6269922Z"
+   },
+   {
+      "cid":1248491,
+      "name":"Victor Mwape",
+      "callsign":"ASA11",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY2",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:58.7724204Z",
+      "logon_time":"2024-01-06T11:58:55.8404973Z"
+   },
+   {
+      "cid":813388,
+      "name":"813388",
+      "callsign":"RKRR_A_CTR",
+      "frequency":"128.325",
+      "facility":6,
+      "rating":6,
+      "server":"AMSTERDAM",
+      "visual_range":500,
+      "text_atis":[
+         "Incheon Control. Radar Contact. Trans ALT14000 / FL140"
+      ],
+      "last_updated":"2024-01-06T13:23:57.6975992Z",
+      "logon_time":"2024-01-06T11:59:03.0262597Z"
+   },
+   {
+      "cid":940134,
+      "name":"Pete Simpson",
+      "callsign":"RYR422",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"UK",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:57.2242947Z",
+      "logon_time":"2024-01-06T12:00:53.5760981Z"
+   },
+   {
+      "cid":1276058,
+      "name":"Fabian Gilgen",
+      "callsign":"LSZH_APP",
+      "frequency":"135.225",
+      "facility":5,
+      "rating":4,
+      "server":"GERMANY",
+      "visual_range":150,
+      "text_atis":[
+         "Zurich Arrival, Grüezi, Report ACFT type and IDENT letter of received ATIS on initial contact",
+         "ATIS 125.725, Initial climb clearance 5000ft, Covering also LSZR, EDNY if local ATC offline",
+         "Find validated routes *routes.vacc.ch*, read our charts *charts.vacc.ch*, feedback *fb.vacc.ch*"
+      ],
+      "last_updated":"2024-01-06T13:24:00.6253176Z",
+      "logon_time":"2024-01-06T12:01:45.8419809Z"
+   },
+   {
+      "cid":1429649,
+      "name":"Hyunjoon Choi",
+      "callsign":"RKPC_GND",
+      "frequency":"121.675",
+      "facility":3,
+      "rating":2,
+      "server":"GERMANY",
+      "visual_range":30,
+      "text_atis":[
+         "Call me \"JEJU Ground\""
+      ],
+      "last_updated":"2024-01-06T13:23:51.5720718Z",
+      "logon_time":"2024-01-06T12:02:22.781219Z"
+   },
+   {
+      "cid":1493429,
+      "name":"Lim Chan",
+      "callsign":"AFRC_FSS",
+      "frequency":"129.075",
+      "facility":1,
+      "rating":5,
+      "server":"GERMANY2",
+      "visual_range":1500,
+      "text_atis":[
+         "Africa Central Control. ATC above FL245 only | CPDLC \"AFRC\" | SELCAL available for Oceanic Airspace",
+         "if local CTR is offline. Covers FLFI FNAN FSSS FWLL FZZA HKNA HTDC and HUEC",
+         "Provide limited APP services if situation allowed | vatssa.com"
+      ],
+      "last_updated":"2024-01-06T13:23:53.4261506Z",
+      "logon_time":"2024-01-06T12:03:14.9498765Z"
+   },
+   {
+      "cid":1683939,
+      "name":"jeong ji woon",
+      "callsign":"AIQ251",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY2",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:54.2078444Z",
+      "logon_time":"2024-01-06T12:03:24.0905357Z"
+   },
+   {
+      "cid":1544561,
+      "name":"YAVUZ ÞAÞMAZ",
+      "callsign":"UPS248A",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:54.0559743Z",
+      "logon_time":"2024-01-06T12:03:50.9722215Z"
+   },
+   {
+      "cid":1615071,
+      "name":"Fabian M",
+      "callsign":"EDDM_N_TWR",
+      "frequency":"118.705",
+      "facility":4,
+      "rating":3,
+      "server":"AMSTERDAM",
+      "visual_range":50,
+      "text_atis":[
+         "This is Muenchen Tower - PDC/DCL datalink [EDDM]",
+         "ATIS on 123.130",
+         "We <3 feedback.vatger.de"
+      ],
+      "last_updated":"2024-01-06T13:24:05.60003Z",
+      "logon_time":"2024-01-06T12:03:55.0170267Z"
+   },
+   {
+      "cid":1322030,
+      "name":"Muhammad Azfar R.",
+      "callsign":"ANT_CTR",
+      "frequency":"131.200",
+      "facility":6,
+      "rating":5,
+      "server":"AMSTERDAM",
+      "visual_range":400,
+      "text_atis":[
+         "Antilles Super Center",
+         "Top-Down for all airport in MTEG, MDCS and TNCF",
+         "Visit us at www.vatcar.net"
+      ],
+      "last_updated":"2024-01-06T13:23:54.7064407Z",
+      "logon_time":"2024-01-06T12:06:57.4337598Z"
+   },
+   {
+      "cid":1566177,
+      "name":"Zixiang Wang",
+      "callsign":"ZX_OBS",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":2,
+      "server":"AMSTERDAM",
+      "visual_range":300,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:57.3953371Z",
+      "logon_time":"2024-01-06T12:07:04.7819558Z"
+   },
+   {
+      "cid":1634177,
+      "name":"Fabian R.",
+      "callsign":"EDDK_GND",
+      "frequency":"121.730",
+      "facility":3,
+      "rating":2,
+      "server":"GERMANY2",
+      "visual_range":20,
+      "text_atis":[
+         "Koeln/Bonn Ground",
+         "PDC/DCL Datalink [EDDK] - Pilotbriefing vats.im/eddk",
+         "You have feedback? Submit it! feedback.vatger.de"
+      ],
+      "last_updated":"2024-01-06T13:23:59.2748941Z",
+      "logon_time":"2024-01-06T12:08:04.7791491Z"
+   },
+   {
+      "cid":1566160,
+      "name":"Robb",
+      "callsign":"RPLL_M_GND",
+      "frequency":"121.800",
+      "facility":3,
+      "rating":3,
+      "server":"AMSTERDAM",
+      "visual_range":10,
+      "text_atis":[
+         "Manila Ground",
+         "Charts available at vats.im/rphicharts | Philippines vACC vatphil.com",
+         "We love feedback! hq.vat-sea.com/atc/feedback"
+      ],
+      "last_updated":"2024-01-06T13:23:56.0265774Z",
+      "logon_time":"2024-01-06T12:09:21.2416866Z"
+   },
+   {
+      "cid":1471161,
+      "name":"John Brogan",
+      "callsign":"JB_OBS1",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"UK",
+      "visual_range":100,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:57.0184616Z",
+      "logon_time":"2024-01-06T12:09:36.2164747Z"
+   },
+   {
+      "cid":1713192,
+      "name":"Sergej Cherkasov",
+      "callsign":"SBI501",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:56.0383934Z",
+      "logon_time":"2024-01-06T12:10:41.1219647Z"
+   },
+   {
+      "cid":1474404,
+      "name":"Muhammad Nabil",
+      "callsign":"WAAF_CTR",
+      "frequency":"128.100",
+      "facility":6,
+      "rating":5,
+      "server":"UK",
+      "visual_range":600,
+      "text_atis":[
+         "Ujung Pandang Control",
+         "Visit Indonesia vACC Website @ idvacc.id/en/"
+      ],
+      "last_updated":"2024-01-06T13:23:43.8648708Z",
+      "logon_time":"2024-01-06T12:12:27.7090351Z"
+   },
+   {
+      "cid":1709879,
+      "name":"Pekka Karkkonen",
+      "callsign":"FIN0",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"AMSTERDAM",
+      "visual_range":50,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:56.347733Z",
+      "logon_time":"2024-01-06T12:13:50.152196Z"
+   },
+   {
+      "cid":1674321,
+      "name":"Benedict Garcia",
+      "callsign":"RPLL_S_GND",
+      "frequency":"121.800",
+      "facility":3,
+      "rating":2,
+      "server":"GERMANY2",
+      "visual_range":100,
+      "text_atis":[
+         "Manila Control | Top-down RPLC, RPLI",
+         "Charts available at vats.im/rphicharts | Philippines vACC vatphil.com",
+         "We love feedback! hq.vat-sea.com/atc/feedback"
+      ],
+      "last_updated":"2024-01-06T13:23:53.466738Z",
+      "logon_time":"2024-01-06T12:13:55.1783151Z"
+   },
+   {
+      "cid":1308711,
+      "name":"Vincent",
+      "callsign":"VS_OBS",
+      "frequency":"118.705",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY",
+      "visual_range":100,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:52.0535592Z",
+      "logon_time":"2024-01-06T12:15:11.6888962Z"
+   },
+   {
+      "cid":1734222,
+      "name":"Valentin Nick Oswald",
+      "callsign":"SAS842A",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"UK",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:00.7536461Z",
+      "logon_time":"2024-01-06T12:15:13.4577761Z"
+   },
+   {
+      "cid":1467165,
+      "name":"Phil H",
+      "callsign":"EISN_LS_CTR",
+      "frequency":"124.700",
+      "facility":6,
+      "rating":10,
+      "server":"UK",
+      "visual_range":400,
+      "text_atis":[
+         "Shannon Control - Covering FL245 and below",
+         "Covering Cork 16 Shannon 24 Knock 26 Kerry 26",
+         "Leave feedback here - vateir.org/feedback/submit/"
+      ],
+      "last_updated":"2024-01-06T13:23:49.7274734Z",
+      "logon_time":"2024-01-06T12:15:33.9548948Z"
+   },
+   {
+      "cid":1567057,
+      "name":"Arbha Pradana",
+      "callsign":"WATO_TWR",
+      "frequency":"122.700",
+      "facility":4,
+      "rating":3,
+      "server":"USA-WEST",
+      "visual_range":100,
+      "text_atis":[
+         "Komodo Tower",
+         "Visit Indonesia vACC Website @ idvacc.id/en/",
+         "youtube.com/@arbhapr"
+      ],
+      "last_updated":"2024-01-06T13:23:54.1805297Z",
+      "logon_time":"2024-01-06T12:16:39.7889959Z"
+   },
+   {
+      "cid":1727728,
+      "name":"Mohammed Akram",
+      "callsign":"PIA300",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:01.4433248Z",
+      "logon_time":"2024-01-06T12:17:01.3555604Z"
+   },
+   {
+      "cid":1333624,
+      "name":"Artur Lysov",
+      "callsign":"AFL5740O",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY2",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:58.7126816Z",
+      "logon_time":"2024-01-06T12:18:27.7387887Z"
+   },
+   {
+      "cid":1549092,
+      "name":"Gabry",
+      "callsign":"VJT569A",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"USA-EAST2",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:54.1868099Z",
+      "logon_time":"2024-01-06T12:20:39.1802023Z"
+   },
+   {
+      "cid":1515065,
+      "name":"Lynel Dsouza",
+      "callsign":"OMDB_DEL",
+      "frequency":"120.350",
+      "facility":2,
+      "rating":2,
+      "server":"USA-EAST2",
+      "visual_range":20,
+      "text_atis":[
+         "\"Dubai Delivery\" | PDC Logon OMDB",
+         "Clearance 10 minutes before departure | Request PDC via Private Message or Datalink",
+         "Getting rerouted? Check out vats.im/uaerm | We love feedback! vats.im/me/uaefeedback | Visit us at arabian-vacc.com"
+      ],
+      "last_updated":"2024-01-06T13:23:48.8854974Z",
+      "logon_time":"2024-01-06T12:20:49.3569747Z"
+   },
+   {
+      "cid":1634616,
+      "name":"Tiaan Verster",
+      "callsign":"SDR60NSA",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY2",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:54.319665Z",
+      "logon_time":"2024-01-06T12:21:54.3558302Z"
+   },
+   {
+      "cid":1425746,
+      "name":"Roald",
+      "callsign":"ENGM_W_TWR",
+      "frequency":"118.300",
+      "facility":4,
+      "rating":5,
+      "server":"AMSTERDAM",
+      "visual_range":50,
+      "text_atis":[
+         "Gardermoen Tower",
+         "Feedback welcome at vatsca.org/feedback"
+      ],
+      "last_updated":"2024-01-06T13:24:05.2811468Z",
+      "logon_time":"2024-01-06T12:22:41.1197465Z"
+   },
+   {
+      "cid":1727599,
+      "name":"Alexander",
+      "callsign":"UNOO_TWR",
+      "frequency":"119.000",
+      "facility":4,
+      "rating":3,
+      "server":"GERMANY",
+      "visual_range":49,
+      "text_atis":[
+         "Omsk Start",
+         "Monitor ATIS on 126.400",
+         "Charts and sceneries on vatrus.info"
+      ],
+      "last_updated":"2024-01-06T13:24:03.214776Z",
+      "logon_time":"2024-01-06T12:23:04.5291968Z"
+   },
+   {
+      "cid":919400,
+      "name":"Tavis Walters",
+      "callsign":"EGLL_N_APP",
+      "frequency":"119.730",
+      "facility":5,
+      "rating":5,
+      "server":"UK",
+      "visual_range":100,
+      "text_atis":[
+         "Heathrow Director",
+         "INITIAL CLIMB ALTITUDE 6000 FEET",
+         "Submit feedback at vats.im/atcfb"
+      ],
+      "last_updated":"2024-01-06T13:23:47.0492753Z",
+      "logon_time":"2024-01-06T12:23:35.0080908Z"
+   },
+   {
+      "cid":1172222,
+      "name":"HYUNJAE LEE",
+      "callsign":"RKNN_APP",
+      "frequency":"124.600",
+      "facility":5,
+      "rating":5,
+      "server":"GERMANY",
+      "visual_range":150,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:07.8583004Z",
+      "logon_time":"2024-01-06T12:24:36.5119692Z"
+   },
+   {
+      "cid":1430237,
+      "name":"Mike Bencivenga",
+      "callsign":"DEN_17_CTR",
+      "frequency":"127.650",
+      "facility":6,
+      "rating":10,
+      "server":"VIRTUALNAS",
+      "visual_range":600,
+      "text_atis":[
+         "Denver Center!!!",
+         "Denver ATIS on 125.600.",
+         "Tell my boss how I'm doing!! https //www.denartcc.org/feedback"
+      ],
+      "last_updated":"2024-01-06T13:23:52.6335061Z",
+      "logon_time":"2024-01-06T12:25:19.4405229Z"
+   },
+   {
+      "cid":1578650,
+      "name":"John Tenney",
+      "callsign":"MEM_22_CTR",
+      "frequency":"132.550",
+      "facility":6,
+      "rating":5,
+      "server":"VIRTUALNAS",
+      "visual_range":600,
+      "text_atis":[
+         "https //vzme.net/feedback",
+         "vzme.net for info on how to join the ARTCC"
+      ],
+      "last_updated":"2024-01-06T13:23:52.6333907Z",
+      "logon_time":"2024-01-06T12:25:24.2380205Z"
+   },
+   {
+      "cid":810309,
+      "name":"Kyprianos Biris",
+      "callsign":"LGGG_CTR",
+      "frequency":"129.675",
+      "facility":6,
+      "rating":7,
+      "server":"GERMANY2",
+      "visual_range":500,
+      "text_atis":[
+         "Athinai Radar",
+         "Charts on briefing.hvacc.org - Coverage at vats.im/gr/sectormap",
+         "Feedback on vats.im/gr/atcfb"
+      ],
+      "last_updated":"2024-01-06T13:23:49.3012543Z",
+      "logon_time":"2024-01-06T12:26:57.4458047Z"
+   },
+   {
+      "cid":1766034,
+      "name":"Jan-Pit Naundorf",
+      "callsign":"LHA23KA",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY2",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:02.0797859Z",
+      "logon_time":"2024-01-06T12:27:14.7884425Z"
+   },
+   {
+      "cid":1316527,
+      "name":"Benedikt Zöller",
+      "callsign":"EDDF_C_GND",
+      "frequency":"121.855",
+      "facility":3,
+      "rating":8,
+      "server":"GERMANY",
+      "visual_range":20,
+      "text_atis":[
+         "Frankfurt Apron",
+         "PDC/DCL Datalink [EDDF] - Pilotbriefing vats.im/eddf",
+         "You have feedback? Submit it! feedback.vatger.de"
+      ],
+      "last_updated":"2024-01-06T13:24:01.6756529Z",
+      "logon_time":"2024-01-06T12:27:24.4482709Z"
+   },
+   {
+      "cid":906808,
+      "name":"Thorsten Zoerner",
+      "callsign":"EDDN_TWR",
+      "frequency":"118.305",
+      "facility":4,
+      "rating":5,
+      "server":"AMSTERDAM",
+      "visual_range":100,
+      "text_atis":[
+         "Towerview https //twitch.tv/stromdao"
+      ],
+      "last_updated":"2024-01-06T13:23:47.4572031Z",
+      "logon_time":"2024-01-06T12:27:41.9320187Z"
+   },
+   {
+      "cid":1130885,
+      "name":"Jason",
+      "callsign":"FACT_TWR",
+      "frequency":"118.100",
+      "facility":4,
+      "rating":3,
+      "server":"USA-WEST",
+      "visual_range":50,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:05.6637374Z",
+      "logon_time":"2024-01-06T12:28:08.2635267Z"
+   },
+   {
+      "cid":1366932,
+      "name":"Luca Schär",
+      "callsign":"LSGG_APP",
+      "frequency":"136.255",
+      "facility":5,
+      "rating":3,
+      "server":"GERMANY",
+      "visual_range":150,
+      "text_atis":[
+         "Geneva Arrival, Bonjour, Report ACFT type on initial contact",
+         "ATIS 135.580",
+         "Find validated routes *routes.vacc.ch*, read our charts *charts.vacc.ch*, feedback *fb.vacc.ch*"
+      ],
+      "last_updated":"2024-01-06T13:24:06.5041752Z",
+      "logon_time":"2024-01-06T12:29:02.8431981Z"
+   },
+   {
+      "cid":1380981,
+      "name":"1380981",
+      "callsign":"EGLL_DEL",
+      "frequency":"121.980",
+      "facility":2,
+      "rating":3,
+      "server":"GERMANY",
+      "visual_range":20,
+      "text_atis":[
+         "Heathrow Delivery",
+         "INITIAL CLIMB ALTITUDE 6000 FEET",
+         "Submit feedback at vats.im/atcfb"
+      ],
+      "last_updated":"2024-01-06T13:23:45.0835938Z",
+      "logon_time":"2024-01-06T12:29:45.7679073Z"
+   },
+   {
+      "cid":1704771,
+      "name":"Daniel",
+      "callsign":"TGW15NA",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:54.1675635Z",
+      "logon_time":"2024-01-06T12:30:07.0889718Z"
+   },
+   {
+      "cid":1656182,
+      "name":"Yngwess",
+      "callsign":"SAS363",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"AMSTERDAM",
+      "visual_range":60,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:06.0963178Z",
+      "logon_time":"2024-01-06T12:31:19.2625314Z"
+   },
+   {
+      "cid":1432304,
+      "name":"Jannik",
+      "callsign":"EDDP_S_TWR",
+      "frequency":"121.105",
+      "facility":4,
+      "rating":5,
+      "server":"GERMANY2",
+      "visual_range":50,
+      "text_atis":[
+         "This is Leipzig Tower - PDC/DCL datalink [EDDP]",
+         "ATIS on 123.955",
+         "We <3 feedback.vatger.de"
+      ],
+      "last_updated":"2024-01-06T13:23:56.5153691Z",
+      "logon_time":"2024-01-06T12:33:18.3048737Z"
+   },
+   {
+      "cid":1678027,
+      "name":"Patryk C",
+      "callsign":"APN7KT",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY2",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:07.2200113Z",
+      "logon_time":"2024-01-06T12:33:19.9077521Z"
+   },
+   {
+      "cid":1694326,
+      "name":"Finn",
+      "callsign":"LSGG_TWR",
+      "frequency":"118.700",
+      "facility":4,
+      "rating":2,
+      "server":"AMSTERDAM",
+      "visual_range":50,
+      "text_atis":[
+         "Geneva Tower, Bonjour",
+         "ATIS 135.580",
+         "Find validated routes *routes.vacc.ch*, read our charts *charts.vacc.ch*, feedback *fb.vacc.ch*"
+      ],
+      "last_updated":"2024-01-06T13:23:55.9060374Z",
+      "logon_time":"2024-01-06T12:33:44.1518475Z"
+   },
+   {
+      "cid":1777018,
+      "name":"Alexander Pirastu",
+      "callsign":"SWR221LA",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"UK",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:02.1951074Z",
+      "logon_time":"2024-01-06T12:34:45.3454374Z"
+   },
+   {
+      "cid":1761220,
+      "name":"Timur Inci",
+      "callsign":"EDSB__TWR",
+      "frequency":"134.105",
+      "facility":4,
+      "rating":2,
+      "server":"GERMANY2",
+      "visual_range":50,
+      "text_atis":[
+         "Baden Tower",
+         "PDC/DCL Datalink [EDSB] - Pilotbriefing vats.im/edsb",
+         "You have feedback? Submit it! feedback.vatger.de"
+      ],
+      "last_updated":"2024-01-06T13:23:50.8827334Z",
+      "logon_time":"2024-01-06T12:37:03.0934557Z"
+   },
+   {
+      "cid":1470334,
+      "name":"Markus Carlin",
+      "callsign":"EWG19YA",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"AMSTERDAM",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:07.286728Z",
+      "logon_time":"2024-01-06T12:38:05.1601394Z"
+   },
+   {
+      "cid":901520,
+      "name":"Dietmar Koch",
+      "callsign":"DASHYO",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"USA-EAST2",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:53.721971Z",
+      "logon_time":"2024-01-06T12:39:53.7218154Z"
+   },
+   {
+      "cid":1586025,
+      "name":"H.W. Lin",
+      "callsign":"LHW_OBS",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"USA-WEST",
+      "visual_range":300,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:04.6802126Z",
+      "logon_time":"2024-01-06T12:39:55.6058883Z"
+   },
+   {
+      "cid":1427130,
+      "name":"Taha",
+      "callsign":"ASIA_W_FSS",
+      "frequency":"135.400",
+      "facility":1,
+      "rating":5,
+      "server":"CANADA",
+      "visual_range":1500,
+      "text_atis":[
+         "\"West Asia Control\"",
+         "Upper Area Control (FL245+) | Covering India, Pakistan, Bangladesh, Afghanistan, Nepal, Sri Lanka & Maldives",
+         "For More Info Visit - https //vatwa.net/wa-operational-guide/"
+      ],
+      "last_updated":"2024-01-06T13:24:00.7223766Z",
+      "logon_time":"2024-01-06T12:40:02.4617651Z"
+   },
+   {
+      "cid":1648929,
+      "name":"Dian Wendel",
+      "callsign":"LSGG_A_GND",
+      "frequency":"121.855",
+      "facility":3,
+      "rating":2,
+      "server":"GERMANY2",
+      "visual_range":20,
+      "text_atis":[
+         "Geneva Apron, Bonjour",
+         "PDC LOGON LSGG I ATIS 135.580",
+         "Find validated routes *routes.vacc.ch*, read our charts *charts.vacc.ch*, feedback *fb.vacc.ch*"
+      ],
+      "last_updated":"2024-01-06T13:24:06.33651Z",
+      "logon_time":"2024-01-06T12:40:11.6461293Z"
+   },
+   {
+      "cid":937390,
+      "name":"Guillermo",
+      "callsign":"LECM_ALL_CTR",
+      "frequency":"133.755",
+      "facility":6,
+      "rating":5,
+      "server":"USA-EAST2",
+      "visual_range":600,
+      "text_atis":[
+         "Madrid Control - CPDLC [CMRA]",
+         "My active sector vats.im/lexx",
+         "charts aip.enaire.es/AIP/ - Want to provide feedback? feedback@vatsimspain.es"
+      ],
+      "last_updated":"2024-01-06T13:23:52.1032896Z",
+      "logon_time":"2024-01-06T12:44:32.8074828Z"
+   },
+   {
+      "cid":811669,
+      "name":"Ron Henderson",
+      "callsign":"KC_94_CTR",
+      "frequency":"125.725",
+      "facility":6,
+      "rating":7,
+      "server":"VIRTUALNAS",
+      "visual_range":600,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:52.6331254Z",
+      "logon_time":"2024-01-06T12:47:08.3026685Z"
+   },
+   {
+      "cid":1120988,
+      "name":"Fatih Mutlu",
+      "callsign":"FMT_SUP",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":11,
+      "server":"USA-EAST2",
+      "visual_range":600,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:06.1276065Z",
+      "logon_time":"2024-01-06T12:47:38.3942748Z"
+   },
+   {
+      "cid":1777386,
+      "name":"Anton Ahlström",
+      "callsign":"SAS162",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"USA-EAST2",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:07.8410161Z",
+      "logon_time":"2024-01-06T12:47:51.5858207Z"
+   },
+   {
+      "cid":1212166,
+      "name":"Darren Faux",
+      "callsign":"EGCC_N_TWR",
+      "frequency":"118.630",
+      "facility":4,
+      "rating":3,
+      "server":"AMSTERDAM",
+      "visual_range":50,
+      "text_atis":[
+         "Manchester Tower",
+         "INITIAL CLIMB ALTITUDE 5000 FEET",
+         "Submit feedback at vats.im/atcfb"
+      ],
+      "last_updated":"2024-01-06T13:23:50.2180841Z",
+      "logon_time":"2024-01-06T12:49:29.3412269Z"
+   },
+   {
+      "cid":1578149,
+      "name":"Alexandr",
+      "callsign":"UNNT_TWR",
+      "frequency":"118.500",
+      "facility":4,
+      "rating":2,
+      "server":"GERMANY",
+      "visual_range":40,
+      "text_atis":[
+         "Novosibirsk Tower",
+         "Monitor ATIS on 131.300",
+         "Charts and sceneries on vatrus.info"
+      ],
+      "last_updated":"2024-01-06T13:23:47.8346121Z",
+      "logon_time":"2024-01-06T12:49:34.3636198Z"
+   },
+   {
+      "cid":1564956,
+      "name":"Peter Parbhoo",
+      "callsign":"PP_OBS",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"AMSTERDAM",
+      "visual_range":275,
+      "text_atis":[
+         "U.A.E Observer",
+         "Getting rerouted? Check out vats.im/uaerm | We love feedback! vats.im/me/uaefeedback | Visit us at arabian-vacc.com"
+      ],
+      "last_updated":"2024-01-06T13:23:55.2062181Z",
+      "logon_time":"2024-01-06T12:51:48.377565Z"
+   },
+   {
+      "cid":981365,
+      "name":"Tom Moseley",
+      "callsign":"EGKK__GND",
+      "frequency":"121.805",
+      "facility":3,
+      "rating":3,
+      "server":"UK",
+      "visual_range":20,
+      "text_atis":[
+         "Gatwick Ground",
+         "INITIAL CLIMB AS CHARTED chartfox.org/EGKK",
+         "Submit feedback at vats.im/atcfb"
+      ],
+      "last_updated":"2024-01-06T13:23:58.9908894Z",
+      "logon_time":"2024-01-06T12:52:58.7506435Z"
+   },
+   {
+      "cid":1516609,
+      "name":"Aayush Dwivedi",
+      "callsign":"THY31C",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY",
+      "visual_range":100,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:54.283574Z",
+      "logon_time":"2024-01-06T12:53:08.4053947Z"
+   },
+   {
+      "cid":1436295,
+      "name":"Apostolos Faloukas",
+      "callsign":"RYR",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY2",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:56.0518992Z",
+      "logon_time":"2024-01-06T12:53:54.936152Z"
+   },
+   {
+      "cid":1773102,
+      "name":"1773102",
+      "callsign":"KLM15PA",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:56.6197973Z",
+      "logon_time":"2024-01-06T12:54:40.4673531Z"
+   },
+   {
+      "cid":1550811,
+      "name":"Henrik Harms",
+      "callsign":"OE-FBDA",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"AMSTERDAM",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:02.8516994Z",
+      "logon_time":"2024-01-06T12:55:18.0645459Z"
+   },
+   {
+      "cid":1300705,
+      "name":"1300705",
+      "callsign":"LIMM_CTR",
+      "frequency":"132.905",
+      "facility":6,
+      "rating":5,
+      "server":"AMSTERDAM",
+      "visual_range":300,
+      "text_atis":[
+         "Milano Radar (cover also Padova)",
+         "live on https //twitch.tv/italianalien21",
+         "feedbacks appreciated, charts mandatory TESTING TOPSKY"
+      ],
+      "last_updated":"2024-01-06T13:23:51.6421485Z",
+      "logon_time":"2024-01-06T12:55:59.6521267Z"
+   },
+   {
+      "cid":1304091,
+      "name":"Francesco Fignon",
+      "callsign":"LIMM_ANE_APP",
+      "frequency":"126.750",
+      "facility":5,
+      "rating":4,
+      "server":"GERMANY2",
+      "visual_range":100,
+      "text_atis":[
+         "Milano Radar | covering LIMC,LIML,LIME and LSZA",
+         "PDC available [LIMC]. Charts at vats.im/it/charts free registration required",
+         "Feedback helps us get better! Submit yours at vats.im/it/feedback"
+      ],
+      "last_updated":"2024-01-06T13:23:56.0758192Z",
+      "logon_time":"2024-01-06T12:56:07.0467193Z"
+   },
+   {
+      "cid":1442675,
+      "name":"Henry Tran",
+      "callsign":"VTBS_APP",
+      "frequency":"124.350",
+      "facility":5,
+      "rating":4,
+      "server":"GERMANY",
+      "visual_range":150,
+      "text_atis":[
+         "\"Bangkok Approach\" | [PDC LOGON VTBS]",
+         "Top-Down VTBS VTBD and Bangkok TMA up to FL160",
+         "ATC Controller Feedback at vacc-tha.org/feedback"
+      ],
+      "last_updated":"2024-01-06T13:23:48.4405703Z",
+      "logon_time":"2024-01-06T12:56:23.2108617Z"
+   },
+   {
+      "cid":1401514,
+      "name":"Amir",
+      "callsign":"TEH_M_CTR",
+      "frequency":"135.200",
+      "facility":6,
+      "rating":8,
+      "server":"GERMANY2",
+      "visual_range":500,
+      "text_atis":[
+         "Tehran Radar | CPDLC LOGON FL270+ [OIIX]",
+         "Covering the entire Tehran FIR (Iran) when local ATC offline",
+         "visit us @ vatir.ir | charts @ https //vats.im/oiix-charts"
+      ],
+      "last_updated":"2024-01-06T13:24:05.2760825Z",
+      "logon_time":"2024-01-06T12:57:55.5868043Z"
+   },
+   {
+      "cid":1207002,
+      "name":"sylvain vaudescal",
+      "callsign":"DLH6KA",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"UK",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:55.3238199Z",
+      "logon_time":"2024-01-06T12:58:54.4654126Z"
+   },
+   {
+      "cid":1556382,
+      "name":"Matthew Kiff",
+      "callsign":"EGPJ_R_TWR",
+      "frequency":"130.455",
+      "facility":4,
+      "rating":2,
+      "server":"USA-EAST",
+      "visual_range":100,
+      "text_atis":[
+         "Callsign Fife Radio",
+         "This is an Air Ground Radio Service (AGCS), not an air traffic control unit.",
+         "Call on frequency for airfield information."
+      ],
+      "last_updated":"2024-01-06T13:23:44.1220413Z",
+      "logon_time":"2024-01-06T12:59:24.7402003Z"
+   },
+   {
+      "cid":1642387,
+      "name":"Theo Suen",
+      "callsign":"TS_OBS",
+      "frequency":"118.700",
+      "facility":0,
+      "rating":2,
+      "server":"USA-WEST",
+      "visual_range":300,
+      "text_atis":[
+         "Hong Kong vACC Observer",
+         "Up to date Charts & Procedures - www.ais.gov.hk"
+      ],
+      "last_updated":"2024-01-06T13:23:55.0723664Z",
+      "logon_time":"2024-01-06T12:59:39.2474473Z"
+   },
+   {
+      "cid":1190173,
+      "name":"Eren Kemer",
+      "callsign":"EDDL_TWR",
+      "frequency":"118.305",
+      "facility":4,
+      "rating":2,
+      "server":"GERMANY",
+      "visual_range":50,
+      "text_atis":[
+         "Duesseldorf Tower",
+         "PDC/DCL Datalink [EDDL] - Pilotbriefing vats.im/eddl",
+         "You have feedback? Submit it! feedback.vatger.de"
+      ],
+      "last_updated":"2024-01-06T13:23:48.7564547Z",
+      "logon_time":"2024-01-06T12:59:44.5236959Z"
+   },
+   {
+      "cid":1495699,
+      "name":"Devin",
+      "callsign":"EDDK_APP",
+      "frequency":"135.350",
+      "facility":5,
+      "rating":3,
+      "server":"GERMANY2",
+      "visual_range":150,
+      "text_atis":[
+         "Langen Radar",
+         "Coverage at vatglasses.uk - PDC/DCL Datalink [EDDK]",
+         "You have feedback? Submit it! feedback.vatger.de"
+      ],
+      "last_updated":"2024-01-06T13:23:49.7233574Z",
+      "logon_time":"2024-01-06T13:00:10.3828585Z"
+   },
+   {
+      "cid":1715264,
+      "name":"Henrik E.",
+      "callsign":"PAC355",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"UK",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:54.875747Z",
+      "logon_time":"2024-01-06T13:00:24.8597678Z"
+   },
+   {
+      "cid":1502513,
+      "name":"Duc Nguyen",
+      "callsign":"VCL_CTR",
+      "frequency":"129.425",
+      "facility":6,
+      "rating":5,
+      "server":"UK",
+      "visual_range":600,
+      "text_atis":[
+         "Mekong Radar. Services in VIE/ENG | CPDLC/DCL LOGON [VVCL]",
+         "A-CDM are in use. Pushback before clearance expires time.",
+         "VVTS-SATR at https //vats.im/vcl/vvts_satr | We love feedback! hq.vat-sea.com/atc/feedback"
+      ],
+      "last_updated":"2024-01-06T13:23:47.2166192Z",
+      "logon_time":"2024-01-06T13:01:22.4596822Z"
+   },
+   {
+      "cid":1393415,
+      "name":"Eirik Coppa",
+      "callsign":"ENBR_W_APP",
+      "frequency":"121.000",
+      "facility":5,
+      "rating":3,
+      "server":"UK",
+      "visual_range":150,
+      "text_atis":[
+         "Flesland Approach",
+         "Feedback welcome at vatsca.org/feedback",
+         "Solo Endorsment"
+      ],
+      "last_updated":"2024-01-06T13:23:54.2722217Z",
+      "logon_time":"2024-01-06T13:01:39.5310597Z"
+   },
+   {
+      "cid":1663296,
+      "name":"Atlas Baudelaire",
+      "callsign":"GHST",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"UK",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:55.7960691Z",
+      "logon_time":"2024-01-06T13:04:10.2811772Z"
+   },
+   {
+      "cid":1508430,
+      "name":"Lyes L.",
+      "callsign":"AFR4783",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"USA-EAST2",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:56.0756771Z",
+      "logon_time":"2024-01-06T13:06:55.5086633Z"
+   },
+   {
+      "cid":1622219,
+      "name":"Luís Freitas",
+      "callsign":"LPMA_TWR",
+      "frequency":"124.660",
+      "facility":4,
+      "rating":3,
+      "server":"USA-EAST",
+      "visual_range":50,
+      "text_atis":[
+         "Madeira Tower.",
+         "For updated charts - charts.portugal-vacc.org/#LPMA",
+         "For ATC feedback vats.im/pt_feedback"
+      ],
+      "last_updated":"2024-01-06T13:24:05.4906537Z",
+      "logon_time":"2024-01-06T13:07:00.740019Z"
+   },
+   {
+      "cid":1762954,
+      "name":"1762954",
+      "callsign":"GD_OBS",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":2,
+      "server":"GERMANY2",
+      "visual_range":100,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:02.766812Z",
+      "logon_time":"2024-01-06T13:07:15.4503971Z"
+   },
+   {
+      "cid":1670145,
+      "name":"Mohd Rafeuddin",
+      "callsign":"UNI408A",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY2",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:07.5461316Z",
+      "logon_time":"2024-01-06T13:07:52.0910542Z"
+   },
+   {
+      "cid":1281279,
+      "name":"Parham",
+      "callsign":"TEH_CTR",
+      "frequency":"135.200",
+      "facility":6,
+      "rating":5,
+      "server":"GERMANY2",
+      "visual_range":500,
+      "text_atis":[
+         "Tehran Radar",
+         "Report Callsign, Altitude & Position on Initial Contact",
+         "Charts/Procedures & Sceneries @ vatir.ir"
+      ],
+      "last_updated":"2024-01-06T13:24:04.3558688Z",
+      "logon_time":"2024-01-06T13:08:13.7833058Z"
+   },
+   {
+      "cid":1648546,
+      "name":"Marco Freitas",
+      "callsign":"BCS5WE",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"USA-EAST2",
+      "visual_range":95,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:03.7102389Z",
+      "logon_time":"2024-01-06T13:08:18.2357122Z"
+   },
+   {
+      "cid":1404385,
+      "name":"Jakob Hollmann",
+      "callsign":"JH_OBS",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":5,
+      "server":"GERMANY2",
+      "visual_range":300,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:04.7356147Z",
+      "logon_time":"2024-01-06T13:08:37.5990764Z"
+   },
+   {
+      "cid":1561994,
+      "name":"Tomas Trojanovic",
+      "callsign":"AMV95",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:04.3572622Z",
+      "logon_time":"2024-01-06T13:10:04.1589067Z"
+   },
+   {
+      "cid":1622647,
+      "name":"Justin Todd",
+      "callsign":"ACE2000",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"USA-EAST",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:59.2225617Z",
+      "logon_time":"2024-01-06T13:10:13.8398454Z"
+   },
+   {
+      "cid":1748267,
+      "name":"Jan",
+      "callsign":"DLH118W",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"AMSTERDAM",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:54.9742326Z",
+      "logon_time":"2024-01-06T13:10:24.478414Z"
+   },
+   {
+      "cid":1597608,
+      "name":"Thies Lange",
+      "callsign":"EDDH_E_GND",
+      "frequency":"121.705",
+      "facility":3,
+      "rating":2,
+      "server":"USA-EAST2",
+      "visual_range":20,
+      "text_atis":[
+         "Callsign HAMBURG APRON - PDC/DCL EDDH",
+         "Airport Briefing vats.im/edww",
+         "Submit your feedback at feedback.vatger.de"
+      ],
+      "last_updated":"2024-01-06T13:24:05.8025498Z",
+      "logon_time":"2024-01-06T13:11:14.4382303Z"
+   },
+   {
+      "cid":1473263,
+      "name":"Jannik",
+      "callsign":"EVRA_X_APP",
+      "frequency":"129.925",
+      "facility":5,
+      "rating":5,
+      "server":"GERMANY2",
+      "visual_range":150,
+      "text_atis":[
+         "Riga Approach | PDC logon code EVRA | 1500ft-FL285 within Riga TMA (Sector A+B+C). GND-FL285 if no lower ATC online.",
+         "Initial climb altitude 4000ft. On initial contact, report ATIS letter received. Expect ILS RWY 18,36",
+         "Riga ATIS 120.180 (120.175) MHz | For charts and scenery visit vats.im/riga - Please leave your feedback. Visit LV-vACC.org/feedback"
+      ],
+      "last_updated":"2024-01-06T13:24:01.0875577Z",
+      "logon_time":"2024-01-06T13:11:46.84459Z"
+   },
+   {
+      "cid":1475694,
+      "name":"Nikita Zikeev",
+      "callsign":"EVRA_APP",
+      "frequency":"129.925",
+      "facility":5,
+      "rating":4,
+      "server":"CANADA",
+      "visual_range":150,
+      "text_atis":[
+         "Riga Approach PDC-EVRA | 1500ft-FL285 within Riga TMA (Sector A+B). GND-FL285 if no lower ATC online.",
+         "Initial climb altitude 4000ft. On initial contact, report ATIS letter received. Expect ILS RWY 36",
+         "Riga ATIS 120.180 (120.175) MHz | For charts and scenery visit vats.im/riga - Please leave your feedback. Visit LV-vACC.org/feedback"
+      ],
+      "last_updated":"2024-01-06T13:23:51.9230351Z",
+      "logon_time":"2024-01-06T13:12:01.8896642Z"
+   },
+   {
+      "cid":1679956,
+      "name":"ayhan karma",
+      "callsign":"PC226",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY2",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:06.1408335Z",
+      "logon_time":"2024-01-06T13:12:20.7451686Z"
+   },
+   {
+      "cid":812730,
+      "name":"david hoyle",
+      "callsign":"DH_OBS",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":3,
+      "server":"USA-WEST",
+      "visual_range":50,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:58.605971Z",
+      "logon_time":"2024-01-06T13:14:24.435227Z"
+   },
+   {
+      "cid":1726481,
+      "name":"Jannis bollmann",
+      "callsign":"KE_OBS",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY2",
+      "visual_range":100,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:45.333575Z",
+      "logon_time":"2024-01-06T13:14:36.2417098Z"
+   },
+   {
+      "cid":1765728,
+      "name":"AdrianTNG",
+      "callsign":"EZY45",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY2",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:55.6454692Z",
+      "logon_time":"2024-01-06T13:14:40.3335644Z"
+   },
+   {
+      "cid":878146,
+      "name":"Patrick Ryan",
+      "callsign":"CYWG_TWR",
+      "frequency":"118.300",
+      "facility":4,
+      "rating":2,
+      "server":"USA-EAST",
+      "visual_range":50,
+      "text_atis":[
+         "Thanks for flying with the Winnipeg FIR!",
+         "Questions, comments or feedback? We want to hear it!",
+         "Visit us at winnipegfir.ca."
+      ],
+      "last_updated":"2024-01-06T13:23:51.2227615Z",
+      "logon_time":"2024-01-06T13:15:12.0554975Z"
+   },
+   {
+      "cid":1395866,
+      "name":"Jakub Plevko",
+      "callsign":"LZTT_TWR",
+      "frequency":"121.350",
+      "facility":4,
+      "rating":4,
+      "server":"GERMANY2",
+      "visual_range":50,
+      "text_atis":[
+         "Poprad Tatry Tower",
+         "LZTT TWR COVERING TMA UP TO FL135",
+         "www.vacc-slovakia.sk"
+      ],
+      "last_updated":"2024-01-06T13:23:57.4886357Z",
+      "logon_time":"2024-01-06T13:15:17.9147225Z"
+   },
+   {
+      "cid":1429343,
+      "name":"Drikus Jansen Van Vuuren",
+      "callsign":"DLH07LA",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:55.7089986Z",
+      "logon_time":"2024-01-06T13:15:25.3882142Z"
+   },
+   {
+      "cid":1615849,
+      "name":"Leonard George",
+      "callsign":"LROP_GND",
+      "frequency":"121.855",
+      "facility":3,
+      "rating":2,
+      "server":"GERMANY",
+      "visual_range":20,
+      "text_atis":[
+         "Otopeni Ground",
+         "ATIS on 118.500",
+         "Charts and Sceneries on www.rovacc.ro"
+      ],
+      "last_updated":"2024-01-06T13:23:59.5585589Z",
+      "logon_time":"2024-01-06T13:15:29.7733546Z"
+   },
+   {
+      "cid":1608013,
+      "name":"Steven Vicat",
+      "callsign":"EZY83XL",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"UK",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:03.1506978Z",
+      "logon_time":"2024-01-06T13:16:02.8166864Z"
+   },
+   {
+      "cid":1593290,
+      "name":"Romain Jacquart",
+      "callsign":"MOMIOBS",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:02.2531078Z",
+      "logon_time":"2024-01-06T13:16:46.9646759Z"
+   },
+   {
+      "cid":1777527,
+      "name":"Michal Sekera",
+      "callsign":"TVS2D",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"UK",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:59.9580302Z",
+      "logon_time":"2024-01-06T13:17:29.7593869Z"
+   },
+   {
+      "cid":1727714,
+      "name":"Bernhard Ebner",
+      "callsign":"LOWW_TWR",
+      "frequency":"119.400",
+      "facility":4,
+      "rating":4,
+      "server":"UK",
+      "visual_range":20,
+      "text_atis":[
+         "Wien Tower DCL LOWW",
+         "My active sector vats.im/lovv",
+         "Charts vats.im/lovv-charts"
+      ],
+      "last_updated":"2024-01-06T13:23:48.3411449Z",
+      "logon_time":"2024-01-06T13:17:38.9403403Z"
+   },
+   {
+      "cid":1612643,
+      "name":"David Ramón Marin Øland Nielsen",
+      "callsign":"EKCH_A_TWR",
+      "frequency":"118.105",
+      "facility":4,
+      "rating":3,
+      "server":"USA-EAST",
+      "visual_range":50,
+      "text_atis":[
+         "Kastrup Tower - Voice Atis For Departures on 122.855. For arrivals on 122.755",
+         "Info, charts and forums at www.vatsim-scandinavia.org/pilots/airports-charts/denmark/ | Thank you for your feedback@vatsim-scandinavia.org",
+         "Enjoy your flight in Denmark!"
+      ],
+      "last_updated":"2024-01-06T13:23:46.3061135Z",
+      "logon_time":"2024-01-06T13:17:47.2200232Z"
+   },
+   {
+      "cid":1579000,
+      "name":"damar damar",
+      "callsign":"GIA837",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:02.2077026Z",
+      "logon_time":"2024-01-06T13:18:02.1200317Z"
+   },
+   {
+      "cid":1645754,
+      "name":"Daniel",
+      "callsign":"DZ_OBS",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"UK",
+      "visual_range":100,
+      "text_atis":[
+         "$radioname, good day",
+         "Find validated routes *routes.vacc.ch*, read our charts *charts.vacc.ch*, feedback *fb.vacc.ch*"
+      ],
+      "last_updated":"2024-01-06T13:23:52.2101497Z",
+      "logon_time":"2024-01-06T13:18:02.4428057Z"
+   },
+   {
+      "cid":1549122,
+      "name":"Shaun Parkinson",
+      "callsign":"EZY632",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"UK",
+      "visual_range":70,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:04.1861263Z",
+      "logon_time":"2024-01-06T13:18:48.9808682Z"
+   },
+   {
+      "cid":1292870,
+      "name":"Tony Dunbar",
+      "callsign":"KQA756",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"UK",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:02.8336625Z",
+      "logon_time":"2024-01-06T13:19:02.8199372Z"
+   },
+   {
+      "cid":1246195,
+      "name":"Francisco Baptista",
+      "callsign":"LPPT_TWR",
+      "frequency":"118.105",
+      "facility":4,
+      "rating":3,
+      "server":"GERMANY",
+      "visual_range":50,
+      "text_atis":[
+         "Lisboa Tower. DCL available on LPPT",
+         "Squawk Mode C on the ground. For updated charts - charts.portugal-vacc.org/#LPPT",
+         "For ATC feedback vats.im/pt_feedback"
+      ],
+      "last_updated":"2024-01-06T13:23:49.5214061Z",
+      "logon_time":"2024-01-06T13:19:30.5735643Z"
+   },
+   {
+      "cid":1021059,
+      "name":"Manuel Ramos",
+      "callsign":"LPPR_TWR",
+      "frequency":"118.005",
+      "facility":4,
+      "rating":5,
+      "server":"UK",
+      "visual_range":50,
+      "text_atis":[
+         "Porto Tower.",
+         "For updated charts - charts.portugal-vacc.org/#LPPR",
+         "For ATC feedback vats.im/pt_feedback"
+      ],
+      "last_updated":"2024-01-06T13:24:08.0242626Z",
+      "logon_time":"2024-01-06T13:19:31.4807497Z"
+   },
+   {
+      "cid":1622122,
+      "name":"Gao",
+      "callsign":"CJX6682",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"UK",
+      "visual_range":100,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:55.7313895Z",
+      "logon_time":"2024-01-06T13:20:25.8749589Z"
+   },
+   {
+      "cid":1254504,
+      "name":"Chris Murray-Wilcox",
+      "callsign":"SY_GND",
+      "frequency":"126.500",
+      "facility":3,
+      "rating":3,
+      "server":"CANADA",
+      "visual_range":10,
+      "text_atis":[
+         "Sydney Ground",
+         "ATIS available on 126.25",
+         "Charts - vats.im/pac/charts",
+         "ATC feedback - helpdesk.vatpac.org"
+      ],
+      "last_updated":"2024-01-06T13:24:04.8452929Z",
+      "logon_time":"2024-01-06T13:20:45.8310328Z"
+   },
+   {
+      "cid":1538856,
+      "name":"Jonathan Hanekonm",
+      "callsign":"AFRS_FSS",
+      "frequency":"134.575",
+      "facility":1,
+      "rating":5,
+      "server":"GERMANY",
+      "visual_range":1500,
+      "text_atis":[
+         "Africa South Control. ATC above FL245 only",
+         "if local CTR is offline. Covers FACA FAJA",
+         "FBGR FIMM FMMM FQBE FVHF and FYWH - vatssa.com"
+      ],
+      "last_updated":"2024-01-06T13:23:55.2598562Z",
+      "logon_time":"2024-01-06T13:21:40.7187872Z"
+   },
+   {
+      "cid":1751923,
+      "name":"Jonas",
+      "callsign":"OBS320A",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"AMSTERDAM",
+      "visual_range":20,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:53.2945335Z",
+      "logon_time":"2024-01-06T13:21:53.2144556Z"
+   },
+   {
+      "cid":1283544,
+      "name":"Cristian Torz",
+      "callsign":"ML-ELW_CTR",
+      "frequency":"123.750",
+      "facility":6,
+      "rating":5,
+      "server":"USA-WEST",
+      "visual_range":600,
+      "text_atis":[
+         "Melbourne Centre",
+         "Charts - vats.im/pac/charts",
+         "ATC feedback - helpdesk.vatpac.org",
+         ""
+      ],
+      "last_updated":"2024-01-06T13:23:59.1758574Z",
+      "logon_time":"2024-01-06T13:21:54.2327798Z"
+   },
+   {
+      "cid":1564821,
+      "name":"Bryan Dyer",
+      "callsign":"ACA492",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"CANADA",
+      "visual_range":70,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:59.6645098Z",
+      "logon_time":"2024-01-06T13:22:44.621532Z"
+   },
+   {
+      "cid":1663461,
+      "name":"Samad Habib",
+      "callsign":"VIDP_TWR",
+      "frequency":"118.100",
+      "facility":4,
+      "rating":3,
+      "server":"GERMANY2",
+      "visual_range":50,
+      "text_atis":[
+         "\"Delhi Tower\"",
+         "Report Callsign and Position on Initial Contact.",
+         "India vACC | VATSIM West Asia | More Information -> indiavacc.org"
+      ],
+      "last_updated":"2024-01-06T13:23:47.2202894Z",
+      "logon_time":"2024-01-06T13:22:47.6026303Z"
+   },
+   {
+      "cid":1749911,
+      "name":"Ronan Hederman",
+      "callsign":"RYR212",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"UK",
+      "visual_range":20,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:02.3453956Z",
+      "logon_time":"2024-01-06T13:23:02.3151062Z"
+   },
+   {
+      "cid":1072019,
+      "name":"Stefan Loos",
+      "callsign":"EDQZ_I_TWR",
+      "frequency":"127.560",
+      "facility":4,
+      "rating":2,
+      "server":"GERMANY",
+      "visual_range":100,
+      "text_atis":[
+         "Pegnitz radio"
+      ],
+      "last_updated":"2024-01-06T13:23:46.7223744Z",
+      "logon_time":"2024-01-06T13:23:23.8123376Z"
+   },
+   {
+      "cid":1748857,
+      "name":"Milo Axmann",
+      "callsign":"GBVS",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:56.1217354Z",
+      "logon_time":"2024-01-06T13:23:26.1111251Z"
+   },
+   {
+      "cid":1744377,
+      "name":"Alexsey",
+      "callsign":"UHWW_GND",
+      "frequency":"121.700",
+      "facility":3,
+      "rating":2,
+      "server":"AMSTERDAM",
+      "visual_range":20,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:23:59.6282923Z",
+      "logon_time":"2024-01-06T13:23:50.4860865Z"
+   },
+   {
+      "cid":1774166,
+      "name":"Cheng guojin",
+      "callsign":"CQH8862A",
+      "frequency":"199.998",
+      "facility":0,
+      "rating":1,
+      "server":"GERMANY",
+      "visual_range":40,
+      "text_atis":null,
+      "last_updated":"2024-01-06T13:24:01.6146516Z",
+      "logon_time":"2024-01-06T13:24:01.6142175Z"
+   }
+]

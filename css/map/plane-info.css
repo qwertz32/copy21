@@ -1,0 +1,10 @@
+.plane-info {
+    position: fixed;
+    top: 6%;
+    margin: 14px;
+    border-radius: 1.2rem;
+    left: 0;
+    height: 20%;
+    width: 20%;
+    background-color: white;
+}

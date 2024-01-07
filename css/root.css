@@ -16,6 +16,7 @@
     --font-rubik: 'Rubik', monospace;
     --font-lato: 'Lato', sans-serif;
     --font-roboto: 'Roboto Mono', monospace;
+    --font-montserrat: 'Montserrat', sans-serif;
     --event-box-deafult-border: 5px solid rgb(84, 31, 2);
     --event-box-active-border: 5px solid rgba(35, 188, 35, 0.797);
     /* --event-box-inactive-border: 2px solid red; NOT IN USE */

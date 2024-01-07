@@ -1,12 +1,15 @@
 $(document).ready(function () {
-    $('.hamburger-menu').click( function () {
-        $('body').removeClass('hide-sidebar');
-        $('body').toggleClass('show-sidebar');
-        $('#sidebar-bg').css('display', 'block');
+    $('.hamburger-menu').click(function () {
+        if ($('body').hasClass('show-sidebar')) {
+            $('body').removeClass('show-sidebar').addClass('hide-sidebar');
+            $('#sidebar-bg').css('display', 'none');
+        } else {
+            $('body').removeClass('hide-sidebar').addClass('show-sidebar');
+            $('#sidebar-bg').css('display', 'block');
+        }
     });
     $('#sidebar-bg').click(function() {
-        $('body').removeClass('show-sidebar');
-        $('body').toggleClass('hide-sidebar');
+        $('body').removeClass('show-sidebar').addClass('hide-sidebar');
         $('#sidebar-bg').css('display', 'none');
     });
 });

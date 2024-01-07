@@ -25,7 +25,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Oswald:wght@500&family=Roboto+Mono:wght@500&family=Rubik:wght@500&display=swap&family=Inter:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Oswald:wght@500&family=Roboto+Mono:wght@500&family=Rubik:wght@500&display=swap&family=Inter:wght@900&display=swap&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
@@ -70,13 +70,12 @@
     <script src="/script/getcountry.js"></script>
     <script src="/script/events/map-content.js"></script>
     <script src="/script/menu-animations.js"></script>
-    <script src="/script/events/precise-popup.js"></script>
     <script src="/script/events/sidebar-toggle.js"></script>
     <script src="/script/events/pin-put.js"></script>
     <script src="/script/events/event-boxes-creator.js"></script>
-    <script src="/script/return-to-center.js"></script>
     <script src="/script/popups.js"></script> 
     <script src="/script/top-right-stats.js"></script>
+    <script src="/script/events/precise-popup-creator.js"></script>
     <style>
 
 .precise-overlay {
@@ -121,9 +120,10 @@
 </head>
 
 <body>
-    
+    <div class="overlay"></div>
     <div id="loading-container">
         <div id="loading-spinner"></div>
+        <p>Ver 0.1.1-alpha <br> Build 6.873</p>
     </div>
      <div id="ls-popup">
         <div id="ls-popup-content">
@@ -141,7 +141,7 @@
     <div id="cd-popup">
         <div class="cd-popup-content">
             <div class="cd-popup-content-text">
-                <p>Whoops! Can't access your browser's local storage. No <a class="cd-popup-links-content cd-popup-links-no-biggie" href="https://dictionary.cambridge.org/dictionary/english/no-biggie" target="_blank">biggie though</a>, some features just won't work. Keep on using it!</p>
+                <p>Whoops! Can't access your browser's local storage.<a class="cd-popup-links-content cd-popup-links-no-biggie" href="https://dictionary.cambridge.org/dictionary/english/no-biggie" target="_blank"> No biggie</a> though, some features just won't work. Keep on using it!</p>
                 <p class="cd-popup-links"><a class="cd-popup-links-content cd-popup-links-animation" href="/disabled-features" target="_blank">Learn which</a> and <a class="cd-popup-links-content cd-popup-links-animation" href="https://www.bublup.com/support/enable-cookies-local-storage-in-your-browser/" target="_blank">how to fix it.</a></p>
             </div>
             <button id="cd-popup-btn" onclick="clsCdPopUp()">Cool! Let's use it anyway</button>
@@ -149,10 +149,7 @@
     </div>
     <div class="precise-overlay-bg"></div>
     <div class="precise-overlay">
-        <!-- <p class="simple-test-close-btn" onclick="closeSimpleOverlay()"><img src="https://vatsim.glitch.me/src/img/square-xmark-solid.svg" alt="X Button"></p> -->
-        <!-- <p class="simple-test-close-btn" onclick="closeSimpleOverlay()"><img src="/src/img/square-xmark-solid.svg"></p> -->
         <p class="precise-close-btn" onclick="closePreciseOverlay()">x</p> 
-
         <h2>A simple testing overlay</h2>
         <p>Made just to test for the future JS functionality.</p>
     </div>
@@ -185,7 +182,6 @@
                     <div class="center">
                         <div class="logo">
                             <div class="nav-logo clr-wht">
-                                <!-- <a href="https://vatsim.net" target="_blank"><img src="/src/img/VATSIM Logos for Public Use/2000w/VATSIM_Logo_Official_White_Tagline_2000px.png" alt="VATSIM Logo"></a> -->
                                 <a href="https://vatsim.net" target="_blank" ><img src="/src/img/VATSIM Logos for Public Use/2000w/VATSIM_Logo_White_No_Tagline_2000px.png" alt="VATSIM logo"></a>
                             </div>
                             <div class="nav-logo-subtext">
@@ -205,37 +201,64 @@
 
                     </div>
                 </nav>
+                </div>
                 <div id="sidebar-bg"></div>
                 <div class="event-sidebox">
+                    <!-- <div class="event-sidebox-redirect">
+                        <a href="/map">Go to MAP</a>
+                    </div>
+                    <hr class="event-sidebox-divide"> was meant to be on the map page -->
                     <div id="event-boxes-container">
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- <div class="overlay"></div> -->
 
     <script id="event-template" type="text/x-handlebars-template">
         <div class="single-event-box {{isActive 'active-event-box' 'inactive-event-box'}}">
-            <div class="event-box-text">
-                <div class="event-box-title">
-                    <span>{{name}}</span>
-                </div>
-                <div class="event-box-shortDescription">
-                    <span>{{{shortDescription}}}</span>
-                </div>
-                <div class="event-box-icaos">
-                    <span>
-                        <span>{{formatTime startTime}} - {{formatTime endTime}}</span>
-                        <span><b>{{#each airports}}{{icao}}{{#unless @last}}, {{/unless}}{{/each}}</b></span>
-                    </span>
-                </div>
+        <div class="event-box-text">
+            <div class="event-box-title">
+                <span>{{name}}</span>
+            </div>
+            <div class="event-box-shortDescription">
+                <span>{{{shortDescription}}}</span>
+            </div>
+            <div class="event-box-icaos">
+                <span>
+                    <span>{{formatTime startTime}} - {{formatTime endTime}}</span>
+                    <span><b>{{#each airports}}{{icao}}{{#unless @last}}, {{/unless}}{{/each}}</b></span>
+                </span>
             </div>
         </div>
-    </script>
+    </div>
+</script>
+<!-- <script id="precise-event-template" type="text/x-handlebars-template">
+     <div class="precise-popup-content">
+        <div class="precise-popup-title">
+            <h2>{{name}}</h2>
+        </div>
+        <div class="precise-popup-desc">
+            {{{description}}}
+        </div>
+        <div class="precise-popup-link">
+            <a href="{{link}}" target="_blank">Event Link</a>
+        </div>
+        <div class="popup-organizers">
+            <h3>Organizers:</h3>
+            {{#each organisers}}
+                <p>{{region}} - {{division}}</p>
+            {{/each}}
+        </div>
+    </div>
+     <div>
+        <h3>{{name}}</h3>
+        <p>{{description}}</p>
+        <a href="{{link}}" target="_blank">Learn more</a>
+    </div> 
+</script> -->
     <noscript>
-        <style>.a-noscript{text-decoration: none;color: rgb(67, 152, 252);font-size: 2vh;}.a-noscript:hover{text-decoration: underline;}.div1-noscript{position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: rgb(0 0 0);display: flex;align-items: center;justify-content:center;z-index: 1050 !important;}  .div2-noscript{color: white;font-weight: 900;font-size: 2.5vh;font-family: sans-serif;text-align: center;}</style><div class="div1-noscript"><div class="div2-noscript">JavaScript is dead, and so is this page...<br>Enable it! <a class="a-noscript" href="https://support.google.com/admanager/answer/12654" target="_blank">How?</a></div></div></noscript>
+        <style>.a-noscript{text-decoration: none;color: rgb(67, 152, 252);font-size: 2vh;}.a-noscript:hover{text-decoration: underline;}.div1-noscript{position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-color: rgb(0 0 0);display: flex;align-items: center;justify-content:center;z-index: 3500 !important;}  .div2-noscript{color: white;font-weight: 900;font-size: 2.5vh;font-family: sans-serif;text-align: center;}</style><div class="div1-noscript"><div class="div2-noscript">JavaScript decided to take a nap, and so did this page...<br>Wake them up! <br><a class="a-noscript" href="https://support.google.com/admanager/answer/12654" target="_blank">Don't know how   ?</a></div></div></noscript>
 </body>
 
 </html>

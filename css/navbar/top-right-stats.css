@@ -7,6 +7,7 @@
     margin-right: 15px;
     align-items: center;
     font-weight: 800;
+    position: sticky;
     font-family: 'Inter', sans-serif;
 }
 .t-r-s-margin {

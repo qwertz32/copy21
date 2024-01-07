@@ -1,5 +1,5 @@
 #loading-container {
-    display: none; /*for now its broken let it remain disabled*/
+    display: flex;/*for now its broken let it remain disabled*/
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -11,6 +11,11 @@
     color: var(--white-color);
     flex-direction: column;
     z-index: 3000;
+}
+#loading-container p {
+    text-align: center;
+    font-family: var(--font-rubik);
+    font-size: 2rem;
 }
 #loading-spinner {
     border: 16px solid #f3f3f3;
