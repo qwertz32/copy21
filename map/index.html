@@ -52,6 +52,7 @@
     <link rel="stylesheet" href="/css/map/plane-info-popup.css">
     <link rel="stylesheet" href="/css/map/plane-info.css">
     <link rel="stylesheet" href="/css/map/bottom-bar.css">
+    <link rel="stylesheet" href="/css/map/search-bar.css">
 
     <!--Scripts-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -66,7 +67,6 @@
     <script src="/script/events/handlebars-register.js"></script>
     <script src="/script/console-functions.js"></script>
     <script src="/script/getcountry.js"></script>
-    <script src="/script/map/map-providers.js"></script>
     <script src="/script/menu-animations.js"></script>
     <script src="/script/events/sidebar-toggle.js"></script>
     <script src="/script/popups.js"></script> 
@@ -74,6 +74,50 @@
     <script src="/script/events/precise-popup-creator.js"></script>
     <script src="/script/map/plane-placement.js"></script>
     <script src="/script/map/plane-info-hbs.js"></script>
+    <script src="/script/map/searching.js"></script>
+
+    <script>
+let cachedData;
+function searchByCallsign(callsign) {
+    console.log("Search function called with callsign:", callsign);
+
+    if (cachedData) {
+        const uppercaseCallsign = callsign.toUpperCase();
+        const foundPilot = cachedData.pilots.find(pilot => pilot.callsign === uppercaseCallsign);
+
+        if (foundPilot) {
+            const pilotLatLng = L.latLng(foundPilot.latitude, foundPilot.longitude);
+            map.whenReady(() => {
+                map.setView(pilotLatLng, 5.5);
+                console.log(`Teleported to ${uppercaseCallsign}'s coordinates.`);
+            });
+        } else {
+            console.log(`Pilot with callsign ${uppercaseCallsign} not found.`);
+        }
+    } else {
+        console.log("JSON data not available. Please fetch the data first.");
+    }
+}
+
+$(document).ready(function () {
+    $('#searchInput').keyup(function (event) {
+        if (event.keyCode === 13) {
+            const searchTerm = $(this).val();
+            console.log("Enter key pressed with search term:", searchTerm);
+            searchByCallsign(searchTerm.toUpperCase());
+        }
+    });
+
+    fetch('https://data.vatsim.net/v3/vatsim-data.json')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Fetched JSON data:', data);
+            cachedData = data;
+        })
+        .catch(error => console.error('Error fetching JSON:', error));
+});
+
+    </script>
 </head>
 
 <body>
@@ -144,7 +188,7 @@
                         <div class="top-right-stats">
                             <span class="t-r-s-icon t-r-s-margin"><i class="fa fa-plane"></i></span>
                             <span class="t-r-s-airplane-count t-r-s-margin t-r-s-text"></span>
-                            <span class="t-r-s-atc-text t-r-s-margin t-r-s-text"><i class="fa-solid fa-tower-control"></i></span>
+                            <span class="t-r-s-atc-text t-r-s-margin t-r-s-text"><!--<i class="fa-solid fa-tower-control"></i>-->ATC</span>
                             <span class="t-r-s-atc-count t-r-s-margin t-r-s-text"></span>
                         </div>
                         <div class="zulu-clock clocks"></div>
@@ -153,7 +197,6 @@
                     </div>
                 </nav>
                 <div class="plane-info"></div>
-                </div>
                 <div class="bottom-filter-bar">
                     <div class="bottom-filter-box">
                         <span class="bottom-filter-button-f1 b-f-b-first"><!--<i class="fa-solid fa-tower-control"></i>-->ATC</span>
@@ -167,7 +210,10 @@
                         <span class="bottom-filter-button b-f-b-middle"><i class="fa fa-tags"></i></span>
                         <span class="bottom-filter-button-f2 b-f-b-last"><i class="fa fa-layer-group"></i></span>
                     </div>
-                </div>                
+                </div>     
+                <div class="bottom-right-search-bar">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                </div>           
             </div>
         </div>
     </div>

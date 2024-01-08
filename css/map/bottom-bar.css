@@ -5,56 +5,45 @@
     border-radius: 2rem;
     height: 50px;
     background-color: #f2f2f2;
+    left: 50%;
     display: flex;
-    align-items: center;
     justify-content: center;
     z-index: 400;
+    transform: translateX(-50%);
 }
 
 .bottom-filter-box {
     height: 100%;
     display: flex;
-    align-items: center;
     margin-inline: 17px;
+    align-items: center;
     cursor: pointer;
     margin: 0 !important;
     padding: 0 !important;
 }
-
-/* New classes for each text/icon box */
 .bottom-filter-icon-box {
     height: 100%;
-    width: 35px; /* Set fixed width */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 35px;
     cursor: pointer;
     transition: all 0.3s;
 }
 
 .bottom-filter-text-box {
     height: 100%;
-    width: 100px; /* Set fixed width */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100px; 
     cursor: pointer;
     transition: all 0.3s;
 }
 
-/* Apply styles to individual boxes */
 .bottom-filter-icon-box:hover,
 .bottom-filter-text-box:hover {
     background-color: #ff0000;
 }
 
-/* Adjusted styles for the icon and text boxes */
 .bottom-filter-icon-box i,
 .bottom-filter-text-box span {
     font-family: var(--font-montserrat);
 }
-
-/* Your existing styles for button-f1 and button-f2 */
 .bottom-filter-button-f1 {
     margin-right: 10px;
 }
