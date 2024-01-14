@@ -50,14 +50,13 @@
     <link rel="stylesheet" href="/css/cache-disabled.css">
     <link rel="stylesheet" href="/css/events/event-popups.css">
     <link rel="stylesheet" href="/css/navbar/top-right-stats.css">
-
+    <link rel="stylesheet" href="/css/events/date-picking.css">
     <!--Scripts-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet"></script>
     <script src="/script/events/sidebar-height.js"></script>
     <script src="/script/loading-spinner.js"></script>
-    <script src="/script/nocache-cords-and-zoom.js"></script>
     <script src="/script/clock.js"></script>
     <script src="/script/events/handlebars-register.js"></script>
     <script src="/script/console-functions.js"></script>
@@ -69,6 +68,7 @@
     <script src="/script/popups.js"></script> 
     <script src="/script/top-right-stats.js"></script>
     <script src="/script/events/precise-popup-creator.js"></script>
+    <script src="/script/events/map.js"></script>
     <style>
 
 .precise-overlay {
@@ -191,7 +191,6 @@
                         </div>
                         <div class="zulu-clock clocks"></div>
                         <div class="local-clock clocks"></div>
-
                     </div>
                 </nav>
                 </div>
@@ -202,12 +201,17 @@
                     </div>
                     <hr class="event-sidebox-divide"> was meant to be on the map page -->
                     <div id="event-boxes-container">
+                        <div id="event-boxes-timeOfFetch"></div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>
-
+    <!-- <div class="date-pick-main">
+        <input type="date" id="date-picking-events">
+        <p>helo</p>
+    </div> -->
     <script id="event-template" type="text/x-handlebars-template">
         <div class="single-event-box {{isActive 'active-event-box' 'inactive-event-box'}}">
         <div class="event-box-text">
@@ -220,7 +224,7 @@
             <div class="event-box-icaos">
                 <span>
                     <span>{{formatTime startTime}} - {{formatTime endTime}}</span>
-                    <span><b>{{#each airports}}{{icao}}{{#unless @last}}, {{/unless}}{{/each}}</b></span>
+                        <span class="event-box-icaos-single"><b>{{#each airports}}{{icao}}{{#unless @last}}, {{/unless}}{{/each}}</b></span>
                 </span>
             </div>
         </div>

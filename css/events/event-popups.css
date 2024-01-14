@@ -3,4 +3,5 @@
     background: var(--events-custom-popup-bg);
     color: #ffffff;
     text-align: center;
+    user-select: none;
 }

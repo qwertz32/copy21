@@ -4,22 +4,22 @@
     width: 290px;
     border-radius: 2rem;
     height: 50px;
-    background-color: #f2f2f2;
+    background-color: var(--bottom-bar-background);
     left: 50%;
     display: flex;
     justify-content: center;
     z-index: 400;
     transform: translateX(-50%);
 }
-
 .bottom-filter-box {
     height: 100%;
     display: flex;
-    margin-inline: 17px;
     align-items: center;
     cursor: pointer;
-    margin: 0 !important;
-    padding: 0 !important;
+}
+.bfb-content {
+    margin: 0 15px;
+    color: #fff;
 }
 .bottom-filter-icon-box {
     height: 100%;
@@ -44,10 +44,7 @@
 .bottom-filter-text-box span {
     font-family: var(--font-montserrat);
 }
-.bottom-filter-button-f1 {
-    margin-right: 10px;
-}
 
-.bottom-filter-button-f2 {
-    margin-left: 15px;
+.b-f-b-first {
+    top: 500px;
 }

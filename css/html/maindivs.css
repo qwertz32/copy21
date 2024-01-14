@@ -2,6 +2,9 @@
     height: calc(100vh - 10%);
     width: 100vw;
 }
+#everything {
+    display: flex;
+}
 .fullscreen {
     display: flex;
     flex-direction: column;

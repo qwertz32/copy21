@@ -1,0 +1,9 @@
+.date-pick-main {
+    width: 300px; /* Adjust the width as needed */
+    height: 100%;
+    background-color: #f0f0f0; /* Set a background color */
+    margin-left: 10px; /* Add some margin for spacing */
+    padding: 10px; /* Add padding for content */
+    box-sizing: border-box; /* Include padding and border in box sizing */
+    overflow: auto;
+}

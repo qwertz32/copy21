@@ -12,3 +12,7 @@
 ::-webkit-scrollbar-thumb:hover {
     background: var(--scroll-handle-hover);
 }
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scroll-handle) var(--scroll-bg) ;
+}

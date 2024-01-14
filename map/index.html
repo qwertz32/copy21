@@ -57,12 +57,13 @@
     <!--Scripts-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-    <script src="https://unpkg.com/leaflet"></script>
-    <script src="https://unpkg.com/leaflet-rotatedmarker"></script> <!--For rotating the icons-->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-rotatedmarker"></script> 
     <script src="https://unpkg.com/leaflet-canvas-marker"></script>
+    <script src="/script/nocache-cords-and-zoom.js"></script>
+    <script src="/script/map/plane-placement.js"></script>
     <script src="/script/events/sidebar-height.js"></script>
     <script src="/script/loading-spinner.js"></script>
-    <script src="/script/nocache-cords-and-zoom.js"></script>
     <script src="/script/clock.js"></script>
     <script src="/script/events/handlebars-register.js"></script>
     <script src="/script/console-functions.js"></script>
@@ -72,52 +73,8 @@
     <script src="/script/popups.js"></script> 
     <script src="/script/top-right-stats.js"></script>
     <script src="/script/events/precise-popup-creator.js"></script>
-    <script src="/script/map/plane-placement.js"></script>
     <script src="/script/map/plane-info-hbs.js"></script>
     <script src="/script/map/searching.js"></script>
-
-    <script>
-let cachedData;
-function searchByCallsign(callsign) {
-    console.log("Search function called with callsign:", callsign);
-
-    if (cachedData) {
-        const uppercaseCallsign = callsign.toUpperCase();
-        const foundPilot = cachedData.pilots.find(pilot => pilot.callsign === uppercaseCallsign);
-
-        if (foundPilot) {
-            const pilotLatLng = L.latLng(foundPilot.latitude, foundPilot.longitude);
-            map.whenReady(() => {
-                map.setView(pilotLatLng, 5.5);
-                console.log(`Teleported to ${uppercaseCallsign}'s coordinates.`);
-            });
-        } else {
-            console.log(`Pilot with callsign ${uppercaseCallsign} not found.`);
-        }
-    } else {
-        console.log("JSON data not available. Please fetch the data first.");
-    }
-}
-
-$(document).ready(function () {
-    $('#searchInput').keyup(function (event) {
-        if (event.keyCode === 13) {
-            const searchTerm = $(this).val();
-            console.log("Enter key pressed with search term:", searchTerm);
-            searchByCallsign(searchTerm.toUpperCase());
-        }
-    });
-
-    fetch('https://data.vatsim.net/v3/vatsim-data.json')
-        .then(response => response.json())
-        .then(data => {
-            console.log('Fetched JSON data:', data);
-            cachedData = data;
-        })
-        .catch(error => console.error('Error fetching JSON:', error));
-});
-
-    </script>
 </head>
 
 <body>
@@ -199,20 +156,24 @@ $(document).ready(function () {
                 <div class="plane-info"></div>
                 <div class="bottom-filter-bar">
                     <div class="bottom-filter-box">
-                        <span class="bottom-filter-button-f1 b-f-b-first"><!--<i class="fa-solid fa-tower-control"></i>-->ATC</span>
+                        <span class="bfb-content bottom-filter-button-f1 b-f-b-first"><img src="/src/img/tower-control.png" alt="ATC" width="20px" height="20px"></span>
+
                         <div class="bfb-plane">
-                            <span class="bottom-filter-button b-f-b-middle"><i class="fa fa-plane"></i></span>
+                            <span class="bfb-content bottom-filter-button b-f-b-middle"><i class="fa fa-plane"></i></span>
                         </div>
                         <div class="bfb-weather">
-                            <span class="bottom-filter-button b-f-b-middle"><i class="fa fa-cloud"></i></span>
+                            <span class="bfb-content bottom-filter-button b-f-b-middle"><i class="fa fa-cloud"></i></span>
 
                         </div>
-                        <span class="bottom-filter-button b-f-b-middle"><i class="fa fa-tags"></i></span>
-                        <span class="bottom-filter-button-f2 b-f-b-last"><i class="fa fa-layer-group"></i></span>
+                        <div class="bfb-labels">
+                            <span class="bfb-content bottom-filter-button b-f-b-middle"><i class="fa fa-tags"></i></span>
+                        </div>
+                        <span class="bfb-content bottom-filter-button-f2 b-f-b-last"><i class="fa fa-layer-group"></i></span>
                     </div>
                 </div>     
                 <div class="bottom-right-search-bar">
                     <input type="text" id="searchInput" placeholder="Search...">
+                    <div id="searchResults"></div>
                 </div>           
             </div>
         </div>
@@ -221,7 +182,7 @@ $(document).ready(function () {
     <div class="plane-info-content">
         <h2>{{callsign}}</h2>
     </div>
-</script>
+</script> <!--Sidebar for plane info-->
 <script>
     $.ajax({
         url: '/version.json',

@@ -10,16 +10,14 @@
     --close-btn-on-hover: rgb(166, 97, 239);
     --bug-report-bg: #481961;
     --dark-bg: rgba(14, 14, 14, 0.7);
-    --scroll-bg: #622c0a;
-    --scroll-handle: #1e7722;
-    --scroll-handle-hover: #19b521;
+    --scroll-bg: #212121;
+    --scroll-handle: #757575;
+    --scroll-handle-hover: #212121;
     --font-rubik: 'Rubik', monospace;
     --font-lato: 'Lato', sans-serif;
     --font-roboto: 'Roboto Mono', monospace;
     --font-montserrat: 'Montserrat', sans-serif;
-    --event-box-deafult-border: 5px solid rgb(84, 31, 2);
     --event-box-active-border: 5px solid rgba(35, 188, 35, 0.797);
-    /* --event-box-inactive-border: 2px solid red; NOT IN USE */
     --sidebox-background: #1b1d1f;
     --event-box-background: #252829;
     --nav-bar-background: #352c45;
@@ -32,4 +30,8 @@
     --sidebar-bg: rgba(0, 0, 0, 0.558);
     --animation-soft-blue: rgb(83, 149, 220);
     --top-right-stats-grayed: rgb(136, 131, 131);
+    --event-box-icaos-color: rgb(74, 237, 167);
+    --bottom-bar-background: rgb(13, 13, 13);
+    --plane-info-background: rgb(13, 13, 13);
+    --active: rgb(167, 110, 232);
 }
