@@ -75,6 +75,7 @@
     <script src="/script/events/precise-popup-creator.js"></script>
     <script src="/script/map/plane-info-hbs.js"></script>
     <script src="/script/map/searching.js"></script>
+    <script src="/script/map/airport-icons.js"></script>
 </head>
 
 <body>
@@ -137,7 +138,7 @@
                                 <a href="https://vatsim.net" target="_blank" ><img src="/src/img/VATSIM Logos for Public Use/2000w/VATSIM_Logo_White_No_Tagline_2000px.png" alt="VATSIM logo"></a>
                             </div>
                             <div class="nav-logo-subtext">
-                                <a href="https://map.vatsim.net" target="_blank"><span class="nav-subtext">map</span></a>
+                                <a href="https://map.vatsim.net" target="_blank"><span title="helo" class="nav-subtext">map</span></a>
                             </div>
                         </div>
                     </div>
@@ -153,7 +154,9 @@
 
                     </div>
                 </nav>
-                <div class="plane-info"></div>
+                <div class="plane-info" style="color:var(--white-color);">
+                    
+                </div>
                 <div class="bottom-filter-bar">
                     <div class="bottom-filter-box">
                         <span class="bfb-content bottom-filter-button-f1 b-f-b-first"><img src="/src/img/tower-control.png" alt="ATC" width="20px" height="20px"></span>
@@ -168,7 +171,10 @@
                         <div class="bfb-labels">
                             <span class="bfb-content bottom-filter-button b-f-b-middle"><i class="fa fa-tags"></i></span>
                         </div>
-                        <span class="bfb-content bottom-filter-button-f2 b-f-b-last"><i class="fa fa-layer-group"></i></span>
+                        <span class="bfb-content bottom-filter-button b-f-b-middle"><i class="fa fa-layer-group"></i></span>
+                        <div class="bfb-airports">
+                            <span class="bfb-content bottom-filter-button-f2 b-f-b-last"><i class="fa fa-map-pin"></i></span>
+                        </div>
                     </div>
                 </div>     
                 <div class="bottom-right-search-bar">
