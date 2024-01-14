@@ -142,9 +142,30 @@
     </div>
     <div class="precise-overlay-bg"></div>
     <div class="precise-overlay">
-        <p class="precise-close-btn" onclick="closePreciseOverlay()">x</p> 
-        <h2>A simple testing overlay</h2>
-        <p>Made just to test for the future JS functionality.</p>
+        <p class="precise-close-btn" onclick="closePreciseOverlay()">x</p>
+        <div class="content">
+            <div class="title">
+                <h2>A Simple Testing Overlay</h2>
+            </div>
+            <div class="details">
+                <div class="link">
+                    <p>Link Text</p>
+                </div>
+                <div class="time">
+                    <p>Start Time: 10:00 AM</p>
+                    <p>End Time: 3:00 PM</p>
+                </div>
+                <div class="description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div class="banner">
+                    <img src="https://vatsim-my.nyc3.digitaloceanspaces.com/events/mkuP4kPYHh5eSuWSQKFwnpMAPGpNPCH5s0n6DJ6j.png" width="60%" height="60%" alt="Banner">
+                </div>
+                <div class="location">
+                    <p>EPWA, EPSC, EPGD, EPKK</p>
+                </div>
+            </div>
+        </div>
     </div>
     <div id="map" style="height: 100vh; width: 100vw;"></div>
     <div id="everything">
@@ -229,6 +250,9 @@
             </div>
         </div>
     </div>
+</script>
+<script id="precise-popup-template" type="text/x-handlebars-template">
+    
 </script>
 <script>
     $.ajax({
