@@ -1,5 +1,5 @@
 .precise-overlay {
-    display: none;
+    display: flex;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -10,10 +10,47 @@
     padding: 10%;
     font-size: 2.3rem;
     border-radius: 1.3rem;
+}
+
+.content {
     text-align: center;
 }
+
+.details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    margin-bottom: 20px;
+}
+
+.link,
+.time,
+.description,
+.banner,
+.location {
+    width: 100%; /* Adjust width as needed */
+    box-sizing: border-box;
+}
+
+.link,
+.time {
+    flex: 1;
+    text-align: left;
+}
+
+.banner {
+    flex: 1;
+    /* Add styling for the banner */
+}
+
+.location {
+    margin-top: 20px;
+}
+
 .precise-close-btn {
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
     position: absolute;
     padding: 0;
     margin: 0;
@@ -23,6 +60,7 @@
     right: 13px;
     cursor: pointer;
 }
+
 .precise-overlay-bg {
     position: fixed;
     top: 0;
