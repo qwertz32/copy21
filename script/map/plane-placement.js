@@ -86,7 +86,11 @@ $(document).ready(() => {
         const zoom = map.getZoom();
         markersLayer.clearLayers();
         visiblePlanes = {};
-    
+        
+        if (L.Browser.mobile) {
+
+        }
+
         if (planesVisible) { 
             if (cachedData) {
                 let maxVisibleIcons;
@@ -112,7 +116,7 @@ $(document).ready(() => {
                         if (data && data.pilots && Array.isArray(data.pilots)) {
                             cachedData = data;
                             const totalPilots = data.pilots.length;
-                            const percentage = 0.4;
+                            var percentage = 1;
                             const maxVisibleIcons = Math.ceil(totalPilots * percentage);
                             const visiblePilots = data.pilots.filter((pilot) =>
                                 isMarkerVisible(pilot, bounds)
@@ -126,8 +130,8 @@ $(document).ready(() => {
         }
     }
     function checkIfPlanesStored() {
-        const planesPreference = localStorage.getItem('planes');
-        planesVisible = planesPreference !== 'hidden';
+        const planesLS = localStorage.getItem('planes');
+        planesVisible = planesLS !== 'hidden';
         updatePlaneVisibility(); 
     }
     checkIfPlanesStored();
