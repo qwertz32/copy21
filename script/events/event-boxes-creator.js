@@ -90,7 +90,7 @@
                 const storedTime = parseInt(storedEventTime, 10);
                 const currentTime = new Date().getTime();
                 if (storedTime < currentTime) {
-                    $('#event-boxes-timeOfFetch').html('Data <span class="s32">might</span> be outdated as it was taken at' + ' ' + fTime);
+                    $('#event-boxes-timeOfFetch').html('The data <span class="s32">might</span> be outdated as it was taken at' + ' ' + fTime);
                 }
             }
         }
