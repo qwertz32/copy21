@@ -97,7 +97,7 @@ $(document).ready(() => {
     
                 if (zoom <= 5) {
                     const totalPilots = cachedData.pilots.length;
-                    const percentage = 0.15;
+                    const percentage = 0.40;
                     maxVisibleIcons = Math.ceil(totalPilots * percentage);
                 } else {
                     maxVisibleIcons = cachedData.pilots.length;
@@ -116,7 +116,7 @@ $(document).ready(() => {
                         if (data && data.pilots && Array.isArray(data.pilots)) {
                             cachedData = data;
                             const totalPilots = data.pilots.length;
-                            var percentage = 1;
+                            const percentage = 0.40;
                             const maxVisibleIcons = Math.ceil(totalPilots * percentage);
                             const visiblePilots = data.pilots.filter((pilot) =>
                                 isMarkerVisible(pilot, bounds)
