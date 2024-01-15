@@ -36,12 +36,11 @@ $.getJSON('https://phoenix-api.vatsim.net/api/events', function (data) {
         return `${day}.${month} ${time}`;
     }
     
-    function generateUniqueId(airportICAO) {
+    function generateUniqueId() {
         const markerToken = Math.random().toString(36).substring(2, 12);
         return `event_${markerToken}`;
     }
     
-
     function findAirportsInEvent(event) {
         if (!event.airports || !Array.isArray(event.airports)) {
             return [];
