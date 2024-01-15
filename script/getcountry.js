@@ -22,13 +22,13 @@ function hideLoadingSpinner() {
                     console.log("Successfully implemented user's country code.")
                 } else {
                     console.error(error);
-                    hideLoadingSpinner();
+
                 }
-                hideLoadingSpinner();
+
             },
             error: function(error) {
                 console.error('Error fetching country.\n', error);
-                hideLoadingSpinner();
+
             }
         });
     }

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    function skibidi_data() {
+    function topRight() {
         $.ajax({
             url: 'https://data.vatsim.net/v3/vatsim-data.json',
             dataType: 'json',
@@ -15,6 +15,7 @@ $(document).ready(function () {
             }
         });
     }
-    skibidi_data();
-    setInterval(skibidi_data, 90000);
+    topRight();
+    setInterval(topRight, 90000);
+    hideLoadingSpinner();
 });
