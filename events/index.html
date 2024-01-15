@@ -220,7 +220,7 @@
         url: '/version.json',
         dataType: 'json',
         success: function (data) {
-            var versionText = 'Version: ' + data.version.ver + ', Build: ' + data.version.build;
+            var versionText = 'V' + data.version.ver + ', Build: ' + data.version.build;
             $('#loading-build-info').text(versionText);
         },
         error: function () {

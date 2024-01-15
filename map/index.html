@@ -19,7 +19,7 @@
     <meta name="twitter:description" content="Browse through VATSIM Network, see current and upcoming events, track your flight and many more!">
     <meta name="twitter:image" content="https://cdn.glitch.global/91c248c6-bd14-4293-a1f2-a614f547a022/VATSIM_Logo_No_Tagline_2000px.png?v=1703727270474">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Oswald:wght@500&family=Roboto+Mono:wght@500&family=Rubik:wght@500&display=swap&family=Inter:wght@900&display=swap&family=Montserrat:wght@700&display=swap&family=Montserrat:ital,wght@1,500&display=swap" rel="stylesheet">
@@ -181,7 +181,7 @@
         url: '/version.json',
         dataType: 'json',
         success: function (data) {
-            var versionText = 'Version: ' + data.version.ver + ', Build: ' + data.version.build;
+            var versionText = 'V' + data.version.ver + ', Build: ' + data.version.build;
             $('#loading-build-info').text(versionText);
         },
         error: function () {
