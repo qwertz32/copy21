@@ -70,7 +70,7 @@ $(document).ready(function () {
         minZoom: 3,
         maxZoom: 19,
         opacity: 0.45,
-        attribution: 'Rainviewer',
+        attribution: '<a href="https://www.rainviewer.com/" target="_blank">Rainviewer</a>',
         preload: Infinity,
         keepBuffer: 5,
         zIndex: 3
