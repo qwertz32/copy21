@@ -7,7 +7,7 @@
 
 .leaflet-control-attribution {
     background: #00000000 !important;
-    color: var(--white-color) !important;
+    color: var(--leaflet-attribution-color) !important;
     padding: 3px;
     border-radius: 15px;
     font-size: 12px;
@@ -21,7 +21,7 @@
 }
 
 .leaflet-control-attribution a {
-    color: var(--white-color);
+    color: var(--leaflet-attribution-color);
 }
 
 .leaflet-container {
