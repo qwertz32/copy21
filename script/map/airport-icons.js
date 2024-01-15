@@ -4,7 +4,7 @@ $(document).ready(() => {
         iconUrl: '/src/img/placeholder_684908.png',
         iconSize: [18, 18],
         iconAnchor: [12, 12],
-        popupAnchor: [0, -5],
+        popupAnchor: [-3, -15],
         className: 'airport-icon-transition',
     });
 
