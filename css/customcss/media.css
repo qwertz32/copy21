@@ -56,15 +56,9 @@
     .event-box-text {
         position: relative;
     }
-    /* .single-event-box {
-        height: fit-content;
-        min-height: 90px;
-    } */
     .event-box-title {
-        /*position: -webkit-sticky;*/
         position: sticky;
         top: 0;
-        /* background: var; */
         z-index: 1;
         font-weight: 700;
         margin-bottom: 0;
@@ -78,10 +72,8 @@
         position: -webkit-sticky;
         position: sticky;
         bottom: 0;
-        /* background: #542cab; */
         z-index: 1;
         height: 25px;
-        /* margin-top: auto; */
         margin-bottom: 0;
     }
     .sidebar-category-name {
@@ -101,6 +93,19 @@
     }
     .top-right-stats {
         display: none !important;
+    }
+    .bottom-right-search-bar {
+        bottom: 20px !important; 
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+    }
+    .bottom-filter-bar {
+        bottom: 80px !important;
+        width: 330px;
+        border-radius: 2rem;
+        height: 50px;
+        background-color: var(--bottom-bar-background);
     }
 }
 
