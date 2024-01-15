@@ -25,7 +25,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Oswald:wght@500&family=Roboto+Mono:wght@500&family=Rubik:wght@500&display=swap&family=Inter:wght@900&display=swap&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Oswald:wght@500&family=Roboto+Mono:wght@500&family=Rubik:wght@500&display=swap&family=Inter:wght@900&display=swap&family=Montserrat:wght@700&display=swap&family=Montserrat:ital,wght@1,500&display=swap" rel="stylesheet">
 
         <!-- IMPORTANT! Think bout what to do with ^^^^^ -->
 
@@ -51,6 +51,7 @@
     <link rel="stylesheet" href="/css/events/event-popups.css">
     <link rel="stylesheet" href="/css/navbar/top-right-stats.css">
     <link rel="stylesheet" href="/css/events/date-picking.css">
+    <link rel="stylesheet" href="/css/events/precise-popup.css">
     <!--Scripts-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
@@ -69,47 +70,6 @@
     <script src="/script/top-right-stats.js"></script>
     <script src="/script/events/precise-popup-creator.js"></script>
     <script src="/script/events/map.js"></script>
-    <style>
-
-.precise-overlay {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2400;
-    background: rgb(45, 40, 40);
-    color: aliceblue;
-    padding: 10%;
-    font-size: 2.3rem;
-    border-radius: 1.3rem;
-    text-align: center;
-}
-.precise-close-btn {
-    font-family:'Courier New', Courier, monospace;
-    position: absolute;
-    padding: 0;
-    margin: 0;
-    text-transform: uppercase;
-    fill: var(--white-color);
-    top: 0;
-    right: 13px;
-    cursor: pointer;
-}
-.precise-close-btn:hover {
-    fill: var(--close-btn-on-hover);
-}
-.precise-overlay-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--precise-event-popup-overlay-bg);
-    display: none;
-    z-index: 2399;
-}
- </style>
 </head>
 
 <body>
@@ -141,32 +101,42 @@
         </div>
     </div>
     <div class="precise-overlay-bg"></div>
-    <div class="precise-overlay">
-        <p class="precise-close-btn" onclick="closePreciseOverlay()">x</p>
-        <div class="content">
-            <div class="title">
-                <h2>A Simple Testing Overlay</h2>
+        <div class="precise-overlay">
+            <p class="precise-close-btn" onclick="closePreciseOverlay()">x</p>
+            <div class="precise-popup-content">
+                <div class="grid-left">
+                    <div class="precise-popup-content">Left Top</div>
+                    <div class="precise-popup-content">Left Middle</div>
+                    <div class="precise-popup-content">The middle of the left</div>
+                    <div class="precise-popup-content">Left Bottom</div>
+                    <div class="precise-popup-content">Left Very Bottom</div>
+                </div>
+                <div class="grid-right">
+                    <div class="precise-popup-content">Content on the right</div>
+                </div>
+                <!-- <div class="precise-content-main-text">
+                    <h2>[VHHH_S_TWR] S2 Exam</h2>
+                    <p>https://my.vatsim.net/events/vhhh-s-twr-s2-exam-28</p>
+                    <p>Today 18:00 - 19:00</p>
+                </div>
+                <div class="precise-popup-content-inline">
+                    <img src="https://vatsim-my.nyc3.digitaloceanspaces.com/events/mkuP4kPYHh5eSuWSQKFwnpMAPGpNPCH5s0n6DJ6j.png" alt="Event Image">
+                    <div class="precise-popup-description">
+                        <h3>Description</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae risus nec odio suscipit eleifend id non quam. Cras ex velit, porta id tempus ac, pellentesque vel magna. Donec euismod, velit vel bibendum lacinia, sapien sapien tincidunt nunc, vel malesuada velit velit vel velit. Sed euismod, sapien ut ultrices blandit, velit nulla bibendum sapien, euismod bibendum sapien diam vel velit. Sed euismod, sapien ut ultrices blandit, velit nulla bibendum sapien, euismod bibendum sapien diam vel velit.</p>
+                    </div>
+                </div>  
+                <div class="related-events">
+                    <h4>Related Events</h4>
+                    <ul>
+                        <li><a href="#">[VHHH_S_TWR] S1 Exam</a></li>
+                        <li><a href="#">[VHHH_S_TWR] S3 Exam</a></li>
+                        <li><a href="#">[VHHH_S_TWR] S4 Exam</a></li>
+                    </ul>
+                </div> -->
             </div>
-            <div class="details">
-                <div class="link">
-                    <p>Link Text</p>
-                </div>
-                <div class="time">
-                    <p>Start Time: 10:00 AM</p>
-                    <p>End Time: 3:00 PM</p>
-                </div>
-                <div class="description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-                <div class="banner">
-                    <img src="https://vatsim-my.nyc3.digitaloceanspaces.com/events/mkuP4kPYHh5eSuWSQKFwnpMAPGpNPCH5s0n6DJ6j.png" width="60%" height="60%" alt="Banner">
-                </div>
-                <div class="location">
-                    <p>EPWA, EPSC, EPGD, EPKK</p>
-                </div>
-            </div>
+            
         </div>
-    </div>
     <div id="map" style="height: 100vh; width: 100vw;"></div>
     <div id="everything">
         <div class="fullscreen">
