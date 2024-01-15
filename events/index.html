@@ -27,9 +27,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Oswald:wght@500&family=Roboto+Mono:wght@500&family=Rubik:wght@500&display=swap&family=Inter:wght@900&display=swap&family=Montserrat:wght@700&display=swap&family=Montserrat:ital,wght@1,500&display=swap" rel="stylesheet">
 
-        <!-- IMPORTANT! Think bout what to do with ^^^^^ -->
-
-
     <!--Stylesheets-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
@@ -87,6 +84,8 @@
             <div class="ls-popup-content-links">
                 <a href="https://map.vatsim.net/" target="_blank">SimAware</a> <!--https://simaware.ca-->
                 <a href="https://vatsim.net/events" target="_blank">Events subpage on VATSIM's website</a>
+                <a href="http://flightradar24.com/" target="_blank">FlightRadar24</a>
+                <a href="https://www.simflightstracker.com/" target="_blank">Sim Flights Tracker</a>
             </div>
             <button id="ls-popup-btn" onclick="clsPopUp()">Understood</button>
         </div>
@@ -104,38 +103,7 @@
         <div class="precise-overlay">
             <p class="precise-close-btn" onclick="closePreciseOverlay()">x</p>
             <div class="precise-popup-content">
-                <div class="grid-left">
-                    <div class="precise-popup-content">Left Top</div>
-                    <div class="precise-popup-content">Left Middle</div>
-                    <div class="precise-popup-content">The middle of the left</div>
-                    <div class="precise-popup-content">Left Bottom</div>
-                    <div class="precise-popup-content">Left Very Bottom</div>
-                </div>
-                <div class="grid-right">
-                    <div class="precise-popup-content">Content on the right</div>
-                </div>
-                <!-- <div class="precise-content-main-text">
-                    <h2>[VHHH_S_TWR] S2 Exam</h2>
-                    <p>https://my.vatsim.net/events/vhhh-s-twr-s2-exam-28</p>
-                    <p>Today 18:00 - 19:00</p>
-                </div>
-                <div class="precise-popup-content-inline">
-                    <img src="https://vatsim-my.nyc3.digitaloceanspaces.com/events/mkuP4kPYHh5eSuWSQKFwnpMAPGpNPCH5s0n6DJ6j.png" alt="Event Image">
-                    <div class="precise-popup-description">
-                        <h3>Description</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae risus nec odio suscipit eleifend id non quam. Cras ex velit, porta id tempus ac, pellentesque vel magna. Donec euismod, velit vel bibendum lacinia, sapien sapien tincidunt nunc, vel malesuada velit velit vel velit. Sed euismod, sapien ut ultrices blandit, velit nulla bibendum sapien, euismod bibendum sapien diam vel velit. Sed euismod, sapien ut ultrices blandit, velit nulla bibendum sapien, euismod bibendum sapien diam vel velit.</p>
-                    </div>
-                </div>  
-                <div class="related-events">
-                    <h4>Related Events</h4>
-                    <ul>
-                        <li><a href="#">[VHHH_S_TWR] S1 Exam</a></li>
-                        <li><a href="#">[VHHH_S_TWR] S3 Exam</a></li>
-                        <li><a href="#">[VHHH_S_TWR] S4 Exam</a></li>
-                    </ul>
-                </div> -->
             </div>
-            
         </div>
     <div id="map" style="height: 100vh; width: 100vw;"></div>
     <div id="everything">
@@ -222,7 +190,26 @@
     </div>
 </script>
 <script id="precise-popup-template" type="text/x-handlebars-template">
-    
+        <div class="precise-content-main-text">
+            <h2>{{eventTitle}}</h2>
+            <p>{{eventLink}}</p>
+            <p>{{eventDate}}</p>
+        </div>
+        <div class="precise-popup-content-inline">
+            <img src="{{eventLink}}" alt="Event Image">
+            <div class="precise-popup-description">
+                <h3>Description</h3>
+                <p>{{eventDescription}}</p>
+            </div>
+        </div>  
+        <div class="related-events">
+            <h4>Related Events</h4>
+            <ul>
+                <li><a href="#">[VHHH_S_TWR] S1 Exam</a></li>
+                <li><a href="#">[VHHH_S_TWR] S3 Exam</a></li>
+                <li><a href="#">[VHHH_S_TWR] S4 Exam</a></li>
+            </ul>
+        </div>
 </script>
 <script>
     $.ajax({
