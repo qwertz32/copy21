@@ -48,6 +48,7 @@ $(document).ready(function () {
 
     function initializeMap() {
         map = L.map('map', {
+            attributionControl: false,
             zoomControl: false,
             zoomSnap: 0.20,
             zoomDelta: 0.75
@@ -58,7 +59,7 @@ $(document).ready(function () {
     baseLayer = L.tileLayer('https://cartodb-basemaps-c.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}.png', {
         minZoom: 3,
         maxZoom: 19,
-        attribution: 'CartoDB',
+        attribution: '<a href="https://carto.com/basemaps" target="_blank">Carto</a>',
         preload: Infinity,
         subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
         keepBuffer: 5,
@@ -78,11 +79,12 @@ $(document).ready(function () {
     var labelLayer = createTileLayer('https://cartodb-basemaps-c.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
         minZoom: 3,
         maxZoom: 19,
-        attribution: 'CartoDB + Dark Labels',
         preload: Infinity,
         keepBuffer: 5,
         zIndex: 2
     });
+    var atrCtrl = L.control.attribution({ position: 'topright' }).addTo(map);
+    atrCtrl.setPrefix('<a href="https://leafletjs.com/" target="_blank">Leaflet</a>'); //fix to remove the ukrainian flag
 
     baseLayer.addTo(map);
 
