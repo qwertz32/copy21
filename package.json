@@ -1,5 +1,10 @@
 {
+    "devDependencies": {
+      "pug": "^3.0.2"
+    },
     "scripts": {
-        "build": "npm run obfuscate "
-      }
-}
+      "build": "npm run obfuscate && npm run compile-pug",
+      "compile-pug": "pug src/views --out public"
+    }
+  }
+  
