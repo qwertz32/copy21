@@ -1,53 +1,62 @@
 .precise-overlay {
-    display: flex;
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2400;
-    background: rgb(45, 40, 40);
-    color: aliceblue;
-    padding: 10%;
-    font-size: 2.3rem;
-    border-radius: 1.3rem;
+    background: #564167;
+    color: rgb(228, 238, 248);
+    border-radius: 1.2rem;
+    padding: 45px;
+    font-family: var(--font-rubik);
 }
 
-.content {
-    text-align: center;
-}
-
-.details {
-    display: flex;
-    justify-content: space-between;
-}
-
-.title {
-    margin-bottom: 20px;
-}
-
-.link,
-.time,
-.description,
-.banner,
-.location {
-    width: 100%; /* Adjust width as needed */
-    box-sizing: border-box;
-}
-
-.link,
-.time {
-    flex: 1;
-    text-align: left;
-}
-
-.banner {
-    flex: 1;
-    /* Add styling for the banner */
-}
-
-.location {
-    margin-top: 20px;
-}
+.precise-popup-content h2 {
+    font-size: 48px;
+    margin: 0;
+ }
+ 
+ .precise-popup-content p {
+    margin-bottom: 10px;
+ }
+ 
+ .precise-popup-content img {
+    height: 50%;
+    width: 50.35%;
+    border-radius: 0.5rem;
+    margin-right: 2.5%;
+ }
+ 
+ .close-btn {
+    position:absolute; 
+    top:-10px; 
+    right:-10px; 
+ }
+ 
+ .related-events {
+     margin-top: 20px;
+ }
+ 
+ .related-events h3 {
+     font-size: 18px;
+     margin-bottom: 10px;
+ }
+ 
+ .related-events ul {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+ }
+ 
+ .related-events li {
+     margin-bottom: 5px;
+ }
+ 
+ .related-events a {
+     color: white;
+     text-decoration: none;
+ }
 
 .precise-close-btn {
     font-family: 'Courier New', Courier, monospace;
@@ -58,6 +67,7 @@
     fill: var(--white-color);
     top: 0;
     right: 13px;
+    font-size: 2rem;
     cursor: pointer;
 }
 
@@ -70,4 +80,11 @@
     background: var(--precise-event-popup-overlay-bg);
     display: none;
     z-index: 2399;
+}
+.precise-popup-content-inline {
+    display: flex;
+}
+.precise-popup-description {
+    margin: auto;
+    flex: 1;
 }
