@@ -1,11 +1,6 @@
 {
-    "devDependencies": {
-      "pug": "^3.0.2",
-      "rimraf": "^5.0.5"
-    },
     "scripts": {
-      "build": "npm run obfuscate && npm run compile-pug",
-      "compile-pug": "pug src -o public && rimraf 'src/**/*.pug'"
+      "build": "npm run obfuscate"
     }
   }
   
