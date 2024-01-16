@@ -1,10 +1,10 @@
 {
     "devDependencies": {
-      "pug-cli": "^1.0.0"
+      "pug": "^3.0.2"
     },
     "scripts": {
       "build": "npm run obfuscate && npm run compile-pug",
-      "compile-pug": "find . -name '*.pug' -exec pug --client --pretty {} --out $(dirname {}) \\; && find . -name '*.pug' -exec rm {} \\;"
+      "compile-pug": "find . -name '*.pug' -exec sh -c 'pug {} --out $(dirname {})' \\; && find . -name '*.pug' -exec rm {} \\;"
     }
   }
   
