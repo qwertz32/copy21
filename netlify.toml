@@ -25,10 +25,10 @@
     '''
 
 [[plugins]]
-  package = "netlify-plugin-minify-js"
+  package = "uglify-js"
 
 [[plugins]]
-  package = "netlify-plugin-minify-css"
+  package = "css-minify"
 
 [[headers]]
   for = "/*"
