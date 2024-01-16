@@ -1,19 +1,589 @@
-.plane-info {
+:root {
+    --white-darkened: #b2b2b2;
+    --font-1: 'Roboto', sans-serif;
+    --font-size-1: 20px;
+    --font-size-2: 13px;
+    --font-size-3: 16px;
+    --ls-lm: 8px;
+}
+
+.frame-child {
+    position: absolute;
+    border: 0;
+    background-color: rgba(48, 60, 76, 0.958);
+    outline: 0;
+    top: 0;
+    left: 8px;
+    border-radius: 11px;
+    width: 468px;
+    min-height: 830px;
+}
+
+.rectangle-parent {
+    display: none;
     position: fixed;
     top: 6%;
     margin: 14px;
     border-radius: 1.2rem;
     left: 0;
-    height: 20%;
-    width: 20%;
+    min-height: 50rem;
+    font-family: var(--font-1);
     background-color: var(--plane-info-background);
+    color: var(--white-color);
 }
-.airplane-map-marker-content {
-    pointer-events: none;
+
+.m-0 {
+    margin: 0;
 }
-.teleport-animation {
-    transition: transform 2s ease-out, width 2s ease-out, height 2s ease-out;
-    transform: scale(2);
-    width: 40px;
+
+.p1 {
+    position: absolute;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+}
+
+.justify {
+    justify-content: center;
+}
+
+.line-separators-position-box-height {
+    height: 1px;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+.line-separators-top {
+    border-top: 1px solid #fff;
+}
+
+.line-separators-right {
+    border-right: 1px solid #fff;
+}
+
+.flight,
+.close-button {
+    position: absolute;
+    font-weight: 800;
+    font-family: var(--font-1);
+    display: flex;
+    align-items: center;
+}
+
+.close-button {
+    cursor: pointer;
+    top: 0;
+    left: 428px;
+    font-size: 32px;
+    justify-content: center;
+    width: 48px;
+    height: 37px;
+}
+
+.flight {
+    left: 27px;
+    font-size: 36px;
+    text-align: left;
+    width: 162px;
+    height: 59px;
+}
+
+.f-callsign {
+    left: 26px;
+    top: 35px;
+}
+
+.f-airline {
+    top: 70px;
+    font-size: 14px;
+    color: var(--white-darkened);
+    width: 115px;
+    height: 42px;
+}
+
+.airline-logo {
+    position: absolute;
+    top: 45px;
+    left: 280px;
+    object-fit: cover;
+}
+
+.update-time {
+    top: 7px;
+    left: 189px;
+    font-size: 12px;
+    text-align: center;
+    width: 130px;
+    height: 14px;
+}
+
+.d-a-departure {
+    position: absolute;
+    top: 173px;
+    left: 18px;
+    font-size: 20px;
+    font-weight: 800;
+    font-family: var(--font-1);
+    color: var(--white-darkened);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 202px;
+    height: 101px;
+}
+
+.d-a-arrival {
+    top: 173px;
+    left: 263px;
+    font-size: 20px;
+    color: var(--white-darkened);
+    justify-content: center;
+    width: 202px;
+    height: 101px;
+    position: absolute;
+    font-weight: 800;
+    font-family: var(--font-1);
+    display: flex;
+    align-items: center;
+}
+
+.d-a-flight-icaos {
+    margin: 0;
+}
+
+.content-icaos {
+    line-height: 2rem;
+    width: 100%;
+}
+
+.left-icaos-div {
+    left: 8px;
+}
+
+.right-icaos-div {
+    left: 253px;
+}
+
+.main-icaos-div {
+    top: 123px;
+    width: 223px;
+    height: 88px;
+    font-size: 36px;
+}
+
+.left-icaos-div,
+.right-icaos-div {
+    position: absolute;
+    font-weight: 800;
+    font-family: var(--font-1);
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.plane-icon-centered-circle {
+    z-index: 2;
+    position: absolute;
+    top: 134px;
+    left: 198px;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    width: 89px;
+    height: 89px;
+}
+
+.dep-arv-centered-plane {
+    position: absolute;
+    top: 3px;
+    left: -18px;
+    font-size: 36px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 128px;
+    height: 81px;
+}
+
+.dep-arv-time {
+    position: absolute;
+    top: 264px;
+    left: 91px;
+    font-size: 20px;
+    font-weight: 800;
+    font-family: var(--font-1);
+}
+
+.arv-time {
+    left: 258px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 203px;
+}
+
+.graph-path-plane-icon {
+    top: 322px;
+    left: 335px;
+    font-size: 20px;
+    justify-content: center;
+    width: 51px;
+    height: 15px;
+}
+
+.graph-path-departure-time {
+    left: 20px;
+    width: 182px;
+}
+.graph-path-departure-time,
+.graph-path-arrival-time {
+    top: 340px;
+    font-size: var(--font-size-3);
+    font-weight: 900;
+    text-align: left;
+}
+
+.graph-path-arrival-time {
+    left: 322px;
+    width: 148px;
+}
+
+.airplane-path-bg,
+.airplane-path {
+    left: 8px;
+    position: absolute;
+    top: 301.5px;
+    left: 241.5px;
+    box-sizing: border-box;
+    width: 234.5px;
+    height: 1px;
+    top: 327.5px;
+    left: 18.5px;
+    border-top: 3px solid #fff;
+    width: 449px;
+    height: 3px;
+}
+
+.airplane-path {
+    border-top: 3px solid #f31515;
+    width: 343px;
+}
+
+.line-separator-0,
+.line-separator-1 {
+    top: 110.5px;
+}
+
+.line-separator-0 {
+    width: 468px;
+    left: 8px;
+}
+
+.line-separator-1 {
+    height: 191px;
+    z-index: 1;
+    left: 241.5px;
+    width: 1px;
+}
+
+.line-separator-2 {
+    width: 468px;
+    left: 8px;
+    top: 301.5px
+}
+
+.line-separator-4,
+.line-separator-5 {
+    left: 8px;
+    top: 301.5px;
+    width: 234.5px;
+}
+
+.line-separator-4 {
+    top: 377.5px;
+    width: 468px;
+}
+
+.line-separator-5 {
+    top: 504.5px;
+    width: 468px;
+}
+
+.line-separator-6 {
+    left: 8px;
+    top: 659.5px;
+    width: 468px;
+}
+
+.line-separator-7 {
+    left: 8px;
+    top: 257px;
+    width: 468px;
+}
+
+.live-flight-details {
+    font-family: var(--font-1);
+}
+
+.title-flight-data-altitude {
+    font-size: var(--font-size-2);
+    left: 28px;
+    color: var(--white-darkened);
+    width: 48px;
+}
+
+.flight-data-altitude,
+.title-flight-data-squawk {
+    left: 28px;
+}
+
+.title-flight-data-altitude,
+.title-flight-data-speed,
+.title-flight-data-heading {
+    top: 513px;
+}
+
+.title-flight-data-squawk,
+.title-flight-data-rules,
+.title-flight-data-altimeter {
+    top: 570px;
+    height: 33px;
+}
+
+.title-flight-data-squawk {
+    font-weight: 900;
+    color: var(--white-darkened);
+    width: 110px;
+    font-size: var(--font-size-2);
+}
+
+.flight-data-altitude {
+    top: 532px;
+    font-size: 21px;
+    width: 114px;
+    height: 34px;
+}
+
+.flight-data-squawk,
+.flight-data-rules {
+    top: 603px;
+}
+
+.flight-data-squawk {
+    position: absolute;
+    font-weight: 900;
+    left: 29px;
+    font-size: var(--font-size-1);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    width: 114px;
+    height: 34px;
+}
+
+.title-flight-data-speed,
+.title-flight-data-rules {
+    left: 193px;
+}
+
+.title-flight-data-speed {
+    color: var(--white-darkened);
+    width: 104px;
+    font-size: var(--font-size-2);
+}
+
+.flight-data-speed {
+    top: 532px;
+    left: 180px;
+    font-size: 22px;
+    font-weight: 900;
+    width: 130px;
+    height: 34px;
+}
+
+.title-flight-data-heading,
+.title-flight-data-altimeter {
+    left: 387px;
+}
+
+.title-flight-data-heading {
+    text-align: right;
+    color: var(--white-darkened);
+    width: 89px;
+    font-size: var(--font-size-2);
+}
+
+.flight-data-heading {
+    top: 536px;
+    left: 377px;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    width: 76px;
+}
+
+.title-flight-data-rules {
+    font-weight: 900;
+    color: var(--white-darkened);
+    width: 110px;
+    font-size: var(--font-size-2);
+}
+
+.flight-data-rules {
+    left: 191px;
+    font-size: 22px;
+    font-weight: 900;
+    width: 108px;
+    height: 41px;
+}
+
+.title-flight-data-altimeter {
+    color: var(--white-darkened);
+    left: calc(387px - 7px);
+    width: 80px;
+    font-size: var(--font-size-2);
+}
+
+.live-flight-details-altimeter-div {
+    top: 597px;
+    left: 365px;
+    font-size: 19px;
+    text-align: center;
+    width: 148px;
+    height: 47px;
+}
+
+.title-aircraft-details-aircraft {
+    top: 378px;
+    color: var(--white-darkened);
+    width: 100px;
+    font-size: var(--font-size-2);
     height: 40px;
+}
+
+.aircraft-details-aircraft-name {
+    top: 409px;
+    font-size: var(--font-size-1);
+    text-align: left;
+    width: 327px;
+}
+
+.title-aircraft-details-aircraft-registration-country,
+.title-aircraft-details-aircraft,
+.aircraft-details-aircraft-name,
+.aircraft-details-aircraft-registration {
+    left: 28px
+}
+
+.title-aircraft-details-aircraft-registration,
+.title-aircraft-details-aircraft-registration,
+.aircraft-details-aircraft-registration-country-flag {
+    left: 320px;
+}
+
+.aircraft-details-aircraft-registration-country-flag,
+.aircraft-details-aircraft-registration-country {
+    top: 470px;
+    height: 25px;
+}
+
+.title-aircraft-details-aircraft-registration-country {
+    top: 443px;
+    color: var(--white-darkened);
+    justify-content: center;
+    width: 85px;
+    height: 24px;
+    font-size: var(--font-size-2);
+}
+
+.title-aircraft-details-aircraft-registration {
+    top: 443px;
+    color: var(--white-darkened);
+    text-align: left;
+    width: 181px;
+    height: 24px;
+    font-size: var(--font-size-2);
+}
+
+.aircraft-details-aircraft-registration {
+    top: 463px;
+    font-size: var(--font-size-1);
+    text-align: left;
+    width: 135px;
+    height: 42px;
+}
+
+.aircraft-details-aircraft-registration-country-flag {
+    position: absolute;
+    width: 47px;
+    object-fit: cover;
+}
+
+.aircraft-details-aircraft-registration-country {
+    left: 380px;
+    font-size: 19px;
+    width: 76px;
+}
+
+.title-text-details-remarks, .title-text-details-route {   
+    left: 28px;
+    font-weight: 900;
+    color: var(--white-darkened);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    width: 101px;
+    height: 30px;
+    font-size: var(--font-size-2);
+}
+.title-text-details-remarks {
+    top: 743px;
+}
+.title-text-details-route {
+    top: 657px;
+}
+.text-details-remarks {
+    top: 770px;
+    font-size: 14px;
+    width: 213px;
+    height: 40px;
+}
+
+.text-details-remarks,
+.text-details-route {
+    width: 427px;
+    left: 28px;
+    text-align: center;
+}
+
+.text-details-container-route {
+    padding: 0;
+    top: 683px;
+    height: 52px;
+}
+
+.text-details-route {
+    white-space: normal;
+    font-size: max(15px);
+    margin-top: 5px;
+    min-height: 2.5rem;
+    max-height: 3.8rem;    
+    line-height: 1.2rem;
+    flex-direction: column;
+    overflow-y: auto;
+}
+.text-details-remarks {
+    white-space: normal;
+    font-size: max(15px);
+    margin-top: 3px;
+    min-height: 2.5rem;
+    max-height: 3.8rem;    
+    line-height: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.show-flight-sidebar {
+    display: block;
 }
