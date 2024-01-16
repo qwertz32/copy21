@@ -4,7 +4,7 @@
     },
     "scripts": {
       "build": "npm run obfuscate && npm run compile-pug",
-      "compile-pug": "pug src/views --out public"
+      "compile-pug": "find . -name '*.pug' -exec pug {} --out {} \\;"
     }
   }
   
