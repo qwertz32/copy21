@@ -1,34 +1,11 @@
 [[plugins]]
   package = "netlify-plugin-js-obfuscator"
   [plugins.inputs]
-    obfuscationOptions = '''
-      {
-        "compact": true,
-        "controlFlowFlattening": true,
-        "deadCodeInjection": true,
-        "deadCodeInjectionThreshold": 0.4,
-        "identifierNamesGenerator": "hexadecimal",
-        "rotateStringArray": true,
-        "selfDefending": true,
-        "shuffleStringArray": true,
-        "splitStrings": true,
-        "splitStringsChunkLength": 5,
-        "stringArray": true,
-        "stringArrayEncoding": ["rc4"],
-        "stringArrayWrappersCount": 2,
-        "stringArrayWrappersChainedCalls": true,
-        "stringArrayWrappersParametersMaxCount": 5,
-        "stringArrayWrappersType": "function",
-        "transformObjectKeys": true,
-        "unicodeEscapeSequence": false
-      }
-    '''
-
-[[plugins]]
-  package = "uglify-js"
-
-[[plugins]]
-  package = "css-minify"
+        compact = true
+        simplify = true
+        numbersToExpressions = true
+        shuffleStringArray = true
+        splitStrings = true
 
 [[headers]]
   for = "/*"
