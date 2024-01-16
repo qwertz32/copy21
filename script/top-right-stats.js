@@ -17,5 +17,5 @@ $(document).ready(function () {
     }
     topRight();
     setInterval(topRight, 90000);
-    setTimeout(hideLoadingSpinner, 500); 
+    hideLoadingSpinner();
 });
