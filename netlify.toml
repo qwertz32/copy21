@@ -24,8 +24,10 @@
       }
     '''
 
+[[plugins]]
   package = "netlify-plugin-minify-js"
 
+[[plugins]]
   package = "netlify-plugin-minify-css"
 
 [[headers]]
