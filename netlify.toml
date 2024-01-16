@@ -7,11 +7,6 @@
         shuffleStringArray = true
         splitStrings = true
 
-[build]
-  command = "npm run build"
-  publish = "public"
-
-
 [[headers]]
   for = "/*"
   [headers.values]
