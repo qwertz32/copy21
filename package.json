@@ -1,0 +1,5 @@
+{
+    "scripts": {
+        "build": "npm run obfuscate && npm run minify"
+    }
+}
