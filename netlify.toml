@@ -1,4 +1,5 @@
 [[headers]]
   for = "/*"
     [headers.values]
-      Access-Control-Allow-Origin = "vatsim1.netlify.app"
+      Access-Control-Allow-Origin = "https://vatsim1.netlify.app"
+      Content-Security-Policy = "referrer origin-when-cross-origin; img-src 'self' https://vatsim1.netlify.app"
