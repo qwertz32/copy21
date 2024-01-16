@@ -58,12 +58,40 @@ $(document).ready(() => {
                 marker.on('mouseout', function () {
                     this.closePopup();
                 });
+                marker.on('click', function() {
+                    showPreciseFlightInfo(pilot);
+                });
                 markersLayer.addLayer(marker);
                 visiblePlanes[markerId] = marker;
             }
         }
     }
 
+    function showPreciseFlightInfo(pilot) {
+        $('.f-callsign').text(pilot.callsign);
+        $('.dep-time').text((pilot.flight_plan.deptime).substring(0, 2) + ':' + (pilot.flight_plan.deptime).substring(2));
+        $('.arv-time').text((new Date(0, 0, 0, Math.floor((parseInt(pilot.flight_plan.deptime) + parseInt(pilot.flight_plan.enroute_time)) / 100), (parseInt(pilot.flight_plan.deptime) + parseInt(pilot.flight_plan.enroute_time)) % 100)).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false }));
+        $('#departureIcao').text(pilot.flight_plan.departure);
+        $('#arrivalIcao').text(pilot.flight_plan.arrival);
+        $('.flight-data-speed').text(pilot.groundspeed + ' KT');
+        $('.flight-data-altitude').text(pilot.altitude + ' FT');
+        $('.flight-data-squawk').text(pilot.transponder);
+        if ((pilot.flight_plan.flight_rules) === "I") {
+            $('.flight-data-rules').text('IFR');
+        } else if ((pilot.flight_plan.flight_rules) === "V") {
+            $('.flight-data-rules').text('VFR');
+        } else {
+            $('.flight-data-rules').text(pilot.flight_plan.flight_rules);
+        };
+        $('.flight-data-heading').text(pilot.heading + "\u00B0");
+        $('.text-details-route').text(pilot.flight_plan.route);
+        $('.text-details-remarks').text(pilot.flight_plan.remarks);
+        $('.aircraft-details-aircraft-name').text(pilot.flight_plan.aircraft_short);
+
+        $('.rectangle-parent').fadeIn( 300 );
+    }
+
+    
     function isMarkerVisible(pilot, bounds) {
         const markerLatLng = L.latLng(pilot.latitude, pilot.longitude);
         return bounds.contains(markerLatLng);
