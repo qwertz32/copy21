@@ -1,9 +1,9 @@
 {
     "scripts": {
         "obfuscate": "netlify-plugin-js-obfuscator",
-        "minify-js": "uglifyjs dist/obfuscated.js -o dist/minified.js",
+        "uglify-js": "uglifyjs dist/obfuscated.js -o dist/minified.js",
         "minify-css": "css-minify src/*.css -d dist",
-        "build": "npm run obfuscate && npm run minify-js && npm run aminify-css"
+        "build": "npm run obfuscate && npm run uglify-js && npm run minify-css"
       },      
     "devDependencies": {
         "css-minify": "^2.0.0",
