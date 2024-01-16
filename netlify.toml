@@ -1,3 +1,6 @@
+[[plugins]]
+  package = "netlify-plugin-js-obfuscator"
+
 [[headers]]
   for = "/*"
     [headers.values]
