@@ -4,13 +4,14 @@
     --font-size-1: 20px;
     --font-size-2: 13px;
     --font-size-3: 16px;
+    --font-size-4: 30px;
     --ls-lm: 8px;
 }
 
 .frame-child {
     position: absolute;
     border: 0;
-    background-color: rgba(48, 60, 76, 0.958);
+    background-color: rgb(4 14 28 / 96%);
     outline: 0;
     top: 0;
     left: 8px;
@@ -97,7 +98,7 @@
     top: 70px;
     font-size: 14px;
     color: var(--white-darkened);
-    width: 115px;
+    width: 240px;
     height: 42px;
 }
 
@@ -235,6 +236,7 @@
     left: 20px;
     width: 182px;
 }
+
 .graph-path-departure-time,
 .graph-path-arrival-time {
     top: 340px;
@@ -525,7 +527,8 @@
     width: 76px;
 }
 
-.title-text-details-remarks, .title-text-details-route {   
+.title-text-details-remarks,
+.title-text-details-route {
     left: 28px;
     font-weight: 900;
     color: var(--white-darkened);
@@ -536,12 +539,15 @@
     height: 30px;
     font-size: var(--font-size-2);
 }
+
 .title-text-details-remarks {
     top: 743px;
 }
+
 .title-text-details-route {
     top: 657px;
 }
+
 .text-details-remarks {
     top: 770px;
     font-size: 14px;
@@ -567,21 +573,31 @@
     font-size: max(15px);
     margin-top: 5px;
     min-height: 2.5rem;
-    max-height: 3.8rem;    
+    max-height: 3.8rem;
     line-height: 1.2rem;
     flex-direction: column;
     overflow-y: auto;
 }
+
 .text-details-remarks {
     white-space: normal;
     font-size: max(15px);
     margin-top: 3px;
     min-height: 2.5rem;
-    max-height: 3.8rem;    
+    max-height: 3.8rem;
     line-height: 1.2rem;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+}
+
+.no-flight-plan-warning {
+    display: none;
+    justify-content: center;
+    top: 190px;
+    font-size: var(--font-size-4);
+    width: 250px;
+    left: 120px;
 }
 
 .show-flight-sidebar {
