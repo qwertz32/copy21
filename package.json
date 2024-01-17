@@ -1,4 +1,7 @@
 {
+    "scripts": {
+        "build": "powershell .\\pug.ps1"
+      },
     "dependencies": {
         "pug-cli": "^1.0.0-alpha6"
     }
