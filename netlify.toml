@@ -7,7 +7,7 @@ numbersToExpressions = true
 shuffleStringArray = true
 splitStrings = true
 [build]
-command = 'npm install -g pug-cli && npm run build'
+command = 'npm install && npm run build'
 [[headers]]
 for = "/*"
 [headers.values]
