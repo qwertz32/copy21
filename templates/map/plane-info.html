@@ -1,0 +1,92 @@
+<div class="rectangle-parent">
+    <div class="frame-child"></div>
+    <div class="top">
+        <div class="close-button">x</div>
+        <div class="update-time p1">Updated at 19:23</div>
+        <div class="flight f-callsign">RYR1QY</div>
+        <div class="flight f-airline">!!!</div><img class="airline-logo p1" alt="Airline Logo" width="150px" he=""
+            src="/src/img/airline_logos/fr_logo.png" />
+    </div>
+    <div class="dep-arv">
+        <div class="main-icaos-div left-icaos-div"><span class="content-icaos">
+                <p class="d-a-flight-icaos" id="departureIcao"></p>
+            </span></div>
+        <div class="d-a-departure">
+            <!-- LONDON-->
+        </div>
+        <div class="main-icaos-div right-icaos-div"><span class="content-icaos">
+                <p class="d-a-flight-icaos" id="arrivalIcao"></p>
+            </span></div>
+        <div class="d-a-arrival">
+            <!-- VILNIUS-->
+        </div>
+        <div class="plane-icon-centered-circle">
+            <div class="dep-arv-centered-plane"><i class="fa fa-plane"></i></div>
+        </div>
+        <div class="dep-arv-time dep-time">16:20</div>
+        <div class="no-flight-plan-warning p1">No flight plan</div>
+        <div class="dep-arv-time arv-time">21:00</div>
+    </div>
+    <div class="graphical-plane-path">
+        <div class="airplane-path-bg"></div>
+        <div class="airplane-path"></div>
+        <div class="graph-path-plane-icon p1"><i class="fa fa-plane"></i></div>
+        <div class="graph-path-departure-time p1">1,208 km, 1:26 ago</div>
+        <div class="graph-path-arrival-time p1">532 km, in 00:45</div>
+    </div>
+    <div class="aircraft-details">
+        <div class="title-aircraft-details-aircraft p1">Aircraft</div>
+        <div class="aircraft-details-aircraft-name p1">Boeing 737-800 (B738)</div>
+        <div class="title-aircraft-details-aircraft-registration p1">Country of reg.</div>
+        <div class="aircraft-details-aircraft-registration p1">EI-DLX</div>
+        <div class="title-aircraft-details-aircraft-registration-country p1">Registration</div><img
+            class="aircraft-details-aircraft-registration-country-flag p1" alt="Country Flag"
+            src="/src/img/flags/ie_flag.png" title="Ireland" />
+        <div class="aircraft-details-aircraft-registration-country p1">Ireland</div>
+    </div>
+    <div class="live-flight-details">
+        <div class="title-flight-data-altitude p1">Altitude</div>
+        <div class="flight-data-altitude p1"></div>
+        <div class="title-flight-data-speed justify p1">Speed</div>
+        <div class="flight-data-speed justify p1" title="Groundspeed"></div>
+        <div class="title-flight-data-heading p1">Heading</div>
+        <div class="flight-data-heading justify p1"></div>
+        <div class="title-flight-data-squawk p1 m-0">Squawk</div>
+        <div class="flight-data-squawk"></div>
+        <div class="title-flight-data-rules justify p1">Flight rules</div>
+        <div class="flight-data-rules justify p1"></div>
+        <div class="title-flight-data-altimeter p1">Altimeter</div>
+        <div class="live-flight-details-altimeter-div m-0 p1"><span class="live-flight-details-altimeter">
+                <p class="m-0 flight-data-altimeter-normal">1019</p>
+                <p class="m-0 flight-data-altimeter-us">30.08</p>
+            </span></div>
+    </div>
+    <div class="text-details">
+        <div class="title-text-details-remarks p1">Remarks</div>
+        <div class="text-details-remarks p1">DOF/240115 /V/</div>
+        <div class="title-text-details-route p1">Route</div>
+        <div class="text-details-container-route p1">
+            <div class="text-details-route p1" id="textDetailsRoute"><span>Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Minima quisquam culpa voluptate non qui eum
+                    voluptates ipsa aut, sapiente totam tempore sint quasi nesciunt incidunt esse et impedit
+                    consequatur!
+                    Facilis distinctio explicabo eaque, quam temporibus aliquam? Architecto ducimus nis
+                    sapiente!</span></div>
+        </div>
+    </div>
+    <div class="line-separators">
+        <div class="line-separators-position-box-height line-separators-top line-separator-0"></div>
+        <div class="line-separators-position-box-height line-separators-right line-separator-1"></div>
+        <div class="line-separators-position-box-height line-separators-top line-separator-2"></div>
+        <div class="line-separators-position-box-height line-separators-top line-separator-3"></div>
+        <div class="line-separators-position-box-height line-separators-top line-separator-4"></div>
+        <div class="line-separators-position-box-height line-separators-top line-separator-5"></div>
+        <div class="line-separators-position-box-height line-separators-top line-separator-6"></div>
+        <div class="line-separators-position-box-height line-separators-top line-separator-7"></div>
+    </div>
+</div>
+<script>
+    $('.close-button').on('click', function () {
+        $('.rectangle-parent').fadeOut();
+    });
+</script>
