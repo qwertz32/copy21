@@ -1,4 +1,5 @@
-let cachedData;
+import { showPreciseFlightInfo } from "./plane-placement.js";
+let cachedData, zoomLevel;
 let selectedPlane = null;
 let previousSearchTerm = '';
 
@@ -14,6 +15,7 @@ function searchFun(callsign) {
         const uppercaseCallsign = callsign.toUpperCase();
         const foundPilot = cachedData.pilots.find(pilot => pilot.callsign === uppercaseCallsign);
         if (foundPilot) {
+            showPreciseFlightInfo(foundPilot);
             const pilotLatLng = L.latLng(foundPilot.latitude, foundPilot.longitude);
             map.whenReady(() => {
                 zoomLevel = 15;
@@ -35,7 +37,6 @@ function liveSearch(results) {
         return;
     }
 
-    // Sort the results alphabetically by callsign
     results.sort((a, b) => a.callsign.localeCompare(b.callsign));
 
     results.forEach(result => {
