@@ -7,7 +7,7 @@ numbersToExpressions = true
 shuffleStringArray = true
 splitStrings = true
 [build]
-command = '/pug.ps1'
+command = 'pug.ps1'
 [[headers]]
 for = "/*"
 [headers.values]
