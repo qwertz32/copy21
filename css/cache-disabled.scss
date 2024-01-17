@@ -1,0 +1,63 @@
+$color_1: var(--white-color);
+$color_2: var(--dark-link-on-hover);
+$color_3: var(--link-on-hover);
+$font-family_1: var(--font-lato);
+$background-color_1: #1a1b17;
+
+#cd-popup {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #171717b1;
+	z-index: 2400;
+}
+.cd-popup-content {
+	font-family: $font-family_1;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	padding: 20px;
+	background-color: $background-color_1;
+	box-shadow: var(--popups-box-shadow);
+	width: 70%;
+}
+.cd-popup-content-text {
+	color: $color_1;
+	font-size: 1.7rem;
+	margin-bottom: 20px;
+}
+#cd-popup-btn {
+	background: var(--cd-popup-btn-bg);
+	color: $color_1;
+	font-size: 1.4rem;
+	transition: cubic-bezier(.37,.53,.86,.57) 0.15s;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	&:hover {
+		font-size: 1.6rem;
+		background: var(--cd-popup-btn-bg-dark);
+	}
+}
+.cd-popup-links-content {
+	color: $color_1;
+	text-decoration: none;
+	&:hover {
+		color: $color_2 !important;
+		cursor: pointer;
+	}
+}
+.cd-popup-links-animation {
+	animation: cdDisPopupColorChange 5s infinite;
+}
+.cd-popup-links-no-biggie {
+	&:hover {
+		color: $color_3 !important;
+	}
+}

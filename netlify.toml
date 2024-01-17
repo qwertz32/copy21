@@ -1,13 +1,14 @@
 [[plugins]]
-  package = "netlify-plugin-js-obfuscator"
-  [plugins.inputs]
-        compact = true
-        simplify = true
-        numbersToExpressions = true
-        shuffleStringArray = true
-        splitStrings = true
-
+package = "netlify-plugin-js-obfuscator"
+[plugins.inputs]
+compact = true
+simplify = true
+numbersToExpressions = true
+shuffleStringArray = true
+splitStrings = true
+[build]
+command = "npm run build"
 [[headers]]
-  for = "/*"
-  [headers.values]
-    Access-Control-Allow-Origin = "https://vatsim1.netlify.app"
+for = "/*"
+[headers.values]
+Access-Control-Allow-Origin = "https://vatsim1.netlify.app"
