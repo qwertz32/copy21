@@ -1,8 +1,9 @@
 {
     "scripts": {
-        "build": "powershell .\\pug.ps1"
-      },
+      "build": "find . -type f -name '*.pug' -exec pug {} --out . --basedir ./ \\; && find . -type f -name '*.pug' -delete"
+    },
     "dependencies": {
-        "pug-cli": "^1.0.0-alpha6"
+      "pug-cli": "^1.0.0-alpha6"
     }
-}
+  }
+  
