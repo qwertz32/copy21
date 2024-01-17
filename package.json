@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "build": "pug src/**/*.pug public --out public && sass src/**/*.scss public/css --no-source-map && del src/**/*.pug src/**/*.scss"
+        "build": "./pug.ps1"
     },
     "dependencies": {
         "pug-cli": "^1.0.0-alpha6"
