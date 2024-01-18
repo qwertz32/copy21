@@ -1,15 +1,16 @@
+let updateTimestamp;
+let cachedVatsimData
 $(document).ready(() => {
-    const planeToggleBtn = $('.bfb-plane');
+    const planeToggleBtn = $(".bfb-plane");
     let planesVisible = true;
     let fetchInterval;
-    let cachedData;
+
 
     const planeIcon = L.icon({
-        iconUrl: '/src/img/B789-high-compress.png',
+        iconUrl: "/src/img/B789-high-compress.png",
         iconSize: [25, 25],
         iconAnchor: [12, 12],
         popupAnchor: [0, -5],
-        className: 'plane-icon-transition',
     });
 
     const markersLayer = L.layerGroup().addTo(map);
@@ -64,21 +65,23 @@ $(document).ready(() => {
         }
     }
 
+    
+
     function isMarkerVisible(pilot, bounds) {
         const markerLatLng = L.latLng(pilot.latitude, pilot.longitude);
         return bounds.contains(markerLatLng);
     }
 
     function handleVisibilityChange() {
-        if (document.visibilityState === 'visible' && planesVisible) {
+        if (document.visibilityState === "visible" && planesVisible) {
             getPlanesPosition();
-            fetchInterval = setInterval(getPlanesPosition, 60000);
+            fetchInterval = setInterval(getPlanesPosition, 200);
         } else {
             clearInterval(fetchInterval);
         }
     }
 
-    document.addEventListener('visibilitychange', handleVisibilityChange);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
     setInterval(getPlanesPosition, 60000);
 
     function getPlanesPosition() {
@@ -87,52 +90,55 @@ $(document).ready(() => {
         markersLayer.clearLayers();
         visiblePlanes = {};
 
-        if (L.Browser.mobile) {
-
-        }
-
         if (planesVisible) {
-            if (cachedData) {
+            if (cachedVatsimData) {
                 let maxVisibleIcons;
-
+                // console.log('cachedVatsimData' + cachedVatsimData)
                 if (zoom <= 5) {
-                    const totalPilots = cachedData.pilots.length;
-                    const percentage = 0.40;
+                    const totalPilots = cachedVatsimData.pilots.length;
+                    const percentage = 0.4;
                     maxVisibleIcons = Math.ceil(totalPilots * percentage);
                 } else {
-                    maxVisibleIcons = cachedData.pilots.length;
+                    maxVisibleIcons = cachedVatsimData.pilots.length;
                 }
 
-                const visiblePilots = cachedData.pilots.filter((pilot) =>
+                const visiblePilots = cachedVatsimData.pilots.filter((pilot) =>
                     isMarkerVisible(pilot, bounds)
                 );
                 visiblePilots.slice(0, maxVisibleIcons).forEach((pilot) => {
                     addOrUpdateMarker(pilot);
                 });
+
+                updateTimestamp = cachedVatsimData.general.update;
+
             } else {
-                fetch('https://data.vatsim.net/v3/vatsim-data.json')
-                    .then((response) => response.json())
-                    .then((data) => {
+                fetch("https://data.vatsim.net/v3/vatsim-data.json")
+                    .then(response => response.json())
+                    .then(data => {
                         if (data && data.pilots && Array.isArray(data.pilots)) {
-                            cachedData = data;
+                            cachedVatsimData = data;
                             const totalPilots = data.pilots.length;
-                            const percentage = 0.40;
+                            const percentage = 0.4;
                             const maxVisibleIcons = Math.ceil(totalPilots * percentage);
                             const visiblePilots = data.pilots.filter((pilot) =>
                                 isMarkerVisible(pilot, bounds)
                             );
                             visiblePilots.slice(0, maxVisibleIcons).forEach((pilot) => {
                                 addOrUpdateMarker(pilot);
+
                             });
+                            updateTimestamp = cachedVatsimData.general.update;
+
                         }
                     });
+
             }
         }
     }
 
     function checkIfPlanesStored() {
-        const planesLS = localStorage.getItem('planes');
-        planesVisible = planesLS !== 'hidden';
+        const planesLS = localStorage.getItem("planes");
+        planesVisible = planesLS !== "hidden";
         updatePlaneVisibility();
     }
 
@@ -151,95 +157,177 @@ $(document).ready(() => {
     planeToggleBtn.click(function () {
         planesVisible = !planesVisible;
         if (planesVisible) {
-            localStorage.setItem('planes', 'visible');
+            localStorage.setItem("planes", "visible");
         } else {
-            localStorage.setItem('planes', 'hidden');
+            localStorage.setItem("planes", "hidden");
         }
         updatePlaneVisibility();
     });
 
-    map.on('moveend zoomend', function () {
+    map.on("moveend zoomend", function () {
         if (planesVisible) {
             getPlanesPosition();
         }
     });
 
     getPlanesPosition();
+
+    $('.d-a-departure').on('click', function () {
+        console.log('departure clicked');
+    })
 });
 
 export async function showPreciseFlightInfo(pilot) {
-    $('.f-callsign').text(pilot.callsign);
+    let vatsimDataUpdateTime;
+
+    fetch('https://data.vatsim.net/v3/vatsim-data.json')
+        .then(response => response.json())
+        .then(data => {
+            vatsimDataUpdateTime = data.general.update;
+            $(".f-callsign").text(pilot.callsign);
+            let result = (vatsimDataUpdateTime + '').slice(8).replace(/(\d{2})(\d{2})(\d{2})/, '$1:$2:$3');
+            console.log(result);
+            $(".update-time").text(`Last Update: ${result}Z`);
+        });
+
+    $(".f-callsign").text(pilot.callsign);
 
     if (pilot.flight_plan === null) {
-        $('.dep-time, .arv-time, .line-separator-1, .plane-icon-centered-circle, .line-separator-7, .main-icaos-div').css('display', 'none');
-        $('.rectangle-parent, .no-flight-plan-warning').fadeIn(300);
+        $(
+            ".dep-time, .arv-time, .line-separator-1, .plane-icon-centered-circle, .line-separator-7, .main-icaos-div, .city-airport-names"
+        ).css("display", "none");
+        $(".rectangle-parent, .no-flight-plan-warning").css("display", "flex");
     } else {
-        $('.no-flight-plan-warning').css('display', 'none');
-        $('.dep-time, .arv-time, .line-separator-1, .plane-icon-centered-circle, .line-separator-7, .main-icaos-div').css('display', 'flex');
-        $('.dep-time').text(`${pilot.flight_plan.deptime.substring(0, 2)}:${pilot.flight_plan.deptime.substring(2)}`);
-        let [deptimeH, deptimeM, enrouteH, enrouteM] = [parseInt(pilot.flight_plan.deptime.substring(0, 2)), parseInt(pilot.flight_plan.deptime.substring(2)), Math.floor(parseInt(pilot.flight_plan.enroute_time) / 100), parseInt(pilot.flight_plan.enroute_time) % 100];
-        let [arrivalH, arrivalM] = [(deptimeH + enrouteH + Math.floor((deptimeM + enrouteM) / 60)) % 24, (deptimeM + enrouteM) % 60];
-        $('.arv-time').text(`${arrivalH.toString().padStart(2, '0')}:${arrivalM.toString().padStart(2, '0')}`);
+        $(".no-flight-plan-warning").css("display", "none");
+        $(
+            ".dep-time, .arv-time, .line-separator-1, .plane-icon-centered-circle, .line-separator-7, .main-icaos-div, .city-airport-names"
+        ).css("display", "flex");
+        $(".dep-time").text(
+            `${pilot.flight_plan.deptime.substring(
+                0,
+                2
+            )}:${pilot.flight_plan.deptime.substring(2)}`
+        );
+        let [deptimeH, deptimeM, enrouteH, enrouteM] = [
+            parseInt(pilot.flight_plan.deptime.substring(0, 2)),
+            parseInt(pilot.flight_plan.deptime.substring(2)),
+            Math.floor(parseInt(pilot.flight_plan.enroute_time) / 100),
+            parseInt(pilot.flight_plan.enroute_time) % 100,
+        ];
+        let [arrivalH, arrivalM] = [
+            (deptimeH + enrouteH + Math.floor((deptimeM + enrouteM) / 60)) % 24,
+            (deptimeM + enrouteM) % 60,
+        ];
+        $(".arv-time").text(
+            `${arrivalH.toString().padStart(2, "0")}:${arrivalM
+                .toString()
+                .padStart(2, "0")}`
+        );
     }
 
-    $('#departureIcao').text(pilot.flight_plan?.departure || 'N/A');
-    $('#arrivalIcao').text(pilot.flight_plan?.arrival || 'N/A');
-    $('.flight-data-speed').text(pilot.groundspeed + ' KT' || 'N/A');
-    $('.flight-data-altitude').text(pilot.altitude + ' FT' || 'N/A');
-    $('.flight-data-squawk').text(pilot.transponder || 'N/A');
-    $('.flight-data-altimeter-normal').text(pilot.qnh_mb + 'hPa');
-    $('.flight-data-altimeter-us').text(pilot.qnh_i_hg.toFixed(2) + 'inHg');
-    $('.aircraft-details-aircraft-name').text(pilot.flight_plan?.aircraft_short || 'N/A');
+    $("#departureIcao").text(pilot.flight_plan?.departure || "N/A");
+    $("#arrivalIcao").text(pilot.flight_plan?.arrival || "N/A");
+    $(".flight-data-speed").text(pilot.groundspeed + " KT" || "N/A");
+    $(".flight-data-altitude").text(pilot.altitude + " FT" || "N/A");
+    $(".flight-data-squawk").text(pilot.transponder || "N/A");
+    $(".flight-data-altimeter-normal").text(pilot.qnh_mb + "hPa");
+    $(".flight-data-altimeter-us").text(pilot.qnh_i_hg.toFixed(2) + "inHg");
+    $(".aircraft-details-aircraft-name").text(
+        pilot.flight_plan?.aircraft_short || "N/A"
+    );
 
     try {
         const airlineData = await getAirlineDataFromCallsign(pilot.callsign);
 
         if (airlineData) {
             const logoUrl = `https://vatsim1.netlify.app/src/img/airline_logos/${airlineData.Code}_logo.png`;
-            $('.airline-logo').attr('src', logoUrl);
-            $('.f-airline').text(airlineData.Name);
-            console.log('the image and name should be in the content');
-        } else {
-            console.error("Error: Unable to find airline data for the callsign.");
+            $(".airline-logo").attr("src", logoUrl).css("display", "block");
+            $(".f-airline").text(airlineData.Name);
         }
     } catch (error) {
-        console.error("Error fetching airline data:", error);
+        console.error(error);
     }
 
+    await getAirportDataFromICAO(); // trigger a function, but wait for it being finished.
+
+    // flight rules
     if (pilot.flight_plan) {
         if (pilot.flight_plan.flight_rules === "I") {
-            $('.flight-data-rules').text('IFR' || 'N/A');
+            $(".flight-data-rules").text("IFR" || "N/A");
         } else if (pilot.flight_plan.flight_rules === "V") {
-            $('.flight-data-rules').text('VFR' || 'N/A');
+            $(".flight-data-rules").text("VFR" || "N/A");
         } else {
-            $('.flight-data-rules').text(pilot.flight_plan.flight_rules);
+            $(".flight-data-rules").text(pilot.flight_plan.flight_rules);
         }
     } else {
-        $('.flight-data-rules').text('N/A');
+        $(".flight-data-rules").text("N/A");
     }
 
-    $('.flight-data-heading').text(pilot.heading + "\u00B0");
-    $('.text-details-route').text(pilot.flight_plan?.route || 'N/A');
-    $('.text-details-remarks').text(pilot.flight_plan?.remarks || 'N/A');
-    $('.aircraft-details-aircraft-name').text(pilot.flight_plan?.aircraft_short || 'N/A');
+    $(".flight-data-heading").text(pilot.heading + "\u00B0");
+    $(".text-details-route").text(pilot.flight_plan?.route || "N/A");
+    $(".text-details-remarks").text(pilot.flight_plan?.remarks || "N/A");
+    $(".aircraft-details-aircraft-name").text(
+        pilot.flight_plan?.aircraft_short || "N/A"
+    );
 
-    $('.rectangle-parent').fadeIn(300);
+    $(".rectangle-parent").fadeIn(300);
+
+
 }
 
+function implementNotFoundAirirplaneData() {
+    $(".airline-logo").css("display", "none");
+    $(".f-airline").text("N/A");
+}
 async function getAirlineDataFromCallsign(callsign) {
     const firstThreeSymbols = callsign.substring(0, 3);
     try {
-        const response = await fetch('/src/json/airlines.json');
+        const response = await fetch("/src/json/airlines.json");
         const data = await response.json();
-        const matchingAirline = data.rows.find(airline => airline.ICAO === firstThreeSymbols);
+        const matchingAirline = data.rows.find(
+            (airline) => airline.ICAO === firstThreeSymbols
+        );
         if (matchingAirline) {
             return matchingAirline;
         } else {
-            console.error("Error: Airline not found in the JSON data.");
-            $('.airline-logo').attr('src', 'https://vatsim1.netlify.app/src/img/airline_logos/lo_logo.png');
+            implementNotFoundAirirplaneData();
         }
     } catch (error) {
         console.error("Error fetching airline data:", error);
-        $('.airline-logo').attr('src', 'https://vatsim1.netlify.app/src/img/airline_logos/lo_logo.png');
+        implementNotFoundAirirplaneData();
+    }
+}
+async function getAirportDataFromICAO() {
+    try {
+        const response = await fetch("/src/json/airports.json");
+        const airportData = await response.json();
+        const departureIcaoCode = $("#departureIcao").text();
+        const arrivalIcaoCode = $("#arrivalIcao").text();
+        // airportData = cachedAirports;
+        const matchingDepartureAirport = airportData.rows.find(
+            (airport) => airport.icao === departureIcaoCode
+        );
+        const matchingArrivalAirport = airportData.rows.find(
+            (airport) => airport.icao === arrivalIcaoCode
+        );
+        if (matchingDepartureAirport) {
+            const cleanedDepartureAirportName = matchingDepartureAirport.name
+                .replace(/\bairport\b|\binternational\b|\bintercontinental\b/gi, "")
+                .trim();
+            $(".d-a-departure").text(cleanedDepartureAirportName);
+        } else {
+            $("#departureIcao").text("N/A");
+        }
+        if (matchingArrivalAirport) {
+            const cleanedArrivalAirportName = matchingArrivalAirport.name
+                .replace(/\bairport\b|\binternational\b|\bintercontinental\b/gi, "")
+                .trim();
+            $(".d-a-arrival").text(cleanedArrivalAirportName);
+        } else {
+            $("#arrivalIcao").text("N/A");
+        }
+        return matchingArrivalAirport;
+    } catch (error) {
+        console.error("Error fetching airport data:", error);
     }
 }
