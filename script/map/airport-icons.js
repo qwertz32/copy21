@@ -22,7 +22,7 @@ $(document).ready(() => {
     }
 
     async function fetchAirportsData() {
-        return fetch('/src/json/airports-2.json')
+        return fetch('/src/json/airports.json')
             .then(response => response.json())
             .then(data => airportData = data.rows)
             .catch(error => console.error(error));
