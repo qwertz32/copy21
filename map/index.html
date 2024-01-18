@@ -157,7 +157,9 @@
 
                     </div>
                 </nav>
-                <div class="flight-info" id="flight-details"></div>
+                <div class="flight-info" id="flight-details">
+                    <!--#include virtual="/templates/map/plane-info.html"-->
+                </div>
                 <div class="bottom-filter-bar">
 
                     <div class="bottom-filter-box">
@@ -192,15 +194,7 @@
             </div>
         </div>
     </div>
-    <script id="plane-info-template" type="text/x-handlebars-template">
-    <div class="plane-info-content">
-        <script>
-            $(document).ready(function () {
-                $('.plane-info-content').load('/templates/map/plane-info.html');
-            })
-        </script>
-    </div>
-    </script> <!--Sidebar for plane info-->
+    </> <!--Sidebar for plane info-->
     <script>
         $.ajax({
             url: '/version.json',
