@@ -195,22 +195,12 @@
     <script id="plane-info-template" type="text/x-handlebars-template">
     <div class="plane-info-content">
         <script>
-            $(document).ready(function() {
-                $.ajax({
-                    url: '/templates/map/plane-info.html',
-                    method: 'GET',
-                    dataType: 'html',
-                    success: function(data) {
-                        $('.plane-info-content').html(data);
-                    },
-                    error: function(error) {
-                        console.error(error);
-                    }
-                })
+            $(document).ready(function () {
+                $('.plane-info-content').load('/templates/map/plane-info.html');
             })
         </script>
     </div>
-</script> <!--Sidebar for plane info-->
+    </script> <!--Sidebar for plane info-->
     <script>
         $.ajax({
             url: '/version.json',
