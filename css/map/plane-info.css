@@ -97,6 +97,7 @@
 .f-airline {
     top: 70px;
     font-size: 14px;
+    text-wrap: nowrap;
     color: var(--white-darkened);
     width: 240px;
     height: 42px;
@@ -111,41 +112,32 @@
 
 .update-time {
     top: 7px;
-    left: 189px;
+    left: 162px;
     font-size: 12px;
     text-align: center;
-    width: 130px;
+    text-wrap: nowrap;
+    min-width: 200px;
     height: 14px;
 }
 
 .d-a-departure {
-    position: absolute;
-    top: 173px;
     left: 18px;
-    font-size: 20px;
-    font-weight: 800;
-    font-family: var(--font-1);
-    color: var(--white-darkened);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 202px;
-    height: 101px;
 }
 
 .d-a-arrival {
-    top: 173px;
     left: 263px;
-    font-size: 20px;
-    color: var(--white-darkened);
-    justify-content: center;
-    width: 202px;
-    height: 101px;
-    position: absolute;
-    font-weight: 800;
+}
+
+.city-airport-names {
     font-family: var(--font-1);
-    display: flex;
-    align-items: center;
+    color: var(--white-darkened);
+    font-weight: 800;
+    width: 202px;
+    justify-content: center;
+    height: 101px;
+    top: 173px;
+    font-size: 20px;
+    text-align: center;
 }
 
 .d-a-flight-icaos {
@@ -185,19 +177,19 @@
 .plane-icon-centered-circle {
     z-index: 2;
     position: absolute;
-    top: 134px;
-    left: 198px;
+    top: 145px;
+    left: 217px;
     border-radius: 50%;
     background-color: #d9d9d9;
-    width: 89px;
-    height: 89px;
+    width: 50px;
+    height: 50px;
 }
 
 .dep-arv-centered-plane {
     position: absolute;
-    top: 3px;
-    left: -18px;
-    font-size: 36px;
+    top: -16px;
+    left: -37px;
+    font-size: 25px;
     color: #000;
     display: flex;
     align-items: center;
