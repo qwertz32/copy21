@@ -65,7 +65,7 @@ $(document).ready(() => {
         }
     }
 
-    
+
 
     function isMarkerVisible(pilot, bounds) {
         const markerLatLng = L.latLng(pilot.latitude, pilot.longitude);
@@ -223,8 +223,7 @@ export async function showPreciseFlightInfo(pilot) {
                 .toString()
                 .padStart(2, "0")}`
         );
-    }
-
+    };
     $("#departureIcao").text(pilot.flight_plan?.departure || "N/A");
     $("#arrivalIcao").text(pilot.flight_plan?.arrival || "N/A");
     $(".flight-data-speed").text(pilot.groundspeed + " KT" || "N/A");
@@ -240,7 +239,7 @@ export async function showPreciseFlightInfo(pilot) {
         const airlineData = await getAirlineDataFromCallsign(pilot.callsign);
 
         if (airlineData) {
-            const logoUrl = `https://vatsim1.netlify.app/src/img/airline_logos/${airlineData.Code}_logo.png`;
+            const logoUrl = `/src/img/airline_logos/${airlineData.Code}_logo.png`;
             $(".airline-logo").attr("src", logoUrl).css("display", "block");
             $(".f-airline").text(airlineData.Name);
         }
@@ -269,10 +268,7 @@ export async function showPreciseFlightInfo(pilot) {
     $(".aircraft-details-aircraft-name").text(
         pilot.flight_plan?.aircraft_short || "N/A"
     );
-
     $(".rectangle-parent").fadeIn(300);
-
-
 }
 
 function implementNotFoundAirirplaneData() {
@@ -304,6 +300,11 @@ async function getAirportDataFromICAO() {
         const departureIcaoCode = $("#departureIcao").text();
         const arrivalIcaoCode = $("#arrivalIcao").text();
         // airportData = cachedAirports;
+        const cleaningTheName = (airport) => {
+            return airport.name
+                .replace(/\bairport\b|\binternational\b|\bintercontinental\b|\bnational\b|\beuroairport\b/gi, "")
+                .trim();
+        };
         const matchingDepartureAirport = airportData.rows.find(
             (airport) => airport.icao === departureIcaoCode
         );
@@ -311,17 +312,13 @@ async function getAirportDataFromICAO() {
             (airport) => airport.icao === arrivalIcaoCode
         );
         if (matchingDepartureAirport) {
-            const cleanedDepartureAirportName = matchingDepartureAirport.name
-                .replace(/\bairport\b|\binternational\b|\bintercontinental\b/gi, "")
-                .trim();
+            const cleanedDepartureAirportName = cleaningTheName(matchingDepartureAirport);
             $(".d-a-departure").text(cleanedDepartureAirportName);
         } else {
             $("#departureIcao").text("N/A");
         }
         if (matchingArrivalAirport) {
-            const cleanedArrivalAirportName = matchingArrivalAirport.name
-                .replace(/\bairport\b|\binternational\b|\bintercontinental\b/gi, "")
-                .trim();
+            const cleanedArrivalAirportName = cleaningTheName(matchingArrivalAirport);
             $(".d-a-arrival").text(cleanedArrivalAirportName);
         } else {
             $("#arrivalIcao").text("N/A");
