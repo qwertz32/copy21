@@ -17,7 +17,8 @@ function hideLoadingSpinner() {
                 if (userCountry !== null) {
                     var attributionContainer = $('.leaflet-control-attribution');
                     var currentAttribution = attributionContainer.html();
-                    var newAttribution = currentAttribution + ' | ' + userCountry;
+                    var countryFlag = (`/src/img/flags/${userCountry}_flag.png`)
+                    var newAttribution = currentAttribution + ' | ' + `<img src="${countryFlag}" alt="${userCountry} flag">` + ' ' + userCountry;
                     attributionContainer.html(newAttribution);
                     console.log("Successfully implemented user's country code.")
                 } else {
@@ -26,9 +27,12 @@ function hideLoadingSpinner() {
                 }
 
             },
-            error: function(error) {
-                console.error('Error fetching country.\n', error);
-
+            error: function(jqXHR, error) {
+                if (jqXHR.status === 0) {
+                    console.error("Disable your Adblock to see your country's code and a nice little flag");
+                } else {
+                    console.error('Error fetching country.', error);
+                }
             }
         });
     }
