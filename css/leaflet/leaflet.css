@@ -17,11 +17,21 @@
     text-wrap: nowrap;
     text-align: right;
     font-family: var(--font-roboto);
-    letter-spacing: -0.05em;
+    letter-spacing: 0.05em;
+    right: 10px;
+    font-weight: 600;
 }
 
 .leaflet-control-attribution a {
     color: var(--leaflet-attribution-color);
+}
+
+.leaflet-control-attribution img {
+    height: 17px;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    top: 5px;
 }
 
 .leaflet-container {
