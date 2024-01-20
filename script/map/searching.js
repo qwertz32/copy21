@@ -3,12 +3,12 @@ let cachedData, zoomLevel;
 let selectedPlane = null;
 let previousSearchTerm = '';
 
-const planesIcon = L.icon({
-    iconUrl: '/src/img/B789-high-compress.png',
-    iconSize: [25, 25],
-    iconAnchor: [12, 12],
-    popupAnchor: [0, -5],
-});
+// const planesIcon = L.icon({
+//     iconUrl: '/src/img/B789-high-compress.png',
+//     iconSize: [25, 25],
+//     iconAnchor: [12, 12],
+//     popupAnchor: [0, -5],
+// });
 
 function searchFun(callsign) {
     if (cachedData) {
@@ -69,21 +69,20 @@ $(document).ready(function () {
             const fResults = cachedData.pilots.filter(pilot =>
                 pilot.callsign.includes(searchTerm)
             );
-
             liveSearch(fResults);
         }
     });
 
-    $('#searchInput').on('focus', function () {
-        const searchTerm = previousSearchTerm;
-        const fResults = cachedData.pilots.filter(pilot =>
-            pilot.callsign.includes(searchTerm)
-        );
-        liveSearch(fResults);
-        if (previousSearchTerm) {
-            $(this).val(previousSearchTerm);
-        }
-    });
+        $('#searchInput').on('focus', function () {
+            const searchTerm = previousSearchTerm;
+            const fResults = cachedData.pilots.filter(pilot =>
+                pilot.callsign.includes(searchTerm)
+            );
+            liveSearch(fResults);
+            if (previousSearchTerm) {
+                $(this).val(previousSearchTerm);
+            }
+        });
 
     fetch('https://data.vatsim.net/v3/vatsim-data.json')
         .then(response => response.json())
