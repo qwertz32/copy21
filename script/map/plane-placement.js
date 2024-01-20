@@ -238,10 +238,12 @@ export async function showPreciseFlightInfo(pilot) {
     try {
         const airlineData = await getAirlineDataFromCallsign(pilot.callsign);
 
-        if (airlineData) {
+        if (airlineData && airlineData.Code) {
             const logoUrl = `/src/img/airline_logos/${airlineData.Code}_logo.png`;
             $(".airline-logo").attr("src", logoUrl).css("display", "block");
             $(".f-airline").text(airlineData.Name);
+        } else {
+            implementNotFoundAirirplaneData();
         }
     } catch (error) {
         console.error(error);
@@ -265,9 +267,7 @@ export async function showPreciseFlightInfo(pilot) {
     $(".flight-data-heading").text(pilot.heading + "\u00B0");
     $(".text-details-route").text(pilot.flight_plan?.route || "N/A");
     $(".text-details-remarks").text(pilot.flight_plan?.remarks || "N/A");
-    $(".aircraft-details-aircraft-name").text(
-        pilot.flight_plan?.aircraft_short || "N/A"
-    );
+    $(".aircraft-details-aircraft-name").text(pilot.flight_plan?.aircraft_short || "N/A");
     $(".rectangle-parent").fadeIn(300);
 }
 
@@ -315,13 +315,13 @@ async function getAirportDataFromICAO() {
             const cleanedDepartureAirportName = cleaningTheName(matchingDepartureAirport);
             $(".d-a-departure").text(cleanedDepartureAirportName);
         } else {
-            $("#departureIcao").text("N/A");
+            $("#departureIcao, .d-a-departure").text("N/A");
         }
         if (matchingArrivalAirport) {
             const cleanedArrivalAirportName = cleaningTheName(matchingArrivalAirport);
             $(".d-a-arrival").text(cleanedArrivalAirportName);
         } else {
-            $("#arrivalIcao").text("N/A");
+            $("#arrivalIcao, .d-a-arrival").text("N/A");
         }
         return matchingArrivalAirport;
     } catch (error) {
