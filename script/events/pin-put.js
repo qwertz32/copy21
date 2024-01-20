@@ -36,11 +36,6 @@ $.getJSON('https://phoenix-api.vatsim.net/api/events', function (data) {
         return `${day}.${month} ${time}`;
     }
     
-    function generateUniqueId() {
-        const markerToken = Math.random().toString(36).substring(2, 12);
-        return `event_${markerToken}`;
-    }
-    
     function findAirportsInEvent(event) {
         if (!event.airports || !Array.isArray(event.airports)) {
             return [];
@@ -77,10 +72,6 @@ $.getJSON('https://phoenix-api.vatsim.net/api/events', function (data) {
                     icon = defaultIcon;
                 }
                 var marker = L.marker(coords, { icon: icon }).addTo(map);
-                
-                const eventId = generateUniqueId();
-
-                marker.eventId = eventId;
 
             var eventsList = data.filter((e) =>
                 e.airports && e.airports.some((a) => a && a.icao === airport.icao) &&
@@ -112,7 +103,7 @@ $.getJSON('https://phoenix-api.vatsim.net/api/events', function (data) {
             $(".precise-overlay-bg").click(function () {
                 closePreciseOverlay(); 
             })
-                console.log(`Event pin put on airport: %c${airport.icao} with ${eventId}`, 'font-weight: bold;');
+                console.log(`Event pin put on airport: %c${airport.icao}`, 'font-weight: bold;');
                 processedAirports.push(airport.icao);
             } else {
                 console.log('No coords found for airport in event.');
