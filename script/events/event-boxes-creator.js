@@ -46,7 +46,7 @@
                     } else if (isTomorrow) {
                         categories.tomorrow.push(event);
                     } else {
-                        dateMap[eventDate] = dateMap[eventDate] || [];
+                            dateMap[eventDate] = dateMap[eventDate] || [];
                         dateMap[eventDate].push(event);
                     }
                 });
@@ -87,7 +87,7 @@
         function checkIfEventsOutdated() {
             const storedEventTime = localStorage.getItem('event-timestamp');
             if (storedEventTime) {
-                const storedTime = parseInt(storedEventTime, 10);
+                const storedTime = storedEventTime;
                 const currentTime = new Date().getTime();
                 if (storedTime < currentTime) {
                     $('#event-boxes-timeOfFetch').html('The data <span class="s32">might</span> be outdated as it was taken at' + ' ' + fTime);
