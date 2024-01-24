@@ -84,7 +84,7 @@ $(document).ready(function () {
         zIndex: 2
     });
     var atrCtrl = L.control.attribution({ position: 'topright' }).addTo(map);
-    atrCtrl.setPrefix('<a href="https://leafletjs.com/" target="_blank">Leaflet</a>'); //fix to remove the ukrainian flag
+    atrCtrl.setPrefix('<i class="fa-brands fa-github"></i><a href="https://github.com/skerretoo/timeshow target="_blank">This project on Github</a>| <a href="https://leafletjs.com/" target="_blank">Leaflet</a>'); //fix to remove the ukrainian flag
 
     baseLayer.addTo(map);
 
