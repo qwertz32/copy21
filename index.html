@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Refresh" content="0; url='/events'" /> 
     <title>Redirecting...</title>
     <style>
         body {
@@ -33,5 +32,10 @@
 <body>
     <h1>Redirecting...</h1>
     <p>If it does not redirect you, <a href="/events">click here</a>.</p>
+    <script>
+        possibilities = ["/events", "/map"];
+        var finalRedirect = possibilities[Math.floor(possibilities.length * Math.random())];
+        window.location.replace(finalRedirect);
+    </script>
 </body>
 </html>
