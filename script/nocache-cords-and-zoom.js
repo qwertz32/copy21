@@ -51,11 +51,12 @@ $(document).ready(function () {
             attributionControl: false,
             zoomControl: false,
             zoomSnap: 0.20,
-            zoomDelta: 0.75
+            zoomDelta: 0.75,
         });
     }
     initializeMap();
 
+    // baseLayer = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v12/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3VkeCIsImEiOiJjbHJrMnd2cXEwOTJnMmpwd2p6aHBrM3VhIn0.osPTV54Z_O4ezRmaO696Lg', {
     baseLayer = L.tileLayer('https://cartodb-basemaps-c.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}.png', {
         minZoom: 3,
         maxZoom: 19,
@@ -83,8 +84,27 @@ $(document).ready(function () {
         keepBuffer: 5,
         zIndex: 2
     });
-    var atrCtrl = L.control.attribution({ position: 'topright' }).addTo(map);
-    atrCtrl.setPrefix('<a href="https://leafletjs.com/" target="_blank">Leaflet</a>'); //fix to remove the ukrainian flag
+
+    function currentVersionToAttribution() {
+        let attributionVersionText; 
+        $.ajax({
+            url: '/version.json',
+            dataType: 'json',
+            success: function (data) {
+                attributionVersionText = 'V' + data.version.ver + ', Build: ' + data.version.build + ' |';
+                console.log("built the attributionVerText correctly");
+                const attributionText = `${attributionVersionText} <a href="https://leafletjs.com/" target="_blank">Leaflet</a>`;
+                const atrCtrl = L.control.attribution({ position: 'topright' }).addTo(map);
+                atrCtrl.setPrefix(attributionText);
+            },
+            error: function () {
+                console.log("errored");
+                $('#loading-build-info').text('');
+            }
+        });
+    }
+    
+    currentVersionToAttribution();
 
     baseLayer.addTo(map);
 
@@ -174,4 +194,5 @@ $(document).ready(function () {
             .catch(error => console.error('Error fetching weather data:', error));
     }
     updateWeatherLayer();
+
 });
