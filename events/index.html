@@ -79,6 +79,7 @@
     <script src="/script/top-right-stats.js"></script>
     <script src="/script/events/precise-popup-creator.js"></script>
     <script src="/script/events/map.js"></script>
+    <script src="/script/attribution.js"></script>
 </head>
 
 <body>
@@ -234,19 +235,6 @@
             </ul>
         </div>
 </script>
-    <script>
-        $.ajax({
-            url: '/version.json',
-            dataType: 'json',
-            success: function (data) {
-                var versionText = 'V' + data.version.ver + ', Build: ' + data.version.build;
-                $('#loading-build-info').text(versionText);
-            },
-            error: function () {
-                $('#loading-build-info').text('');
-            }
-        });
-    </script>
     <noscript>
         <style>
             .a-noscript {
