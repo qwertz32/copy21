@@ -107,6 +107,17 @@
         height: 50px;
         background-color: var(--bottom-bar-background);
     }
+    .leaflet-control-attribution {
+        width: fit-content;
+        text-wrap: unset !important;
+        padding-inline: 10px !important;
+        color: var(--leaflet-attribution-color-darkened) !important;
+        font-size: 12px !important;
+        letter-spacing: normal !important;
+    }
+    .leaflet-control-attribution a {
+        color: var(--leaflet-attribution-color-darkened) !important;
+    }
 }
 
 /* Nedeed media from main */

@@ -4,12 +4,12 @@
         height: 6%;
     }
     .nav-logo {
-        width: auto; /* Allow the logo container to adjust its width */
-        text-align: center; /* Center the content inside the logo container */
+        width: auto;
+        text-align: center;
     }
     .nav-logo img {
         height: 35px;
-        max-height: 35px; /* Ensure the maximum height for the logo */
+        max-height: 35px;
     }
     .menu-icon {
         display: flex !important;
@@ -34,11 +34,11 @@
 @media (max-height: 1150px) {
     .nav-logo {
         height: 30px;
-        text-align: center; /* Center the content inside the logo container */
+        text-align: center;
     }
     .nav-logo img {
         height: 30px;
-        max-height: 30px; /* Ensure the maximum height for the logo */
+        max-height: 30px;
     }
 }
 /* WHEN CONFLICT */
