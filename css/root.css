@@ -14,10 +14,10 @@
     --scroll-bg: #212121;
     --scroll-handle: #757575;
     --scroll-handle-hover: #212121;
-    --font-rubik: 'Rubik', monospace;
-    --font-lato: 'Lato', sans-serif;
-    --font-roboto: 'Roboto Mono', monospace;
-    --font-montserrat: 'Montserrat', sans-serif;
+    --font-rubik: "Rubik", monospace;
+    --font-lato: "Lato", sans-serif;
+    --font-roboto: "Roboto Mono", monospace;
+    --font-montserrat: "Montserrat", sans-serif;
     --event-box-active-border: 5px solid rgba(35, 188, 35, 0.797);
     --sidebox-background: #1b1d1f;
     --event-box-background: #252829;
@@ -25,7 +25,7 @@
     --ls-popup-btn-bg: #9a5e04;
     --cd-popup-btn-bg: #7939ce;
     --cd-popup-btn-bg-dark: #510ea9;
-    --popups-box-shadow:  0 0 10px rgb(52, 54, 53);
+    --popups-box-shadow: 0 0 10px rgb(52, 54, 53);
     --events-custom-popup-bg: #61573d;
     --precise-event-popup-overlay-bg: rgba(0, 0, 0, 0.914);
     --sidebar-bg: rgba(0, 0, 0, 0.558);
@@ -33,8 +33,9 @@
     --top-right-stats-grayed: rgb(136, 131, 131);
     --event-box-icaos-color: rgb(74, 237, 167);
     --bottom-bar-background: rgb(13, 13, 13);
-    --plane-info-background: #0F0F0F;
+    --plane-info-background: #0f0f0f;
     --active: rgb(167, 110, 232);
     --leaflet-attribution-color: #c5c4c4ac;
     --leaflet-attribution-color-darkened: rgba(138, 138, 138, 0.5);
+    --line-separators-plane-info-color: #808080;
 }
