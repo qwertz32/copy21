@@ -24,7 +24,7 @@ $(document).ready(() => {
                 visiblePlanes[markerId].setLatLng([pilot.latitude, pilot.longitude]);
                 visiblePlanes[markerId].setRotationAngle(pilot.heading);
             } else {
-                const marker = L.marker([pilot.latitude, pilot.longitude], {
+                const marker = L.marker([parseFloat(pilot.latitude), parseFloat(pilot.longitude)], {
                     icon: planeIcon,
                     rotationAngle: pilot.heading,
                 });
@@ -72,12 +72,13 @@ $(document).ready(() => {
         return bounds.contains(markerLatLng);
     }
 
+    // getPlanesPosition()
+
     function handleVisibilityChange() {
         if (document.visibilityState === "visible" && planesVisible) {
             getPlanesPosition();
-            fetchInterval = setInterval(getPlanesPosition, 200);
         } else {
-            clearInterval(fetchInterval);
+            console.error("an error occurred when getting planes' position.")
         }
     }
 
@@ -147,10 +148,8 @@ $(document).ready(() => {
     function updatePlaneVisibility() {
         if (planesVisible) {
             getPlanesPosition();
-            fetchInterval = setInterval(getPlanesPosition, 60000);
         } else {
             markersLayer.clearLayers();
-            clearInterval(fetchInterval);
         }
     }
 
@@ -223,7 +222,8 @@ export async function showPreciseFlightInfo(pilot) {
                 .toString()
                 .padStart(2, "0")}`
         );
-    };
+    }
+
     $("#departureIcao").text(pilot.flight_plan?.departure || "N/A");
     $("#arrivalIcao").text(pilot.flight_plan?.arrival || "N/A");
     $(".flight-data-speed").text(pilot.groundspeed + " KT" || "N/A");
@@ -235,6 +235,22 @@ export async function showPreciseFlightInfo(pilot) {
         pilot.flight_plan?.aircraft_short || "N/A"
     );
 
+    if (pilot.flight_plan.remarks) {
+        const searchTerm = "REG/";
+        const registrationText = pilot.flight_plan.remarks.toLowerCase().includes(searchTerm.toLowerCase())
+            ? pilot.flight_plan.remarks.split(searchTerm)[1]?.split(' ')[0]
+            : null;
+        if (registrationText) {
+            $(".aircraft-details-aircraft-registration").text(registrationText);
+            console.log(registrationText)
+        } else {
+            $(".aircraft-details-aircraft-registration").text("N/A")
+            console.error("No registration information found in remarksOne");
+        }
+    } else {
+        console.error("No remarks for the selected flight.")
+    }
+    
     try {
         const airlineData = await getAirlineDataFromCallsign(pilot.callsign);
 
@@ -243,7 +259,7 @@ export async function showPreciseFlightInfo(pilot) {
             $(".airline-logo").attr("src", logoUrl).css("display", "block");
             $(".f-airline").text(airlineData.Name);
         } else {
-            implementNotFoundAirirplaneData();
+            implementNotFoundAirplaneData();
         }
     } catch (error) {
         console.error(error);
@@ -268,10 +284,9 @@ export async function showPreciseFlightInfo(pilot) {
     $(".text-details-route").text(pilot.flight_plan?.route || "N/A");
     $(".text-details-remarks").text(pilot.flight_plan?.remarks || "N/A");
     $(".aircraft-details-aircraft-name").text(pilot.flight_plan?.aircraft_short || "N/A");
-    $(".rectangle-parent").fadeIn(300);
+    $(".rectangle-parent").fadeIn(200);
 }
-
-function implementNotFoundAirirplaneData() {
+function implementNotFoundAirplaneData() {
     $(".airline-logo").css("display", "none");
     $(".f-airline").text("N/A");
 }
@@ -286,11 +301,11 @@ async function getAirlineDataFromCallsign(callsign) {
         if (matchingAirline) {
             return matchingAirline;
         } else {
-            implementNotFoundAirirplaneData();
+            implementNotFoundAirplaneData();
         }
     } catch (error) {
         console.error("Error fetching airline data:", error);
-        implementNotFoundAirirplaneData();
+        implementNotFoundAirplaneData();
     }
 }
 async function getAirportDataFromICAO() {
