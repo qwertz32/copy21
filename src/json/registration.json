@@ -1,0 +1,918 @@
+[
+  {
+    "Country or region": "Afghanistan",
+    "Registration prefix": "YA"
+  },
+  {
+    "Country or region": "Albania",
+    "Registration prefix": "ZA"
+  },
+  {
+    "Country or region": "Algeria",
+    "Registration prefix": "7T"
+  },
+  {
+    "Country or region": "Andorra",
+    "Registration prefix": "C3"
+  },
+  {
+    "Country or region": "Angola",
+    "Registration prefix": "D2"
+  },
+  {
+    "Country or region": "Anguilla",
+    "Registration prefix": "VP-A"
+  },
+  {
+    "Country or region": "Antigua and Barbuda",
+    "Registration prefix": "V2"
+  },
+  {
+    "Country or region": "Argentina",
+    "Registration prefix": "LV"
+  },
+  {
+    "Country or region": "LQ",
+    "Registration prefix": "LQ"
+  },
+  {
+    "Country or region": "Armenia",
+    "Registration prefix": "EK"
+  },
+  {
+    "Country or region": "Aruba",
+    "Registration prefix": "P4"
+  },
+  {
+    "Country or region": "Australia",
+    "Registration prefix": "VH"
+  },
+  {
+    "Country or region": "Austria",
+    "Registration prefix": "OE"
+  },
+  {
+    "Country or region": "Azerbaijan",
+    "Registration prefix": "4K"
+  },
+  {
+    "Country or region": "Bahamas",
+    "Registration prefix": "C6"
+  },
+  {
+    "Country or region": "Bahrain",
+    "Registration prefix": "A9C"
+  },
+  {
+    "Country or region": "Bangladesh",
+    "Registration prefix": "S2"
+  },
+  {
+    "Country or region": "Barbados",
+    "Registration prefix": "8P"
+  },
+  {
+    "Country or region": "Belarus",
+    "Registration prefix": "EW"
+  },
+  {
+    "Country or region": "Belgium",
+    "Registration prefix": "OO"
+  },
+  {
+    "Country or region": "Belize",
+    "Registration prefix": "V3"
+  },
+  {
+    "Country or region": "Benin",
+    "Registration prefix": "TY"
+  },
+  {
+    "Country or region": "Bermuda",
+    "Registration prefix": "VP-B"
+  },
+  {
+    "Country or region": "Bhutan",
+    "Registration prefix": "A5"
+  },
+  {
+    "Country or region": "Bolivia",
+    "Registration prefix": "CP"
+  },
+  {
+    "Country or region": "Bosnia and Herzegovina",
+    "Registration prefix": "E7"
+  },
+  {
+    "Country or region": "Botswana",
+    "Registration prefix": "A2"
+  },
+  {
+    "Country or region": "Brazil",
+    "Registration prefix": "PP"
+  },
+  {
+    "Country or region": "PR",
+    "Registration prefix": "PR"
+  },
+  {
+    "Country or region": "PS",
+    "Registration prefix": "PS"
+  },
+  {
+    "Country or region": "PT",
+    "Registration prefix": "PT"
+  },
+  {
+    "Country or region": "PU",
+    "Registration prefix": "PU"
+  },
+  {
+    "Country or region": "British Virgin Islands",
+    "Registration prefix": "VP-L"
+  },
+  {
+    "Country or region": "Brunei",
+    "Registration prefix": "V8"
+  },
+  {
+    "Country or region": "Bulgaria",
+    "Registration prefix": "LZ"
+  },
+  {
+    "Country or region": "Burkina Faso",
+    "Registration prefix": "XT"
+  },
+  {
+    "Country or region": "Burundi",
+    "Registration prefix": "9U"
+  },
+  {
+    "Country or region": "Cambodia",
+    "Registration prefix": "XU"
+  },
+  {
+    "Country or region": "Cameroon",
+    "Registration prefix": "TJ"
+  },
+  {
+    "Country or region": "Canada",
+    "Registration prefix": "C"
+  },
+  {
+    "Country or region": "Cape Verde",
+    "Registration prefix": "D4"
+  },
+  {
+    "Country or region": "Cayman Islands",
+    "Registration prefix": "VP-C"
+  },
+  {
+    "Country or region": "Central African Republic",
+    "Registration prefix": "TL"
+  },
+  {
+    "Country or region": "Chad",
+    "Registration prefix": "TT"
+  },
+  {
+    "Country or region": "Chile",
+    "Registration prefix": "CC"
+  },
+  {
+    "Country or region": "China",
+    "Registration prefix": "B"
+  },
+  {
+    "Country or region": "Colombia",
+    "Registration prefix": "HJ"
+  },
+  {
+    "Country or region": "HK",
+    "Registration prefix": "HK"
+  },
+  {
+    "Country or region": "Comoros",
+    "Registration prefix": "D6"
+  },
+  {
+    "Country or region": "Congo, Republic of",
+    "Registration prefix": "TN"
+  },
+  {
+    "Country or region": "Congo, Democratic Republic of",
+    "Registration prefix": "9S"
+  },
+  {
+    "Country or region": "9T",
+    "Registration prefix": "9T"
+  },
+  {
+    "Country or region": "Cook Islands",
+    "Registration prefix": "E5"
+  },
+  {
+    "Country or region": "Costa Rica",
+    "Registration prefix": "TI"
+  },
+  {
+    "Country or region": "Croatia",
+    "Registration prefix": "9A"
+  },
+  {
+    "Country or region": "Cuba",
+    "Registration prefix": "CU"
+  },
+  {
+    "Country or region": "Cyprus",
+    "Registration prefix": "5B"
+  },
+  {
+    "Country or region": "Czech Republic",
+    "Registration prefix": "OK"
+  },
+  {
+    "Country or region": "Denmark",
+    "Registration prefix": "OY"
+  },
+  {
+    "Country or region": "Djibouti",
+    "Registration prefix": "J2"
+  },
+  {
+    "Country or region": "Dominica",
+    "Registration prefix": "J7"
+  },
+  {
+    "Country or region": "Dominican Republic",
+    "Registration prefix": "HI"
+  },
+  {
+    "Country or region": "Ecuador",
+    "Registration prefix": "HC"
+  },
+  {
+    "Country or region": "Egypt",
+    "Registration prefix": "SU"
+  },
+  {
+    "Country or region": "El Salvador",
+    "Registration prefix": "YS"
+  },
+  {
+    "Country or region": "Equatorial Guinea",
+    "Registration prefix": "3C"
+  },
+  {
+    "Country or region": "Eritrea",
+    "Registration prefix": "E3"
+  },
+  {
+    "Country or region": "Estonia",
+    "Registration prefix": "ES"
+  },
+  {
+    "Country or region": "Ethiopia",
+    "Registration prefix": "ET"
+  },
+  {
+    "Country or region": "Falkland Islands (Islas Malvinas)",
+    "Registration prefix": "VP-F"
+  },
+  {
+    "Country or region": "Faroe Islands",
+    "Registration prefix": "OY"
+  },
+  {
+    "Country or region": "Fiji",
+    "Registration prefix": "DQ"
+  },
+  {
+    "Country or region": "Finland",
+    "Registration prefix": "OH"
+  },
+  {
+    "Country or region": "France",
+    "Registration prefix": "F"
+  },
+  {
+    "Country or region": "French Guiana",
+    "Registration prefix": "FY"
+  },
+  {
+    "Country or region": "French Polynesia",
+    "Registration prefix": "F-O"
+  },
+  {
+    "Country or region": "Gabon",
+    "Registration prefix": "TR"
+  },
+  {
+    "Country or region": "Gambia",
+    "Registration prefix": "C5"
+  },
+  {
+    "Country or region": "Georgia",
+    "Registration prefix": "4L"
+  },
+  {
+    "Country or region": "Germany",
+    "Registration prefix": "D"
+  },
+  {
+    "Country or region": "Ghana",
+    "Registration prefix": "9G"
+  },
+  {
+    "Country or region": "Gibraltar",
+    "Registration prefix": "GX"
+  },
+  {
+    "Country or region": "Greece",
+    "Registration prefix": "SX"
+  },
+  {
+    "Country or region": "Greenland",
+    "Registration prefix": "OY"
+  },
+  {
+    "Country or region": "Grenada",
+    "Registration prefix": "J3"
+  },
+  {
+    "Country or region": "Guadeloupe",
+    "Registration prefix": "F-"
+  },
+  {
+    "Country or region": "Guatemala",
+    "Registration prefix": "TG"
+  },
+  {
+    "Country or region": "Guinea",
+    "Registration prefix": "3X"
+  },
+  {
+    "Country or region": "Guinea-Bissau",
+    "Registration prefix": "J5"
+  },
+  {
+    "Country or region": "Guyana",
+    "Registration prefix": "8R"
+  },
+  {
+    "Country or region": "Haiti",
+    "Registration prefix": "HH"
+  },
+  {
+    "Country or region": "Honduras",
+    "Registration prefix": "HR"
+  },
+  {
+    "Country or region": "Hungary",
+    "Registration prefix": "HA"
+  },
+  {
+    "Country or region": "Iceland",
+    "Registration prefix": "TF"
+  },
+  {
+    "Country or region": "India",
+    "Registration prefix": "VT"
+  },
+  {
+    "Country or region": "Indonesia",
+    "Registration prefix": "PK-G"
+  },
+  {
+    "Country or region": "Iran",
+    "Registration prefix": "EP"
+  },
+  {
+    "Country or region": "Iraq",
+    "Registration prefix": "YI"
+  },
+  {
+    "Country or region": "Ireland",
+    "Registration prefix": "EI"
+  },
+  {
+    "Country or region": "Israel",
+    "Registration prefix": "4X"
+  },
+  {
+    "Country or region": "Italy",
+    "Registration prefix": "I"
+  },
+  {
+    "Country or region": "Ivory Coast",
+    "Registration prefix": "TU"
+  },
+  {
+    "Country or region": "Jamaica",
+    "Registration prefix": "6Y"
+  },
+  {
+    "Country or region": "Japan",
+    "Registration prefix": "JA"
+  },
+  {
+    "Country or region": "Jordan",
+    "Registration prefix": "JY"
+  },
+  {
+    "Country or region": "Kazakhstan",
+    "Registration prefix": "UP"
+  },
+  {
+    "Country or region": "Kenya",
+    "Registration prefix": "5Y"
+  },
+  {
+    "Country or region": "Kiribati",
+    "Registration prefix": "T3"
+  },
+  {
+    "Country or region": "Kuwait",
+    "Registration prefix": "9K"
+  },
+  {
+    "Country or region": "Kyrgyzstan",
+    "Registration prefix": "EX"
+  },
+  {
+    "Country or region": "Laos",
+    "Registration prefix": "RDPL"
+  },
+  {
+    "Country or region": "Latvia",
+    "Registration prefix": "YL"
+  },
+  {
+    "Country or region": "Lebanon",
+    "Registration prefix": "OD"
+  },
+  {
+    "Country or region": "Lesotho",
+    "Registration prefix": "7P"
+  },
+  {
+    "Country or region": "Liberia",
+    "Registration prefix": "EL"
+  },
+  {
+    "Country or region": "Libya",
+    "Registration prefix": "5A"
+  },
+  {
+    "Country or region": "Liechtenstein",
+    "Registration prefix": "HB"
+  },
+  {
+    "Country or region": "Lithuania",
+    "Registration prefix": "LY"
+  },
+  {
+    "Country or region": "Luxembourg",
+    "Registration prefix": "LX"
+  },
+  {
+    "Country or region": "Macedonia",
+    "Registration prefix": "Z3"
+  },
+  {
+    "Country or region": "Madagascar",
+    "Registration prefix": "5R"
+  },
+  {
+    "Country or region": "Malawi",
+    "Registration prefix": "7Q"
+  },
+  {
+    "Country or region": "Malaysia",
+    "Registration prefix": "9M"
+  },
+  {
+    "Country or region": "Maldives",
+    "Registration prefix": "8Q"
+  },
+  {
+    "Country or region": "Mali",
+    "Registration prefix": "TZ"
+  },
+  {
+    "Country or region": "Malta",
+    "Registration prefix": "9H"
+  },
+  {
+    "Country or region": "Marshall Islands",
+    "Registration prefix": "V7-"
+  },
+  {
+    "Country or region": "Martinique",
+    "Registration prefix": "F-"
+  },
+  {
+    "Country or region": "Mauritania",
+    "Registration prefix": "5T-"
+  },
+  {
+    "Country or region": "Mauritius",
+    "Registration prefix": "3B-"
+  },
+  {
+    "Country or region": "Mexico",
+    "Registration prefix": "XA-"
+  },
+  {
+    "Country or region": "Micronesia",
+    "Registration prefix": "V6-"
+  },
+  {
+    "Country or region": "Moldova",
+    "Registration prefix": "ER-"
+  },
+  {
+    "Country or region": "Monaco",
+    "Registration prefix": "3A-"
+  },
+  {
+    "Country or region": "Mongolia",
+    "Registration prefix": "JU-"
+  },
+  {
+    "Country or region": "Montenegro",
+    "Registration prefix": "4O-"
+  },
+  {
+    "Country or region": "Montserrat",
+    "Registration prefix": "VP-M"
+  },
+  {
+    "Country or region": "Morocco",
+    "Registration prefix": "CN-"
+  },
+  {
+    "Country or region": "Mozambique",
+    "Registration prefix": "C9-"
+  },
+  {
+    "Country or region": "Myanmar (Burma)",
+    "Registration prefix": "XY-"
+  },
+  {
+    "Country or region": "Namibia",
+    "Registration prefix": "V5-"
+  },
+  {
+    "Country or region": "Nauru",
+    "Registration prefix": "C2-"
+  },
+  {
+    "Country or region": "Nepal",
+    "Registration prefix": "9N-"
+  },
+  {
+    "Country or region": "Netherlands",
+    "Registration prefix": "PH-"
+  },
+  {
+    "Country or region": "New Caledonia",
+    "Registration prefix": "F-O"
+  },
+  {
+    "Country or region": "New Zealand",
+    "Registration prefix": "ZK-"
+  },
+  {
+    "Country or region": "Nicaragua",
+    "Registration prefix": "YN-"
+  },
+  {
+    "Country or region": "Niger",
+    "Registration prefix": "5U-"
+  },
+  {
+    "Country or region": "Nigeria",
+    "Registration prefix": "5N-"
+  },
+  {
+    "Country or region": "Niue",
+    "Registration prefix": "E3-"
+  },
+  {
+    "Country or region": "Norfolk Island",
+    "Registration prefix": "VK-"
+  },
+  {
+    "Country or region": "North Korea",
+    "Registration prefix": "P-"
+  },
+  {
+    "Country or region": "Norway",
+    "Registration prefix": "LN-"
+  },
+  {
+    "Country or region": "Oman",
+    "Registration prefix": "A4-O"
+  },
+  {
+    "Country or region": "Pakistan",
+    "Registration prefix": "AP-"
+  },
+  {
+    "Country or region": "Palau",
+    "Registration prefix": "T8-"
+  },
+  {
+    "Country or region": "Panama",
+    "Registration prefix": "HP-"
+  },
+  {
+    "Country or region": "Papua New Guinea",
+    "Registration prefix": "P2-"
+  },
+  {
+    "Country or region": "Paraguay",
+    "Registration prefix": "ZP-"
+  },
+  {
+    "Country or region": "Peru",
+    "Registration prefix": "OB-"
+  },
+  {
+    "Country or region": "Philippines",
+    "Registration prefix": "RP-"
+  },
+  {
+    "Country or region": "Poland",
+    "Registration prefix": "SP-"
+  },
+  {
+    "Country or region": "Portugal",
+    "Registration prefix": "CS-"
+  },
+  {
+    "Country or region": "Qatar",
+    "Registration prefix": "A7-"
+  },
+  {
+    "Country or region": "Reunion",
+    "Registration prefix": "F-"
+  },
+  {
+    "Country or region": "Romania",
+    "Registration prefix": "YR"
+  },
+  {
+    "Country or region": "Russia",
+    "Registration prefix": "RA"
+  },
+  {
+    "Country or region": "Rwanda",
+    "Registration prefix": "9X"
+  },
+  {
+    "Country or region": "Saint Barthelemy",
+    "Registration prefix": "F"
+  },
+  {
+    "Country or region": "Saint Helena",
+    "Registration prefix": "VQ-H"
+  },
+  {
+    "Country or region": "Saint Kitts and Nevis",
+    "Registration prefix": "V4"
+  },
+  {
+    "Country or region": "Saint Lucia",
+    "Registration prefix": "J6"
+  },
+  {
+    "Country or region": "Saint Martin",
+    "Registration prefix": "F"
+  },
+  {
+    "Country or region": "Saint Pierre and Miquelon",
+    "Registration prefix": "F"
+  },
+  {
+    "Country or region": "Saint Vincent and the Grenadines",
+    "Registration prefix": "J8"
+  },
+  {
+    "Country or region": "Samoa",
+    "Registration prefix": "5W"
+  },
+  {
+    "Country or region": "San Marino",
+    "Registration prefix": "T7"
+  },
+  {
+    "Country or region": "Sao Tome and Principe",
+    "Registration prefix": "S9"
+  },
+  {
+    "Country or region": "Saudi Arabia",
+    "Registration prefix": "HZ"
+  },
+  {
+    "Country or region": "Senegal",
+    "Registration prefix": "6V"
+  },
+  {
+    "Country or region": "Serbia",
+    "Registration prefix": "YU"
+  },
+  {
+    "Country or region": "Seychelles",
+    "Registration prefix": "S7"
+  },
+  {
+    "Country or region": "Sierra Leone",
+    "Registration prefix": "9L"
+  },
+  {
+    "Country or region": "Singapore",
+    "Registration prefix": "9V"
+  },
+  {
+    "Country or region": "Slovakia",
+    "Registration prefix": "OM"
+  },
+  {
+    "Country or region": "Slovenia",
+    "Registration prefix": "S5"
+  },
+  {
+    "Country or region": "Solomon Islands",
+    "Registration prefix": "H4"
+  },
+  {
+    "Country or region": "Somalia",
+    "Registration prefix": "6O"
+  },
+  {
+    "Country or region": "South Africa",
+    "Registration prefix": "ZS"
+  },
+  {
+    "Country or region": "South Korea",
+    "Registration prefix": "HL"
+  },
+  {
+    "Country or region": "South Sudan",
+    "Registration prefix": "Z8"
+  },
+  {
+    "Country or region": "Spain",
+    "Registration prefix": "EC"
+  },
+  {
+    "Country or region": "Sri Lanka",
+    "Registration prefix": "4R"
+  },
+  {
+    "Country or region": "Sudan",
+    "Registration prefix": "ST"
+  },
+  {
+    "Country or region": "Suriname",
+    "Registration prefix": "PZ"
+  },
+  {
+    "Country or region": "Swaziland",
+    "Registration prefix": "3D"
+  },
+  {
+    "Country or region": "Sweden",
+    "Registration prefix": "SE"
+  },
+  {
+    "Country or region": "Switzerland",
+    "Registration prefix": "HB"
+  },
+  {
+    "Country or region": "Syria",
+    "Registration prefix": "YK"
+  },
+  {
+    "Country or region": "Taiwan",
+    "Registration prefix": "B-"
+  },
+  {
+    "Country or region": "Tajikistan",
+    "Registration prefix": "EY"
+  },
+  {
+    "Country or region": "Tanzania",
+    "Registration prefix": "5H"
+  },
+  {
+    "Country or region": "Thailand",
+    "Registration prefix": "HS"
+  },
+  {
+    "Country or region": "Timor-Leste",
+    "Registration prefix": "4W"
+  },
+  {
+    "Country or region": "Togo",
+    "Registration prefix": "5V"
+  },
+  {
+    "Country or region": "Tonga",
+    "Registration prefix": "A3"
+  },
+  {
+    "Country or region": "Trinidad and Tobago",
+    "Registration prefix": "9Y"
+  },
+  {
+    "Country or region": "Tunisia",
+    "Registration prefix": "TS"
+  },
+  {
+    "Country or region": "Turkey",
+    "Registration prefix": "TC"
+  },
+  {
+    "Country or region": "Turkmenistan",
+    "Registration prefix": "EZ"
+  },
+  {
+    "Country or region": "Turks and Caicos Islands",
+    "Registration prefix": "VPT"
+  },
+  {
+    "Country or region": "Tuvalu",
+    "Registration prefix": "T2"
+  },
+  {
+    "Country or region": "Uganda",
+    "Registration prefix": "5X"
+  },
+  {
+    "Country or region": "Ukraine",
+    "Registration prefix": "UR"
+  },
+  {
+    "Country or region": "United Arab Emirates",
+    "Registration prefix": "A6"
+  },
+  {
+    "Country or region": "United Kingdom",
+    "Registration prefix": "G"
+  },
+  {
+    "Country or region": "United States",
+    "Registration prefix": "N"
+  },
+  {
+    "Country or region": "Uruguay",
+    "Registration prefix": "CX"
+  },
+  {
+    "Country or region": "Uzbekistan",
+    "Registration prefix": "UK"
+  },
+  {
+    "Country or region": "Vanuatu",
+    "Registration prefix": "YJ"
+  },
+  {
+    "Country or region": "Vatican City",
+    "Registration prefix": "HV"
+  },
+  {
+    "Country or region": "Venezuela",
+    "Registration prefix": "YV"
+  },
+  {
+    "Country or region": "Vietnam",
+    "Registration prefix": "VN"
+  },
+  {
+    "Country or region": "Virgin Islands, U.S.",
+    "Registration prefix": "N"
+  },
+  {
+    "Country or region": "Wallis and Futuna",
+    "Registration prefix": "FW"
+  },
+  {
+    "Country or region": "Western Sahara",
+    "Registration prefix": "C9"
+  },
+  {
+    "Country or region": "Yemen",
+    "Registration prefix": "7O"
+  },
+  {
+    "Country or region": "Zambia",
+    "Registration prefix": "9J"
+  },
+  {
+    "Country or region": "Zimbabwe",
+    "Registration prefix": "Z"
+  }
+]
