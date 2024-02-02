@@ -20,37 +20,22 @@ $(document).ready(() => {
             const markerId = pilot.callsign;
 
             if (visiblePlanes[markerId]) {
-                visiblePlanes[markerId].setLatLng([
-                    pilot.latitude,
-                    pilot.longitude,
-                ]);
+                visiblePlanes[markerId].setLatLng([pilot.latitude, pilot.longitude]);
                 visiblePlanes[markerId].setRotationAngle(pilot.heading);
             } else {
-                const marker = L.marker(
-                    [parseFloat(pilot.latitude), parseFloat(pilot.longitude)],
-                    {
-                        icon: planeIcon,
-                        rotationAngle: pilot.heading,
-                    }
-                );
+                const marker = L.marker([parseFloat(pilot.latitude), parseFloat(pilot.longitude)], {
+                    icon: planeIcon,
+                    rotationAngle: pilot.heading,
+                });
                 let popupContent = pilot.callsign;
                 if (!pilot.flight_plan) {
                     // if flight plan not available
-                    popupContent += pilot.altitude
-                        ? `<br>${Math.round(pilot.altitude / 50) * 50}ft`
-                        : "";
+                    popupContent += pilot.altitude ? `<br>${Math.round(pilot.altitude / 50) * 50}ft` : "";
                     popupContent += "<br>No flight plan";
                 } else {
-                    popupContent += pilot.flight_plan.aircraft_short
-                        ? `<br>${pilot.flight_plan.aircraft_short}`
-                        : "";
-                    popupContent += pilot.altitude
-                        ? `<br>${Math.round(pilot.altitude / 50) * 50}ft ${pilot.groundspeed}kts tas`
-                        : "";
-                    popupContent +=
-                        pilot.flight_plan.departure && pilot.flight_plan.arrival
-                            ? `<br>${pilot.flight_plan.departure} - ${pilot.flight_plan.arrival}`
-                            : "";
+                    popupContent += pilot.flight_plan.aircraft_short ? `<br>${pilot.flight_plan.aircraft_short}` : "";
+                    popupContent += pilot.altitude ? `<br>${Math.round(pilot.altitude / 50) * 50}ft ${pilot.groundspeed}kts tas` : "";
+                    popupContent += pilot.flight_plan.departure && pilot.flight_plan.arrival ? `<br>${pilot.flight_plan.departure} - ${pilot.flight_plan.arrival}` : "";
                 }
                 marker.bindPopup(popupContent, {
                     className: "plane-custom-popup",
@@ -107,9 +92,7 @@ $(document).ready(() => {
                     maxVisibleIcons = cachedVatsimData.pilots.length;
                 }
 
-                const visiblePilots = cachedVatsimData.pilots.filter((pilot) =>
-                    isMarkerVisible(pilot, bounds)
-                );
+                const visiblePilots = cachedVatsimData.pilots.filter((pilot) => isMarkerVisible(pilot, bounds));
                 visiblePilots.slice(0, maxVisibleIcons).forEach((pilot) => {
                     addOrUpdateMarker(pilot);
                 });
@@ -123,17 +106,11 @@ $(document).ready(() => {
                             cachedVatsimData = data;
                             const totalPilots = data.pilots.length;
                             const percentage = 0.4;
-                            const maxVisibleIcons = Math.ceil(
-                                totalPilots * percentage
-                            );
-                            const visiblePilots = data.pilots.filter((pilot) =>
-                                isMarkerVisible(pilot, bounds)
-                            );
-                            visiblePilots
-                                .slice(0, maxVisibleIcons)
-                                .forEach((pilot) => {
-                                    addOrUpdateMarker(pilot);
-                                });
+                            const maxVisibleIcons = Math.ceil(totalPilots * percentage);
+                            const visiblePilots = data.pilots.filter((pilot) => isMarkerVisible(pilot, bounds));
+                            visiblePilots.slice(0, maxVisibleIcons).forEach((pilot) => {
+                                addOrUpdateMarker(pilot);
+                            });
                             updateTimestamp = cachedVatsimData.general.update;
                         }
                     });
@@ -188,9 +165,7 @@ export async function showPreciseFlightInfo(pilot) {
         .then((data) => {
             vatsimDataUpdateTime = data.general.update;
             $(".f-callsign").text(pilot.callsign);
-            let result = (vatsimDataUpdateTime + "")
-                .slice(8)
-                .replace(/(\d{2})(\d{2})(\d{2})/, "$1:$2:$3");
+            let result = (vatsimDataUpdateTime + "").slice(8).replace(/(\d{2})(\d{2})(\d{2})/, "$1:$2:$3");
             console.log(result);
             $(".update-time").text(`Last Update: ${result}Z`);
         });
@@ -198,36 +173,20 @@ export async function showPreciseFlightInfo(pilot) {
     $(".f-callsign").text(pilot.callsign);
 
     if (pilot.flight_plan === null) {
-        $(
-            ".dep-time, .arv-time, .line-separator-1, .plane-icon-centered-circle, .line-separator-7, .main-icaos-div, .city-airport-names"
-        ).css("display", "none");
+        $(".dep-time, .arv-time, .line-separator-1, .plane-icon-centered-circle, .line-separator-7, .main-icaos-div, .city-airport-names").css("display", "none");
         $(".rectangle-parent, .no-flight-plan-warning").css("display", "flex");
     } else {
         $(".no-flight-plan-warning").css("display", "none");
-        $(
-            ".dep-time, .arv-time, .line-separator-1, .plane-icon-centered-circle, .line-separator-7, .main-icaos-div, .city-airport-names"
-        ).css("display", "flex");
-        $(".dep-time").text(
-            `${pilot.flight_plan.deptime.substring(
-                0,
-                2
-            )}:${pilot.flight_plan.deptime.substring(2)}`
-        );
+        $(".dep-time, .arv-time, .line-separator-1, .plane-icon-centered-circle, .line-separator-7, .main-icaos-div, .city-airport-names").css("display", "flex");
+        $(".dep-time").text(`${pilot.flight_plan.deptime.substring(0, 2)}:${pilot.flight_plan.deptime.substring(2)}`);
         let [deptimeH, deptimeM, enrouteH, enrouteM] = [
             parseInt(pilot.flight_plan.deptime.substring(0, 2)),
             parseInt(pilot.flight_plan.deptime.substring(2)),
             Math.floor(parseInt(pilot.flight_plan.enroute_time) / 100),
             parseInt(pilot.flight_plan.enroute_time) % 100,
         ];
-        let [arrivalH, arrivalM] = [
-            (deptimeH + enrouteH + Math.floor((deptimeM + enrouteM) / 60)) % 24,
-            (deptimeM + enrouteM) % 60,
-        ];
-        $(".arv-time").text(
-            `${arrivalH.toString().padStart(2, "0")}:${arrivalM
-                .toString()
-                .padStart(2, "0")}`
-        );
+        let [arrivalH, arrivalM] = [(deptimeH + enrouteH + Math.floor((deptimeM + enrouteM) / 60)) % 24, (deptimeM + enrouteM) % 60];
+        $(".arv-time").text(`${arrivalH.toString().padStart(2, "0")}:${arrivalM.toString().padStart(2, "0")}`);
     }
 
     $("#departureIcao").text(pilot.flight_plan?.departure || "N/A");
@@ -237,17 +196,11 @@ export async function showPreciseFlightInfo(pilot) {
     $(".flight-data-squawk").text(pilot.transponder || "N/A");
     $(".flight-data-altimeter-normal").text(pilot.qnh_mb + "hPa");
     $(".flight-data-altimeter-us").text(pilot.qnh_i_hg.toFixed(2) + "inHg");
-    $(".aircraft-details-aircraft-name").text(
-        pilot.flight_plan?.aircraft_short || "N/A"
-    );
+    $(".aircraft-details-aircraft-name").text(pilot.flight_plan?.aircraft_short || "N/A");
 
     if (pilot.flight_plan.remarks) {
         const searchTerm = "REG/";
-        const registrationText = pilot.flight_plan.remarks
-            .toLowerCase()
-            .includes(searchTerm.toLowerCase())
-            ? pilot.flight_plan.remarks.split(searchTerm)[1]?.split(" ")[0]
-            : null;
+        const registrationText = pilot.flight_plan.remarks.toLowerCase().includes(searchTerm.toLowerCase()) ? pilot.flight_plan.remarks.split(searchTerm)[1]?.split(" ")[0] : null;
         if (registrationText) {
             $(".aircraft-details-aircraft-registration").text(registrationText);
             console.log(registrationText);
@@ -291,9 +244,7 @@ export async function showPreciseFlightInfo(pilot) {
     $(".flight-data-heading").text(pilot.heading + "\u00B0");
     $(".text-details-route").text(pilot.flight_plan?.route || "N/A");
     $(".text-details-remarks").text(pilot.flight_plan?.remarks || "N/A");
-    $(".aircraft-details-aircraft-name").text(
-        pilot.flight_plan?.aircraft_short || "N/A"
-    );
+    $(".aircraft-details-aircraft-name").text(pilot.flight_plan?.aircraft_short || "N/A");
     $(".rectangle-parent").fadeIn(200);
 }
 function implementNotFoundAirplaneData() {
@@ -305,9 +256,7 @@ async function getAirlineDataFromCallsign(callsign) {
     try {
         const response = await fetch("/src/json/airlines.json");
         const data = await response.json();
-        const matchingAirline = data.rows.find(
-            (airline) => airline.ICAO === firstThreeSymbols
-        );
+        const matchingAirline = data.rows.find((airline) => airline.ICAO === firstThreeSymbols);
         if (matchingAirline) {
             return matchingAirline;
         } else {
@@ -326,31 +275,18 @@ async function getAirportDataFromICAO() {
         const arrivalIcaoCode = $("#arrivalIcao").text();
         // airportData = cachedAirports;
         const cleaningTheName = (airport) => {
-            return airport.name
-                .replace(
-                    /\bairport\b|\binternational\b|\bintercontinental\b|\bnational\b|\beuroairport\b/gi,
-                    ""
-                )
-                .trim();
+            return airport.name.replace(/\bairport\b|\binternational\b|\bintercontinental\b|\bnational\b|\beuroairport\b/gi, "").trim();
         };
-        const matchingDepartureAirport = airportData.rows.find(
-            (airport) => airport.icao === departureIcaoCode
-        );
-        const matchingArrivalAirport = airportData.rows.find(
-            (airport) => airport.icao === arrivalIcaoCode
-        );
+        const matchingDepartureAirport = airportData.rows.find((airport) => airport.icao === departureIcaoCode);
+        const matchingArrivalAirport = airportData.rows.find((airport) => airport.icao === arrivalIcaoCode);
         if (matchingDepartureAirport) {
-            const cleanedDepartureAirportName = cleaningTheName(
-                matchingDepartureAirport
-            );
+            const cleanedDepartureAirportName = cleaningTheName(matchingDepartureAirport);
             $(".d-a-departure").text(cleanedDepartureAirportName);
         } else {
             $("#departureIcao, .d-a-departure").text("N/A");
         }
         if (matchingArrivalAirport) {
-            const cleanedArrivalAirportName = cleaningTheName(
-                matchingArrivalAirport
-            );
+            const cleanedArrivalAirportName = cleaningTheName(matchingArrivalAirport);
             $(".d-a-arrival").text(cleanedArrivalAirportName);
         } else {
             $("#arrivalIcao, .d-a-arrival").text("N/A");
