@@ -1,10 +1,9 @@
 let updateTimestamp;
-let cachedVatsimData
+let cachedVatsimData;
 $(document).ready(() => {
     const planeToggleBtn = $(".bfb-plane");
     let planesVisible = true;
     let fetchInterval;
-
 
     const planeIcon = L.icon({
         iconUrl: "/src/img/B789-high-compress.png",
@@ -21,42 +20,49 @@ $(document).ready(() => {
             const markerId = pilot.callsign;
 
             if (visiblePlanes[markerId]) {
-                visiblePlanes[markerId].setLatLng([pilot.latitude, pilot.longitude]);
+                visiblePlanes[markerId].setLatLng([
+                    pilot.latitude,
+                    pilot.longitude,
+                ]);
                 visiblePlanes[markerId].setRotationAngle(pilot.heading);
             } else {
-                const marker = L.marker([parseFloat(pilot.latitude), parseFloat(pilot.longitude)], {
-                    icon: planeIcon,
-                    rotationAngle: pilot.heading,
-                });
+                const marker = L.marker(
+                    [parseFloat(pilot.latitude), parseFloat(pilot.longitude)],
+                    {
+                        icon: planeIcon,
+                        rotationAngle: pilot.heading,
+                    }
+                );
                 let popupContent = pilot.callsign;
                 if (!pilot.flight_plan) {
                     // if flight plan not available
                     popupContent += pilot.altitude
                         ? `<br>${Math.round(pilot.altitude / 50) * 50}ft`
-                        : '';
-                    popupContent += '<br>No flight plan'
+                        : "";
+                    popupContent += "<br>No flight plan";
                 } else {
                     popupContent += pilot.flight_plan.aircraft_short
                         ? `<br>${pilot.flight_plan.aircraft_short}`
-                        : '';
+                        : "";
                     popupContent += pilot.altitude
                         ? `<br>${Math.round(pilot.altitude / 50) * 50}ft ${pilot.groundspeed}kts tas`
-                        : '';
-                    popupContent += pilot.flight_plan.departure && pilot.flight_plan.arrival
-                        ? `<br>${pilot.flight_plan.departure} - ${pilot.flight_plan.arrival}`
-                        : '';
+                        : "";
+                    popupContent +=
+                        pilot.flight_plan.departure && pilot.flight_plan.arrival
+                            ? `<br>${pilot.flight_plan.departure} - ${pilot.flight_plan.arrival}`
+                            : "";
                 }
                 marker.bindPopup(popupContent, {
-                    className: 'plane-custom-popup',
+                    className: "plane-custom-popup",
                 });
-                marker.on('mouseover', function () {
+                marker.on("mouseover", function () {
                     this.openPopup();
-                    $(".leaflet-popup-close-button").css('display', 'none');
+                    $(".leaflet-popup-close-button").css("display", "none");
                 });
-                marker.on('mouseout', function () {
+                marker.on("mouseout", function () {
                     this.closePopup();
                 });
-                marker.on('click', function () {
+                marker.on("click", function () {
                     showPreciseFlightInfo(pilot);
                 });
                 markersLayer.addLayer(marker);
@@ -64,8 +70,6 @@ $(document).ready(() => {
             }
         }
     }
-
-
 
     function isMarkerVisible(pilot, bounds) {
         const markerLatLng = L.latLng(pilot.latitude, pilot.longitude);
@@ -78,7 +82,7 @@ $(document).ready(() => {
         if (document.visibilityState === "visible" && planesVisible) {
             getPlanesPosition();
         } else {
-            console.error("an error occurred when getting planes' position.")
+            console.error("an error occurred when getting planes' position.");
         }
     }
 
@@ -111,28 +115,28 @@ $(document).ready(() => {
                 });
 
                 updateTimestamp = cachedVatsimData.general.update;
-
             } else {
                 fetch("https://data.vatsim.net/v3/vatsim-data.json")
-                    .then(response => response.json())
-                    .then(data => {
+                    .then((response) => response.json())
+                    .then((data) => {
                         if (data && data.pilots && Array.isArray(data.pilots)) {
                             cachedVatsimData = data;
                             const totalPilots = data.pilots.length;
                             const percentage = 0.4;
-                            const maxVisibleIcons = Math.ceil(totalPilots * percentage);
+                            const maxVisibleIcons = Math.ceil(
+                                totalPilots * percentage
+                            );
                             const visiblePilots = data.pilots.filter((pilot) =>
                                 isMarkerVisible(pilot, bounds)
                             );
-                            visiblePilots.slice(0, maxVisibleIcons).forEach((pilot) => {
-                                addOrUpdateMarker(pilot);
-
-                            });
+                            visiblePilots
+                                .slice(0, maxVisibleIcons)
+                                .forEach((pilot) => {
+                                    addOrUpdateMarker(pilot);
+                                });
                             updateTimestamp = cachedVatsimData.general.update;
-
                         }
                     });
-
             }
         }
     }
@@ -171,20 +175,22 @@ $(document).ready(() => {
 
     getPlanesPosition();
 
-    $('.d-a-departure').on('click', function () {
-        console.log('departure clicked');
-    })
+    $(".d-a-departure").on("click", function () {
+        console.log("departure clicked");
+    });
 });
 
 export async function showPreciseFlightInfo(pilot) {
     let vatsimDataUpdateTime;
 
-    fetch('https://data.vatsim.net/v3/vatsim-data.json')
-        .then(response => response.json())
-        .then(data => {
+    fetch("https://data.vatsim.net/v3/vatsim-data.json")
+        .then((response) => response.json())
+        .then((data) => {
             vatsimDataUpdateTime = data.general.update;
             $(".f-callsign").text(pilot.callsign);
-            let result = (vatsimDataUpdateTime + '').slice(8).replace(/(\d{2})(\d{2})(\d{2})/, '$1:$2:$3');
+            let result = (vatsimDataUpdateTime + "")
+                .slice(8)
+                .replace(/(\d{2})(\d{2})(\d{2})/, "$1:$2:$3");
             console.log(result);
             $(".update-time").text(`Last Update: ${result}Z`);
         });
@@ -237,20 +243,22 @@ export async function showPreciseFlightInfo(pilot) {
 
     if (pilot.flight_plan.remarks) {
         const searchTerm = "REG/";
-        const registrationText = pilot.flight_plan.remarks.toLowerCase().includes(searchTerm.toLowerCase())
-            ? pilot.flight_plan.remarks.split(searchTerm)[1]?.split(' ')[0]
+        const registrationText = pilot.flight_plan.remarks
+            .toLowerCase()
+            .includes(searchTerm.toLowerCase())
+            ? pilot.flight_plan.remarks.split(searchTerm)[1]?.split(" ")[0]
             : null;
         if (registrationText) {
             $(".aircraft-details-aircraft-registration").text(registrationText);
-            console.log(registrationText)
+            console.log(registrationText);
         } else {
-            $(".aircraft-details-aircraft-registration").text("N/A")
+            $(".aircraft-details-aircraft-registration").text("N/A");
             console.error("No registration information found in remarksOne");
         }
     } else {
-        console.error("No remarks for the selected flight.")
+        console.error("No remarks for the selected flight.");
     }
-    
+
     try {
         const airlineData = await getAirlineDataFromCallsign(pilot.callsign);
 
@@ -283,7 +291,9 @@ export async function showPreciseFlightInfo(pilot) {
     $(".flight-data-heading").text(pilot.heading + "\u00B0");
     $(".text-details-route").text(pilot.flight_plan?.route || "N/A");
     $(".text-details-remarks").text(pilot.flight_plan?.remarks || "N/A");
-    $(".aircraft-details-aircraft-name").text(pilot.flight_plan?.aircraft_short || "N/A");
+    $(".aircraft-details-aircraft-name").text(
+        pilot.flight_plan?.aircraft_short || "N/A"
+    );
     $(".rectangle-parent").fadeIn(200);
 }
 function implementNotFoundAirplaneData() {
@@ -317,7 +327,10 @@ async function getAirportDataFromICAO() {
         // airportData = cachedAirports;
         const cleaningTheName = (airport) => {
             return airport.name
-                .replace(/\bairport\b|\binternational\b|\bintercontinental\b|\bnational\b|\beuroairport\b/gi, "")
+                .replace(
+                    /\bairport\b|\binternational\b|\bintercontinental\b|\bnational\b|\beuroairport\b/gi,
+                    ""
+                )
                 .trim();
         };
         const matchingDepartureAirport = airportData.rows.find(
@@ -327,13 +340,17 @@ async function getAirportDataFromICAO() {
             (airport) => airport.icao === arrivalIcaoCode
         );
         if (matchingDepartureAirport) {
-            const cleanedDepartureAirportName = cleaningTheName(matchingDepartureAirport);
+            const cleanedDepartureAirportName = cleaningTheName(
+                matchingDepartureAirport
+            );
             $(".d-a-departure").text(cleanedDepartureAirportName);
         } else {
             $("#departureIcao, .d-a-departure").text("N/A");
         }
         if (matchingArrivalAirport) {
-            const cleanedArrivalAirportName = cleaningTheName(matchingArrivalAirport);
+            const cleanedArrivalAirportName = cleaningTheName(
+                matchingArrivalAirport
+            );
             $(".d-a-arrival").text(cleanedArrivalAirportName);
         } else {
             $("#arrivalIcao, .d-a-arrival").text("N/A");
