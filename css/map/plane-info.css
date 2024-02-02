@@ -515,9 +515,10 @@
 }
 
 .aircraft-details-aircraft-registration-country {
-    left: 380px;
+    left: 375px;
     font-size: 19px;
     width: 76px;
+    line-height: 1.05rem;
 }
 
 .title-text-details-remarks,
