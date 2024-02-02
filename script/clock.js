@@ -1,11 +1,11 @@
 let animationDuration = 500; // As it says, duration of the fadein/fadeout
-let updateInterval = 5000; // Animation Interval, how often will the change of clock occur 
+let updateInterval = 5000; // Animation Interval, how often will the change of clock occur
 
 function toggleClocks() {
-    const localClock = $('.local-clock');
-    const zuluClock = $('.zulu-clock');
+    const localClock = $(".local-clock");
+    const zuluClock = $(".zulu-clock");
 
-    if (localClock.is(':visible')) {
+    if (localClock.is(":visible")) {
         localClock.fadeOut(animationDuration, function () {
             zuluClock.html(showZuluTime());
             zuluClock.fadeIn(animationDuration);
@@ -23,13 +23,15 @@ function showLocalTime() {
     let localH = date.getHours();
     let localM = date.getMinutes();
     const localDay = date.getDate();
-    const localMonthShort = new Intl.DateTimeFormat('en-US', { month: 'short' }).format(date);
+    const localMonthShort = new Intl.DateTimeFormat("en-US", {
+        month: "short",
+    }).format(date);
 
-    localH = (localH < 10) ? "0" + localH : localH;
-    localM = (localM < 10) ? "0" + localM : localM;
+    localH = localH < 10 ? "0" + localH : localH;
+    localM = localM < 10 ? "0" + localM : localM;
     const localTime = `${localH}:${localM}&nbsp;  CET`;
 
-    const localMinutesAndDate = localDay + ' ' + localMonthShort;
+    const localMinutesAndDate = localDay + " " + localMonthShort;
 
     return `${localTime} , ${localMinutesAndDate}`;
 }
@@ -40,24 +42,27 @@ function showZuluTime() {
     let zuluH = date.getUTCHours();
     let zuluM = date.getUTCMinutes();
     const zuluDay = date.getUTCDate();
-    const zuluMonthShort = new Intl.DateTimeFormat('en-US', { month: 'short', timeZone: 'UTC' }).format(date);
-    zuluH = (zuluH < 10) ? "0" + zuluH : zuluH;
-    zuluM = (zuluM < 10) ? "0" + zuluM : zuluM;
+    const zuluMonthShort = new Intl.DateTimeFormat("en-US", {
+        month: "short",
+        timeZone: "UTC",
+    }).format(date);
+    zuluH = zuluH < 10 ? "0" + zuluH : zuluH;
+    zuluM = zuluM < 10 ? "0" + zuluM : zuluM;
     const zuluTime = `${zuluH}:${zuluM} Zulu`;
-    const zuluMinutesAndDate = zuluDay + ' ' + zuluMonthShort;
+    const zuluMinutesAndDate = zuluDay + " " + zuluMonthShort;
     return `${zuluTime} , ${zuluMinutesAndDate}`;
 }
 
 $(document).ready(function () {
-    $('.local-clock').html(showLocalTime());
+    $(".local-clock").html(showLocalTime());
     setInterval(function () {
         toggleClocks();
     }, updateInterval);
     setInterval(function () {
-        if ($('.local-clock').is(':visible')) {
-            $('.local-clock').html(showLocalTime());
+        if ($(".local-clock").is(":visible")) {
+            $(".local-clock").html(showLocalTime());
         } else {
-            $('.zulu-clock').html(showZuluTime());
+            $(".zulu-clock").html(showZuluTime());
         }
     }, 1000); // Clock Interval, how often will it update its time.
 });
