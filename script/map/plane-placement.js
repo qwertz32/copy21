@@ -254,7 +254,7 @@ export async function showPreciseFlightInfo(pilot) {
                     //<img class="aircraft-details-aircraft-registration-country-flag p1" alt="Country Flag" src="/src/img/flags/ie_flag.png" title="Ireland">
                 } else {
                     console.log("No matching country found for the given registration prefix with two characters.");
-                    $(".aircraft-details-aircraft-registration-country").css("left", "355px").text('N/A');
+                    $(".aircraft-details-aircraft-registration-country").text('N/A');
                     const oneCharRegistrationPrefix = registrationText.substring(0, 1);
                     const oneCharMatchingCountry = countriesData.find(country => country.reg === oneCharRegistrationPrefix);
                     if (oneCharMatchingCountry) {
@@ -263,7 +263,7 @@ export async function showPreciseFlightInfo(pilot) {
                         $(".aircraft-details-aircraft-registration-country-flag").attr("src", "/src/img/flags/" + oneCharMatchingCountry.code + "_flag.png").css("width", "47px");
                     } else {
                         console.log("No matching country.")
-                        $(".aircraft-details-aircraft-registration-country").css("left", "355px").text('N/A');
+                        $(".aircraft-details-aircraft-registration-country").text('N/A');
                         $(".aircraft-details-aircraft-registration-country-flag").attr("src", "").css("width", "unset");
                     }
                 }
