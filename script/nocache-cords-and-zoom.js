@@ -19,7 +19,9 @@ var presetCoordinatesList = [
 ];
 
 var tileLayerUrl = 'https://mt2.google.com/vt?lyrs=s&x={x}&y={y}&z={z}';
-var presetCoordinates = isMobile() ? [54.526000, 15.255100] : getRandomCordsForStart();
+var presetCoordinates = isMobile()
+    ? [54.526, 15.2551]
+    : getRandomCordsForStart();
 var presetZoom = isMobile() ? 4 : 3;
 
 try {
@@ -28,9 +30,9 @@ try {
     initialCoordinates = JSON.parse(storedCoordinates) || presetCoordinates;
 } catch (error) {
     console.error(
-        "Error getting the last position. \n Fix is most likely to %cenable cache%c. \n If this does not help, contact the owner and provide any other error you get.",
-        "color: #e30505; font-weight: bold; text-decoration: underline;",
-        "color: orange; font-weight: normal;"
+        'Error getting the last position. \n Fix is most likely to %cenable cache%c. \n If this does not help, contact the owner and provide any other error you get.',
+        'color: #e30505; font-weight: bold; text-decoration: underline;',
+        'color: orange; font-weight: normal;',
     );
     initialCoordinates = presetCoordinates;
 }
@@ -50,40 +52,48 @@ $(document).ready(function () {
         map = L.map('map', {
             attributionControl: false,
             zoomControl: false,
-            zoomSnap: 0.20,
+            zoomSnap: 0.2,
             zoomDelta: 0.75,
         });
     }
     initializeMap();
 
     // baseLayer = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v12/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3VkeCIsImEiOiJjbHJrMnd2cXEwOTJnMmpwd2p6aHBrM3VhIn0.osPTV54Z_O4ezRmaO696Lg', {
-    baseLayer = L.tileLayer('https://cartodb-basemaps-c.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}.png', {
-        minZoom: 3,
-        maxZoom: 19,
-        attribution: '<a href="https://carto.com/basemaps" target="_blank">Carto</a>',
-        preload: Infinity,
-        subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
-        keepBuffer: 5,
-        zIndex: 1
-    });
+    baseLayer = L.tileLayer(
+        'https://cartodb-basemaps-c.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}.png',
+        {
+            minZoom: 3,
+            maxZoom: 19,
+            attribution:
+                '<a href="https://carto.com/basemaps" target="_blank">Carto</a>',
+            preload: Infinity,
+            subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+            keepBuffer: 5,
+            zIndex: 1,
+        },
+    );
 
     var weatherLayer = createTileLayer('', {
         minZoom: 3,
         maxZoom: 19,
         opacity: 0.45,
-        attribution: '<a href="https://www.rainviewer.com/" target="_blank">Rainviewer</a>',
+        attribution:
+            '<a href="https://www.rainviewer.com/" target="_blank">Rainviewer</a>',
         preload: Infinity,
         keepBuffer: 5,
-        zIndex: 3
+        zIndex: 3,
     });
-    
-    var labelLayer = createTileLayer('https://cartodb-basemaps-c.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
-        minZoom: 3,
-        maxZoom: 19,
-        preload: Infinity,
-        keepBuffer: 5,
-        zIndex: 2
-    });
+
+    var labelLayer = createTileLayer(
+        'https://cartodb-basemaps-c.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png',
+        {
+            minZoom: 3,
+            maxZoom: 19,
+            preload: Infinity,
+            keepBuffer: 5,
+            zIndex: 2,
+        },
+    );
 
     baseLayer.addTo(map);
 
@@ -91,10 +101,13 @@ $(document).ready(function () {
         try {
             var currentCoordinates = map.getCenter();
             var currentZoom = map.getZoom();
-            localStorage.setItem('mapCoordinates', JSON.stringify(currentCoordinates));
+            localStorage.setItem(
+                'mapCoordinates',
+                JSON.stringify(currentCoordinates),
+            );
             localStorage.setItem('mapZoom', currentZoom.toString());
         } catch (error) {
-            console.error("Cannot write into Local Storage");
+            console.error('Cannot write into Local Storage');
         }
     });
 
@@ -111,7 +124,7 @@ $(document).ready(function () {
         }
         map.setView(map.getCenter(), map.getZoom());
     }
-    
+
     function removeLayerFromMap(layer) {
         map.addLayer(baseLayer);
         if (map.hasLayer(layer)) {
@@ -146,7 +159,7 @@ $(document).ready(function () {
         }
     });
 
-    $('.bfb-labels').on('click', function() {
+    $('.bfb-labels').on('click', function () {
         if (map.hasLayer(labelLayer)) {
             removeLayerFromMap(labelLayer);
             localStorage.removeItem('labels');
@@ -160,8 +173,8 @@ $(document).ready(function () {
 
     function updateWeatherLayer() {
         fetch('https://tilecache.rainviewer.com/api/maps.json')
-            .then(response => response.json())
-            .then(data => {
+            .then((response) => response.json())
+            .then((data) => {
                 const highestTimestamp = Math.max(...data);
                 const newWeatherLayerUrl = `https://tilecache.rainviewer.com/v2/radar/${highestTimestamp}/512/{z}/{x}/{y}/6/0_1.png`;
                 weatherLayer.setUrl(newWeatherLayerUrl);
@@ -170,8 +183,9 @@ $(document).ready(function () {
                     addLayerToMap(weatherLayer);
                 }
             })
-            .catch(error => console.error('Error fetching weather data:', error));
+            .catch((error) =>
+                console.error('Error fetching weather data:', error),
+            );
     }
     updateWeatherLayer();
-
 });
