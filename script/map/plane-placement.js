@@ -254,6 +254,7 @@ export async function showPreciseFlightInfo(pilot) {
                     //<img class="aircraft-details-aircraft-registration-country-flag p1" alt="Country Flag" src="/src/img/flags/ie_flag.png" title="Ireland">
                 } else {
                     console.log("No matching country found for the given registration prefix with two characters.");
+                    $(".aircraft-details-aircraft-registration-country-flag").attr("src", "").css("width", "unset");
                     $(".aircraft-details-aircraft-registration-country").text('N/A');
                     const oneCharRegistrationPrefix = registrationText.substring(0, 1);
                     const oneCharMatchingCountry = countriesData.find(country => country.reg === oneCharRegistrationPrefix);
