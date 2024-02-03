@@ -1,6 +1,10 @@
 const fs = require('fs');
-const file = 'version.json';
-const recievedData = JSON.parse(fs.readFileSync(file));
-const currentBuildNumber = parseInt(recievedData.build.split('_')[0]);
-recievedData.build = `${currentBuildNumber + 1}_${Math.floor(Date.now() / 1000)}`;
-fs.writeFileSync(file, JSON.stringify(recievedData, null, 2));
+const versionFile = 'version.json';
+const versionData = JSON.parse(fs.readFileSync(versionFile));
+const buildNumberFile = 'buildNumber.txt';
+let currentBuildNumber = parseInt(fs.readFileSync(buildNumberFile, 'utf-8'));
+versionData.build = `${currentBuildNumber}_${Math.floor(Date.now() / 1000)}`;
+currentBuildNumber++;
+fs.writeFileSync(buildNumberFile, currentBuildNumber.toString());
+fs.writeFileSync(versionFile, JSON.stringify(versionData, null, 2));
+console.log(`build update: ${versionData.ver}_${versionData.build}`);
