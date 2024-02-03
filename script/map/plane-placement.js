@@ -281,10 +281,10 @@ export async function showPreciseFlightInfo(pilot) {
     
     
     //known bad registrations
-    if (registrationText === "PMDG738") {
+    if (registrationText === "PMDG738" || registrationText === "PMDG739") {
         $(".aircraft-details-aircraft-registration-country").text('N/A');
         $(".aircraft-details-aircraft-registration-country-flag").attr("src", "");
-    };
+    }
 
     $(".flight-data-heading").text(pilot.heading + "\u00B0");
     $(".text-details-route").text(pilot.flight_plan?.route || "N/A");
