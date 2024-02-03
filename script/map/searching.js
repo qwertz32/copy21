@@ -1,4 +1,4 @@
-import { showPreciseFlightInfo } from "./plane-placement.js";
+import {showPreciseFlightInfo} from "./plane-placement.js";
 let cachedData, zoomLevel;
 let selectedPlane = null;
 let previousSearchTerm = '';
