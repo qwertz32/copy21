@@ -1,9 +1,7 @@
-let updateTimestamp;
-let cachedVatsimData;
+let cachedVatsimData, updateTimestamp;
 $(document).ready(() => {
     const planeToggleBtn = $(".bfb-plane");
     let planesVisible = true;
-    let fetchInterval;
 
     const planeIcon = L.icon({
         iconUrl: "/src/img/B789-high-compress.png",
@@ -158,7 +156,9 @@ $(document).ready(() => {
 });
 
 export async function showPreciseFlightInfo(pilot) {
-    let vatsimDataUpdateTime;
+    let vatsimDataUpdateTime, remarksEssence, registrationText;
+
+    // fetch("/src/json/countries.json").then(response);
 
     fetch("https://data.vatsim.net/v3/vatsim-data.json")
         .then((response) => response.json())
@@ -198,9 +198,9 @@ export async function showPreciseFlightInfo(pilot) {
     $(".flight-data-altimeter-us").text(pilot.qnh_i_hg.toFixed(2) + "inHg");
     $(".aircraft-details-aircraft-name").text(pilot.flight_plan?.aircraft_short || "N/A");
 
-    if (pilot.flight_plan.remarks) {
+    if (pilot.flight_plan) {
         const searchTerm = "REG/";
-        const registrationText = pilot.flight_plan.remarks.toLowerCase().includes(searchTerm.toLowerCase()) ? pilot.flight_plan.remarks.split(searchTerm)[1]?.split(" ")[0] : null;
+        registrationText = pilot.flight_plan.remarks.toLowerCase().includes(searchTerm.toLowerCase()) ? pilot.flight_plan.remarks.split(searchTerm)[1]?.split(" ")[0] : null;
         if (registrationText) {
             $(".aircraft-details-aircraft-registration").text(registrationText);
             console.log(registrationText);
@@ -226,7 +226,7 @@ export async function showPreciseFlightInfo(pilot) {
         console.error(error);
     }
 
-    await getAirportDataFromICAO(); // trigger a function, but wait for it being finished.
+    await getAirportDataFromICAO();
 
     // flight rules
     if (pilot.flight_plan) {
@@ -240,6 +240,50 @@ export async function showPreciseFlightInfo(pilot) {
     } else {
         $(".flight-data-rules").text("N/A");
     }
+  
+    try {
+            const response = await fetch("/src/json/registration.json"); 
+            const countriesData = await response.json();
+            const registrationPrefix = registrationText.substring(0, 2);
+            const matchingCountry = countriesData.find(country => country.reg === registrationPrefix);
+            if (pilot.flight_plan) {
+                if (matchingCountry) {
+                    console.log(`Found country: ${matchingCountry.name} (${matchingCountry.code})`);
+                    $(".aircraft-details-aircraft-registration-country").text(matchingCountry.name);
+                    $(".aircraft-details-aircraft-registration-country-flag").attr("src", "/src/img/flags/" + matchingCountry.code + "_flag.png").css("width", "47px");
+                    //<img class="aircraft-details-aircraft-registration-country-flag p1" alt="Country Flag" src="/src/img/flags/ie_flag.png" title="Ireland">
+                } else {
+                    console.log("No matching country found for the given registration prefix with two characters.");
+                    $(".aircraft-details-aircraft-registration-country").css("left", "355px").text('N/A');
+                    const oneCharRegistrationPrefix = registrationText.substring(0, 1);
+                    const oneCharMatchingCountry = countriesData.find(country => country.reg === oneCharRegistrationPrefix);
+                    if (oneCharMatchingCountry) {
+                        console.log(`Found country, with one character registration prefix: ${oneCharMatchingCountry.name} (${oneCharRegistrationPrefix})`);
+                        $(".aircraft-details-aircraft-registration-country").text(oneCharMatchingCountry.name);
+                        $(".aircraft-details-aircraft-registration-country-flag").attr("src", "/src/img/flags/" + oneCharMatchingCountry.code + "_flag.png").css("width", "47px");
+                    } else {
+                        console.log("No matching country.")
+                        $(".aircraft-details-aircraft-registration-country").css("left", "355px").text('N/A');
+                        $(".aircraft-details-aircraft-registration-country-flag").attr("src", "").css("width", "unset");
+                    }
+                }
+            } else {
+                console.error("No flight plan, cannot get the aircraft's registration.");
+                $(".aircraft-details-aircraft-registration-country").text('N/A');
+                $(".aircraft-details-aircraft-registration-country-flag").attr("src", "").css("width", "unset");
+            }
+        } catch (error) {
+            console.error("Error fetching countries data, most likely the aircraft does not have its registration filled in remarks.");
+            $(".aircraft-details-aircraft-registration-country").text('N/A');
+            $(".aircraft-details-aircraft-registration-country-flag").attr("src", "").css("width", "unset");
+        }
+    
+    
+    //known bad registrations
+    if (registrationText === "PMDG738") {
+        $(".aircraft-details-aircraft-registration-country").text('N/A');
+        $(".aircraft-details-aircraft-registration-country-flag").attr("src", "");
+    };
 
     $(".flight-data-heading").text(pilot.heading + "\u00B0");
     $(".text-details-route").text(pilot.flight_plan?.route || "N/A");
