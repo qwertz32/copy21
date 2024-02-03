@@ -501,11 +501,10 @@
 }
 
 .aircraft-details-aircraft-registration {
-    top: 463px;
+    top: 470px;
     font-size: var(--font-size-1);
     text-align: left;
     width: 135px;
-    height: 42px;
 }
 
 .aircraft-details-aircraft-registration-country-flag {
