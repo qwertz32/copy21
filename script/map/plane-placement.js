@@ -249,41 +249,41 @@ export async function showPreciseFlightInfo(pilot) {
             if (pilot.flight_plan) {
                 if (matchingCountry) {
                     console.log(`Found country: ${matchingCountry.name} (${matchingCountry.code})`);
-                    $(".aircraft-details-aircraft-registration-country").text(matchingCountry.name);
+                    $(".aircraft-details-aircraft-registration-country").text(matchingCountry.name).css({"left": "372px", "font-size": "19px"});
                     $(".aircraft-details-aircraft-registration-country-flag").attr("src", "/src/img/flags/" + matchingCountry.code + "_flag.png").css("width", "47px");
                     //<img class="aircraft-details-aircraft-registration-country-flag p1" alt="Country Flag" src="/src/img/flags/ie_flag.png" title="Ireland">
                 } else {
                     console.log("No matching country found for the given registration prefix with two characters.");
-                    $(".aircraft-details-aircraft-registration-country-flag").attr("src", "").css("width", "unset");
-                    $(".aircraft-details-aircraft-registration-country").text('N/A');
+                    $(".aircraft-details-aircraft-registration-country-flag").attr("src", "").css("width", "0");
+                    $(".aircraft-details-aircraft-registration-country").text('N/A').css({"left": "362px", "font-size": "var(--font-size-1)"});
                     const oneCharRegistrationPrefix = registrationText.substring(0, 1);
                     const oneCharMatchingCountry = countriesData.find(country => country.reg === oneCharRegistrationPrefix);
                     if (oneCharMatchingCountry) {
                         console.log(`Found country, with one character registration prefix: ${oneCharMatchingCountry.name} (${oneCharRegistrationPrefix})`);
-                        $(".aircraft-details-aircraft-registration-country").text(oneCharMatchingCountry.name);
+                        $(".aircraft-details-aircraft-registration-country").text(oneCharMatchingCountry.name).css({"left": "372px", "font-size": "19px"});
                         $(".aircraft-details-aircraft-registration-country-flag").attr("src", "/src/img/flags/" + oneCharMatchingCountry.code + "_flag.png").css("width", "47px");
                     } else {
                         console.log("No matching country.")
-                        $(".aircraft-details-aircraft-registration-country").text('N/A');
-                        $(".aircraft-details-aircraft-registration-country-flag").attr("src", "").css("width", "unset");
+                        $(".aircraft-details-aircraft-registration-country").text('N/A').css({"left": "362px", "font-size": "var(--font-size-1)"});
+                        $(".aircraft-details-aircraft-registration-country-flag").css("width", "0");
                     }
                 }
             } else {
                 console.error("No flight plan, cannot get the aircraft's registration.");
                 $(".aircraft-details-aircraft-registration-country").text('N/A');
-                $(".aircraft-details-aircraft-registration-country-flag").attr("src", "").css("width", "unset");
+                $(".aircraft-details-aircraft-registration-country-flag").css("width", "0");
             }
         } catch (error) {
             console.error("Error fetching countries data, most likely the aircraft does not have its registration filled in remarks.");
-            $(".aircraft-details-aircraft-registration-country").text('N/A');
-            $(".aircraft-details-aircraft-registration-country-flag").attr("src", "").css("width", "unset");
+            $(".aircraft-details-aircraft-registration-country").text('N/A').css({"left": "362px", "font-size": "var(--font-size-1)"});
+            $(".aircraft-details-aircraft-registration-country-flag").css("width", "0");
         }
     
     
     //known bad registrations
     if (registrationText === "PMDG738" || registrationText === "PMDG739") {
-        $(".aircraft-details-aircraft-registration-country").text('N/A');
-        $(".aircraft-details-aircraft-registration-country-flag").attr("src", "");
+        $(".aircraft-details-aircraft-registration-country").text('N/A').css({"left": "362px", "font-size": "var(--font-size-1)"});
+        $(".aircraft-details-aircraft-registration-country-flag").css("width", "0");;
     }
 
     $(".flight-data-heading").text(pilot.heading + "\u00B0");
