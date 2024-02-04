@@ -1,0 +1,28 @@
+# Idea stuff
+.idea/
+
+#webpack
+webpack.config.js
+
+#vscode 
+.vscode/
+.vs/
+
+#packages
+src/packages
+package-lock.json
+node_modules
+
+#self text formatting instructions
+one-lining/
+
+#dev only
+script/console-functions.js
+
+#prettier
+.prettierignore
+
+#not yet ready
+/templates/base/
+download/
+thanks.txt
