@@ -1,6 +1,9 @@
 {
+    "printWidth": 165,
     "tabWidth": 4,
-    "semi": true,
-    "singleQuote": true,
-    "bracketSameLine": true
+    "trailingComma": "all",
+    "arrowParens": "always",
+    "endOfLine": "auto",
+    "bracketSameLine": true,
+    "htmlWhitespaceSensitivity": "ignore"
 }
