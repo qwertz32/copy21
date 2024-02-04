@@ -29,7 +29,7 @@
     display: flex;
     height: auto;
     flex-direction: column;
-    background: var(--event-box-background); 
+    background: var(--event-box-background);
     border-radius: 0.5rem;
     position: relative;
     margin: 3% 3% 10px;
@@ -37,7 +37,7 @@
 
 .event-box-text {
     margin: 2%;
-    background: var(--event-box-background); 
+    background: var(--event-box-background);
     border-radius: inherit;
     display: flex;
     flex-direction: column;
@@ -55,7 +55,10 @@
     white-space: normal;
     display: -webkit-box;
     line-height: 1.3; /* fix for taller letter being cut in the bottom line*/
-    -webkit-line-clamp: 3;
+    /* -webkit-line-clamp: 3;  
+    IF the description lenght is problematic, 
+    enable this as it will create a 
+    3 line limit for it*/
     -webkit-box-orient: vertical;
     margin-top: 3px;
 }
@@ -81,12 +84,13 @@
     text-align: center;
 }
 
-.event-boxes-container:last-child, .event-category:last-child {
-    margin-bottom: 80px; 
+.event-boxes-container:last-child,
+.event-category:last-child {
+    margin-bottom: 80px;
 }
 
 .active-event-box {
-    border: var(--event-box-active-border)
+    border: var(--event-box-active-border);
 }
 
 #sidebar-bg {
@@ -96,7 +100,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--sidebar-bg); 
+    background: var(--sidebar-bg);
     z-index: 1000;
 }
 
