@@ -58,7 +58,6 @@ $(document).ready(function () {
     }
     initializeMap();
 
-    // baseLayer = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v12/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3VkeCIsImEiOiJjbHJrMnd2cXEwOTJnMmpwd2p6aHBrM3VhIn0.osPTV54Z_O4ezRmaO696Lg', {
     baseLayer = L.tileLayer(
         'https://cartodb-basemaps-c.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}.png',
         {
@@ -73,7 +72,7 @@ $(document).ready(function () {
         },
     );
 
-    var weatherLayer = createTileLayer('', {
+    weatherLayer = createTileLayer('', {
         minZoom: 3,
         maxZoom: 19,
         opacity: 0.45,
@@ -84,7 +83,7 @@ $(document).ready(function () {
         zIndex: 3,
     });
 
-    var labelLayer = createTileLayer(
+    labelLayer = createTileLayer(
         'https://cartodb-basemaps-c.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png',
         {
             minZoom: 3,
@@ -181,11 +180,12 @@ $(document).ready(function () {
                 console.log('WeatherLayer URL updated:', newWeatherLayerUrl);
                 if (localStorage.getItem('weather-layer') === 'shown') {
                     addLayerToMap(weatherLayer);
+                } else {
+                    console.log('the else of adding weather layer');
                 }
             })
             .catch((error) =>
                 console.error('Error fetching weather data:', error),
             );
     }
-    updateWeatherLayer();
 });
