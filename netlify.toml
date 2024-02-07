@@ -4,8 +4,8 @@
 [[redirects]]
   from = "/"
   to = "/map"
-  status = 200
-  weight = 50
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/*"
