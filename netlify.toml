@@ -1,2 +1,19 @@
 [build]
   command = "node build/updateVersion.js"
+
+[[redirects]]
+  from = "/"
+  to = "/map"
+  status = 200
+  weight = 50
+
+[[redirects]]
+  from = "/"
+  to = "/events"
+  status = 200
+  weight = 50
+
+[[redirects]]
+  from = "/*"
+  to = "/404"
+  status = 404
