@@ -1,3 +1,6 @@
+#this file
+.gitignore
+
 # Idea stuff
 .idea/
 
@@ -13,6 +16,10 @@ src/packages
 package-lock.json
 node_modules
 
+#temp
+.tmp.driveupload/
+
+
 #self text formatting instructions
 one-lining/
 
@@ -26,3 +33,5 @@ script/console-functions.js
 /templates/base/
 download/
 thanks.txt
+
+
