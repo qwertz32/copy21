@@ -1,7 +1,0 @@
-{
-    "scripts": {
-        "build": "webpack --config webpack.config.js",
-        "start": "webpack serve --open",
-        "deploy": "npm run build && netlify deploy --prod"
-    }
-}
