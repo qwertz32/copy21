@@ -21,17 +21,16 @@
     }
     .l-clock {
         display: none;
-    } 
+    }
     .center {
         margin-left: 60px;
     }
-    
 }
 @media (min-width: 1150px) {
     body.show-sidebar {
         overflow: visible !important;
     }
-    
+
     .event-sidebox {
         transform: translateX(0) !important;
     }
@@ -51,7 +50,7 @@
         width: 300px;
     }
     .nav-logo-subtext {
-        margin-left: 15%;
+        margin-left: 23%; /* the gap between the logo and text is bigger now */
     }
     .event-box-text {
         position: relative;
@@ -88,14 +87,15 @@
     #ls-popup-btn {
         font-size: 1.2rem !important;
     }
-    .event-boxes-container:last-child, .event-category:last-child {
+    .event-boxes-container:last-child,
+    .event-category:last-child {
         height: 40dvh;
     }
     .top-right-stats {
         display: none !important;
     }
     .bottom-right-search-bar {
-        bottom: 20px !important; 
+        bottom: 20px !important;
         left: 50%;
         transform: translateX(-50%);
         width: 100%;
@@ -121,12 +121,12 @@
 }
 
 /* Nedeed media from main */
-@media(max-height: 1150px) {
+@media (max-height: 1150px) {
     .nav-logo {
         height: 30px;
     }
 }
-@media(max-width: 389px) {
+@media (max-width: 389px) {
     .clocks {
         font-size: 0.8rem !important;
     }
