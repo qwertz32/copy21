@@ -5,7 +5,7 @@
 .idea/
 
 #webpack
-webpack.config.js
+#webpack.config.js
 
 #vscode 
 .vscode/
