@@ -73,13 +73,13 @@ body {
 }
 
 .top-text span:nth-child(1) {
-    color: rgb(36, 233, 105);
+    color: rgb(32, 225, 100);
 }
 .top-text span:nth-child(2) {
-    color: #6121e0;
+    color: rgb(224, 44, 44);
 }
 .top-text span:nth-child(3) {
-    color: rgb(243, 110, 179);
+    color: rgb(239, 145, 23);
 }
 @media (max-width: 600px) {
     .main-top {
@@ -92,4 +92,8 @@ body {
         font-size: 1.8rem;
         line-height: 45px;
     }
+}
+
+.animate__animated.animate__shakeX {
+    --animate-duration: 1s;
 }
