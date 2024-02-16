@@ -48,6 +48,7 @@
         <link rel="stylesheet" href="/css/navbar/top-right-stats.css" />
         <link rel="stylesheet" href="/css/events/date-picking.css" />
         <link rel="stylesheet" href="/css/events/precise-popup.css" />
+        <link rel="stylesheet" href="/css/navbar/mobile-menu.css" />
         <!--HOTFIX - TO BE REMOVED-->
         <style>
             .precise-overlay {
@@ -97,21 +98,14 @@
                 <div class="main-content">
                     <nav class="nav-bar-main">
                         <div class="nav-text nav-left">
-                            <div class="hamburger-menu" id="sidebar-fun">
+                            <div class="hamburger-menu">
                                 <div class="menu-icon">
                                     <i class="fas fa-bars"></i>
                                 </div>
-                                <div class="menu-options">
+                                <div class="menu-options" style="left: unset; right: 10px !important">
                                     <ul>
-                                        <li>
-                                            <a class="nav-links" href="/map">Map</a>
-                                        </li>
-                                        <li>
-                                            <a class="nav-links" href="/events">Events</a>
-                                        </li>
-                                        <li>
-                                            <a class="nav-links" href="/events">Events</a>
-                                        </li>
+                                        <li><a class="nav-links" href="/map">/Map</a></li>
+                                        <!-- <li><a class="nav-links" href="/events">Events</a></li> -->
                                     </ul>
                                 </div>
                             </div>
@@ -134,7 +128,7 @@
                                         <img src="/src/img/VATSIM Logos for Public Use/2000w/VATSIM_Logo_White_No_Tagline_2000px.png" alt="VATSIM logo" />
                                     </a>
                                 </div>
-                                <div class="nav-logo-subtext">
+                                <div class="nav-logo-subtext-events">
                                     <a href="https://vatsim.net/events" target="_blank"><span class="nav-subtext">events</span></a>
                                 </div>
                             </div>
@@ -191,7 +185,9 @@
                             <span class="event-box-icaos-single">
                                 <b>
                                     {{#each airports}}
-                                        {{icao}}{{#unless @last}},{{/unless}}
+                                        {{icao}}{{#unless @last}}
+                                            ,
+                                        {{/unless}}
                                     {{/each}}
                                 </b>
                             </span>
