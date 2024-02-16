@@ -10,7 +10,9 @@
         <link rel="stylesheet" href="/404/nf-style.css" />
         <script src="https://code.jquery.com/jquery-4.0.0-beta.js"></script>
         <script src="/script/nf-page/type-animation.js"></script>
-        <script src="https://unpkg.com/typeit"></script>
+        <script src="https://unpkg.com/typeit@8.8.3/dist/index.umd.js"></script>
+        <script src="https://unpkg.com/animejs@3.2.2/lib/anime.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     </head>
     <body>
         <div id="top-container">
@@ -18,7 +20,7 @@
             <div>
                 <div class="main-top">
                     <div class="main-top-content">
-                        <div class="top-text">
+                        <div class="top-text animate__animated animate__fadeInDown">
                             <span>4</span>
                             <span>0</span>
                             <span>4</span>
@@ -43,7 +45,7 @@
             <!-- ↓ Return buttons ↓ -->
             <div>
                 <article>
-                    <div class="returns-div">
+                    <div class="returns-div animate__animated animate__shakeX animate__delay-5s animate_slower">
                         <div class="return-map">
                             <span>Return to</span>
                             <span><a href="/map">/map</a></span>
