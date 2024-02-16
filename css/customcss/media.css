@@ -49,9 +49,6 @@
     .event-sidebox {
         width: 300px;
     }
-    .nav-logo-subtext {
-        margin-left: 23%; /* the gap between the logo and text is bigger now */
-    }
     .event-box-text {
         position: relative;
     }

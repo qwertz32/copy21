@@ -1,0 +1,43 @@
+.menu-icon {
+    cursor: pointer;
+    color: #e3e3e3;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.menu-options {
+    display: none;
+    position: absolute;
+    background-color: var(--hamburger-menu-background);
+    padding: 15px 10px 15px 10px;
+    border-radius: 5px;
+    top: 60px;
+    left: 10px;
+}
+
+.menu-options ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.menu-options ul li {
+    margin-bottom: 5px;
+}
+
+.menu-options ul li a {
+    text-decoration: none;
+    font-family: var(--font-lato);
+    color: var(--white-color);
+    font-size: 21px;
+    font-weight: 900;
+}
+
+.menu-icon.active + .menu-options {
+    display: block;
+}
+
+.nav-links {
+    line-height: 30px;
+}
