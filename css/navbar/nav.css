@@ -24,6 +24,18 @@
     width: 30%;
 }
 
+.nav-links {
+    text-decoration: none;
+    color: var(--white-color);
+    display: inline-block;
+    line-height: 40px;
+    transition: transform 0.3s ease;
+    font-family: var(--font-rubik);
+}
+.nav-links:hover {
+    transform: scale(1.2);
+}
+
 .nav-text {
     display: flex;
     color: var(--white-color);
