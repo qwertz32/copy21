@@ -40,7 +40,11 @@
     .nav-subwebsites {
         width: 0 !important;
     }
+    .hamburger-menu {
+        display: none;
+    }
 }
+
 @media (max-width: 750px) {
     .clocks {
         text-align: center;
