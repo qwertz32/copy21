@@ -22,7 +22,6 @@ node_modules
 #temp
 .tmp.driveupload/
 
-
 #self text formatting instructions
 one-lining/
 
@@ -37,4 +36,5 @@ script/console-functions.js
 download/
 thanks.txt
 
-
+#dev only
+404/dev.html
