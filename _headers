@@ -1,0 +1,11 @@
+/build/*
+  X-Robots-Tag: noindex, nofollow, nosnippet, noarchive
+  Disallow: /
+
+/disabled-features/*
+  X-Robots-Tag: noindex, nofollow, nosnippet, noarchive
+  Disallow: /
+
+/templates/*
+  X-Robots-Tag: noindex, nofollow, nosnippet, noarchive
+  Disallow: /
