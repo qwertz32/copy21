@@ -11,13 +11,16 @@
     --close-btn-on-hover: rgb(166, 97, 239);
     --bug-report-bg: #481961;
     --dark-bg: rgba(14, 14, 14, 0.7);
+
     --scroll-bg: #212121;
     --scroll-handle: #757575;
     --scroll-handle-hover: #212121;
+
     --font-rubik: "Rubik", monospace;
     --font-lato: "Lato", sans-serif;
     --font-roboto: "Roboto Mono", monospace;
     --font-montserrat: "Montserrat", sans-serif;
+
     --event-box-active-border: 5px solid rgba(35, 188, 35, 0.797);
     --sidebox-background: #1b1d1f;
     --event-box-background: #252829;
