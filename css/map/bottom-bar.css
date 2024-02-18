@@ -1,3 +1,7 @@
+:root {
+    --bottom-bar-animation-duration: 0.15s;
+}
+
 .bottom-filter-bar {
     position: fixed;
     bottom: 15px;
@@ -11,49 +15,33 @@
     z-index: 400;
     transform: translateX(-50%);
 }
+
 .bottom-filter-box {
     height: 100%;
     display: flex;
     align-items: center;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out;
 }
+
 .bfb-content {
     margin: 0 15px;
     color: #fff;
 }
+
 .bottom-filter-icon-box {
     height: 100%;
     width: 35px;
     cursor: pointer;
-    transition: all 0.3s;
 }
 
-.bottom-filter-text-box {
-    height: 100%;
-    width: 100px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.bottom-filter-icon-box:hover,
-.bottom-filter-text-box:hover {
+.bottom-filter-icon-box:hover {
     background-color: #ff0000;
-}
-
-.bottom-filter-icon-box i,
-.bottom-filter-text-box span {
-    font-family: var(--font-montserrat);
-}
-
-.b-f-b-first {
-    top: 500px;
 }
 
 .bottom-filter-box div span i {
     transition:
-        transform 0.3s ease-in-out,
-        color 0.3s ease-in-out;
+        transform var(--bottom-bar-animation-duration),
+        color var(--bottom-bar-animation-duration);
 }
 
 .bottom-filter-box div span i:hover {
@@ -67,5 +55,5 @@
 }
 
 .bottom-tower-image {
-    transition: all 0.3s ease-in-out;
+    transition: all var(--bottom-bar-animation-duration) ease-in-out;
 }
