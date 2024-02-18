@@ -4,7 +4,7 @@ $(document).ready(() => {
     let planesVisible = true;
 
     const planeIcon = L.icon({
-        iconUrl: "/src/img/B789-high-compress.png",
+        iconUrl: "/src/img/assets/map/B789-high-compress.png",
         iconSize: [25, 25],
         iconAnchor: [12, 12],
         popupAnchor: [0, -5],
@@ -303,13 +303,16 @@ export async function showPreciseFlightInfo(pilot) {
     // Known bad registrations
     const knownBadRegistrations = ["PMDG738", "PMDG739", "B747", "PMDG737"];
     if (knownBadRegistrations.includes(registrationText)) {
+        // say "N/A" as the country of reg because it tries to put e.g. North Korean flag there
         handleNoMatchingCountry();
+        // say "N/A" as the registration because those are not the real registrations
+        $(".aircraft-details-aircraft-registration").text("N/A");
+        console.info("removed faulty registration");
     }
 
     $(".flight-data-heading").text(pilot.heading + "\u00B0");
     $(".text-details-route").text(pilot.flight_plan?.route || "N/A");
     $(".text-details-remarks").text(pilot.flight_plan?.remarks || "N/A");
-    $(".aircraft-details-aircraft-name").text(pilot.flight_plan?.aircraft_short || "N/A");
     $(".rectangle-parent").fadeIn(200);
 }
 function implementNotFoundAirplaneData() {

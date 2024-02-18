@@ -49,23 +49,23 @@
 .b-f-b-first {
     top: 500px;
 }
-/* 
-.b-f-b-first:hover,
-.b-f-b-middle:hover,
-.b-f-b-last:hover {
-    transition: all 0.4s;
-    font-size: 30px;
-    color: #339ed4;
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(200deg);
-} */
 
-.bottom-filter-box div span .icon {
+.bottom-filter-box div span i {
     transition:
         transform 0.3s ease-in-out,
         color 0.3s ease-in-out;
 }
 
-.bottom-filter-box div span .icon:hover {
-    transform: scale(1.5) translate(-50%, -50%);
-    color: blue;
+.bottom-filter-box div span i:hover {
+    transform: scale(1.5);
+    color: rgb(29, 139, 212);
+}
+
+.bottom-filter-box div span i:active {
+    transform: scale(1.3);
+    color: rgb(29, 212, 93);
+}
+
+.bottom-tower-image {
+    transition: all 0.3s ease-in-out;
 }
