@@ -73,6 +73,7 @@
         <script defer src="/script/template-load.js"></script>
         <script src="/script/attribution.js"></script>
         <script src="/script/onclicks.js"></script>
+        <script src="/script/map/bottom-bar.js"></script>
     </head>
 
     <body>
@@ -146,9 +147,11 @@
                     <div class="flight-info" id="flight-details"></div>
                     <div class="bottom-filter-bar">
                         <div class="bottom-filter-box">
-                            <span class="bfb-content bottom-filter-button-f1 b-f-b-first">
-                                <img src="/src/img/tower-control.png" alt="ATC" width="20px" height="20px" />
-                            </span>
+                            <div class="bfb-tower">
+                                <span class="bfb-content bottom-filter-button-f1 b-f-b-first">
+                                    <img class="bottom-tower-image" src="/src/img/assets/map/tower-control.png" alt="ATC" width="20px" height="20px" />
+                                </span>
+                            </div>
                             <div class="bfb-plane">
                                 <span class="bfb-content bottom-filter-button b-f-b-middle">
                                     <i class="icon fa fa-plane"></i>
@@ -164,9 +167,11 @@
                                     <i class="icon fa fa-tags"></i>
                                 </span>
                             </div>
-                            <span class="bfb-content bottom-filter-button b-f-b-middle">
-                                <i class="icon fa fa-layer-group"></i>
-                            </span>
+                            <div class="bfb-layers">
+                                <span class="bfb-content bottom-filter-button b-f-b-middle">
+                                    <i class="icon fa fa-layer-group"></i>
+                                </span>
+                            </div>
                             <div class="bfb-airports">
                                 <span class="bfb-content bottom-filter-button-f2 b-f-b-last">
                                     <i class="icon fa fa-map-pin"></i>
