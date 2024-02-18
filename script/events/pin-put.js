@@ -1,19 +1,19 @@
 $.getJSON("https://phoenix-api.vatsim.net/api/events", function (data) {
     var currentDate = new Date();
     var defaultIcon = L.icon({
-        iconUrl: "/src/img/event_marker_off.png",
+        iconUrl: "/src/img/assets/events/event_marker_off.png",
         iconSize: [32, 32],
         iconAnchor: [16, 32],
         popupAnchor: [0, -35],
     });
     var ongoingIcon = L.icon({
-        iconUrl: "/src/img/event_marker_on.png",
+        iconUrl: "/src/img/assets/events/event_marker_on.png",
         iconSize: [32, 32],
         iconAnchor: [16, 32],
         popupAnchor: [0, -32],
     });
     var multipleIcon = L.icon({
-        iconUrl: "/src/img/event_marker_multiple.png",
+        iconUrl: "/src/img/assets/events/event_marker_multiple.png",
         iconSize: [32, 32],
         iconAnchor: [16, 32],
         popupAnchor: [0, -32],
