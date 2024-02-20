@@ -1,0 +1,143 @@
+<head>
+    <script src="https://unpkg.com/jquery"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet" />
+    <style>
+        .atc-info-wrapper {
+            height: 70px;
+            width: 380px;
+            padding: 4px;
+            background-color: #3e3e3e;
+            border-radius: 0.35rem;
+            display: flex;
+            color: aliceblue;
+            font-family: "Inter";
+        }
+        .atc-info-bars {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .atc-info-left-box {
+            width: 20%;
+        }
+        .atc-info-left-top,
+        .atc-info-left-bottom {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+        .atc-info-freq {
+            color: #00ffa3;
+            font-weight: 900;
+            font-size: 1.5rem;
+            margin-right: 8px;
+        }
+        .atc-info-top-bar {
+            height: 50%;
+            width: 100%;
+            display: flex;
+            max-width: 230px;
+            align-items: center;
+            font-weight: 800;
+            justify-content: center;
+        }
+        .atc-info-main-name {
+            font-size: 1.5rem;
+            text-align: center;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        .atc-info-bottom-bar {
+            height: 50%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .atc-info-bottom-bar .atc-info-callsign {
+            font-size: 0.7rem;
+        }
+        .atc-info-right-box {
+            width: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+        .atc-info-operator-name,
+        .atc-info-operator-rating {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        .atc-info-id {
+            color: #999999;
+        }
+        .atc-info-timespent-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20px;
+            border: 0.5px solid rgb(225, 225, 225);
+            padding: 0 2px;
+            width: auto;
+        }
+        .atc-info-right-timespent {
+            font-size: 1.2rem;
+        }
+        /* .atc-info-freq-div-name {
+            display: none;
+            align-items: center;
+            margin: 5px 0 0 35px;
+            border-radius: 0.2rem;
+            justify-content: center;
+            height: 30px;
+            color: aliceblue;
+            font-family: "Inter";
+            background-color: #707070;
+            padding: 0;
+            width: auto;
+            max-width: 300px;
+        } */
+    </style>
+</head>
+<body>
+    <div class="atc-info-wrapper">
+        <div class="atc-info-left-box">
+            <div class="atc-info-left-top"><span class="atc-info-id">EPWW</span></div>
+            <div class="atc-info-left-bottom"><span class="atc-info-callsign">EPWW_CTR</span></div>
+        </div>
+        <div class="atc-info-bars">
+            <div class="atc-info-top-bar"><span class="atc-info-main-name">Warsaw Control</span></div>
+            <div class="atc-info-bottom-bar">
+                <span class="atc-info-freq">128.805</span>
+                <img class="atc-info-freq-img" src="/src/img/assets/map/tower-control.png" alt="" height="25px" />
+            </div>
+        </div>
+        <div class="atc-info-right-box">
+            <div class="atc-info-timespent-box"><span class="atc-info-right-timespent">2:32</span></div>
+        </div>
+    </div>
+    <!-- <div class="atc-info-freq-div-name">
+        <span class="atc-info-operator-name" style="margin-right: 3px">Krzysztof Budniewski</span>
+        <span class="atc-info-operator-rating">1638955</span>
+    </div>
+    <script>
+        $(document).ready(() => {
+            $(".atc-info-freq").hover(
+                function () {
+                    $(".atc-info-freq-div-name").fadeIn().css("display", "flex");
+                },
+                function () {
+                    setTimeout(() => {
+                        $(".atc-info-freq-div-name").fadeOut();
+                    }, 250);
+                },
+            );
+        });
+    </script> -->
+</body>
