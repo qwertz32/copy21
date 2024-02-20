@@ -1,38 +1,32 @@
-let userResponse = '';
+let userResponse;
 
 function shwPopUp() {
     try {
-        if (!localStorage) {
-            console.error("nope")
-        }
-        if (localStorage.getItem('resp') === 'understood') {
+        const resp = localStorage.getItem("resp");
+        if (resp === "understood") {
             return; // Do not open the popup
+        } else {
+            $("#ls-popup").fadeIn();
         }
-        if (localStorage.getItem('resp') === null) {
-            $('#ls-popup').fadeIn();
-        } 
     } catch (error) {
-        $('#cd-popup').fadeIn();
+        $("#cd-popup").fadeIn();
         console.error("Local Storage not accessible.");
     }
-};
-
+}
 
 function clsPopUp() {
-    $('#ls-popup').fadeOut();
+    $("#ls-popup").fadeOut();
 
-    userResponse = 'understood';
-    localStorage.setItem('resp', userResponse.toString());
+    userResponse = "understood";
+    localStorage.setItem("resp", userResponse.toString());
 }
 function clsCdPopUp() {
-    $('#cd-popup').fadeOut();
+    $("#cd-popup").fadeOut();
 }
 $(document).ready(function () {
-    setTimeout(function () {
-        shwPopUp();
-    }, 0);
+    shwPopUp();
 
-$("#ls-popup-btn").click(function () {
-    clsPopUp();
-});
+    $("#ls-popup-btn").click(function () {
+        clsPopUp();
+    });
 });
