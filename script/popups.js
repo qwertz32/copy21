@@ -1,6 +1,6 @@
 let userResponse;
 
-function shwPopUp() {
+(function shwPopUp() {
     try {
         const resp = localStorage.getItem("resp");
         if (resp === "understood") {
@@ -12,17 +12,16 @@ function shwPopUp() {
         $("#cd-popup").fadeIn();
         console.error("Local Storage not accessible.");
     }
-}
+});
 
-function clsPopUp() {
+(function clsPopUp() {
     $("#ls-popup").fadeOut();
 
     userResponse = "understood";
     localStorage.setItem("resp", userResponse.toString());
-}
-function clsCdPopUp() {
+})(function clsCdPopUp() {
     $("#cd-popup").fadeOut();
-}
+});
 $(document).ready(function () {
     shwPopUp();
 
