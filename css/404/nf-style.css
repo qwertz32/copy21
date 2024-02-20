@@ -3,6 +3,7 @@ body {
     color: white;
     font-family: "Inter", sans-serif;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 #top-container {
