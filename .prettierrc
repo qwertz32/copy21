@@ -4,6 +4,5 @@
     "trailingComma": "all",
     "arrowParens": "always",
     "endOfLine": "auto",
-    "bracketSameLine": true,
-    "htmlWhitespaceSensitivity": "ignore"
+    "bracketSameLine": true
 }
