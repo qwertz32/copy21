@@ -8,7 +8,8 @@
     align-items: center;
     font-weight: 800;
     position: sticky;
-    font-family: 'Inter', sans-serif;
+    /* removed custom font because it caused weird font change on boundary hover (only on firefox i guess, but still...) */
+    font-family: /*'Inter',*/ sans-serif;
 }
 .t-r-s-margin {
     margin-right: 10px;
