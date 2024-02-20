@@ -1,31 +1,41 @@
-let userResponse;
+(function () {
+    let userResponse;
 
-(function shwPopUp() {
-    try {
-        const resp = localStorage.getItem("resp");
-        if (resp === "understood") {
-            return; // Do not open the popup
-        } else {
-            $("#ls-popup").fadeIn();
+    function shwPopUp() {
+        try {
+            const resp = localStorage.getItem("resp");
+            if (resp === "understood") {
+                return; // Do not open the popup
+            } else {
+                $("#ls-popup").fadeIn();
+            }
+        } catch (error) {
+            $("#cd-popup").fadeIn();
+            console.error("Local Storage not accessible.");
         }
-    } catch (error) {
-        $("#cd-popup").fadeIn();
-        console.error("Local Storage not accessible.");
     }
-});
 
-(function clsPopUp() {
-    $("#ls-popup").fadeOut();
+    function clsPopUp() {
+        $("#ls-popup").fadeOut();
 
-    userResponse = "understood";
-    localStorage.setItem("resp", userResponse.toString());
-})(function clsCdPopUp() {
-    $("#cd-popup").fadeOut();
-});
-$(document).ready(function () {
-    shwPopUp();
+        userResponse = "understood";
+        localStorage.setItem("resp", userResponse.toString());
+    }
 
-    $("#ls-popup-btn").click(function () {
-        clsPopUp();
+    function clsCdPopUp() {
+        $("#cd-popup").fadeOut();
+    }
+
+    $(document).ready(function () {
+        shwPopUp();
+
+        $("#ls-popup-btn").click(function () {
+            clsPopUp();
+        });
     });
-});
+
+    // Expose only necessary functionality
+    window.popupModule = {
+        closeCdPopUp: clsCdPopUp,
+    };
+})();
