@@ -1,7 +1,9 @@
 ### Each network request simaware.ca is doing:
 
 <img src="https://images2.imgbox.com/94/29/3vBvSjyq_o.png"/>
-<div style="height:30px;width:100%;background-color:#640D36;border-radius:0.6rem;color;display:flex;align-items:center;justify-content:center;font-family:sans-serif;font-weight:900;">Each one explained:</div>
+
+# Each one explained
+
 (Search with <b>Ctrl+F</b>, <b>Cmd+F</b>)
 
 ## countries.json
