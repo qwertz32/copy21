@@ -18,21 +18,19 @@ var presetCoordinatesList = [
     [52.23919989939035, 21.04489368750266],
 ];
 
-var tileLayerUrl = 'https://mt2.google.com/vt?lyrs=s&x={x}&y={y}&z={z}';
-var presetCoordinates = isMobile()
-    ? [54.526, 15.2551]
-    : getRandomCordsForStart();
+var tileLayerUrl = "https://mt2.google.com/vt?lyrs=s&x={x}&y={y}&z={z}";
+var presetCoordinates = isMobile() ? [54.526, 15.2551] : getRandomCordsForStart();
 var presetZoom = isMobile() ? 4 : 3;
 
 try {
-    var storedCoordinates = localStorage.getItem('mapCoordinates');
-    var storedZoom = localStorage.getItem('mapZoom');
+    var storedCoordinates = localStorage.getItem("mapCoordinates");
+    var storedZoom = localStorage.getItem("mapZoom");
     initialCoordinates = JSON.parse(storedCoordinates) || presetCoordinates;
 } catch (error) {
     console.error(
-        'Error getting the last position. \n Fix is most likely to %cenable cache%c. \n If this does not help, contact the owner and provide any other error you get.',
-        'color: #e30505; font-weight: bold; text-decoration: underline;',
-        'color: orange; font-weight: normal;',
+        "Error getting the last position. \n Fix is most likely to %cenable cache%c. \n If this does not help, contact the owner and provide any other error you get.",
+        "color: #e30505; font-weight: bold; text-decoration: underline;",
+        "color: orange; font-weight: normal;",
     );
     initialCoordinates = presetCoordinates;
 }
@@ -49,7 +47,7 @@ $(document).ready(function () {
     initialCoordinates = JSON.parse(storedCoordinates) || presetCoordinates;
 
     function initializeMap() {
-        map = L.map('map', {
+        map = L.map("map", {
             attributionControl: false,
             zoomControl: false,
             zoomSnap: 0.2,
@@ -58,134 +56,122 @@ $(document).ready(function () {
     }
     initializeMap();
 
-    baseLayer = L.tileLayer(
-        'https://cartodb-basemaps-c.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}.png',
-        {
-            minZoom: 3,
-            maxZoom: 19,
-            attribution:
-                '<a href="https://carto.com/basemaps" target="_blank">Carto</a>',
-            preload: Infinity,
-            subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
-            keepBuffer: 5,
-            zIndex: 1,
-        },
-    );
+    baseLayer = L.tileLayer("https://cartodb-basemaps-c.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}.png", {
+        minZoom: 3,
+        maxZoom: 19,
+        attribution: '<a href="https://carto.com/basemaps" target="_blank">Carto</a>',
+        preload: Infinity,
+        subdomains: ["mt0", "mt1", "mt2", "mt3"],
+        keepBuffer: 5,
+        zIndex: 1,
+    });
 
-    weatherLayer = createTileLayer('', {
+    weatherLayer = createTileLayer("", {
         minZoom: 3,
         maxZoom: 19,
         opacity: 0.45,
-        attribution:
-            '<a href="https://www.rainviewer.com/" target="_blank">Rainviewer</a>',
+        attribution: '<a href="https://www.rainviewer.com/" target="_blank">Rainviewer</a>',
         preload: Infinity,
         keepBuffer: 5,
         zIndex: 3,
     });
 
-    labelLayer = createTileLayer(
-        'https://cartodb-basemaps-c.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png',
-        {
-            minZoom: 3,
-            maxZoom: 19,
-            preload: Infinity,
-            keepBuffer: 5,
-            zIndex: 2,
-        },
-    );
+    labelLayer = createTileLayer("https://cartodb-basemaps-c.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png", {
+        minZoom: 3,
+        maxZoom: 19,
+        preload: Infinity,
+        keepBuffer: 5,
+        zIndex: 2,
+    });
 
     baseLayer.addTo(map);
 
-    map.on('moveend', function () {
+    map.on("moveend", function () {
         try {
             var currentCoordinates = map.getCenter();
             var currentZoom = map.getZoom();
-            localStorage.setItem(
-                'mapCoordinates',
-                JSON.stringify(currentCoordinates),
-            );
-            localStorage.setItem('mapZoom', currentZoom.toString());
+            localStorage.setItem("mapCoordinates", JSON.stringify(currentCoordinates));
+            localStorage.setItem("mapZoom", currentZoom.toString());
         } catch (error) {
-            console.error('Cannot write into Local Storage');
+            console.error("Cannot write into Local Storage");
         }
     });
 
     map.setView(initialCoordinates, initialZoom);
+});
 
-    function createTileLayer(url, options) {
-        return L.tileLayer(url, options);
+function createTileLayer(url, options) {
+    return L.tileLayer(url, options);
+}
+
+function addLayerToMap(layer) {
+    map.addLayer(baseLayer);
+    if (!map.hasLayer(layer)) {
+        map.addLayer(layer);
     }
+    map.setView(map.getCenter(), map.getZoom());
+}
 
-    function addLayerToMap(layer) {
-        map.addLayer(baseLayer);
-        if (!map.hasLayer(layer)) {
-            map.addLayer(layer);
-        }
-        map.setView(map.getCenter(), map.getZoom());
+function removeLayerFromMap(layer) {
+    map.addLayer(baseLayer);
+    if (map.hasLayer(layer)) {
+        map.removeLayer(layer);
     }
+    map.setView(map.getCenter(), map.getZoom());
+}
 
-    function removeLayerFromMap(layer) {
-        map.addLayer(baseLayer);
-        if (map.hasLayer(layer)) {
-            map.removeLayer(layer);
-        }
-        map.setView(map.getCenter(), map.getZoom());
+function checkMapLayers() {
+    if (localStorage.getItem("weather-layer") === "shown") {
+        addLayerToMap(weatherLayer);
+        updateWeatherLayer();
+        console.log("Weather layer is shown");
     }
-
-    function checkMapLayers() {
-        if (localStorage.getItem('weather-layer') === 'shown') {
-            addLayerToMap(weatherLayer);
-            updateWeatherLayer();
-            console.log('Weather layer is shown');
-        }
-        if (localStorage.getItem('labels') === 'shown') {
-            addLayerToMap(labelLayer);
-            console.log('Labels are shown');
-        }
+    if (localStorage.getItem("labels") === "shown") {
+        addLayerToMap(labelLayer);
+        console.log("Labels are shown");
     }
-    checkMapLayers();
+}
+checkMapLayers();
 
-    $('.bfb-weather').on('click', function () {
-        if (map.hasLayer(weatherLayer)) {
-            removeLayerFromMap(weatherLayer);
-            localStorage.removeItem('weather-layer');
-            console.log('Weather layer removed');
-        } else {
-            addLayerToMap(weatherLayer);
-            localStorage.setItem('weather-layer', 'shown');
-            updateWeatherLayer();
-            console.log('Weather layer added');
-        }
-    });
-
-    $('.bfb-labels').on('click', function () {
-        if (map.hasLayer(labelLayer)) {
-            removeLayerFromMap(labelLayer);
-            localStorage.removeItem('labels');
-            console.log('Labels removed');
-        } else {
-            addLayerToMap(labelLayer);
-            localStorage.setItem('labels', 'shown');
-            console.log('Labels added');
-        }
-    });
-
-    function updateWeatherLayer() {
-        fetch('https://tilecache.rainviewer.com/api/maps.json')
-            .then((response) => response.json())
-            .then((data) => {
-                const highestTimestamp = Math.max(...data);
-                const newWeatherLayerUrl = `https://tilecache.rainviewer.com/v2/radar/${highestTimestamp}/512/{z}/{x}/{y}/6/0_1.png`;
-                weatherLayer.setUrl(newWeatherLayerUrl);
-                console.log('WeatherLayer URL updated:', newWeatherLayerUrl);
-                if (localStorage.getItem('weather-layer') === 'shown') {
-                    addLayerToMap(weatherLayer);
-                } else {
-                    console.log('the else of adding weather layer');
-                }
-            })
-            .catch((error) =>
-                console.error('Error fetching weather data:', error),
-            );
+$(".bfb-weather").on("click", function () {
+    if (map.hasLayer(weatherLayer)) {
+        removeLayerFromMap(weatherLayer);
+        localStorage.removeItem("weather-layer");
+        console.log("Weather layer removed");
+    } else {
+        addLayerToMap(weatherLayer);
+        localStorage.setItem("weather-layer", "shown");
+        updateWeatherLayer();
+        console.log("Weather layer added");
     }
 });
+
+$(".bfb-labels").on("click", function () {
+    if (map.hasLayer(labelLayer)) {
+        removeLayerFromMap(labelLayer);
+        localStorage.removeItem("labels");
+        console.log("Labels removed");
+    } else {
+        addLayerToMap(labelLayer);
+        localStorage.setItem("labels", "shown");
+        console.log("Labels added");
+    }
+});
+
+function updateWeatherLayer() {
+    fetch("https://tilecache.rainviewer.com/api/maps.json")
+        .then((response) => response.json())
+        .then((data) => {
+            const highestTimestamp = Math.max(...data);
+            const newWeatherLayerUrl = `https://tilecache.rainviewer.com/v2/radar/${highestTimestamp}/512/{z}/{x}/{y}/6/0_1.png`;
+            weatherLayer.setUrl(newWeatherLayerUrl);
+            console.log("WeatherLayer URL updated:", newWeatherLayerUrl);
+            if (localStorage.getItem("weather-layer") === "shown") {
+                addLayerToMap(weatherLayer);
+            } else {
+                console.log("the else of adding weather layer");
+            }
+        })
+        .catch((error) => console.error("Error fetching weather data:", error));
+}
+// });
