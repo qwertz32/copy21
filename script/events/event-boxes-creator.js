@@ -94,9 +94,9 @@
                 const storedTime = storedEventTime;
                 const currentTime = new Date().getTime();
                 if (storedTime < currentTime) {
-                    $("#event-boxes-timeOfFetch").html(
-                        'The data <span class="s32">might</span> be outdated as it was taken at' + " " + fTime + "<br>" + "Click to reload",
-                    );
+                    $("#event-boxes-timeOfFetch")
+                        .html('The data <span class="s32">might</span> be outdated as it was taken at' + " " + fTime + "<br>" + "Click to reload")
+                        .css("cursor", "pointer");
                 }
             }
         }
