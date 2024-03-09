@@ -1,5 +1,6 @@
 [build]
-  command = "node build/updateVersion.js"
+  command = "node build/updateVersion.js && npm run build
+  functions = "lambda"
 
 [[redirects]]
   from = "/"
