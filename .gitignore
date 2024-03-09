@@ -8,7 +8,7 @@
 webpack.config.js
 
 #package
-package.json
+# package.json
 
 #vscode 
 .vscode/

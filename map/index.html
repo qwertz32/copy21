@@ -75,8 +75,8 @@
         <script src="/script/attribution.js"></script>
         <script src="/script/onclicks.js"></script>
         <script src="/script/map/bottom-bar.js"></script>
-        <!-- <script src="/script/map/boundaries.js"></script> -->
-        <!-- <script src="/script/preloadimages.js"></script> -->
+        <script src="/script/map/boundaries.js"></script>
+        <script src="/script/preloadimages.js"></script>
 
         <!---->
     </head>
@@ -234,5 +234,19 @@
                 </div>
             </div>
         </noscript>
+
+        <script>
+            window.addEventListener("DOMContentLoaded", () => {
+                fetch("/.netlify/functions/files")
+                    .then((response) => response.json())
+                    .then((data) => {
+                        const fileListElement = document.getElementById("fileList");
+                        data.files.forEach((file) => {
+                            fileListElement.innerHTML += `<div>${file}</div>`;
+                        });
+                    })
+                    .catch((error) => console.error("Error:", error));
+            });
+        </script>
     </body>
 </html>
