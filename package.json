@@ -1,6 +1,0 @@
-{
-    "scripts": {
-        "build": "echo 'Building 1234!!!' && netlify-lambda build",
-        "start": "netlify-lambda serve"
-    }
-}
