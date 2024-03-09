@@ -98,80 +98,79 @@ $(document).ready(function () {
     });
 
     map.setView(initialCoordinates, initialZoom);
+
+    function createTileLayer(url, options) {
+        return L.tileLayer(url, options);
+    }
+
+    function addLayerToMap(layer) {
+        map.addLayer(baseLayer);
+        if (!map.hasLayer(layer)) {
+            map.addLayer(layer);
+        }
+        map.setView(map.getCenter(), map.getZoom());
+    }
+
+    function removeLayerFromMap(layer) {
+        map.addLayer(baseLayer);
+        if (map.hasLayer(layer)) {
+            map.removeLayer(layer);
+        }
+        map.setView(map.getCenter(), map.getZoom());
+    }
+
+    function checkMapLayers() {
+        if (localStorage.getItem("weather-layer") === "shown") {
+            addLayerToMap(weatherLayer);
+            updateWeatherLayer();
+            console.log("Weather layer is shown");
+        }
+        if (localStorage.getItem("labels") === "shown") {
+            addLayerToMap(labelLayer);
+            console.log("Labels are shown");
+        }
+    }
+    checkMapLayers();
+
+    $(".bfb-weather").on("click", function () {
+        if (map.hasLayer(weatherLayer)) {
+            removeLayerFromMap(weatherLayer);
+            localStorage.removeItem("weather-layer");
+            console.log("Weather layer removed");
+        } else {
+            addLayerToMap(weatherLayer);
+            localStorage.setItem("weather-layer", "shown");
+            updateWeatherLayer();
+            console.log("Weather layer added");
+        }
+    });
+
+    $(".bfb-labels").on("click", function () {
+        if (map.hasLayer(labelLayer)) {
+            removeLayerFromMap(labelLayer);
+            localStorage.removeItem("labels");
+            console.log("Labels removed");
+        } else {
+            addLayerToMap(labelLayer);
+            localStorage.setItem("labels", "shown");
+            console.log("Labels added");
+        }
+    });
+
+    function updateWeatherLayer() {
+        fetch("https://tilecache.rainviewer.com/api/maps.json")
+            .then((response) => response.json())
+            .then((data) => {
+                const highestTimestamp = Math.max(...data);
+                const newWeatherLayerUrl = `https://tilecache.rainviewer.com/v2/radar/${highestTimestamp}/512/{z}/{x}/{y}/6/0_1.png`;
+                weatherLayer.setUrl(newWeatherLayerUrl);
+                console.log("WeatherLayer URL updated:", newWeatherLayerUrl);
+                if (localStorage.getItem("weather-layer") === "shown") {
+                    addLayerToMap(weatherLayer);
+                } else {
+                    console.log("the else of adding weather layer");
+                }
+            })
+            .catch((error) => console.error("Error fetching weather data:", error));
+    }
 });
-
-function createTileLayer(url, options) {
-    return L.tileLayer(url, options);
-}
-
-function addLayerToMap(layer) {
-    map.addLayer(baseLayer);
-    if (!map.hasLayer(layer)) {
-        map.addLayer(layer);
-    }
-    map.setView(map.getCenter(), map.getZoom());
-}
-
-function removeLayerFromMap(layer) {
-    map.addLayer(baseLayer);
-    if (map.hasLayer(layer)) {
-        map.removeLayer(layer);
-    }
-    map.setView(map.getCenter(), map.getZoom());
-}
-
-function checkMapLayers() {
-    if (localStorage.getItem("weather-layer") === "shown") {
-        addLayerToMap(weatherLayer);
-        updateWeatherLayer();
-        console.log("Weather layer is shown");
-    }
-    if (localStorage.getItem("labels") === "shown") {
-        addLayerToMap(labelLayer);
-        console.log("Labels are shown");
-    }
-}
-checkMapLayers();
-
-$(".bfb-weather").on("click", function () {
-    if (map.hasLayer(weatherLayer)) {
-        removeLayerFromMap(weatherLayer);
-        localStorage.removeItem("weather-layer");
-        console.log("Weather layer removed");
-    } else {
-        addLayerToMap(weatherLayer);
-        localStorage.setItem("weather-layer", "shown");
-        updateWeatherLayer();
-        console.log("Weather layer added");
-    }
-});
-
-$(".bfb-labels").on("click", function () {
-    if (map.hasLayer(labelLayer)) {
-        removeLayerFromMap(labelLayer);
-        localStorage.removeItem("labels");
-        console.log("Labels removed");
-    } else {
-        addLayerToMap(labelLayer);
-        localStorage.setItem("labels", "shown");
-        console.log("Labels added");
-    }
-});
-
-function updateWeatherLayer() {
-    fetch("https://tilecache.rainviewer.com/api/maps.json")
-        .then((response) => response.json())
-        .then((data) => {
-            const highestTimestamp = Math.max(...data);
-            const newWeatherLayerUrl = `https://tilecache.rainviewer.com/v2/radar/${highestTimestamp}/512/{z}/{x}/{y}/6/0_1.png`;
-            weatherLayer.setUrl(newWeatherLayerUrl);
-            console.log("WeatherLayer URL updated:", newWeatherLayerUrl);
-            if (localStorage.getItem("weather-layer") === "shown") {
-                addLayerToMap(weatherLayer);
-            } else {
-                console.log("the else of adding weather layer");
-            }
-        })
-        .catch((error) => console.error("Error fetching weather data:", error));
-}
-// });
