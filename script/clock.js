@@ -1,5 +1,5 @@
-let animationDuration = 500; // As it says, duration of the fadein/fadeout
-let updateInterval = 5000; // Animation Interval, how often will the change of clock occur
+let animationDuration = 500;
+let updateInterval = 5000;
 
 function toggleClocks() {
     const localClock = $(".local-clock");
@@ -64,5 +64,5 @@ $(document).ready(function () {
         } else {
             $(".zulu-clock").html(showZuluTime());
         }
-    }, 1000); // Clock Interval, how often will it update its time.
+    }, 1000);
 });
