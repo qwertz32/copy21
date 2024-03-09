@@ -31,6 +31,8 @@ body {
     margin-top: 1rem;
     text-align: center;
     font-weight: 600;
+    display: flex;
+    justify-content: center;
 }
 
 .returns-div {
@@ -61,6 +63,7 @@ body {
     font-weight: 800;
     /* fix for (long) path overflowing the screen */
     overflow-wrap: break-word;
+    width: 80%;
 }
 
 .path-name {
