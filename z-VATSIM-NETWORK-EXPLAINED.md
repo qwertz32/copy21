@@ -136,8 +136,8 @@
   },
 ```
 
-> Gives: **?**  
-> Usability: **_Low_**
+> Gives: **Upper Information region prefix, name and all the FIR's that belong to it**  
+> Usability: **_Medium_**
 
 ## airports.json
 
