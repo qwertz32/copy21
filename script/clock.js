@@ -17,11 +17,13 @@ function toggleClocks() {
         });
     }
 }
+
 function showLocalTime() {
     const date = new Date();
 
     let localH = date.getHours();
     let localM = date.getMinutes();
+    let localS = date.getSeconds();
     const localDay = date.getDate();
     const localMonthShort = new Intl.DateTimeFormat("en-US", {
         month: "short",
@@ -29,7 +31,8 @@ function showLocalTime() {
 
     localH = localH < 10 ? "0" + localH : localH;
     localM = localM < 10 ? "0" + localM : localM;
-    const localTime = `${localH}:${localM}&nbsp;  CET`;
+    localS = localS < 10 ? "0" + localS : localS;
+    const localTime = `${localH}:${localM}:${localS}&nbsp; CET`;
 
     const localMinutesAndDate = localDay + " " + localMonthShort;
 
@@ -41,6 +44,7 @@ function showZuluTime() {
 
     let zuluH = date.getUTCHours();
     let zuluM = date.getUTCMinutes();
+    let zuluS = date.getUTCSeconds();
     const zuluDay = date.getUTCDate();
     const zuluMonthShort = new Intl.DateTimeFormat("en-US", {
         month: "short",
@@ -48,7 +52,8 @@ function showZuluTime() {
     }).format(date);
     zuluH = zuluH < 10 ? "0" + zuluH : zuluH;
     zuluM = zuluM < 10 ? "0" + zuluM : zuluM;
-    const zuluTime = `${zuluH}:${zuluM} Zulu`;
+    zuluS = zuluS < 10 ? "0" + zuluS : zuluS;
+    const zuluTime = `${zuluH}:${zuluM}:${zuluS} Zulu`;
     const zuluMinutesAndDate = zuluDay + " " + zuluMonthShort;
     return `${zuluTime} , ${zuluMinutesAndDate}`;
 }
