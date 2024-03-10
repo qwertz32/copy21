@@ -74,7 +74,45 @@
                     )
                     .join("")}`;
 
-                $('<div class="event-category"></div>').html(categoryHtml).appendTo("#event-boxes-container");
+                const categoryElement = $('<div class="event-category"></div>').html(categoryHtml).appendTo("#event-boxes-container");
+
+                categoryElement.find(".event-box-icaos-single").click(function () {
+                    const icaos = $(this)
+                        .text()
+                        .trim()
+                        .split(/\s*,\s*/);
+                    console.log("Clicked ICAOs:", icaos);
+                    icaos.forEach((icao) => {
+                        const trimmedIcao = icao.trim(); // Trim whitespace from each ICAO code
+                        console.log("Clicked ICAO:", trimmedIcao);
+                        const event = events.find((event) => event.airports.some((airport) => airport.icao === trimmedIcao));
+                        if (event) {
+                            const airport = event.airports.find((a) => a.icao === trimmedIcao);
+                            if (airport) {
+                                const coords = airport.coords;
+                                console.log("Airport Coordinates:", coords);
+                                // Assuming you have a function to teleport the user on your Leaflet.js map
+                                map.setView(coords, 13);
+                                return; // Exit the loop if the correct airport is found
+                            }
+                        }
+                    });
+                });
+
+                categoryElement.find(".event-box-icaos-single").hover(
+                    function () {
+                        const icao = $(this).text().trim();
+                        const airport = findAirportByIcao(events, icao);
+                        if (airport) {
+                            const fullName = airport.fullName;
+                            // Display the full name of the airport however you want (e.g., tooltip, console.log, etc.)
+                            console.log("Airport Full Name:", fullName);
+                        }
+                    },
+                    function () {
+                        // Remove the displayed full name if necessary
+                    },
+                );
             }
         });
     }
@@ -112,3 +150,14 @@
 
     getEvents();
 })();
+
+function findAirportByIcao(events, icao) {
+    for (const event of events) {
+        for (const airport of event.airports) {
+            if (airport.icao === icao) {
+                return airport;
+            }
+        }
+    }
+    return null;
+}
