@@ -2,6 +2,7 @@
 .plane-custom-popup .leaflet-popup-content-wrapper {
     background: #000000a9;
     box-shadow: none;
+    padding: 1px;
     font-family: var(--font-montserrat);
     color: #fce306;
     font-weight: 800;
