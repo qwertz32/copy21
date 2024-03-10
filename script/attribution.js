@@ -7,7 +7,7 @@ $(document).ready(() => {
             success: function (data) {
                 attributionVersionText = "V" + data.ver + ", Build: " + data.build + " |";
                 console.log("built the attributionVerText correctly");
-                const attributionText = `${attributionVersionText} <a taget="_blank" href="https://github.com/skerretoo/TimeShow">Github</a> | <a href="https://leafletjs.com/" target="_blank">Leaflet</a>`;
+                const attributionText = `${attributionVersionText} | <a href="https://leafletjs.com/" target="_blank">Leaflet</a>`;
                 const atrCtrl = L.control.attribution({ position: "topright" }).addTo(map);
                 atrCtrl.setPrefix(attributionText);
                 loadingVersionText = attributionVersionText.slice(0, -1);
