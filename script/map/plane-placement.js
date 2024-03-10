@@ -173,12 +173,13 @@ export async function showPreciseFlightInfo(pilot) {
 
     $(".f-callsign").text(pilot.callsign);
 
+    const combinedValues1 = $(".dep-time, .arv-time, .line-separator-1, .plane-icon-centered-circle, .line-separator-7, .main-icaos-div, .city-airport-names");
     if (pilot.flight_plan === null) {
-        $(".dep-time, .arv-time, .line-separator-1, .plane-icon-centered-circle, .line-separator-7, .main-icaos-div, .city-airport-names").css("display", "none");
+        combinedValues1.css("display", "none");
         $(".rectangle-parent, .no-flight-plan-warning").css("display", "flex");
     } else {
         $(".no-flight-plan-warning").css("display", "none");
-        $(".dep-time, .arv-time, .line-separator-1, .plane-icon-centered-circle, .line-separator-7, .main-icaos-div, .city-airport-names").css("display", "flex");
+        combinedValues1.css("display", "flex");
         $(".dep-time").text(`${pilot.flight_plan.deptime.substring(0, 2)}:${pilot.flight_plan.deptime.substring(2)}`);
         let [deptimeH, deptimeM, enrouteH, enrouteM] = [
             parseInt(pilot.flight_plan.deptime.substring(0, 2)),
